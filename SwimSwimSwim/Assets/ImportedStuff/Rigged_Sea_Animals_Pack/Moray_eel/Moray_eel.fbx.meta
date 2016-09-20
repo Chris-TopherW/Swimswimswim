@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 487e94ffd9791944ab89e24d11b9300e
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Jnt_Morena_mandibula_R_1
+    100002: Jnt_Morena_mandibula_L_2
+    100004: pMorena_Dientes_Sup
+    100006: Jnt_Morena_cola_3
+    100008: Jnt_Morena_cola_2
+    100010: Jnt_Morena_cola_1
+    100012: Jnt_mandibula_Sup_R_1
+    100014: Jnt_mandibula_Sup_L
+    100016: pMorena_Ojos
+    100018: Jnt_Morena
+    100020: pMorena_Dientes_Inf
+    100022: //RootNode
+    100024: Jnt_mandibula_Sup_R_1 1
+    100026: Jnt_Morena_mandibula_L_1
+    100028: Jnt_Morena_boca_End
+    100030: Jnt_Morena_boca_1
+    100032: Jnt_Morena_cola_End
+    100034: Jnt_Morena_cola_7
+    100036: Jnt_Morena_cola_6
+    100038: pMorena_Cuerpo
+    100040: Jnt_mandibula_Sup_R
+    100042: Jnt_Morena_Branquias_1
+    100044: Jnt_Morena_mandibula_R_2
+    100046: Jnt_Morena_cola_5
+    100048: Jnt_Morena_cola_4
+    400000: Jnt_Morena_mandibula_R_1
+    400002: Jnt_Morena_mandibula_L_2
+    400004: pMorena_Dientes_Sup
+    400006: Jnt_Morena_cola_3
+    400008: Jnt_Morena_cola_2
+    400010: Jnt_Morena_cola_1
+    400012: Jnt_mandibula_Sup_R_1
+    400014: Jnt_mandibula_Sup_L
+    400016: pMorena_Ojos
+    400018: Jnt_Morena
+    400020: pMorena_Dientes_Inf
+    400022: //RootNode
+    400024: Jnt_mandibula_Sup_R_1 1
+    400026: Jnt_Morena_mandibula_L_1
+    400028: Jnt_Morena_boca_End
+    400030: Jnt_Morena_boca_1
+    400032: Jnt_Morena_cola_End
+    400034: Jnt_Morena_cola_7
+    400036: Jnt_Morena_cola_6
+    400038: pMorena_Cuerpo
+    400040: Jnt_mandibula_Sup_R
+    400042: Jnt_Morena_Branquias_1
+    400044: Jnt_Morena_mandibula_R_2
+    400046: Jnt_Morena_cola_5
+    400048: Jnt_Morena_cola_4
+    2300000: pMorena_Dientes_Inf
+    2300002: pMorena_Dientes_Sup
+    2300004: pMorena_Ojos
+    2300006: pMorena_Cuerpo
+    3300000: pMorena_Dientes_Inf
+    3300002: pMorena_Dientes_Sup
+    3300004: pMorena_Ojos
+    3300006: pMorena_Cuerpo
+    4300000: pMorena_Cuerpo
+    4300002: pMorena_Ojos
+    4300004: pMorena_Dientes_Inf
+    4300006: pMorena_Dientes_Sup
+    7400000: Take 001 //// Jnt_Morena
+    11100000: //RootNode
+    11100002: pMorena_Cuerpo
+    11100004: pMorena_Dientes_Inf
+    11100006: pMorena_Dientes_Sup
+    11100008: pMorena_Ojos
+    11100010: Jnt_Morena
+    11100012: Jnt_Morena_boca_1
+    11100014: Jnt_Morena_boca_End
+    11100016: Jnt_Morena_Branquias_1
+    11100018: Jnt_Morena_cola_1
+    11100020: Jnt_Morena_cola_2
+    11100022: Jnt_Morena_cola_3
+    11100024: Jnt_Morena_cola_4
+    11100026: Jnt_Morena_cola_5
+    11100028: Jnt_Morena_cola_6
+    11100030: Jnt_Morena_cola_7
+    11100032: Jnt_Morena_cola_End
+    13700000: pMorena_Dientes_Sup
+    13700002: pMorena_Ojos
+    13700004: pMorena_Dientes_Inf
+    13700006: pMorena_Cuerpo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 1
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

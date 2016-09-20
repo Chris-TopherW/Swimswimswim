@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 0998863a87b93f34a955cde8e4dc1348
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Teeth
+    100002: EyeR
+    100004: EyeL
+    100006: Jnt_respiradero_end_mmr
+    100008: Jnt_respiradero_03_mmr
+    100010: Jnt_respiradero_02_mmr
+    100012: Body
+    100016: Jnt_vertebra_02_mmm
+    100018: Jnt_vertebra_01_mmm
+    100020: Jnt_vertebra_R_mmm
+    100034: Jnt_Tail_02_end_mmr
+    100052: Jnt_Tail_03_end_mmm
+    100054: Jnt_Tail_02_end_mml
+    100056: Jnt_vertebra_03_mmm
+    100066: Jnt_aleron_01_end_mml
+    100068: Jnt_aleron_01_mml
+    100070: Jnt_aleron_R_mml
+    100072: Jnt_Tail_01_mmr
+    100074: Jnt_Tail_R_mmr
+    100076: Jnt_Tail_03_mmm
+    100080: Jnt_Tail_01_mml
+    100082: Jnt_Tail_R_mml
+    100084: Jnt_Tail_R_mmm
+    100100: Jnt_aleron_01_end_mmr
+    100102: Jnt_aleron_01_mmr
+    100104: Jnt_aleron_R_mmr
+    100114: Jnt_Eye_end_mdr 1
+    100116: Jnt_Eye_end_mur 1
+    100118: Jnt_respiradero_end_mmm
+    100122: Jnt_Tail_02_mmr
+    100124: Jnt_Tail_02_mmm
+    100126: Jnt_Tail_01_mmm
+    100128: Jnt_Tail_02_mml
+    100130: Jnt_Eye_end_mdr
+    100132: //RootNode
+    100144: Jnt_respiradero_01_mmr
+    100146: Jnt_respiradero_R_mmm
+    100148: Jnt_Head_01_end_mmm
+    100152: Jnt_Eye_mdl
+    100154: Jnt_Eye_end_mur
+    100156: Jnt_Eye_mul
+    100158: Jnt_Eye_mdr
+    100160: Jnt_respiradero_03_mml
+    100162: Jnt_respiradero_02_mml
+    100164: Jnt_respiradero_01_mml
+    100166: Jnt_Head_01_mmm
+    100168: Jnt_Head_R_mmm
+    100170: Jnt_Pelvis_mmm
+    100184: Jnt_Jaw_end_mmm
+    100186: Jnt_Jaw_mmm
+    100190: Jnt_Eye_mur
+    400000: Teeth
+    400002: EyeR
+    400004: EyeL
+    400006: Jnt_respiradero_end_mmr
+    400008: Jnt_respiradero_03_mmr
+    400010: Jnt_respiradero_02_mmr
+    400012: Body
+    400016: Jnt_vertebra_02_mmm
+    400018: Jnt_vertebra_01_mmm
+    400020: Jnt_vertebra_R_mmm
+    400034: Jnt_Tail_02_end_mmr
+    400052: Jnt_Tail_03_end_mmm
+    400054: Jnt_Tail_02_end_mml
+    400056: Jnt_vertebra_03_mmm
+    400066: Jnt_aleron_01_end_mml
+    400068: Jnt_aleron_01_mml
+    400070: Jnt_aleron_R_mml
+    400072: Jnt_Tail_01_mmr
+    400074: Jnt_Tail_R_mmr
+    400076: Jnt_Tail_03_mmm
+    400080: Jnt_Tail_01_mml
+    400082: Jnt_Tail_R_mml
+    400084: Jnt_Tail_R_mmm
+    400100: Jnt_aleron_01_end_mmr
+    400102: Jnt_aleron_01_mmr
+    400104: Jnt_aleron_R_mmr
+    400114: Jnt_Eye_end_mdr 1
+    400116: Jnt_Eye_end_mur 1
+    400118: Jnt_respiradero_end_mmm
+    400122: Jnt_Tail_02_mmr
+    400124: Jnt_Tail_02_mmm
+    400126: Jnt_Tail_01_mmm
+    400128: Jnt_Tail_02_mml
+    400130: Jnt_Eye_end_mdr
+    400132: //RootNode
+    400144: Jnt_respiradero_01_mmr
+    400146: Jnt_respiradero_R_mmm
+    400148: Jnt_Head_01_end_mmm
+    400152: Jnt_Eye_mdl
+    400154: Jnt_Eye_end_mur
+    400156: Jnt_Eye_mul
+    400158: Jnt_Eye_mdr
+    400160: Jnt_respiradero_03_mml
+    400162: Jnt_respiradero_02_mml
+    400164: Jnt_respiradero_01_mml
+    400166: Jnt_Head_01_mmm
+    400168: Jnt_Head_R_mmm
+    400170: Jnt_Pelvis_mmm
+    400184: Jnt_Jaw_end_mmm
+    400186: Jnt_Jaw_mmm
+    400190: Jnt_Eye_mur
+    4300000: Geo_Cachalote_Cuerpo
+    4300002: polySurface2
+    4300004: Geo_Cachalote_Ojo_mml
+    4300006: Geo_Cachalote_Ojo_mmr
+    4300008: Body
+    4300010: EyeL
+    4300012: EyeR
+    4300014: Teeth
+    7400000: Take 001
+    11100000: //RootNode
+    13700000: Teeth
+    13700002: EyeR
+    13700004: EyeL
+    13700006: Body
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 3
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
