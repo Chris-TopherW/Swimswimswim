@@ -1,0 +1,49 @@
+﻿cl : Command line warning D9002: ignoring unknown option '/arch:SSE2'
+  AudioPluginUtil.cpp
+..\AudioPluginUtil.cpp(9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+..\AudioPluginUtil.cpp(18): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1465): note: see declaration of 'vsprintf'
+..\AudioPluginUtil.cpp(29): warning C4018: '<': signed/unsigned mismatch
+  ..\AudioPluginUtil.cpp(96): note: see reference to function template instantiation 'void FFTProcess<double>(UnityComplexNumber *,int,bool)' being compiled
+..\AudioPluginUtil.cpp(40): warning C4018: '<': signed/unsigned mismatch
+..\AudioPluginUtil.cpp(53): warning C4018: '<': signed/unsigned mismatch
+..\AudioPluginUtil.cpp(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\kelmo\documents\swimgit\swimswimswim\nativecode\AudioPluginUtil.h(81): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ..\AudioPluginUtil.cpp(84): note: see reference to function template instantiation 'void UnityComplexNumberT<float>::Sub<float,T,float>(const UnityComplexNumberT<float> &,const UnityComplexNumberT<T> &,UnityComplexNumberT<float> &)' being compiled
+          with
+          [
+              T=double
+          ]
+  ..\AudioPluginUtil.cpp(84): note: see reference to function template instantiation 'void UnityComplexNumberT<float>::Sub<float,T,float>(const UnityComplexNumberT<float> &,const UnityComplexNumberT<T> &,UnityComplexNumberT<float> &)' being compiled
+          with
+          [
+              T=double
+          ]
+  ..\AudioPluginUtil.cpp(96): note: see reference to function template instantiation 'void FFTProcess<double>(UnityComplexNumber *,int,bool)' being compiled
+c:\users\kelmo\documents\swimgit\swimswimswim\nativecode\AudioPluginUtil.h(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\kelmo\documents\swimgit\swimswimswim\nativecode\AudioPluginUtil.h(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ..\AudioPluginUtil.cpp(85): note: see reference to function template instantiation 'void UnityComplexNumberT<float>::Add<float,T,float>(const UnityComplexNumberT<float> &,const UnityComplexNumberT<T> &,UnityComplexNumberT<float> &)' being compiled
+          with
+          [
+              T=double
+          ]
+  ..\AudioPluginUtil.cpp(85): note: see reference to function template instantiation 'void UnityComplexNumberT<float>::Add<float,T,float>(const UnityComplexNumberT<float> &,const UnityComplexNumberT<T> &,UnityComplexNumberT<float> &)' being compiled
+          with
+          [
+              T=double
+          ]
+c:\users\kelmo\documents\swimgit\swimswimswim\nativecode\AudioPluginUtil.h(75): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Plugin_BitCrusher.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cmath(248): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
+  Plugin_BitSmasher.cpp
+  Plugin_Gain.cpp
+  Plugin_SampleRateReducer.cpp
+     Creating library C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Release\AudioPluginDemo.lib and object C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Release\AudioPluginDemo.exp
+  Generating code
+  All 63 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  AudioPluginDemo.vcxproj -> C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Release\AudioPluginDemo.dll
+  AudioPluginDemo.vcxproj -> C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Release\AudioPluginDemo.pdb (Full PDB)
+  A subdirectory or file ..\..\Assets\Plugins\x86_64 already exists.
+          1 file(s) copied.
