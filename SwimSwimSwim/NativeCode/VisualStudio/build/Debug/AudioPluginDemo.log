@@ -1,0 +1,6 @@
+﻿  Plugin_BitCrusher.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\cmath(248): warning C4577: 'noexcept' used with no exception handling mode specified; termination on exception is not guaranteed. Specify /EHsc
+  AudioPluginDemo.vcxproj -> C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Debug\AudioPluginDemo.dll
+  AudioPluginDemo.vcxproj -> C:\Users\kelmo\Documents\SwimGit\SwimSwimSwim\NativeCode\VisualStudio\build\Debug\AudioPluginDemo.pdb (Full PDB)
+  A subdirectory or file ..\..\Assets\Plugins\x86_64 already exists.
+          1 file(s) copied.
