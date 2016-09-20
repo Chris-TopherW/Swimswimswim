@@ -117,9 +117,39 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Houdini Script Access\Editor\ExampleScriptGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUICurve.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUIInput.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUIMerger.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUIOTL.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetGUIOTLHandle.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniAssetModificationProcessor.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniCurveGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniGUIUtility.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniGeoAttributeManagerGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniGeoControlGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniInstanceGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniInstancerGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniInstancerManagerGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniMenu.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniObjectControlGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniParmsGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniPartControlGUI.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniWindowDebug.cs" />
+    <Compile Include="Assets\Houdini\Editor\HoudiniWindowSettings.cs" />
+    <Compile Include="Assets\Houdini\Editor\TestGUI.cs" />
     <Compile Include="Assets\ImportedStuff\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Houdini\Shaders\HoudiniAlphaSpecularVertexColor.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniCurvePoint.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniDottedLine.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniLine.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniMeshPoint.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniSpecularVertexColor.shader" />
+    <None Include="Assets\Houdini\Shaders\HoudiniVolumeSurface.shader" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
