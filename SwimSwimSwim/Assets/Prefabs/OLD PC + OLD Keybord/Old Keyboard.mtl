@@ -1,0 +1,78 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+newmtl KY-KeyBD
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  3.0
+illum 2
+map_Kd CP-KeybD.jpg
+#
+# Multi/Sub KY-B&G (2) to come 
+#
+newmtl KY-greyL
+Ka  0.0 0.0 0.0
+Kd  0.9 0.9 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  3.0
+illum 2
+#
+newmtl black
+Ka  0.0 0.0 0.0
+Kd  0.2 0.2 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  1.0
+illum 2
+#
+# Multi/Sub KY-B&G done 
+#
+newmtl KY-grey
+Ka  0.0 0.0 0.0
+Kd  0.9 0.9 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  3.0
+illum 2
+#
+# Multi/Sub KY-Num (2) to come 
+#
+newmtl map
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  3.0
+illum 2
+map_Kd CP-KeybN.jpg
+#
+newmtl red
+Ka  0.1 0.1 0.1
+Kd  1.0 0.0 0.0
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub KY-Num done 
+#
+newmtl KY-chrome
+Ka  0.0 0.0 0.0
+Kd  0.4 0.3 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  9.0
+illum 2
+#
+newmtl KY-KeyBL
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  3.0
+illum 2
+map_Kd CP-KeybL.jpg
+#
+# EOF

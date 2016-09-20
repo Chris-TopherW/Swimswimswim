@@ -1,0 +1,139 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+newmtl F507BLK
+Ka  0.0 0.0 0.0
+Kd  0.1 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  2.0
+illum 2
+#
+newmtl F507LGRD
+Ka  0.0 0.0 0.0
+Kd  0.7 0.0 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  10.0
+illum 2
+#
+newmtl F507RED
+Ka  0.0 0.0 0.0
+Kd  0.9 0.2 0.2
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  2.0
+illum 2
+#
+newmtl F507BASE
+Ka  0.0 0.0 0.0
+Kd  0.6 0.6 0.6
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  2.0
+illum 2
+#
+newmtl F507CRN
+Ka  0.0 0.0 0.0
+Kd  0.2 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  9.0
+illum 2
+#
+newmtl F507ONF
+Ka  0.0 0.0 0.0
+Kd  0.1 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  2.0
+illum 2
+map_Kd F507ONFM.jpg
+#
+newmtl F507DCT
+Ka  0.0 0.0 0.0
+Kd  0.5 0.5 0.5
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  9.0
+illum 2
+map_Kd F507DCT.jpg
+#
+newmtl F507BONB
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  10.0
+illum 2
+map_Kd F507CART.jpg
+bump F507CART.jpg
+#
+newmtl F507DECT
+Ka  0.0 0.0 0.0
+Kd  0.5 0.5 0.5
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  9.0
+illum 2
+map_Kd F507DECT.jpg
+#
+newmtl F507CRN
+Ka  0.0 0.0 0.0
+Kd  0.2 0.1 0.1
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  9.0
+illum 2
+#
+newmtl F507WHT
+Ka  0.0 0.0 0.0
+Kd  0.9 0.9 0.9
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  10.0
+illum 2
+#
+newmtl F507GRAY
+Ka  0.0 0.0 0.0
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  2.0
+illum 2
+#
+newmtl F507LIGH
+Ka  0.3 1.0 0.0
+Kd  0.3 1.0 0.0
+Ks  0.3 1.0 0.0
+d  0.9
+Ns  10.0
+illum 2
+#
+newmtl F507BOND
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  10.0
+illum 2
+map_Kd F507CART.jpg
+#
+newmtl F507SCR
+Ka  0.0 0.0 0.0
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  10.0
+illum 2
+map_Kd F507SCRT.jpg
+#
+newmtl F507ETIT
+Ka  0.0 0.0 0.0
+Kd  0.7 0.7 0.7
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd F507ETIT.jpg
+#
+# EOF
