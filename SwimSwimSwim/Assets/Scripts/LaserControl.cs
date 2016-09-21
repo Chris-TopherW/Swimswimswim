@@ -34,7 +34,7 @@ public class LaserControl : MonoBehaviour {
             RaycastHit vHit = new RaycastHit();
             Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
             line.SetPosition(0, transform.position);
-            if (Physics.Raycast(vRay, out vHit, 1000))
+			if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
             {
                 line.SetPosition(1, vHit.point);
                 Destroy(vHit.transform.gameObject);

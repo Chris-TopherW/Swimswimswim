@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+	public int maxPollutionLevel;
+	public static int currentPollutionLevel;
 
-	// Use this for initialization
 	void Start () {
-		//Screen.lockCursor = true;
+		Cursor.visible = false;
+		currentPollutionLevel = 0;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+		if (currentPollutionLevel >= maxPollutionLevel) {
+			SceneManager.LoadScene ("LoseScreen");
+		}
 	}
 }

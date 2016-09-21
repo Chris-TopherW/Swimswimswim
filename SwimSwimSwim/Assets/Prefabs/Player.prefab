@@ -694,6 +694,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013550227152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014286310446}
+  - 114: {fileID: 114000012400924950}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013568396862
 GameObject:
   m_ObjectHideFlags: 1
@@ -1396,6 +1412,7 @@ Transform:
   - {fileID: 4000011627551062}
   - {fileID: 4000011002848798}
   - {fileID: 4000010430921484}
+  - {fileID: 4000014286310446}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000014163034722
@@ -1441,6 +1458,19 @@ Transform:
   - {fileID: 4000012004616504}
   m_Father: {fileID: 4000011002848798}
   m_RootOrder: 0
+--- !u!4 &4000014286310446
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013550227152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014117909574}
+  m_RootOrder: 5
 --- !u!20 &20000011992752860
 Camera:
   m_ObjectHideFlags: 1
@@ -1836,6 +1866,24 @@ MonoBehaviour:
   startZ: -50
   mainColor: {r: 0.94117653, g: 0.35294122, b: 0.8719723, a: 1}
   subColor: {r: 0, g: 0.024137855, b: 0.5, a: 1}
+--- !u!114 &114000012400924950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013550227152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488fc8ab0fc2f46c8bdbedfebd4b3cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 1000011669057948, guid: be6a9fb553da944259e905bb78580d69, type: 2}
+  - {fileID: 1000011735756958, guid: 4fdbab9f91f964cfd9d2fb0758408a7c, type: 2}
+  - {fileID: 1000010513036278, guid: 0ea625d721f144b47bf0d78167947d85, type: 2}
+  startDelay: 3
+  randomWidthX: 20
+  spawningToggle: 1
 --- !u!114 &114000013317393652
 MonoBehaviour:
   m_ObjectHideFlags: 1
