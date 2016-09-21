@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LaserControl : MonoBehaviour {
 
+    public Camera cam;
 	LineRenderer line;
 	private Vector3 mousePosition;
 
@@ -29,19 +30,17 @@ public class LaserControl : MonoBehaviour {
 		line.enabled = true;
 		while (Input.GetButton ("Fire1")) 
 		{
-			mousePosition.x = Input.mousePosition.x - 100;
-			mousePosition.y = Input.mousePosition.y - 100;
-			Ray ray = new Ray (transform.position, mousePosition);
-			RaycastHit hit;
 
-			line.SetPosition (0, ray.origin);
-			if (Physics.Raycast (ray, out hit, 100)) 
-			{
-				line.SetPosition (1, hit.point);
-				Destroy (hit.transform.gameObject);
-			}
+            RaycastHit vHit = new RaycastHit();
+            Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
+            line.SetPosition(0, transform.position);
+            if (Physics.Raycast(vRay, out vHit, 1000))
+            {
+                line.SetPosition(1, vHit.point);
+                Destroy(vHit.transform.gameObject);
+            }
 			else
-				line.SetPosition (1, ray.GetPoint (100));
+				line.SetPosition (1, vRay.GetPoint (1000));
 
 			yield return null;
 		}
