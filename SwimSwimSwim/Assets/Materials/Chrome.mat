@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Chrome
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 208, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
     _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 1
@@ -49,7 +49,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 89020d0a1df326841b311c4e77a9e5db, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9168c42a75f624db48b04e105f0a7724, type: 3}
         m_Scale: {x: 0, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -123,6 +123,9 @@ Material:
     - first:
         name: _Color
       second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _EmisColor
+      second: {r: 0, g: 0.91724133, b: 0, a: 0}
     - first:
         name: _EmissionColor
       second: {r: 0.1, g: 0.1, b: 0.1, a: 1}

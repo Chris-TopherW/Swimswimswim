@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DC6A4A74-88CC-7AE0-4677-DF8D0A54C15C}</ProjectGuid>
+    <ProjectGuid>{5F18085E-2B29-B28C-80AD-FF311D665B4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_0;UNITY_5_4;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_4_1;UNITY_5_4;UNITY_5;UNITY_64;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_EDITOR_RETINA;ENABLE_RETINA_GUISTYLES;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -45,10 +45,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ImportedStuff\Scripts\LevelScripts\ControlsTutorial.cs" />
-     <Compile Include="Assets\ImportedStuff\Scripts\LevelScripts\HintManagement.cs" />
-     <Compile Include="Assets\ImportedStuff\Scripts\LevelScripts\ThirdPersonOrbitCam.cs" />
-     <Compile Include="Assets\ImportedStuff\Scripts\PlayerScripts\PlayerControl.cs" />
+     <Compile Include="Assets\Houdini Script Access\Scripts\ExampleScript.cs" />
+     <Compile Include="Assets\Houdini Script Access\Scripts\HoudiniAssetAccessor.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAsset.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetCurve.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetInput.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetMerger.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetOTL.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetUndoInfo.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniAssetUtility.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniCommon.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniControl.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniCurve.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniDataFile.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniGeoAttribute.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniGeoAttributeManager.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniGeoAttributeManagerMap.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniGeoControl.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHost.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostGraphics.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostImports.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostLinker.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostSession.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostStrings.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostUndoInfo.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniHostWrappers.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniInstance.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniInstancer.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniInstancerManager.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniInstancerOverrideInfo.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniInstancerPersistentData.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniJSONObject.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniMap.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniObjectControl.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniParms.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniParmsUndoInfo.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniPartControl.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniPreset.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniPresetMap.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniProgressBar.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniSetPath.cs" />
+     <Compile Include="Assets\Houdini\Scripts\HoudiniVersion.cs" />
+     <Compile Include="Assets\Houdini\Scripts\TestScript.cs" />
+     <Compile Include="Assets\HoudiniApi\Scripts\HoudiniApiAssetHook.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -93,14 +132,25 @@
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\DolphinMovement.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GridOverlay.cs" />
-     <None Include="Assets\Coke\Bonus\NuShader.shader" />
+     <Compile Include="Assets\Scripts\LaserControl.cs" />
+     <Compile Include="Assets\Scripts\SpinningObject.cs" />
+     <None Include="Assets\Houdini\Shaders\HoudiniAlphaSpecularVertexColor.shader" />
+     <None Include="Assets\Prefabs\Obstacles\Parts\Coke\Bonus\NuShader.shader" />
+     <None Include="Assets\Houdini\Shaders\HoudiniSpecularVertexColor.shader" />
+     <None Include="Assets\Houdini\Shaders\HoudiniCurvePoint.shader" />
+     <None Include="Assets\Houdini\Shaders\HoudiniMeshPoint.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Houdini\Shaders\HoudiniDottedLine.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Houdini\Shaders\HoudiniVolumeSurface.shader" />
      <None Include="Assets\ImportedStuff\readme.txt" />
+     <None Include="Assets\Houdini\Shaders\HoudiniLine.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
