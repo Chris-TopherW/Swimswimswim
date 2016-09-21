@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f5c606218e0429c8c7c13c9d2a85b0, type: 3}
+  m_Name: Notes
+  m_EditorClassIdentifier: 
+  _sampleRate: 44100
+  _sampleInfos:
+  - _name: BSemiQ
+    _midiCode: 0
+    _pathInResources: BSemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: 001d414262b0a426eab798093cae68f2
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: DESemiQ
+    _midiCode: 0
+    _pathInResources: DESemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: 5807268963c5b45488f47f8b01b5c78f
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: FESemiQ
+    _midiCode: 0
+    _pathInResources: FESemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: a51e6f09e1b8c4c568590ee1caa1ce34
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: CSemiQ
+    _midiCode: 0
+    _pathInResources: CSemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: c1072f425e9bd4763bc63921360e3b99
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: AESemiQ
+    _midiCode: 0
+    _pathInResources: AESemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: 6425607fd0bc546fab33706972e5689f
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: DSemiQ
+    _midiCode: 0
+    _pathInResources: DSemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: df63173d385bf4055a1db5312beaf6d6
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: GESemiQ
+    _midiCode: 0
+    _pathInResources: GESemiQ
+    _numChannels: 2
+    _samplesPerChannel: 8252
+    _guid: cee43e2cee8ec4a469ff7806dad2aa89
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 462112

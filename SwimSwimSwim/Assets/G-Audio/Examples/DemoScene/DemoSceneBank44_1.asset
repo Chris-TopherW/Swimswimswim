@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99e071ed3c424e16bf543c19f92bf91, type: 3}
+  m_Name: DemoSceneBank44_1
+  m_EditorClassIdentifier: 
+  _sampleRate: 44100
+  _sampleInfos:
+  - _name: 4335
+    _midiCode: 72
+    _pathInResources: 44656d6f53616d706c65735f34342e312f4335
+    _numChannels: 1
+    _samplesPerChannel: 308705
+    _guid: 6131616634616666326537313334346266613635653832316437646265353461
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: 4735
+    _midiCode: 79
+    _pathInResources: 44656d6f53616d706c65735f34342e312f4735
+    _numChannels: 1
+    _samplesPerChannel: 308705
+    _guid: 3432616364323735326533626134613261396132313534306562353362343064
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 2469640

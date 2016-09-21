@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f5c606218e0429c8c7c13c9d2a85b0, type: 3}
+  m_Name: Song1
+  m_EditorClassIdentifier: 
+  _sampleRate: 44100
+  _sampleInfos:
+  - _name: ALoopVapor
+    _midiCode: 0
+    _pathInResources: ALoopVapor
+    _numChannels: 2
+    _samplesPerChannel: 528524
+    _guid: f279f16ee363441319a77aae920e46d1
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: AMelodyLoopVapor
+    _midiCode: 0
+    _pathInResources: AMelodyLoopVapor
+    _numChannels: 2
+    _samplesPerChannel: 393032
+    _guid: 68a41d0645045479899cf69c495e2dce
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: BreakdownVapor
+    _midiCode: 0
+    _pathInResources: BreakdownVapor
+    _numChannels: 2
+    _samplesPerChannel: 528524
+    _guid: 33ef4c46812ec4ac6b4b689fbc554efc
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: BMelodyVapor
+    _midiCode: 0
+    _pathInResources: BMelodyVapor
+    _numChannels: 2
+    _samplesPerChannel: 528524
+    _guid: dfb78d5add3194b54b914458a7b7c81d
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 15828832

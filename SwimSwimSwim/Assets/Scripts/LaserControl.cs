@@ -5,13 +5,11 @@ public class LaserControl : MonoBehaviour {
 
     public Camera cam;
 	LineRenderer line;
-	private Vector3 mousePosition;
 
 	void Start () 
 	{
 		line = GetComponent<LineRenderer> ();
 		line.enabled = false;
-		mousePosition = new Vector3(Input.mousePosition.x, 0f, Input.mousePosition.y);
 
 	}
 
