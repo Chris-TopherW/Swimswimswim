@@ -17,10 +17,12 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: b0d12e89922b74d30896f5d031b2c216
     name: CrusherMix
-  - guid: c7c3d701386c2451b9b8056f73a61676
-    name: DECIMATION
   - guid: 6fc42fd271a8041e0893d8797afd37eb
     name: DecimateMix
+  - guid: c7c3d701386c2451b9b8056f73a61676
+    name: DECIMATION
+  - guid: 42af347b8045c1048b7fcedbcfcbf90b
+    name: LowPassFreq
   m_AudioMixerGroupViews:
   - guids:
     - 43d7bda1c6a5f4fd29f079a09c89272c
@@ -70,18 +72,19 @@ AudioMixerSnapshotController:
   m_FloatValues:
     be0a75a077fc0bf4e98f246f1e067c33: 1.001
     c114c1e0337cc124ebbe89183c6092ed: 9.5
-    c7c3d701386c2451b9b8056f73a61676: 2.2
+    c7c3d701386c2451b9b8056f73a61676: 32.8
     57b0f9513b8544aed96a8edcdcad2f61: 1
     eb60b032d370a1e46b0cf1ef4ca4af1b: 120.00001
-    6fc42fd271a8041e0893d8797afd37eb: 0.035
-    1ae3b323cb826474ab3bef5a9b80e90f: 122.26
+    6fc42fd271a8041e0893d8797afd37eb: 0.488
+    1ae3b323cb826474ab3bef5a9b80e90f: 121.71001
     d79b4d8435448de44b7b46858b913b7c: 0.025
-    0b48f0b6d374ee84486183071ddd6c63: 0.179
+    0b48f0b6d374ee84486183071ddd6c63: 1
     7a96b5379100c7e4eb9eb6db876ea7cf: 95
     7e325d09327721949b9d88b50cf2c53b: 4076
-    b0d12e89922b74d30896f5d031b2c216: 0.813
-    42af347b8045c1048b7fcedbcfcbf90b: 22000
+    b0d12e89922b74d30896f5d031b2c216: 0.43
+    42af347b8045c1048b7fcedbcfcbf90b: 4650
     8602917dbf869fb4aba78098daec2d78: 32
+    2738f4dfd268541a4a1f58c61269f374: 19.5
   m_TransitionOverrides: {}
 --- !u!243 &243000012838407858
 AudioMixerGroupController:
@@ -103,7 +106,7 @@ AudioMixerGroupController:
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
-  m_BypassEffects: 0
+  m_BypassEffects: 1
 --- !u!244 &244000010731767622
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -118,6 +121,8 @@ AudioMixerEffectController:
     m_GUID: 7a96b5379100c7e4eb9eb6db876ea7cf
   - m_ParameterName: Mix amount
     m_GUID: 0b48f0b6d374ee84486183071ddd6c63
+  - m_ParameterName: quantisation banbands
+    m_GUID: 2738f4dfd268541a4a1f58c61269f374
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

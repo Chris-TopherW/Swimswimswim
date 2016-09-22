@@ -44,12 +44,14 @@ public class DolphinMovement : MonoBehaviour {
 
 		if (dolphinPosition.y < -2.5f) {
 			audioMixer.SetFloat ("CrusherMix", 0.4f);
-            audioMixer.SetFloat("DECIMATION", Random.Range(50,100));
+            audioMixer.SetFloat("DECIMATION", Random.Range(1,100));
             audioMixer.SetFloat ("DecimateMix", 0.1f);
+			audioMixer.SetFloat ("LowPassFreq", 5000.0f);
 		} else {
             audioMixer.SetFloat("DECIMATION", 1);
             audioMixer.SetFloat ("CrusherMix", 1.0f);
 			audioMixer.SetFloat ("DecimateMix", 1.0f);
+			audioMixer.SetFloat ("LowPassFreq", 22000.0f);
 		}
 
 	}
