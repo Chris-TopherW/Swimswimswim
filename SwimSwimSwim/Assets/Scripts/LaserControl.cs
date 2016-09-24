@@ -9,6 +9,7 @@ public class LaserControl : MonoBehaviour {
 	private AudioSource audioSource;
 	private float currentStep;
 	private float increment = 0.00392156862f;
+    public bool inverse;
 
 	void Start () 
 	{
@@ -37,7 +38,15 @@ public class LaserControl : MonoBehaviour {
 		{
 			audioSource.volume = 0.05f;
             RaycastHit vHit = new RaycastHit();
-            Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
+            Vector3 InverseMouse = new Vector3(Screen.width -  Input.mousePosition.x, Input.mousePosition.y, 0);
+            Ray vRay;
+            if (inverse)
+            {
+                vRay = cam.ScreenPointToRay(InverseMouse);
+            } else
+            {
+                vRay = cam.ScreenPointToRay(Input.mousePosition);
+            }
             line.SetPosition(0, transform.position);
 			if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
             {

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ObstacleBehaviour : MonoBehaviour {
 
-	public GameObject player;
+	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +12,7 @@ public class ObstacleBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.position.z < player.transform.position.z - 5.0f) 
+		if (gameObject.transform.position.z < player.transform.position.z) 
 		{
 			Destroy (gameObject);
 			GameManager.currentPollutionLevel += 1;
