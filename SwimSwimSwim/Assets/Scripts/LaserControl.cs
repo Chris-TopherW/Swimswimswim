@@ -35,7 +35,7 @@ public class LaserControl : MonoBehaviour {
 		line.enabled = true;
 		while (Input.GetButton ("Fire1")) 
 		{
-			audioSource.volume = 0.1f;
+			audioSource.volume = 0.05f;
             RaycastHit vHit = new RaycastHit();
             Ray vRay = cam.ScreenPointToRay(Input.mousePosition);
             line.SetPosition(0, transform.position);
