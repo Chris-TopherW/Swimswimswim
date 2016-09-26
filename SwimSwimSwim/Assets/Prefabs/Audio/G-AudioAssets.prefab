@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000010848493730}
   m_IsPrefabParent: 1
+--- !u!1 &1000010262800138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012839593414}
+  - 114: {fileID: 114000013303358418}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010560656132
 GameObject:
   m_ObjectHideFlags: 1
@@ -26,7 +42,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000010760717810
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013987642962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -203,6 +219,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014015142096}
   m_RootOrder: 2
+--- !u!4 &4000012839593414
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010262800138}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014202646546}
+  m_RootOrder: 3
 --- !u!4 &4000013261676762
 Transform:
   m_ObjectHideFlags: 1
@@ -210,7 +239,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010760717810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -223,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013108876494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -240,13 +269,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010848493730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -309.36508, y: 261.77756, z: 285.69775}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012443507912}
   - {fileID: 4000013261676762}
   - {fileID: 4000014015142096}
+  - {fileID: 4000012839593414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &114000010135055936
@@ -352,26 +382,20 @@ MonoBehaviour:
     _pitch: 1
     _semiTones: 0
     _gain: 1
-  - _sampleName: AMelodyLoopVapor_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: AMelodyLoopVapor_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BreakdownVapor_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BMelodyVapor_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BMelodyVapor_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
+--- !u!114 &114000013303358418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010262800138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b92457bdc624d7ead437a629214ce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse: {fileID: 114000010384818324}
+  patterModuleObjectLeft: {fileID: 1000011084408462}
+  patterModuleObjectRight: {fileID: 1000012365933000}
 --- !u!114 &114000013410917518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,26 +420,6 @@ MonoBehaviour:
   _envelopeModule: {fileID: 0}
   _samples:
   - _sampleName: ALoopVapor_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: AMelodyLoopVapor_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: AMelodyLoopVapor_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BreakdownVapor_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BMelodyVapor_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: BMelodyVapor_1
     _pitch: 1
     _semiTones: 0
     _gain: 1
@@ -455,14 +459,6 @@ MonoBehaviour:
     _semiTones: 0
     _gain: 1
   - _sampleName: CSemiQ_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: CSemiQ_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: DSemiQ_1
     _pitch: 1
     _semiTones: 0
     _gain: 1
