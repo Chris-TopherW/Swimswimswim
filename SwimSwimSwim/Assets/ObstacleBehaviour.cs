@@ -12,10 +12,11 @@ public class ObstacleBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //TODO: REWRITE THIS
 		if (gameObject.transform.position.z < player.transform.position.z) 
 		{
-			Destroy (gameObject);
-			GameManager.currentPollutionLevel += 1;
+		//	Destroy (gameObject);
+		//	GameManager.currentPollutionLevel += 1;
 		}
 	}
 }

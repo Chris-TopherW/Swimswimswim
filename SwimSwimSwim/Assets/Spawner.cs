@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour {
 	public float randomWidthX;
 	public bool spawningToggle;
 
-	private Vector3 spawnPoint;
+    private Vector3 spawnPoint;
 
 	IEnumerator Start()
 	{
@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour {
 		if (spawningToggle) 
 		{
 			spawnPoint = gameObject.transform.position;
-			spawnPoint.x = Random.Range (-randomWidthX, randomWidthX);
+			spawnPoint.x += Random.Range (-randomWidthX, randomWidthX);
 			Instantiate (obstacles [Random.Range(0,3)], spawnPoint, Quaternion.identity);
 		}
 		yield return new WaitForSeconds(delay);

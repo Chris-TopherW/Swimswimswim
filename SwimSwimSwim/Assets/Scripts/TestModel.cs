@@ -5,8 +5,19 @@ using System.Linq;
 
 public class TestModel : MonoBehaviour {
 
+    public int xOffset;
     public BezierCurve bezier;
     public List<Transform> controlPointsList = new List<Transform>();
+
+    void Awake()
+    {
+        Vector3[] positions = new Vector3[controlPointsList.Count];
+        for (int i = 0; i < controlPointsList.Count; i++)
+        {
+            positions[i] = controlPointsList[i].position;
+        }
+        bezier = new BezierCurve(positions);
+    }
 
     void OnDrawGizmos()
     {
@@ -18,26 +29,36 @@ public class TestModel : MonoBehaviour {
         ExtrudeShape shape = new ExtrudeShape();
         shape.verts = new Vector2[]
         {
-            new Vector2(-1,0),
-            new Vector2(1,0)
+            new Vector2(xOffset,0),
+            new Vector2(xOffset,1),
+            new Vector2(xOffset,1),
+            new Vector2(xOffset,0)
         };
         shape.normals = new Vector2[]
         {
-            new Vector2(0,1),
-            new Vector2(0,1)
+            new Vector2(1,0),
+            new Vector2(1,0),
+            new Vector2(-1,0),
+            new Vector2(-1,0)
         };
         shape.uCoords = new float[]
         {
             0,
+            1,
+            0,
             1
         };
+        for (int i = 0; i < controlPointsList.Count; i++)
+        {
+            Gizmos.DrawWireSphere(controlPointsList[i].position, 0.3f);
+        }
         Vector3[] positions = new Vector3[controlPointsList.Count];
         for (int i = 0; i < controlPointsList.Count; i++)
         {
             positions[i] = controlPointsList[i].position;
-            Gizmos.DrawWireSphere(controlPointsList[i].position, 0.3f);
         }
         bezier = new BezierCurve(positions);
+
         DisplayCatmullRomSpline();
         OrientedPoint[] path = bezier.GeneratePath(100).ToArray<OrientedPoint>();
         bezier.Extrude(mesh, shape, path);

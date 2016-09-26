@@ -5,12 +5,13 @@ using UnityEngine.Audio;
 public class DolphinMovement : MonoBehaviour {
 
 	public AudioMixer audioMixer;
-
+    public TestModel path;
+    public float dolphinSpeed;
 	private Vector3 dolphinPosition;
+    private float t = 0;
 
 	// Use this for initialization
 	void Start () {
-		dolphinPosition = new Vector3(0,0,0);
 		dolphinPosition = transform.position;
 	}
 	
@@ -18,31 +19,33 @@ public class DolphinMovement : MonoBehaviour {
 	void Update () 
 	{
 
-			dolphinPosition.z += 2.5f * Time.deltaTime;
-			transform.position = dolphinPosition;
+        t += 0.01f * Time.deltaTime;
+        OrientedPoint p = new OrientedPoint();
+        p = path.bezier.GetOrientedPoint(t);
+        transform.rotation = p.rotation;
+        transform.position = p.position;
 
 		if (Input.GetKey (KeyCode.A)) 
 		{
-			dolphinPosition.x -= 1.5f * Time.deltaTime;
-			transform.position = dolphinPosition;
+			dolphinPosition.x -= dolphinSpeed * Time.deltaTime;
 		}
 		if (Input.GetKey (KeyCode.D)) 
 		{
-			dolphinPosition.x += 1.5f * Time.deltaTime;
-			transform.position = dolphinPosition;
+			dolphinPosition.x += dolphinSpeed * Time.deltaTime;
 		}
 		if (Input.GetKey (KeyCode.S)) 
 		{
-			dolphinPosition.y -= 1.5f * Time.deltaTime;
-			transform.position = dolphinPosition;
+			dolphinPosition.y -= dolphinSpeed * Time.deltaTime;
 		}
 		if (Input.GetKey (KeyCode.W)) 
 		{
-			dolphinPosition.y += 1.5f * Time.deltaTime;
-			transform.position = dolphinPosition;
+			dolphinPosition.y += dolphinSpeed * Time.deltaTime;
 		}
 
-		if (dolphinPosition.y < -2.5f) {
+        
+        transform.position = p.position + (p.rotation * dolphinPosition);
+
+        if (dolphinPosition.y < -2.5f) {
 			audioMixer.SetFloat ("CrusherMix", 0.4f);
             audioMixer.SetFloat("DECIMATION", Random.Range(1,100));
             audioMixer.SetFloat ("DecimateMix", 0.1f);
