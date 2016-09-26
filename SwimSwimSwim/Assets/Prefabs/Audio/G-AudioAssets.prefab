@@ -1,0 +1,468 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010848493730}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010560656132
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011394272938}
+  - 114: {fileID: 114000014228690134}
+  m_Layer: 0
+  m_Name: MelodyRandom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010760717810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013261676762}
+  - 114: {fileID: 114000010814776274}
+  m_Layer: 0
+  m_Name: NotesBank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010848493730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014202646546}
+  m_Layer: 0
+  m_Name: G-AudioAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011084408462
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011605064212}
+  - 114: {fileID: 114000011867689980}
+  m_Layer: 0
+  m_Name: LoopLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012084198190
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010449250270}
+  - 114: {fileID: 114000010135055936}
+  m_Layer: 0
+  m_Name: Sub Pulse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012365933000
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012732081978}
+  - 114: {fileID: 114000013410917518}
+  m_Layer: 0
+  m_Name: LoopRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013108876494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014015142096}
+  - 114: {fileID: 114000010384818324}
+  m_Layer: 0
+  m_Name: Master Pulse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013987642962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012443507912}
+  - 114: {fileID: 114000011196367304}
+  m_Layer: 0
+  m_Name: Sample Bank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010449250270
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012084198190}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 0
+--- !u!4 &4000011394272938
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010560656132}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 3
+--- !u!4 &4000011605064212
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011084408462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 1
+--- !u!4 &4000012443507912
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013987642962}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014202646546}
+  m_RootOrder: 0
+--- !u!4 &4000012732081978
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012365933000}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 2
+--- !u!4 &4000013261676762
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010760717810}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014202646546}
+  m_RootOrder: 1
+--- !u!4 &4000014015142096
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013108876494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 309.36508, y: -261.77756, z: -285.69775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000010449250270}
+  - {fileID: 4000011605064212}
+  - {fileID: 4000012732081978}
+  - {fileID: 4000011394272938}
+  m_Father: {fileID: 4000014202646546}
+  m_RootOrder: 2
+--- !u!4 &4000014202646546
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010848493730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -309.36508, y: 261.77756, z: 285.69775}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000012443507912}
+  - {fileID: 4000013261676762}
+  - {fileID: 4000014015142096}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000010135055936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012084198190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae87499f8df14ce598a1f50d410284a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Bypass: 0
+  _Period: 0.18726592117035104
+  _Steps: 01010101
+  _RandomBypassStep: 0
+  _StepBypassChance: 0
+  _pulseUnit: 0
+  _ParentPulse: {fileID: 114000010384818324}
+  _SubPulseMode: 0
+  _RatioOfParentPeriod: 0
+  _RandomBypassParentPulse: 0
+  _ParentPulseBypassChance: 0
+  _SubscribedSteps: 01010101010101010101010101010101
+--- !u!114 &114000010384818324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013108876494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111c236b436a14999bdb5dd42e56d88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Bypass: 0
+  _Period: 0.7490636846814042
+  _Steps: 01010101010101010101010101010101
+  _RandomBypassStep: 0
+  _StepBypassChance: 0
+  _pulseUnit: 0
+  _StartPulseAuto: 1
+  _StartDelay: 1
+--- !u!114 &114000010814776274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010760717810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bc5f2acedd442a1b750db622ddf987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundBanks:
+  - {fileID: 11400000, guid: 073e221d881074f5c8f9569b58dccf06, type: 2}
+  extraCapacity: 0
+  _loadInAwake: 1
+  _allocationMode: 0
+  _AutoLoadInEditMode: 1
+--- !u!114 &114000011196367304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013987642962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bc5f2acedd442a1b750db622ddf987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundBanks:
+  - {fileID: 11400000, guid: f934dd3f3887b4a4aa58d35882af18f7, type: 2}
+  extraCapacity: 0
+  _loadInAwake: 1
+  _allocationMode: 0
+  _AutoLoadInEditMode: 1
+--- !u!114 &114000011867689980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011084408462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167b16c29c99448893c108fbd97a40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulse: {fileID: 114000010384818324}
+  _subscribedSteps: 01000000000000000000000000000000
+  _player: {fileID: 0}
+  _sampleBank: {fileID: 114000011196367304}
+  _trackNb: 0
+  _playingOrder: 1
+  _randomDelay: 0
+  _randomDelayMaxRatio: 0
+  _randomBypass: 0
+  _randomBypassChance: 0
+  _envelopeModule: {fileID: 0}
+  _samples:
+  - _sampleName: ALoopVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: AMelodyLoopVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: AMelodyLoopVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BreakdownVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BMelodyVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BMelodyVapor_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+--- !u!114 &114000013410917518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012365933000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167b16c29c99448893c108fbd97a40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulse: {fileID: 114000010384818324}
+  _subscribedSteps: 01000000000000000000000000000000
+  _player: {fileID: 0}
+  _sampleBank: {fileID: 114000011196367304}
+  _trackNb: 1
+  _playingOrder: 1
+  _randomDelay: 0
+  _randomDelayMaxRatio: 0
+  _randomBypass: 0
+  _randomBypassChance: 0
+  _envelopeModule: {fileID: 0}
+  _samples:
+  - _sampleName: ALoopVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: AMelodyLoopVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: AMelodyLoopVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BreakdownVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BMelodyVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: BMelodyVapor_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+--- !u!114 &114000014228690134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010560656132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167b16c29c99448893c108fbd97a40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulse: {fileID: 114000010135055936}
+  _subscribedSteps: 01010101
+  _player: {fileID: 0}
+  _sampleBank: {fileID: 114000010814776274}
+  _trackNb: 2
+  _playingOrder: 2
+  _randomDelay: 0
+  _randomDelayMaxRatio: 0
+  _randomBypass: 1
+  _randomBypassChance: 0
+  _envelopeModule: {fileID: 0}
+  _samples:
+  - _sampleName: DESemiQ_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: FESemiQ_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: AESemiQ_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: CSemiQ_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: CSemiQ_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
+  - _sampleName: DSemiQ_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
