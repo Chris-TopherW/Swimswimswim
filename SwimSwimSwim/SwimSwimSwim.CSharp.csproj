@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DisplayPollution.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\DemoSceneMain.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\EnvelopeOffsetSlider.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\LightPulser.cs" />
@@ -248,19 +247,20 @@
     <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\CatMullRom.cs" />
     <Compile Include="Assets\Scripts\CrossHair.cs" />
+    <Compile Include="Assets\Scripts\DisplayPollution.cs" />
     <Compile Include="Assets\Scripts\DolphinMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GridOverlay.cs" />
     <Compile Include="Assets\Scripts\LaserControl.cs" />
+    <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\SpinningObject.cs" />
     <Compile Include="Assets\Scripts\TestModel.cs" />
-    <Compile Include="Assets\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />

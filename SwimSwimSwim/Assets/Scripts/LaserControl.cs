@@ -51,7 +51,8 @@ public class LaserControl : MonoBehaviour {
 			if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
             {
                 line.SetPosition(1, vHit.point);
-                Destroy(vHit.transform.gameObject);
+                ObstacleBehaviour targetToDamage = vHit.transform.gameObject.GetComponent<ObstacleBehaviour>();
+                targetToDamage.TakeDamage((float)(10.0f * Time.deltaTime));
             }
 			else
 				line.SetPosition (1, vRay.GetPoint (1000));
