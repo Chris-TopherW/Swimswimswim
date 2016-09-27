@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour {
 		{
 			spawnPoint = gameObject.transform.position;
 			spawnPoint.x += Random.Range (-randomWidthX, randomWidthX);
-			Instantiate (obstacles [Random.Range(0,3)], spawnPoint, Quaternion.identity);
+			Instantiate (obstacles [Random.Range(0,4)], spawnPoint, Quaternion.identity);
 		}
 		yield return new WaitForSeconds(delay);
 	}
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
 		{
 			spawnPoint = gameObject.transform.position;
 			spawnPoint.x = Random.Range (-randomWidthX, randomWidthX);
-			Instantiate (obstacles [Random.Range(0,3)], spawnPoint, Quaternion.identity);
+			Instantiate (obstacles [Random.Range(0,4)], spawnPoint, Quaternion.identity);
 		}
 	}
 }
