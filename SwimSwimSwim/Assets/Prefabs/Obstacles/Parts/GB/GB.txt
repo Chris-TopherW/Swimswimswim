@@ -1,0 +1,13 @@
+/==[ GB (obj, vtx, 3ds) ]==\
+|                          |
+| Poly    : 20             |
+| Texture : 48*48 (difuse) |
+|                          |
+| [TheDarkTiger], 2009     |
+|                          |
+\==========================/
+
+
+Model   : Anim8Or
+Texture : Paint
+UV Map  : GMax

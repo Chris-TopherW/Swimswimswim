@@ -71,6 +71,7 @@
      <None Include="Assets\ImportedStuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\G-Audio\Scripts\Filters\Audial Manipulators - G-Audio\AboutAudial.txt" />
      <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
+     <None Include="Assets\Prefabs\Obstacles\Parts\GB\GB.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\G-Audio\__ReadMe.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
