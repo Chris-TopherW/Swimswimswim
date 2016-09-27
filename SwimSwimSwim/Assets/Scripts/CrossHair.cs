@@ -10,11 +10,12 @@ public class CrossHair : MonoBehaviour
 
 	void Start() 
 	{
-		position = new Rect(Input.mousePosition.x, Input.mousePosition.y, crosshairTexture.width/2, crosshairTexture.height/2);
+		position = new Rect(Input.mousePosition.x, -Input.mousePosition.y, crosshairTexture.width/2, crosshairTexture.height/2);
 	}
 
 	void OnGUI() 
 	{
+		position.Set (Input.mousePosition.x , -Input.mousePosition.y + (Screen.height), crosshairTexture.width / 5, crosshairTexture.height / 5);
 		Cursor.visible = false; 
 
 		if(OriginalOn == true) 
