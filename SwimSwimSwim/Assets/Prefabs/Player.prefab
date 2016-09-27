@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000012265926292}
   m_IsPrefabParent: 1
+--- !u!1 &1000010167439848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011302210612}
+  - 114: {fileID: 114000011519396510}
+  m_Layer: 0
+  m_Name: Crosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010222847500
 GameObject:
   m_ObjectHideFlags: 1
@@ -245,7 +261,6 @@ GameObject:
   - 124: {fileID: 124000012987473572}
   - 92: {fileID: 92000013369087836}
   - 81: {fileID: 81000013772412628}
-  - 114: {fileID: 114000012195957980}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1038,6 +1053,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011002848798}
   m_RootOrder: 2
+--- !u!4 &4000011302210612
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010167439848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014117909574}
+  m_RootOrder: 6
 --- !u!4 &4000011557890728
 Transform:
   m_ObjectHideFlags: 1
@@ -1415,6 +1443,7 @@ Transform:
   - {fileID: 4000011002848798}
   - {fileID: 4000010430921484}
   - {fileID: 4000014286310446}
+  - {fileID: 4000011302210612}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000014163034722
@@ -1996,29 +2025,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011992752860}
   inverse: 0
---- !u!114 &114000012195957980
+--- !u!114 &114000011519396510
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011687910560}
+  m_GameObject: {fileID: 1000010167439848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bfed3fe0d16b4ec99865f66c478b3e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 320ebca8d4971484d970c03ebf9e994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showMain: 1
-  showSub: 0
-  gridSizeX: 1000
-  gridSizeY: 0
-  gridSizeZ: 100
-  smallStep: 3
-  largeStep: 3
-  startX: -75
-  startY: -2
-  startZ: -50
-  mainColor: {r: 0.94117653, g: 0.35294122, b: 0.8719723, a: 1}
-  subColor: {r: 0, g: 0.024137855, b: 0.5, a: 1}
+  crosshairTexture: {fileID: 2800000, guid: a2cb8632520b84063ad6aaad7b0df57e, type: 3}
+  scale: 16
 --- !u!114 &114000012400924950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2033,8 +2052,9 @@ MonoBehaviour:
   obstacles:
   - {fileID: 1000011669057948, guid: be6a9fb553da944259e905bb78580d69, type: 2}
   - {fileID: 1000011735756958, guid: 4fdbab9f91f964cfd9d2fb0758408a7c, type: 2}
-  - {fileID: 1000010513036278, guid: 0ea625d721f144b47bf0d78167947d85, type: 2}
-  startDelay: 0.1
+  - {fileID: 1000010632660548, guid: 38606fd2b0f50fe4fae8ee38cbffdd07, type: 2}
+  - {fileID: 1000011366224864, guid: 8b19c67b2443644479c60d3c1b5f5555, type: 2}
+  startDelay: 1
   randomWidthX: 10
   spawningToggle: 1
 --- !u!114 &114000013317393652
