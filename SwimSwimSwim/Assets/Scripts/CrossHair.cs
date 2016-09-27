@@ -3,19 +3,23 @@ using System.Collections;
 
 public class CrossHair : MonoBehaviour 
 {
-	public Texture2D crosshairTexture; 
-
-	private Rect position; 
+	public Texture2D crosshairTexture;
+    public float scale;
+	private Rect position;
+    private float size;
 	static bool OriginalOn = true;
 
 	void Start() 
 	{
-		position = new Rect(Input.mousePosition.x, -Input.mousePosition.y, crosshairTexture.width/2, crosshairTexture.height/2);
+        size = Screen.height / scale;
+        position = new Rect(Input.mousePosition.x - size / 2, -Input.mousePosition.y - size / 1.54f, size, size);
 	}
 
 	void OnGUI() 
 	{
-		position.Set (Input.mousePosition.x , -Input.mousePosition.y + (Screen.height), crosshairTexture.width / 5, crosshairTexture.height / 5);
+        size = Screen.height / scale;
+
+        position.Set (Input.mousePosition.x - size/2, -Input.mousePosition.y + (Screen.height) - size/ 1.54f, size, size);
 		Cursor.visible = false; 
 
 		if(OriginalOn == true) 

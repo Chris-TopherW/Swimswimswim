@@ -29,10 +29,10 @@ public class TestModel : MonoBehaviour {
         ExtrudeShape shape = new ExtrudeShape();
         shape.verts = new Vector2[]
         {
-            new Vector2(xOffset,0),
-            new Vector2(xOffset,1),
-            new Vector2(xOffset,1),
-            new Vector2(xOffset,0)
+            new Vector2(xOffset,-10),
+            new Vector2(xOffset,10),
+            new Vector2(xOffset,10),
+            new Vector2(xOffset,-10)
         };
         shape.normals = new Vector2[]
         {
