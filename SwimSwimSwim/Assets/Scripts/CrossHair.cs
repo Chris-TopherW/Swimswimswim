@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CrossHair : MonoBehaviour {
+public class CrossHair : MonoBehaviour 
+{
+	public Texture2D crosshairTexture; 
 
+	private Rect position; 
+	static bool OriginalOn = true;
 
-//	Texture2D crosshairTexture; 
-//	Vector3 position; 
-//	static bool OriginalOn = true;
-//
-//	void Update () { 
-//		position = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-//	}
-//
-//	void OnGUI(){ 
-//		if(OriginalOn == true) 
-//			{ 
-//				GUI.DrawTexture(position, crosshairTexture); 
-//			} 
-//	}
+	void Start() 
+	{
+		position = new Rect(Input.mousePosition.x, Input.mousePosition.y, crosshairTexture.width/2, crosshairTexture.height/2);
+	}
+
+	void OnGUI() 
+	{
+		Cursor.visible = false; 
+
+		if(OriginalOn == true) 
+			GUI.DrawTexture(position, crosshairTexture); 
+	}
 }
