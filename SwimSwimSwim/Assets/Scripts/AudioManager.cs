@@ -33,36 +33,35 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 				switch (loopNumber) {
 				case 1:
-					pulsedPatternLeft.AddSample ("AMelodyLoopVapor_0");
-					pulsedPatternRight.AddSample ("AMelodyLoopVapor_1");
-					pulsedPatternLeft.RemoveSampleAt (0);
-					pulsedPatternRight.RemoveSampleAt (0);
+					changeLoop ("AMelodyLoopVapor");
 					break;
 				case 2:
-					pulsedPatternLeft.AddSample ("ALoopVapor_0");
-					pulsedPatternRight.AddSample ("ALoopVapor_1");
-					pulsedPatternLeft.RemoveSampleAt (0);
-					pulsedPatternRight.RemoveSampleAt (0);
+					changeLoop("ALoopVapor");
 					break;
 				case 3:
-					pulsedPatternLeft.AddSample ("BreakdownVapor_0");
-					pulsedPatternRight.AddSample ("BreakdownVapor_1");
-					pulsedPatternLeft.RemoveSampleAt (0);
-					pulsedPatternRight.RemoveSampleAt (0);
+					changeLoop("BreakdownVapor");
 					break;
 				case 4:
-					pulsedPatternLeft.AddSample ("BMelodyVapor_0");
-					pulsedPatternRight.AddSample ("BMelodyVapor_1");
-					pulsedPatternLeft.RemoveSampleAt (0);
-					pulsedPatternRight.RemoveSampleAt (0);
+					changeLoop("BMelodyVapor");
+					break;
+				default:
+					changeLoop("ALoopVapor");
 					break;
 				}
 			}
 		}
 		if (pulseInfo.StepIndex == 0)
 			loopNumber++;
-
 	}
+
+	public void changeLoop (string fname)
+	{
+		pulsedPatternLeft.AddSample (fname + "_0");
+		pulsedPatternRight.AddSample (fname + "_1");
+		pulsedPatternLeft.RemoveSampleAt (0);
+		pulsedPatternRight.RemoveSampleAt (0);
+	}
+
 
 	public void PulseStepsDidChange(bool[] newSteps)
 	{
