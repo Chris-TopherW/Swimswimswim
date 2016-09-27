@@ -9,7 +9,9 @@ public class LaserControl : MonoBehaviour {
 	private AudioSource audioSource;
 	private float currentStep;
 	private float increment = 0.00392156862f;
+    private float increment2 = 0.00392156862f * 5;
     public bool inverse;
+    private bool damaging;
 
 	void Start () 
 	{
@@ -48,13 +50,15 @@ public class LaserControl : MonoBehaviour {
                 vRay = cam.ScreenPointToRay(Input.mousePosition);
             }
             line.SetPosition(0, transform.position);
-			if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
+            if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
             {
+                damaging = true;
                 line.SetPosition(1, vHit.point);
                 ObstacleBehaviour targetToDamage = vHit.transform.gameObject.GetComponent<ObstacleBehaviour>();
                 targetToDamage.TakeDamage((float)(10.0f * Time.deltaTime));
             }
-			else
+            else
+                damaging = false;
 				line.SetPosition (1, vRay.GetPoint (1000));
 
 			yield return null;
@@ -66,7 +70,8 @@ public class LaserControl : MonoBehaviour {
 	void OnAudioFilterRead(float[] data, int channels)
 	{
 		for (int i = 0; i < 1024; i++) {
-			currentStep += increment;
+            if (damaging) currentStep += increment2;
+            else currentStep += increment;
 			if (currentStep >= 1.0f) {
 				currentStep = 0.0f;
 			}
