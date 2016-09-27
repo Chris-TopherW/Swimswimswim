@@ -151,6 +151,7 @@
     <None Include="Assets\ImportedStuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\ImportedStuff\readme.txt" />
     <None Include="Assets\Prefabs\Obstacles\Parts\Coke\Bonus\NuShader.shader" />
+    <None Include="Assets\Prefabs\Obstacles\Parts\GB\GB.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -88,13 +88,13 @@ QualitySettings:
     name: Good
     pixelLightCount: 2
     shadows: 2
-    shadowResolution: 1
+    shadowResolution: 3
     shadowProjection: 1
-    shadowCascades: 2
-    shadowDistance: 40
+    shadowCascades: 4
+    shadowDistance: 256
     shadowNearPlaneOffset: 2
     shadowCascade2Split: 0.33333334
-    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
+    shadowCascade4Split: {x: 0.06666667, y: 0.19999999, z: 0.46666664}
     blendWeights: 2
     textureQuality: 0
     anisotropicTextures: 1
@@ -176,6 +176,7 @@ QualitySettings:
     Tizen: 2
     WP8: 3
     Web: 3
+    WebGL: 0
     Windows Store Apps: 3
     XBOX360: 3
     XboxOne: 3

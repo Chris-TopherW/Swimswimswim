@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 		}
 		if (pulseInfo.StepIndex == 0)
 			loopNumber++;
+        if (loopNumber == 5) loopNumber = 0;
 	}
 
 	public void changeLoop (string fname)

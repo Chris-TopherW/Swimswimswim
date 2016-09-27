@@ -20,6 +20,7 @@ public class DolphinMovement : MonoBehaviour {
 	{
 
         t += 0.01f * Time.deltaTime;
+        if (t >= 1) t = 0;
         OrientedPoint p = new OrientedPoint();
         p = path.bezier.GetOrientedPoint(t);
         transform.rotation = p.rotation;
