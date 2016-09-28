@@ -3,8 +3,10 @@ using System.Collections;
 
 public class ObstacleBehaviour : MonoBehaviour {
 
+	public float health = 5.0f;
+	public GameObject explosionSound;
+
 	private GameObject player;
-    public float health = 5.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +23,7 @@ public class ObstacleBehaviour : MonoBehaviour {
         //TODO: REWRITE THIS
 		if (health <= 0) 
 		{
+			Instantiate (explosionSound, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
 	}

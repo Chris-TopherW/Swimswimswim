@@ -321,6 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  explosionSound: {fileID: 1000010825053920, guid: b8339251a69ea4085bf22bcb2b8dcb63,
+    type: 2}
 --- !u!136 &136000013020664666
 CapsuleCollider:
   m_ObjectHideFlags: 1
