@@ -104,6 +104,23 @@ MonoBehaviour:
   _filters: []
   _nbOfChannelsToFilter: 1
   _selectedFilterSlot: 0
+--- !u!1 &296258511 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010262800138, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+    type: 2}
+  m_PrefabInternal: {fileID: 981630068}
+--- !u!114 &296258514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296258511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b57ce9eca4914e5db99bb317d94c354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: e225c0d18ccb24291afc21e43fff8d0a, type: 2}
 --- !u!43 &305553428
 Mesh:
   m_ObjectHideFlags: 0
@@ -791,6 +808,11 @@ Prefab:
       propertyPath: Pan2D
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010279987070, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: audioManagerObject
+      value: 
+      objectReference: {fileID: 296258511}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 048800896bcc9814fab6f2bda3a9b123, type: 2}
   m_IsPrefabParent: 0

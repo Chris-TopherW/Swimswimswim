@@ -7,12 +7,17 @@ public class DolphinMovement : MonoBehaviour {
 	public AudioMixer audioMixer;
     public TestModel path;
     public float dolphinSpeed;
+	public GameObject audioManagerObject;
+
+	private AudioManager audioManager;
 	private Vector3 dolphinPosition;
     private float t = 0;
+	private bool fadeToggle = false;
 
 	// Use this for initialization
 	void Start () {
 		dolphinPosition = transform.position;
+		audioManager = audioManagerObject.GetComponent<AudioManager> ();
 	}
 	
 	// Update is called once per frame
@@ -45,18 +50,12 @@ public class DolphinMovement : MonoBehaviour {
 
         
         transform.position = p.position + (p.rotation * dolphinPosition);
-
-        if (dolphinPosition.y < -2.5f) {
-			audioMixer.SetFloat ("CrusherMix", 0.4f);
-            audioMixer.SetFloat("DECIMATION", Random.Range(1,100));
-            audioMixer.SetFloat ("DecimateMix", 0.1f);
-			audioMixer.SetFloat ("LowPassFreq", 5000.0f);
-		} else {
-            audioMixer.SetFloat("DECIMATION", 1);
-            audioMixer.SetFloat ("CrusherMix", 1.0f);
-			audioMixer.SetFloat ("DecimateMix", 1.0f);
-			audioMixer.SetFloat ("LowPassFreq", 22000.0f);
+		if (dolphinPosition.y < -2.5f && !fadeToggle) {
+			audioManager.TurnOnEffects ();
+			fadeToggle = true;
+		} else if(dolphinPosition.y >= -2.5f && fadeToggle) {
+			audioManager.TurnOffEffects ();
+			fadeToggle = false;
 		}
-
 	}
 }

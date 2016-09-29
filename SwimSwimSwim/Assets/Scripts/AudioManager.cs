@@ -10,13 +10,17 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 	private PulsedPatternModule pulsedPatternLeft;
 	private PulsedPatternModule pulsedPatternRight;
+	private SetLevels setLevels;
 	private int loopNumber = 0;
+
+	//G-Audio management
 
 	public void OnEnable()
 	{
 		pulse.SubscribeToPulse (this);
 		pulsedPatternLeft = patterModuleObjectLeft.GetComponent<PulsedPatternModule> ();
 		pulsedPatternRight = patterModuleObjectRight.GetComponent<PulsedPatternModule> ();
+		setLevels = GetComponent<SetLevels> ();
 	}
 
 	public void OnDisable()
@@ -67,6 +71,21 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	public void PulseStepsDidChange(bool[] newSteps)
 	{
 
+	}
+
+	//vertical mixing management
+	public void TurnOnEffects()
+	{
+		setLevels.CreateFade("CrusherMix", 0.4f, 1.0f);
+		setLevels.CreateFade ("DecimateMix", 0.1f, 1.0f);
+		setLevels.CreateFade("LowPassFreq", 5000.0f, 1.0f);
+	}
+
+	public void TurnOffEffects()
+	{
+		setLevels.CreateFade("CrusherMix", 1.0f, 2.0f);
+		setLevels.CreateFade ("DecimateMix", 1.0f, 2.0f);
+		setLevels.CreateFade("LowPassFreq", 20000.0f, 2.0f);
 	}
 
 }

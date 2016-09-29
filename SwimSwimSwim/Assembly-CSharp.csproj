@@ -227,13 +227,17 @@
      <Compile Include="Assets\Scripts\BezierCurve.cs" />
      <Compile Include="Assets\Scripts\CatMullRom.cs" />
      <Compile Include="Assets\Scripts\CrossHair.cs" />
+     <Compile Include="Assets\Scripts\DestroySound.cs" />
      <Compile Include="Assets\Scripts\DisplayPollution.cs" />
      <Compile Include="Assets\Scripts\DolphinMovement.cs" />
+     <Compile Include="Assets\Scripts\FriendlyFishMovement.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GridOverlay.cs" />
      <Compile Include="Assets\Scripts\LaserControl.cs" />
      <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
      <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
+     <Compile Include="Assets\Scripts\RandomStartPos.cs" />
+     <Compile Include="Assets\Scripts\SetLevels.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\SpinningObject.cs" />
      <Compile Include="Assets\Scripts\TestModel.cs" />
