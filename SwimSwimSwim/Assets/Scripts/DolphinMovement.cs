@@ -4,26 +4,23 @@ using UnityEngine.Audio;
 
 public class DolphinMovement : MonoBehaviour {
 
-	public AudioMixer audioMixer;
     public TestModel path;
     public float dolphinSpeed;
 	public GameObject audioManagerObject;
 
-	private AudioManager audioManager;
 	private Vector3 dolphinPosition;
     private float t = 0;
+	private AudioManager audioManager;
 	private bool fadeToggle = false;
 
-	// Use this for initialization
 	void Start () {
 		dolphinPosition = transform.position;
 		audioManager = audioManagerObject.GetComponent<AudioManager> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () 
 	{
-
+		//Movement section
         t += 0.01f * Time.deltaTime;
         if (t >= 1) t = 0;
         OrientedPoint p = new OrientedPoint();
@@ -47,9 +44,10 @@ public class DolphinMovement : MonoBehaviour {
 		{
 			dolphinPosition.y += dolphinSpeed * Time.deltaTime;
 		}
-
-        
+			
         transform.position = p.position + (p.rotation * dolphinPosition);
+
+		//Audio section
 		if (dolphinPosition.y < -2.5f && !fadeToggle) {
 			audioManager.TurnOnEffects ();
 			fadeToggle = true;
