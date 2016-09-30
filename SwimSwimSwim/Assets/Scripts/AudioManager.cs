@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	private PulsedPatternModule pulsedPatternLeft;
 	private PulsedPatternModule pulsedPatternRight;
 	private SetLevels setLevels;
-	private int loopNumber = 0;
+	private int loopNumber, testNumber = 0;
 
 	//G-Audio management
 
@@ -28,12 +28,13 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 		pulse.UnsubscribeToPulse (this);
 	}
 
+	//public void OnPulse(IGATPulseInfo pulseInfo){}
+
 	public void OnPulse(IGATPulseInfo pulseInfo)
 	{
-		//print (pulseInfo.StepIndex + "Pulse!");
-
+		print (pulseInfo.StepIndex + "Pulse!");
 		if (loopNumber < 10) {
-			if (pulseInfo.StepIndex == 0) {
+			if (pulseInfo.StepIndex == 8) {
 
 				switch (loopNumber) {
 				case 1:
@@ -53,6 +54,10 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 					break;
 				}
 			}
+			if (pulseInfo.StepIndex == 0) 
+			{
+				//removeSample (0);
+			}
 		}
 		if (pulseInfo.StepIndex == 0)
 			loopNumber++;
@@ -63,8 +68,11 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	{
 		pulsedPatternLeft.AddSample (fname + "_0");
 		pulsedPatternRight.AddSample (fname + "_1");
-		pulsedPatternLeft.RemoveSampleAt (0);
-		pulsedPatternRight.RemoveSampleAt (0);
+	}
+
+	public void removeSample(int index){
+		pulsedPatternLeft.RemoveSampleAt (index);
+		pulsedPatternRight.RemoveSampleAt (index);
 	}
 
 

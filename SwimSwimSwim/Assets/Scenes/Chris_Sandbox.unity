@@ -570,6 +570,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014202646546, guid: 294fe16db2ac0fe41a2702d65acdf8f6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -644,6 +649,21 @@ Prefab:
         type: 2}
       propertyPath: _subscribedSteps.Array.data[3]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[1]._sampleName
+      value: ALoopVapor_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[1]._pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[1]._gain
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 294fe16db2ac0fe41a2702d65acdf8f6, type: 2}
@@ -1426,7 +1446,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
