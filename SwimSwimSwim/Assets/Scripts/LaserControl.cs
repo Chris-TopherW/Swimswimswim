@@ -50,16 +50,27 @@ public class LaserControl : MonoBehaviour {
                 vRay = cam.ScreenPointToRay(Input.mousePosition);
             }
             line.SetPosition(0, transform.position);
-            if (Physics.Raycast(vRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
+            if (Physics.Raycast(vRay, out vHit, 1000))
             {
-                damaging = true;
+                Debug.Log("Hit!! :" + vHit.ToString());
                 line.SetPosition(1, vHit.point);
-                ObstacleBehaviour targetToDamage = vHit.transform.gameObject.GetComponent<ObstacleBehaviour>();
-                targetToDamage.TakeDamage((float)(10.0f * Time.deltaTime));
+                Ray dolphinRay = new Ray(transform.position, (vHit.point - transform.position));
+                if (Physics.Raycast(dolphinRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
+                {
+                    damaging = true;
+                    line.SetPosition(1, vHit.point);
+                    ObstacleBehaviour targetToDamage = vHit.transform.gameObject.GetComponent<ObstacleBehaviour>();
+                    targetToDamage.TakeDamage((float)(10.0f * Time.deltaTime));
+                } else
+                {
+                    damaging = false;
+                }
             }
             else
+            {
                 damaging = false;
-				line.SetPosition (1, vRay.GetPoint (1000));
+                line.SetPosition(1, vRay.GetPoint(200));
+            }
 
 			yield return null;
 		}

@@ -22,9 +22,10 @@ public class TestModel : MonoBehaviour {
     void OnDrawGizmos()
     {
         MeshFilter meshFilter = GetComponent<MeshFilter>();
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
         if (meshFilter.sharedMesh == null)
             meshFilter.sharedMesh = new Mesh();
-        Mesh mesh = meshFilter.sharedMesh;
+        Mesh mesh = new Mesh();
 
         ExtrudeShape shape = new ExtrudeShape();
         shape.verts = new Vector2[]
@@ -63,6 +64,9 @@ public class TestModel : MonoBehaviour {
         OrientedPoint[] path = bezier.GeneratePath(100).ToArray<OrientedPoint>();
         bezier.Extrude(mesh, shape, path);
 
+        meshFilter.sharedMesh = mesh;
+        meshCollider.sharedMesh = mesh;
+        
     }
 
     void DisplayCatmullRomSpline()

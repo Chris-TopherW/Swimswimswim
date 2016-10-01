@@ -163,3 +163,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  explosionSound: {fileID: 1000010825053920, guid: b8339251a69ea4085bf22bcb2b8dcb63,
+    type: 2}
