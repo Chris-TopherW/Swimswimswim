@@ -73,7 +73,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1000011595902428
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -88,7 +88,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1000012358387902
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -170,9 +170,24 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013327725500}
-  - 111: {fileID: 111000011055709554}
-  - 136: {fileID: 136000013564382878}
-  - 114: {fileID: 114000011445242312}
+  - 136: {fileID: 136000010009863026}
+  - 114: {fileID: 114000012827888682}
+  m_Layer: 0
+  m_Name: Fin_whale@swim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013806418270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013163763128}
+  - 111: {fileID: 111000010235814938}
   m_Layer: 0
   m_Name: Fin_whale@swim
   m_TagString: Friend
@@ -235,7 +250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 4000013327725500}
+  m_Father: {fileID: 4000013163763128}
   m_RootOrder: 1
 --- !u!4 &4000010052364870
 Transform:
@@ -333,7 +348,7 @@ Transform:
   - {fileID: 4000010253750260}
   - {fileID: 4000010005794140}
   - {fileID: 4000011798693338}
-  m_Father: {fileID: 4000013327725500}
+  m_Father: {fileID: 4000013163763128}
   m_RootOrder: 0
 --- !u!4 &4000011798693338
 Transform:
@@ -376,6 +391,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011798693338}
   m_RootOrder: 0
+--- !u!4 &4000013163763128
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013806418270}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_Children:
+  - {fileID: 4000011341537666}
+  - {fileID: 4000010041071698}
+  m_Father: {fileID: 4000013327725500}
+  m_RootOrder: 0
 --- !u!4 &4000013327725500
 Transform:
   m_ObjectHideFlags: 1
@@ -387,16 +417,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 4000011341537666}
-  - {fileID: 4000010041071698}
+  - {fileID: 4000013163763128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!111 &111000011055709554
+--- !u!111 &111000010235814938
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013113363344}
+  m_GameObject: {fileID: 1000013806418270}
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: ed5ad776ec1037448b404bfdf0d7378f, type: 3}
@@ -406,7 +435,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114000011445242312
+--- !u!114 &114000012827888682
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -417,8 +446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6562d889dd8475398b9d284447c945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 0}
---- !u!136 &136000013564382878
+  fishOffset: {x: 0, y: 0, z: 0}
+--- !u!136 &136000010009863026
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

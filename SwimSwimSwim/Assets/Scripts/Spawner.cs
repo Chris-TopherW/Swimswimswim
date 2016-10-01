@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour {
 	void Update () 
 	{
         OrientedPoint p = new OrientedPoint();
-        p = path.GetOrientedPoint(GameManager.splinePos + 0.02f);
+        p = path.GetOrientedPoint(GameManager.splinePos + 0.1f);
         transform.rotation = p.rotation;
         transform.position = p.position;
         if (Input.GetKeyDown (KeyCode.Space)) 

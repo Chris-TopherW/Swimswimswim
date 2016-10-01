@@ -16,7 +16,7 @@ public class FriendlyFishMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		t += -0.1f * Time.deltaTime;
+		t += -0.02f * Time.deltaTime;
 		if (t >= 1) t = 0;
 		OrientedPoint p = new OrientedPoint();
 		p = path.GetOrientedPoint(t);
