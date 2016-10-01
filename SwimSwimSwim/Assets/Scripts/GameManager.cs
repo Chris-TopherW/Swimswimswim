@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	public int maxPollutionLevel;
 	public static int currentPollutionLevel;
+    public static float splinePos;
 
 	void Start () {
 		Cursor.visible = false;

@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Destroyable
   - Friend
-  - Cleanup
+  - Spline
   layers:
   - Default
   - TransparentFX

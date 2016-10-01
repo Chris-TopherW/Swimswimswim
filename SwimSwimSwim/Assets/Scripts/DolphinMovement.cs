@@ -4,27 +4,27 @@ using UnityEngine.Audio;
 
 public class DolphinMovement : MonoBehaviour {
 
-    public TestModel path;
+    public BezierCurve path;
     public float dolphinSpeed;
 	public GameObject audioManagerObject;
 
 	private Vector3 dolphinPosition;
-    private float t = 0;
 	private AudioManager audioManager;
 	private bool fadeToggle = false;
 
 	void Start () {
 		dolphinPosition = transform.position;
-		audioManager = audioManagerObject.GetComponent<AudioManager> ();
+        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<TestModel>().bezier;
+        audioManager = audioManagerObject.GetComponent<AudioManager> ();
 	}
 
 	void Update () 
 	{
 		//Movement section
-        t += 0.01f * Time.deltaTime;
-        if (t >= 1) t = 0;
+        GameManager.splinePos += 0.01f * Time.deltaTime;
+        if (GameManager.splinePos >= 1) GameManager.splinePos = 0;
         OrientedPoint p = new OrientedPoint();
-        p = path.bezier.GetOrientedPoint(t);
+        p = path.GetOrientedPoint(GameManager.splinePos);
         transform.rotation = p.rotation;
         transform.position = p.position;
 
