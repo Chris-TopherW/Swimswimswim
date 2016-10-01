@@ -6,7 +6,7 @@ public class ObstacleBehaviour : MonoBehaviour {
 	public float health = 5.0f;
 	public GameObject explosionSound;
 
-	private GameObject player;
+    private GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -26,5 +26,6 @@ public class ObstacleBehaviour : MonoBehaviour {
 			Instantiate (explosionSound, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
+
 	}
 }

@@ -52,7 +52,7 @@ public class LaserControl : MonoBehaviour {
             line.SetPosition(0, transform.position);
             if (Physics.Raycast(vRay, out vHit, 1000))
             {
-                Debug.Log("Hit!! :" + vHit.ToString());
+                //Debug.Log("Hit!! :" + vHit.ToString());
                 line.SetPosition(1, vHit.point);
                 Ray dolphinRay = new Ray(transform.position, (vHit.point - transform.position));
                 if (Physics.Raycast(dolphinRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")

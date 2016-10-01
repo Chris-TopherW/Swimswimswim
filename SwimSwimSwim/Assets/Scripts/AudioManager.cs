@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 	public void OnPulse(IGATPulseInfo pulseInfo)
 	{
-		print (pulseInfo.StepIndex + "Pulse!");
+	//	print (pulseInfo.StepIndex + "Pulse!");
 		if (loopNumber < 10) {
 			if (pulseInfo.StepIndex == 8) {
 

@@ -259,6 +259,7 @@
     <Compile Include="Assets\Scripts\GridOverlay.cs" />
     <Compile Include="Assets\Scripts\LaserControl.cs" />
     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
+    <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
     <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
     <Compile Include="Assets\Scripts\RandomStartPos.cs" />
     <Compile Include="Assets\Scripts\SetLevels.cs" />
