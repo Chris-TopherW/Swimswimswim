@@ -3,24 +3,24 @@ using System.Collections;
 
 public class FriendlyFishMovement : MonoBehaviour {
 
-	public TestModel path;
-	public float dolphinSpeed;
-	private Vector3 dolphinPosition;
+    private BezierCurve path;
+	public Vector3 fishOffset;
 	private float t = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-		path = GameObject.Find("LeftWall").GetComponent<TestModel>();
+        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<TestModel>().bezier;
+        t = GameManager.splinePos + 0.02f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		t += -0.004f * Time.deltaTime;
+		t += -0.1f * Time.deltaTime;
 		if (t >= 1) t = 0;
 		OrientedPoint p = new OrientedPoint();
-		p = path.bezier.GetOrientedPoint(t);
+		p = path.GetOrientedPoint(t);
 		transform.rotation = p.rotation;
-		transform.position = p.position + transform.position;
+		transform.position = p.position + (p.rotation * fishOffset);
 	}
 }

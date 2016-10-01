@@ -24,7 +24,11 @@ public class Spawner : MonoBehaviour {
             Vector3 spawnOffset = transform.rotation * Random.insideUnitCircle * 6;
             spawnPoint = gameObject.transform.position + spawnOffset;
 
-            Instantiate (obstacles [Random.Range(0,obstacles.Length)], spawnPoint, Quaternion.identity);
+            GameObject spawned = (GameObject) Instantiate (obstacles [Random.Range(0,obstacles.Length)], spawnPoint, transform.rotation);
+            if (spawned.GetComponent<FriendlyFishMovement>())
+            {
+                spawned.GetComponent<FriendlyFishMovement>().fishOffset = spawnOffset;
+            }
 		}
 		yield return new WaitForSeconds(delay);
 	}
