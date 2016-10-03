@@ -4,10 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+//This is a placeholder script...
 	
 	// Update is called once per frame
 	void Update () {

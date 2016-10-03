@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class UIMusic : MonoBehaviour {
 
-	public GameObject[] samples; //0 and 1 are A and D, then odds are A melody, evens are D melody
+	public GameObject[] samples; //0 and 1 are A and D bass, then odds are A melody, evens are D melody
 
 	private SetLevels setLevels;
 
@@ -12,11 +12,15 @@ public class UIMusic : MonoBehaviour {
 	{
 		setLevels = GetComponent<SetLevels> ();
 		StartCoroutine (playSample (0));
-		StartCoroutine (playSample (2));
+		StartCoroutine (playSample (2 + (Random.Range(0,3)*2)));
 	}
 
-	void Update(){
-
+	void Update()
+	{
+		if (Input.GetKeyDown (KeyCode.W))
+			TurnOnEffects ();
+		if (Input.GetKeyDown (KeyCode.S))
+			TurnOffEffects ();
 	}
 
 	private IEnumerator playSample(int index)
@@ -27,12 +31,12 @@ public class UIMusic : MonoBehaviour {
 		if (index == 0) 
 		{
 			StartCoroutine (playSample (1));
-			StartCoroutine (playSample (3));
+			StartCoroutine (playSample (1 + (Random.Range(0,3)*2)));
 		} 
 		else if (index == 1) 
 		{
 			StartCoroutine (playSample (0));
-			StartCoroutine (playSample (2));
+			StartCoroutine (playSample (2 + (Random.Range(0,3)*2)));
 		}
 		
 		yield break;
