@@ -11,7 +11,12 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	private PulsedPatternModule pulsedPatternLeft;
 	private PulsedPatternModule pulsedPatternRight;
 	private SetLevels setLevels;
-	private int loopNumber, testNumber = 0;
+	private int loopNumber = 0;
+
+	void Start() 
+	{
+		setLevels.CreateFade ("UIVolume", -80.0f, 1.0f);
+	}
 
 	//G-Audio management
 

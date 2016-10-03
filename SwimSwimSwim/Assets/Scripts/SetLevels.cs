@@ -19,6 +19,7 @@ public class SetLevels : MonoBehaviour {
 		changingBools.Add("DecimateMix", false);
 		changingBools.Add("DECIMATION", false);
 		changingBools.Add("LowPassFreq", false);
+		changingBools.Add ("UIVolume", false);
 	}
 
 	public void CreateFade(string loopName, float endValue, float length) {
