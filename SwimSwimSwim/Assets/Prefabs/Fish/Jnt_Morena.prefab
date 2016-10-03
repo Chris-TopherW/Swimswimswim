@@ -200,6 +200,7 @@ GameObject:
   - 4: {fileID: 4000010367301562}
   - 111: {fileID: 111000011038488768}
   - 136: {fileID: 136000013226281546}
+  - 114: {fileID: 114000011215654378}
   m_Layer: 0
   m_Name: Jnt_Morena
   m_TagString: Untagged
@@ -764,6 +765,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114000011215654378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012660935238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6562d889dd8475398b9d284447c945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishOffset: {x: 0, y: 0, z: 0}
 --- !u!136 &136000013226281546
 CapsuleCollider:
   m_ObjectHideFlags: 1

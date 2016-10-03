@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if (currentPollutionLevel >= maxPollutionLevel) {
 			//SceneManager.LoadScene ("LoseScreen");
-			Debug.Log("You Lose!!");
+			//Debug.Log("You Lose!!");
 		}
 	}
 }

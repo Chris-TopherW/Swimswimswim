@@ -3,12 +3,15 @@ using System.Collections;
 
 public class ObstacleCleanup : MonoBehaviour {
     
-    void OnTriggerEnter(Collider other)
+    void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Destroyable"))
-        {
-            GameManager.currentPollutionLevel++;
-            Destroy(other.gameObject);
-        }
+		if (other.gameObject.CompareTag ("Destroyable")) {
+			GameManager.currentPollutionLevel++;
+			Destroy (other.gameObject);
+		} 
+		else if (other.gameObject.CompareTag ("Friend")) 
+		{
+			Destroy (other.gameObject);
+		}
     }
 }
