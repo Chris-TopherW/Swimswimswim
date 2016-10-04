@@ -12,6 +12,7 @@ public class LaserControl : MonoBehaviour {
     private float increment2 = 0.00392156862f * 5;
     public bool inverse;
     private bool damaging;
+    private Material material;
 
 	void Start () 
 	{
@@ -20,6 +21,7 @@ public class LaserControl : MonoBehaviour {
 		//audio setup
 		currentStep = 0;
 		audioSource = GetComponent<AudioSource> ();
+        material = GetComponent<Renderer>().material;
 
 	}
 
@@ -58,18 +60,25 @@ public class LaserControl : MonoBehaviour {
                 if (Physics.Raycast(dolphinRay, out vHit, 1000) && vHit.transform.gameObject.tag == "Destroyable")
                 {
                     damaging = true;
+                    Color finalColor = Color.white * Mathf.LinearToGammaSpace(50.0f);
+                    material.SetColor("_EmissionColor", finalColor);
                     line.SetPosition(1, vHit.point);
                     ObstacleBehaviour targetToDamage = vHit.transform.gameObject.GetComponent<ObstacleBehaviour>();
                     targetToDamage.TakeDamage((float)(10.0f * Time.deltaTime));
                 } else
                 {
+
                     damaging = false;
+                    Color finalColor = Color.blue * Mathf.LinearToGammaSpace(5.0f);
+                    material.SetColor("_EmissionColor", finalColor);
                 }
             }
             else
             {
                 damaging = false;
-                line.SetPosition(1, vRay.GetPoint(200));
+                Color finalColor = Color.blue * Mathf.LinearToGammaSpace(5.0f);
+                material.SetColor("_EmissionColor", finalColor);
+                line.SetPosition(1, vRay.GetPoint(1000));
             }
 
 			yield return null;

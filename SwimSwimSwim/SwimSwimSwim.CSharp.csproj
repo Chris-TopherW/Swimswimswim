@@ -254,6 +254,7 @@
     <Compile Include="Assets\Scripts\DestroySound.cs" />
     <Compile Include="Assets\Scripts\DisplayPollution.cs" />
     <Compile Include="Assets\Scripts\DolphinMovement.cs" />
+    <Compile Include="Assets\Scripts\DolphinRigidBodyScript.cs" />
     <Compile Include="Assets\Scripts\FriendlyFishMovement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GridOverlay.cs" />
@@ -265,7 +266,9 @@
     <Compile Include="Assets\Scripts\SetLevels.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\SpinningObject.cs" />
+    <Compile Include="Assets\Scripts\StartManager.cs" />
     <Compile Include="Assets\Scripts\TestModel.cs" />
+    <Compile Include="Assets\Scripts\UIMusic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />

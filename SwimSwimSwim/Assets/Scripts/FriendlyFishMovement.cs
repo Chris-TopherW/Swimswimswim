@@ -10,7 +10,7 @@ public class FriendlyFishMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         path = GameObject.FindGameObjectWithTag("Spline").GetComponent<TestModel>().bezier;
-        t = GameManager.splinePos + 0.02f;
+        t = GameManager.splinePos + 0.1f;
 	}
 	
 	// Update is called once per frame

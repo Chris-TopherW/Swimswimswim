@@ -33,20 +33,32 @@ public class TestModel : MonoBehaviour {
             new Vector2(xOffset,-10),
             new Vector2(xOffset,10),
             new Vector2(xOffset,10),
+            new Vector2(xOffset+1,10),
+            new Vector2(xOffset+1,10),
+            new Vector2(xOffset+1,-10),
+            new Vector2(xOffset+1,-10),
             new Vector2(xOffset,-10)
         };
         shape.normals = new Vector2[]
         {
             new Vector2(1,0),
             new Vector2(1,0),
+            new Vector2(0,1),
+            new Vector2(0,1),
             new Vector2(-1,0),
-            new Vector2(-1,0)
+            new Vector2(-1,0),
+              new Vector2(0,-1),
+            new Vector2(0,-1)
         };
         shape.uCoords = new float[]
         {
             0,
             1,
+            1,
+            1,
             0,
+            1,
+            1,
             1
         };
         for (int i = 0; i < controlPointsList.Count; i++)

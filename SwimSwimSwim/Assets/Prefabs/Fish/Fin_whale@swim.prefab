@@ -170,7 +170,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013327725500}
-  - 136: {fileID: 136000010009863026}
   - 114: {fileID: 114000012827888682}
   m_Layer: 0
   m_Name: Fin_whale@swim
@@ -188,6 +187,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013163763128}
   - 111: {fileID: 111000010235814938}
+  - 136: {fileID: 136000013189838628}
+  - 54: {fileID: 54000010131420724}
   m_Layer: 0
   m_Name: Fin_whale@swim
   m_TagString: Friend
@@ -420,6 +421,21 @@ Transform:
   - {fileID: 4000013163763128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!54 &54000010131420724
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013806418270}
+  serializedVersion: 2
+  m_Mass: 100000
+  m_Drag: 4.82
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!111 &111000010235814938
 Animation:
   m_ObjectHideFlags: 1
@@ -447,12 +463,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishOffset: {x: 0, y: 0, z: 0}
---- !u!136 &136000010009863026
+--- !u!136 &136000013189838628
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013113363344}
+  m_GameObject: {fileID: 1000013806418270}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
