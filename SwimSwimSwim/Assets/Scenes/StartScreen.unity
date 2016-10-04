@@ -179,6 +179,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4000010218903112, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -209,6 +219,66 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010218903112, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedAverage.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010118261808, guid: e4ec4e350c11b4d39b6a1fdaf2b0bd54,
+        type: 2}
+      propertyPath: weightedValues.Array.data[5]
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
