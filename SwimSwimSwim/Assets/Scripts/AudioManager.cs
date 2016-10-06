@@ -5,11 +5,15 @@ using GAudio;
 public class AudioManager : MonoBehaviour, IGATPulseClient 
 {
 	public PulseModule pulse;
-	public GameObject patterModuleObjectLeft;
-	public GameObject patterModuleObjectRight;
+	public GameObject patternModuleObjectLeft1;
+	public GameObject patternModuleObjectRight1;
+	public GameObject patternModuleObjectLeft2;
+	public GameObject patternModuleObjectRight2;
 
-	private PulsedPatternModule pulsedPatternLeft;
-	private PulsedPatternModule pulsedPatternRight;
+	private PulsedPatternModule pulsedPatternLeft1;
+	private PulsedPatternModule pulsedPatternRight1;
+	private PulsedPatternModule pulsedPatternLeft2;
+	private PulsedPatternModule pulsedPatternRight2;
 	private SetLevels setLevels;
 	private int loopNumber = 0;
 
@@ -23,8 +27,10 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	public void OnEnable()
 	{
 		pulse.SubscribeToPulse (this);
-		pulsedPatternLeft = patterModuleObjectLeft.GetComponent<PulsedPatternModule> ();
-		pulsedPatternRight = patterModuleObjectRight.GetComponent<PulsedPatternModule> ();
+		pulsedPatternLeft1 = patternModuleObjectLeft1.GetComponent<PulsedPatternModule> ();
+		pulsedPatternRight1 = patternModuleObjectRight1.GetComponent<PulsedPatternModule> ();
+		pulsedPatternLeft2 = patternModuleObjectLeft2.GetComponent<PulsedPatternModule> ();
+		pulsedPatternRight2 = patternModuleObjectRight2.GetComponent<PulsedPatternModule> ();
 		setLevels = GetComponent<SetLevels> ();
 	}
 
@@ -54,6 +60,11 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 				case 4:
 					changeLoop("BMelodyVapor");
 					break;
+//				case 1:
+//					removeSample (0);
+//					pulsedPatternLeft2.AddSample ("FasterVapor" + "_0");
+//					pulsedPatternRight2.AddSample ("FasterVapor" + "_1");
+//					break;
 				default:
 					changeLoop("ALoopVapor");
 					break;
@@ -71,13 +82,13 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 	public void changeLoop (string fname)
 	{
-		pulsedPatternLeft.AddSample (fname + "_0");
-		pulsedPatternRight.AddSample (fname + "_1");
+		pulsedPatternLeft1.AddSample (fname + "_0");
+		pulsedPatternRight1.AddSample (fname + "_1");
 	}
 
 	public void removeSample(int index){
-		pulsedPatternLeft.RemoveSampleAt (index);
-		pulsedPatternRight.RemoveSampleAt (index);
+		pulsedPatternLeft1.RemoveSampleAt (index);
+		pulsedPatternRight1.RemoveSampleAt (index);
 	}
 
 

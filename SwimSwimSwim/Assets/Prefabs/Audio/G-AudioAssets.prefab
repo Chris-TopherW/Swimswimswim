@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000010848493730}
   m_IsPrefabParent: 1
+--- !u!1 &1000010052167250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012627904570}
+  - 114: {fileID: 114000010548685250}
+  m_Layer: 0
+  m_Name: Song2Bank
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000010262800138
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,8 +36,25 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012839593414}
   - 114: {fileID: 114000013303358418}
+  - 114: {fileID: 114000010734807604}
   m_Layer: 0
   m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010302259350
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012888596770}
+  - 114: {fileID: 114000012339698982}
+  m_Layer: 0
+  m_Name: Song2LoopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +75,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010760717810
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +117,7 @@ GameObject:
   - 4: {fileID: 4000011605064212}
   - 114: {fileID: 114000011867689980}
   m_Layer: 0
-  m_Name: LoopLeft
+  m_Name: Song1LoopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +149,7 @@ GameObject:
   - 4: {fileID: 4000012732081978}
   - 114: {fileID: 114000013410917518}
   m_Layer: 0
-  m_Name: LoopRight
+  m_Name: Song1LoopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +171,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013289841284
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012500767658}
+  - 114: {fileID: 114000010802156424}
+  m_Layer: 0
+  m_Name: Song2LoopLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013987642962
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +197,7 @@ GameObject:
   - 4: {fileID: 4000012443507912}
   - 114: {fileID: 114000011196367304}
   m_Layer: 0
-  m_Name: Sample Bank
+  m_Name: Song1Bank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +228,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000014015142096}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!4 &4000011605064212
 Transform:
   m_ObjectHideFlags: 1
@@ -206,6 +255,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014202646546}
   m_RootOrder: 0
+--- !u!4 &4000012500767658
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013289841284}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 3
+--- !u!4 &4000012627904570
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010052167250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014202646546}
+  m_RootOrder: 2
 --- !u!4 &4000012732081978
 Transform:
   m_ObjectHideFlags: 1
@@ -231,7 +306,20 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000014202646546}
-  m_RootOrder: 3
+  m_RootOrder: 4
+--- !u!4 &4000012888596770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302259350}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014015142096}
+  m_RootOrder: 4
 --- !u!4 &4000013261676762
 Transform:
   m_ObjectHideFlags: 1
@@ -259,9 +347,11 @@ Transform:
   - {fileID: 4000010449250270}
   - {fileID: 4000011605064212}
   - {fileID: 4000012732081978}
+  - {fileID: 4000012500767658}
+  - {fileID: 4000012888596770}
   - {fileID: 4000011394272938}
   m_Father: {fileID: 4000014202646546}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &4000014202646546
 Transform:
   m_ObjectHideFlags: 1
@@ -275,6 +365,7 @@ Transform:
   m_Children:
   - {fileID: 4000012443507912}
   - {fileID: 4000013261676762}
+  - {fileID: 4000012627904570}
   - {fileID: 4000014015142096}
   - {fileID: 4000012839593414}
   m_Father: {fileID: 0}
@@ -321,6 +412,58 @@ MonoBehaviour:
   _pulseUnit: 0
   _StartPulseAuto: 1
   _StartDelay: 1
+--- !u!114 &114000010548685250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010052167250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bc5f2acedd442a1b750db622ddf987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SoundBanks:
+  - {fileID: 11400000, guid: 81895b78e78cf4064a8979a28ad402b2, type: 2}
+  extraCapacity: 0
+  _loadInAwake: 1
+  _allocationMode: 0
+  _AutoLoadInEditMode: 0
+--- !u!114 &114000010734807604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010262800138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b57ce9eca4914e5db99bb317d94c354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: e225c0d18ccb24291afc21e43fff8d0a, type: 2}
+--- !u!114 &114000010802156424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013289841284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167b16c29c99448893c108fbd97a40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulse: {fileID: 114000010384818324}
+  _subscribedSteps: 01000000000000000000000000000000
+  _player: {fileID: 0}
+  _sampleBank: {fileID: 114000010548685250}
+  _trackNb: 0
+  _playingOrder: 0
+  _randomDelay: 0
+  _randomDelayMaxRatio: 0
+  _randomBypass: 0
+  _randomBypassChance: 0
+  _envelopeModule: {fileID: 0}
+  _samples: []
 --- !u!114 &114000010814776274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,6 +525,29 @@ MonoBehaviour:
     _pitch: 1
     _semiTones: 0
     _gain: 1
+--- !u!114 &114000012339698982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010302259350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167b16c29c99448893c108fbd97a40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulse: {fileID: 114000010384818324}
+  _subscribedSteps: 01000000000000000000000000000000
+  _player: {fileID: 0}
+  _sampleBank: {fileID: 114000010548685250}
+  _trackNb: 1
+  _playingOrder: 0
+  _randomDelay: 0
+  _randomDelayMaxRatio: 0
+  _randomBypass: 0
+  _randomBypassChance: 0
+  _envelopeModule: {fileID: 0}
+  _samples: []
 --- !u!114 &114000013303358418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -394,8 +560,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pulse: {fileID: 114000010384818324}
-  patterModuleObjectLeft: {fileID: 1000011084408462}
-  patterModuleObjectRight: {fileID: 1000012365933000}
+  patternModuleObjectLeft1: {fileID: 1000011084408462}
+  patternModuleObjectRight1: {fileID: 1000012365933000}
+  patternModuleObjectLeft2: {fileID: 1000013289841284}
+  patternModuleObjectRight2: {fileID: 1000010302259350}
 --- !u!114 &114000013410917518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -439,7 +607,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _sampleBank: {fileID: 114000010814776274}
   _trackNb: 2
-  _playingOrder: 2
+  _playingOrder: 1
   _randomDelay: 0
   _randomDelayMaxRatio: 0
   _randomBypass: 1
