@@ -17,9 +17,14 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	void Start() 
 	{
 		setLevels.CreateFade ("UIVolume", -80.0f, 1.0f);
-		pulse.StartPulsing (0);
 		//set BPM
 		pulse.Period = 60.0f / 81.0f;
+	}
+
+	void Update()
+	{
+		if(Time.time > 2.0f && !pulse.IsPulsing)
+		pulse.StartPulsing (0);
 	}
 
 	//G-Audio management
@@ -75,7 +80,7 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 					changeLoop ("FastVapeA2");
 					break;
 				case 4:
-					changeLoop ("VaporVaseA");
+					changeLoop ("FastVapeTransition");
 					break;
 				default:
 					changeLoop ("VaporVaseA");
@@ -120,13 +125,15 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 	public void TurnOnEffects()
 	{
 		setLevels.CreateFade("CrusherMix", 0.4f, 1.0f);
+		setLevels.CreateFade("SmasherMix", 0.1f, 1.0f);
 		setLevels.CreateFade ("DecimateMix", 0.1f, 1.0f);
-		setLevels.CreateFade("LowPassFreq", 5000.0f, 1.0f);
+		setLevels.CreateFade("LowPassFreq", 3000.0f, 1.0f);
 	}
 
 	public void TurnOffEffects()
 	{
 		setLevels.CreateFade("CrusherMix", 1.0f, 2.0f);
+		setLevels.CreateFade("SmasherMix", 1.0f, 1.0f);
 		setLevels.CreateFade ("DecimateMix", 1.0f, 2.0f);
 		setLevels.CreateFade("LowPassFreq", 20000.0f, 2.0f);
 	}

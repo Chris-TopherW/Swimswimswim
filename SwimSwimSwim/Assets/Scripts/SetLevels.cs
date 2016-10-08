@@ -16,6 +16,7 @@ public class SetLevels : MonoBehaviour {
 	void Awake() {
 		changingBools = new Dictionary<string, bool>();
 		changingBools.Add("CrusherMix", false);
+		changingBools.Add("SmasherMix", false);
 		changingBools.Add("DecimateMix", false);
 		changingBools.Add("DECIMATION", false);
 		changingBools.Add("LowPassFreq", false);
