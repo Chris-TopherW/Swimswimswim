@@ -70,7 +70,7 @@ namespace GAudio
 
 		protected virtual void OnEnable()
 		{
-			Debug.Log( "Delay OnEnable" );
+			//Debug.Log( "Delay OnEnable" );
 			if( MAX_DELAY_SAMPLES == 0 )
 				MAX_DELAY_SAMPLES = GATInfo.OutputSampleRate * 1;
 

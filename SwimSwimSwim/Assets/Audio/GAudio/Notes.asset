@@ -13,60 +13,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 44100
   _sampleInfos:
-  - _name: BSemiQ
+  - _name: SynthD6
     _midiCode: 0
-    _pathInResources: BSemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: 001d414262b0a426eab798093cae68f2
+    _pathInResources: SynthD6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: a83b3684bb9984221942aeb3e975ba1b
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: DESemiQ
+  - _name: SynthG6
     _midiCode: 0
-    _pathInResources: DESemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: 5807268963c5b45488f47f8b01b5c78f
+    _pathInResources: SynthG6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: 42caeb75cb1df45ae8d4773111d9c0d3
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: FESemiQ
+  - _name: SynthF6
     _midiCode: 0
-    _pathInResources: FESemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: a51e6f09e1b8c4c568590ee1caa1ce34
+    _pathInResources: SynthF6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: af5c2c887f7674b729717cd983d421c5
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: CSemiQ
+  - _name: SynthA6
     _midiCode: 0
-    _pathInResources: CSemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: c1072f425e9bd4763bc63921360e3b99
+    _pathInResources: SynthA6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: 43ed22e8ec2ea4ade87d8de7dd414e2d
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: AESemiQ
+  - _name: SynthD7
     _midiCode: 0
-    _pathInResources: AESemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: 6425607fd0bc546fab33706972e5689f
+    _pathInResources: SynthD7
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: d9973c1ab26aa429993b9774d16718c0
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: DSemiQ
+  - _name: SynthB6
     _midiCode: 0
-    _pathInResources: DSemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: df63173d385bf4055a1db5312beaf6d6
+    _pathInResources: SynthB6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: fdabc4ca5ca094628bd229b5ab0a483e
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: GESemiQ
+  - _name: SynthE6
     _midiCode: 0
-    _pathInResources: GESemiQ
-    _numChannels: 2
-    _samplesPerChannel: 8252
-    _guid: cee43e2cee8ec4a469ff7806dad2aa89
+    _pathInResources: SynthE6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: bd4680cc226be4b6495c877b1fe1ca4f
     _isStreamingAsset: 0
     clipStatus: 0
-  _totalUncompressedBytes: 462112
+  - _name: SynthC6
+    _midiCode: 0
+    _pathInResources: SynthC6
+    _numChannels: 1
+    _samplesPerChannel: 8704
+    _guid: 82de7c2f2a45947379e1641c31d427e2
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 278528

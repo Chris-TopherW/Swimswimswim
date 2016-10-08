@@ -13,36 +13,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 44100
   _sampleInfos:
-  - _name: ALoopVapor
+  - _name: FastVapeA2
     _midiCode: 0
-    _pathInResources: ALoopVapor
+    _pathInResources: FastVapeA2
     _numChannels: 2
-    _samplesPerChannel: 528524
-    _guid: f279f16ee363441319a77aae920e46d1
+    _samplesPerChannel: 278526
+    _guid: eb1742802541f44f896036f5ec73f717
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: AMelodyLoopVapor
+  - _name: VaporVaseA
     _midiCode: 0
-    _pathInResources: AMelodyLoopVapor
+    _pathInResources: VaporVaseA
     _numChannels: 2
-    _samplesPerChannel: 393032
-    _guid: 68a41d0645045479899cf69c495e2dce
+    _samplesPerChannel: 261333
+    _guid: 87b4f5803b8ce461f9bf0666c808b0d2
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: BreakdownVapor
+  - _name: VaporVaseBreakdown1
     _midiCode: 0
-    _pathInResources: BreakdownVapor
+    _pathInResources: VaporVaseBreakdown1
     _numChannels: 2
-    _samplesPerChannel: 528524
-    _guid: 33ef4c46812ec4ac6b4b689fbc554efc
+    _samplesPerChannel: 261333
+    _guid: b7450692862114d019f4d756d17b188d
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: BMelodyVapor
+  - _name: VaporVaseAMelody1
     _midiCode: 0
-    _pathInResources: BMelodyVapor
+    _pathInResources: VaporVaseAMelody1
     _numChannels: 2
-    _samplesPerChannel: 528524
-    _guid: dfb78d5add3194b54b914458a7b7c81d
+    _samplesPerChannel: 261333
+    _guid: 49815458811d744ea8e36a1b640c250a
     _isStreamingAsset: 0
     clipStatus: 0
-  _totalUncompressedBytes: 15828832
+  - _name: VaporVaseAMelody2
+    _midiCode: 0
+    _pathInResources: VaporVaseAMelody2
+    _numChannels: 2
+    _samplesPerChannel: 261333
+    _guid: 19de77a81605d477f9b7dc46856c694c
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: VaporVaseBridge2
+    _midiCode: 0
+    _pathInResources: VaporVaseBridge2
+    _numChannels: 2
+    _samplesPerChannel: 261333
+    _guid: 1ea9afc894e8d40a4a610011db2658be
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: FastVapeA1
+    _midiCode: 0
+    _pathInResources: FastVapeA1
+    _numChannels: 2
+    _samplesPerChannel: 278526
+    _guid: d230f77a992bf4ad39532cc36b4c7514
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: VaporVaseTransition
+    _midiCode: 0
+    _pathInResources: VaporVaseTransition
+    _numChannels: 2
+    _samplesPerChannel: 278526
+    _guid: d4fa70cd0373149f8bc109b5917c4f00
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: VaporVaseBridge1
+    _midiCode: 0
+    _pathInResources: VaporVaseBridge1
+    _numChannels: 2
+    _samplesPerChannel: 261333
+    _guid: f164f73f68a264479ab9edbdb07f8417
+    _isStreamingAsset: 0
+    clipStatus: 0
+  - _name: VaporVaseBreakdown2
+    _midiCode: 0
+    _pathInResources: VaporVaseBreakdown2
+    _numChannels: 2
+    _samplesPerChannel: 261333
+    _guid: bf0e40afa2f6c475996a60532fc2c760
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 21319272
