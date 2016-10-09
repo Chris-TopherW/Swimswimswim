@@ -9,9 +9,8 @@ public class CurveImplementation : MonoBehaviour
 
     //public GameObject[] Points = new GameObject[4];
     public List<GameObject> Points;
-    public int CurveResolution = 10;
+    public int CurveResolution = 20;
     private ExtrudeShape shape;
-    public bool inverseX;
     public GameObject[] walls;
 
     private List<Vector3> lWallPoints = new List<Vector3>();
@@ -19,14 +18,15 @@ public class CurveImplementation : MonoBehaviour
 
     void Awake()
     {
-        Points = GetComponent<SplineMaker>().points;
-        Generate();
     }
 
 
     void Start()
     {
+        Points = GetComponent<SplineMaker>().points;
 
+        MakeShape();
+        Generate();
     }
 
     void MakeShape()
@@ -115,7 +115,7 @@ public class CurveImplementation : MonoBehaviour
         lWallPoints.Clear();
         rWallPoints.Clear();
         int startGen = GameManager.segmentPos - 2;
-        int endGen = GameManager.segmentPos + 10;
+        int endGen = GameManager.segmentPos + 8;
         if (startGen < 0) startGen = 0;
         if (endGen > Points.Count - 1) endGen = Points.Count - 1;
         if (endGen < 0) endGen = 0;
@@ -177,14 +177,11 @@ public class CurveImplementation : MonoBehaviour
             Debug.DrawLine(p1, p1 + leftOffset);
         }
 
-        MakeShape();
-
         MeshFilter meshFilter = walls[0].GetComponent<MeshFilter>();
         MeshCollider meshCollider = walls[0].GetComponent<MeshCollider>();
         if (meshFilter.sharedMesh == null)
             meshFilter.sharedMesh = new Mesh();
         Mesh mesh = new Mesh();
-        meshFilter.sharedMesh.Clear();
         CatmullRom.Extrude(mesh, shape, GetWallPath(lWallPoints));
         meshFilter.sharedMesh = mesh;
         meshCollider.sharedMesh = mesh;
@@ -206,18 +203,10 @@ public class CurveImplementation : MonoBehaviour
         for (int i = 0; i < pts.Count - 1; i++)
         {
             Vector3 p0, p1, m0, m1;
-            //if (Points[i] == null || Points[i + 1] == null || (i > 0 && Points[i - 1] == null) || (i < Points.Count - 2 && Points[i + 2] == null))
-            //{
-            //    return;
-            //}
 
             p0 = pts[i];
             p1 = pts[i + 1];
-
-            // Tangent calculation for each control point
-            // Tangent M[k] = (P[k+1] - P[k-1]) / 2
-            // With [] indicating subscript
-
+            
             // m0
             if (i == 0)
             {

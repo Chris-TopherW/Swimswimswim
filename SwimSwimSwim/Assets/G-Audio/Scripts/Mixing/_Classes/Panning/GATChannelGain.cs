@@ -44,7 +44,7 @@ namespace GAudio
 		
 		bool  _needsUpdate;
 		
-		public override float Gain
+		public float Gain
 		{
 			get 
 			{
