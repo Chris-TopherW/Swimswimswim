@@ -68,13 +68,19 @@
      <Compile Include="Assets\ImportedStuff\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <None Include="Assets\Prefabs\Obstacles\Parts\Coke\Bonus\NuShader.shader" />
      <None Include="Assets\G-Audio\Examples\_Example_05_Looper\__LooperReadme.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\G-Audio\Scripts\Filters\Audial Manipulators - G-Audio\AboutAudial.txt" />
      <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
      <None Include="Assets\Prefabs\Obstacles\Parts\GB\GB.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\G-Audio\__ReadMe.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\G-Audio\NVorbis\__License.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\ImportedStuff\readme.txt" />
@@ -119,6 +125,8 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{BC55F934-0EEA-C66B-0A05-73B3CA2DC106}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{5F18085E-2B29-B28C-80AD-FF311D665B4B}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>

@@ -367,7 +367,7 @@ MonoBehaviour:
   extraCapacity: 0
   _loadInAwake: 1
   _allocationMode: 0
-  _AutoLoadInEditMode: 0
+  _AutoLoadInEditMode: 1
 --- !u!114 &114000011867689980
 MonoBehaviour:
   m_ObjectHideFlags: 1

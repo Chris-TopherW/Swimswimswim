@@ -225,8 +225,9 @@
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\BezierCurve.cs" />
-     <Compile Include="Assets\Scripts\CatMullRom.cs" />
+     <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
      <Compile Include="Assets\Scripts\CrossHair.cs" />
+     <Compile Include="Assets\Scripts\CurveImplementation.cs" />
      <Compile Include="Assets\Scripts\DestroySound.cs" />
      <Compile Include="Assets\Scripts\DisplayPollution.cs" />
      <Compile Include="Assets\Scripts\DolphinMovement.cs" />
@@ -237,23 +238,32 @@
      <Compile Include="Assets\Scripts\LaserControl.cs" />
      <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
      <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
+     <Compile Include="Assets\Scripts\PlaneControl.cs" />
+     <Compile Include="Assets\Scripts\PointControl.cs" />
      <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
      <Compile Include="Assets\Scripts\RandomStartPos.cs" />
      <Compile Include="Assets\Scripts\SetLevels.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\SpinningObject.cs" />
+     <Compile Include="Assets\Scripts\SplineMaker.cs" />
      <Compile Include="Assets\Scripts\StartManager.cs" />
      <Compile Include="Assets\Scripts\TestModel.cs" />
      <Compile Include="Assets\Scripts\UIMusic.cs" />
      <None Include="Assets\Prefabs\Obstacles\Parts\Coke\Bonus\NuShader.shader" />
      <None Include="Assets\G-Audio\Examples\_Example_05_Looper\__LooperReadme.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\G-Audio\Scripts\Filters\Audial Manipulators - G-Audio\AboutAudial.txt" />
      <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
      <None Include="Assets\Prefabs\Obstacles\Parts\GB\GB.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\G-Audio\__ReadMe.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\G-Audio\NVorbis\__License.txt" />
      <None Include="Assets\ImportedStuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
      <None Include="Assets\ImportedStuff\readme.txt" />
@@ -263,6 +273,10 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{BC55F934-0EEA-C66B-0A05-73B3CA2DC106}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

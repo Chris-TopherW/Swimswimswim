@@ -91,7 +91,8 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 			if (pulseInfo.StepIndex == 0 && loopNumber == 2) {
 				pulse.Period = 60.0f / 76.0f;
 				Debug.Log ("Tempo shift to 76 bpm");
-			} if(pulseInfo.StepIndex == 0 && loopNumber == 5) {
+			}
+			if(pulseInfo.StepIndex == 0 && loopNumber == 5) {
 				pulse.Period = 60.0f / 81.0f;
 				Debug.Log ("Tempo shift to 81 bpm");
 			}
