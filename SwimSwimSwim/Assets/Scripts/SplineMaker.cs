@@ -10,11 +10,11 @@ public class SplineMaker : MonoBehaviour {
     [ExecuteInEditMode()]
 	void Awake () {
         points.Clear();
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 1000; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-300, 300), 0, i * 200);
             GameObject newPoint = (GameObject)Instantiate(pointPrefab, pos, Quaternion.identity);
-            newPoint.GetComponent<PointControl>().width = Random.Range(20, 100);
+            newPoint.GetComponent<PointControl>().width = Random.Range(40, 180);
             points.Add(newPoint);
         }
         CurveImplementation script = GetComponent<CurveImplementation>();
