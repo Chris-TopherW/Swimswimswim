@@ -24,10 +24,9 @@ public class DolphinMovement : MonoBehaviour {
 	void FixedUpdate () 
 	{
 		//Movement section
-        GameManager.splinePos += 0.01f * Time.deltaTime;
-        if (GameManager.splinePos >= 1) GameManager.splinePos = 0;
-        int segPos = (int)(GameManager.splinePos * (path.Points.Count -1));
-        float tPos = GameManager.splinePos * (path.Points.Count - 1) - segPos;
+        GameManager.splinePos += 0.05f * Time.deltaTime;
+        int segPos = GameManager.segmentPos;
+        float tPos = GameManager.splinePos;
         OrientedPoint p = path.GetPos(segPos, tPos);
         // body.AddForce(p.position - transform.position);
         transform.rotation = p.rotation;

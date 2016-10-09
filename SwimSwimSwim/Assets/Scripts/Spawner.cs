@@ -37,8 +37,8 @@ public class Spawner : MonoBehaviour {
 	{
         float t = GameManager.splinePos + 0.2f;
         if (t >= 1) t = 1;
-        int segPos = (int)(t * (path.Points.Count - 1));
-        float tPos = t * (path.Points.Count - 1) - segPos;
+        int segPos = GameManager.segmentPos + 2;
+        float tPos = t;
         OrientedPoint p = path.GetPos(segPos, tPos);
         // body.AddForce(p.position - transform.position);
         transform.rotation = p.rotation;

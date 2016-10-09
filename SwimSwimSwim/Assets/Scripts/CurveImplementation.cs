@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 [RequireComponent(typeof(MeshFilter))]
-[ExecuteInEditMode()]
 public class CurveImplementation : MonoBehaviour
 {
 
     //public GameObject[] Points = new GameObject[4];
-    public List<GameObject> Points = new List<GameObject>();
+    public List<GameObject> Points;
     public int CurveResolution = 10;
     private ExtrudeShape shape;
     public bool inverseX;
@@ -20,7 +19,8 @@ public class CurveImplementation : MonoBehaviour
 
     void Awake()
     {
-        Update();
+        Points = GetComponent<SplineMaker>().points;
+        Generate();
     }
 
 
@@ -104,7 +104,7 @@ public class CurveImplementation : MonoBehaviour
 
     }
 
-    void Update()
+    public void Generate()
     {
         Vector3 p0, p1, m0, m1;
         float width1, width2;
@@ -114,15 +114,20 @@ public class CurveImplementation : MonoBehaviour
             pointsToMake = (CurveResolution) * (Points.Count - 1);
         lWallPoints.Clear();
         rWallPoints.Clear();
+        int startGen = GameManager.segmentPos - 2;
+        int endGen = GameManager.segmentPos + 10;
+        if (startGen < 0) startGen = 0;
+        if (endGen > Points.Count - 1) endGen = Points.Count - 1;
+        if (endGen < 0) endGen = 0;
 
         // First for loop goes through each individual control point and connects it to the next, so 0-1, 1-2, 2-3 and so on
-        for (int i = 0; i < Points.Count - 1; i++)
+        for (int i = startGen; i < endGen; i++)
         {
             //if (Points[i] == null || Points[i + 1] == null || (i > 0 && Points[i - 1] == null) || (i < Points.Count - 2 && Points[i + 2] == null))
             //{
             //    return;
             //}
-
+            Debug.Log(GameManager.segmentPos);
             p0 = Points[i].transform.position;
             p1 =  Points[i + 1].transform.position;
             width1 = Points[i].GetComponent<PointControl>().width;
@@ -224,7 +229,7 @@ public class CurveImplementation : MonoBehaviour
             }
 
             // m1
-            if (i < Points.Count - 2)
+            if (i < pts.Count - 2)
             {
                 m1 = 0.5f * (pts[(i + 2) % Points.Count] - p0);
             }

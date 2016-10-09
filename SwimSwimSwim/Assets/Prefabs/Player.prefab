@@ -85,6 +85,7 @@ GameObject:
   - 124: {fileID: 124000012987473572}
   - 92: {fileID: 92000013369087836}
   - 81: {fileID: 81000013772412628}
+  - 114: {fileID: 114000012612763892}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -573,10 +574,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012265926292}
-  m_LocalRotation: {x: -0, y: 0.9203245, z: -0, w: 0.39115587}
-  m_LocalPosition: {x: 3.7, y: 0, z: -2.8}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 133.878, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010430921484}
   - {fileID: 4000012589836432}
@@ -619,8 +620,8 @@ Camera:
   m_GameObject: {fileID: 1000011687910560}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.7568628, g: 0.7568628, b: 0.7568628, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.03103447, g: 0.7007606, b: 1, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -628,7 +629,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 83.6
   orthographic: 0
   orthographic size: 5
@@ -930,6 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170f8ea5a7b41411d8e2e5917b8201de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: {fileID: 0}
   dolphinSpeed: 10
   audioManagerObject: {fileID: 0}
   areaWidth: 36
@@ -944,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488fc8ab0fc2f46c8bdbedfebd4b3cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: {fileID: 0}
   obstacles:
   - {fileID: 1000011669057948, guid: be6a9fb553da944259e905bb78580d69, type: 2}
   - {fileID: 1000011735756958, guid: 4fdbab9f91f964cfd9d2fb0758408a7c, type: 2}
@@ -957,6 +960,25 @@ MonoBehaviour:
   randomWidth: 10
   randomHeight: 5
   spawningToggle: 1
+--- !u!114 &114000012612763892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011687910560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceFog: 0
+  excludeFarPixels: 0
+  useRadialDistance: 0
+  heightFog: 1
+  height: 0
+  heightDensity: 0.05
+  startDistance: 0
+  fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &114000013317393652
 MonoBehaviour:
   m_ObjectHideFlags: 1
