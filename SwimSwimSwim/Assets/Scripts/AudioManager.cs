@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 	void Start() 
 	{
-		
+		pulse.Period = 60.0f / 81.0f;
 	}
 
 	void Update()
@@ -24,8 +24,6 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 		if(Time.time > 2.0f && !pulse.IsPulsing)
 		pulse.StartPulsing (0);
 		setLevels.CreateFade ("UIVolume", -80.0f, 15.0f);
-		//set BPM
-		pulse.Period = 60.0f / 81.0f;
 	}
 
 	//G-Audio management
