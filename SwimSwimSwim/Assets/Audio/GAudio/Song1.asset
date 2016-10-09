@@ -101,4 +101,12 @@ MonoBehaviour:
     _guid: 3b51c5f730dbe48a2a371588f42eb369
     _isStreamingAsset: 0
     clipStatus: 0
-  _totalUncompressedBytes: 23478712
+  - _name: DroneTransition
+    _midiCode: 0
+    _pathInResources: DroneTransition
+    _numChannels: 2
+    _samplesPerChannel: 261333
+    _guid: b6ec012df60d64140b46ec491d77c0c7
+    _isStreamingAsset: 0
+    clipStatus: 0
+  _totalUncompressedBytes: 25569376

@@ -16,15 +16,16 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 	void Start() 
 	{
-		setLevels.CreateFade ("UIVolume", -80.0f, 1.0f);
-		//set BPM
-		pulse.Period = 60.0f / 81.0f;
+		
 	}
 
 	void Update()
 	{
 		if(Time.time > 2.0f && !pulse.IsPulsing)
 		pulse.StartPulsing (0);
+		setLevels.CreateFade ("UIVolume", -80.0f, 15.0f);
+		//set BPM
+		pulse.Period = 60.0f / 81.0f;
 	}
 
 	//G-Audio management
@@ -53,11 +54,11 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 
 				switch (loopNumber) {
 				case 0:
+					changeLoop ("DroneTransition");
+					break;
+				case 1:
 					changeLoop ("VaporVaseA");
 					break;
-//				case 1:
-//					changeLoop ("VaporVaseA");
-//					break;
 //				case 2:
 //					changeLoop ("VaporVaseAMelody1");
 //					break;
@@ -70,16 +71,16 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 //				case 5:
 //					changeLoop ("VaporVaseA");
 //					break;
-				case 1:
+				case 2:
 					changeLoop ("VaporVaseTransition");
 					break;
-				case 2:
+				case 3:
 					changeLoop ("FastVapeA1");
 					break;
-				case 3:
+				case 4:
 					changeLoop ("FastVapeA2");
 					break;
-				case 4:
+				case 5:
 					changeLoop ("FastVapeTransition");
 					break;
 				default:
@@ -87,10 +88,10 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 					break;
 				}
 			}
-			if (pulseInfo.StepIndex == 0 && loopNumber == 1) {
+			if (pulseInfo.StepIndex == 0 && loopNumber == 2) {
 				pulse.Period = 60.0f / 76.0f;
 				Debug.Log ("Tempo shift to 76 bpm");
-			} if(pulseInfo.StepIndex == 0 && loopNumber == 4) {
+			} if(pulseInfo.StepIndex == 0 && loopNumber == 5) {
 				pulse.Period = 60.0f / 81.0f;
 				Debug.Log ("Tempo shift to 81 bpm");
 			}
@@ -98,8 +99,8 @@ public class AudioManager : MonoBehaviour, IGATPulseClient
 			if (pulseInfo.StepIndex == 0) {
 				loopNumber++;
 			}
-			if (loopNumber == 5)
-				loopNumber = 0;
+			if (loopNumber == 6)
+				loopNumber = 1;
 		}
 	}
 

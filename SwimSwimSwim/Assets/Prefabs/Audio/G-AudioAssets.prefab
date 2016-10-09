@@ -367,7 +367,7 @@ MonoBehaviour:
   extraCapacity: 0
   _loadInAwake: 1
   _allocationMode: 0
-  _AutoLoadInEditMode: 1
+  _AutoLoadInEditMode: 0
 --- !u!114 &114000011867689980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -391,7 +391,7 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
   _samples:
-  - _sampleName: VaporVaseA_0
+  - _sampleName: DroneTransition_0
     _pitch: 1
     _semiTones: 0
     _gain: 1
@@ -432,7 +432,7 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
   _samples:
-  - _sampleName: VaporVaseA_1
+  - _sampleName: DroneTransition_1
     _pitch: 1
     _semiTones: 0
     _gain: 1
