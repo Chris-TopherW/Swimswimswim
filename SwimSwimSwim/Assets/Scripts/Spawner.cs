@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-    public BezierCurve path;
+    public CurveImplementation path;
     public GameObject[] obstacles;
 	public float startDelay;
 	public float randomWidth, randomHeight;
@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour {
 
 	IEnumerator Start()
 	{
-        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<TestModel>().bezier;
+        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<CurveImplementation>();
         while (true)
 				yield return StartCoroutine (spawnTimer (startDelay));
 	}
@@ -35,8 +35,12 @@ public class Spawner : MonoBehaviour {
 
 	void Update () 
 	{
-        OrientedPoint p = new OrientedPoint();
-        p = path.GetOrientedPoint(GameManager.splinePos + 0.1f);
+        float t = GameManager.splinePos + 0.2f;
+        if (t >= 1) t = 1;
+        int segPos = (int)(t * (path.Points.Count - 1));
+        float tPos = t * (path.Points.Count - 1) - segPos;
+        OrientedPoint p = path.GetPos(segPos, tPos);
+        // body.AddForce(p.position - transform.position);
         transform.rotation = p.rotation;
         transform.position = p.position;
         if (Input.GetKeyDown (KeyCode.Space)) 

@@ -3,13 +3,13 @@ using System.Collections;
 
 public class FriendlyFishMovement : MonoBehaviour {
 
-    private BezierCurve path;
-	public Vector3 fishOffset;
+    public CurveImplementation path;
+    public Vector3 fishOffset;
 	private float t = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<TestModel>().bezier;
+        path = GameObject.FindGameObjectWithTag("Spline").GetComponent<CurveImplementation>();
         t = GameManager.splinePos + 0.1f;
 	}
 	
@@ -18,9 +18,11 @@ public class FriendlyFishMovement : MonoBehaviour {
 	
 		t += -0.02f * Time.deltaTime;
 		if (t >= 1) t = 0;
-		OrientedPoint p = new OrientedPoint();
-		p = path.GetOrientedPoint(t);
-		transform.rotation = p.rotation;
-		transform.position = p.position + (p.rotation * fishOffset);
-	}
+        if (t < 0) t = 0;
+        int segPos = (int)(t * (path.Points.Count - 1));
+        float tPos = t * (path.Points.Count - 1) - segPos;
+        OrientedPoint p = path.GetPos(segPos, tPos);
+        transform.position = p.position;
+        transform.rotation = p.rotation;
+    }
 }
