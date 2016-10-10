@@ -4,9 +4,8 @@ using System.Collections.Generic;
 
 public class SplineMaker : MonoBehaviour {
 
-    public GameObject pointPrefab;
-    public List<GameObject> points = new List<GameObject>();
-	// Use this for initialization
+    public GameObject 			pointPrefab;
+    public List<GameObject> 	points = new List<GameObject>();
     [ExecuteInEditMode()]
 	void Awake () {
         CurveImplementation script = GetComponent<CurveImplementation>();
@@ -24,9 +23,4 @@ public class SplineMaker : MonoBehaviour {
         script.enabled = true;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

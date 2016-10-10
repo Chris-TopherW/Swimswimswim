@@ -785,6 +785,26 @@ Prefab:
       propertyPath: audioManagerObject
       value: 
       objectReference: {fileID: 296258511}
+    - target: {fileID: 114000012612763892, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000011992752860, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000011992752860, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.7897059
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000011992752860, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.5068965
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 048800896bcc9814fab6f2bda3a9b123, type: 2}
   m_IsPrefabParent: 0
@@ -826,10 +846,6 @@ Prefab:
     - target: {fileID: 4000013590831804, guid: da1421822fefb44668a94b3446c406eb, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012566532710, guid: da1421822fefb44668a94b3446c406eb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da1421822fefb44668a94b3446c406eb, type: 2}
