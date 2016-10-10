@@ -22,7 +22,6 @@ public class Spawner : MonoBehaviour {
 		if ( spawningToggle ) {
             Vector3 spawnOffset = transform.rotation * Random.insideUnitCircle * 6;
             spawnPoint = gameObject.transform.position + spawnOffset;
-<<<<<<< HEAD
 			GameObject spawned;
 			if ( GameManager.gameState == "BossFight" ) {
 				spawned = ( GameObject )Instantiate ( obstacles [obstacles.Length - 1], spawnPoint, transform.rotation );
@@ -31,12 +30,6 @@ public class Spawner : MonoBehaviour {
 				spawned = ( GameObject )Instantiate ( obstacles [Random.Range ( 0, obstacles.Length - 1 )], spawnPoint, transform.rotation );
 			}
             if (spawned.GetComponent<FriendlyFishMovement>()){
-=======
-
-            GameObject spawned = (GameObject) Instantiate (obstacles [Random.Range(0,obstacles.Length)], spawnPoint, transform.rotation);
-            if (spawned.GetComponent<FriendlyFishMovement>())
-            {
->>>>>>> parent of a70ff34... game state logic
                 spawned.GetComponent<FriendlyFishMovement>().fishOffset = spawnOffset;
             }
 		}
