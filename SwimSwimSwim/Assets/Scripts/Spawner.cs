@@ -24,7 +24,18 @@ public class Spawner : MonoBehaviour {
             Vector3 spawnOffset = transform.rotation * Random.insideUnitCircle * 6;
             spawnPoint = gameObject.transform.position + spawnOffset;
 
-            GameObject spawned = (GameObject) Instantiate (obstacles [Random.Range(0,obstacles.Length)], spawnPoint, transform.rotation);
+			//Spawn boss for fight and stop spawning other objects
+			GameObject spawned;
+			if (GameManager.gameState == "BossFight") 
+			{
+				spawned = (GameObject)Instantiate (obstacles [obstacles.Length - 1], spawnPoint, transform.rotation);
+				spawningToggle = false;
+			} 
+			else 
+			{
+				spawned = (GameObject)Instantiate (obstacles [Random.Range (0, obstacles.Length - 1)], spawnPoint, transform.rotation);
+			}
+
             if (spawned.GetComponent<FriendlyFishMovement>())
             {
                 spawned.GetComponent<FriendlyFishMovement>().fishOffset = spawnOffset;
