@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 [RequireComponent(typeof(MeshFilter))]
 public class CurveImplementation : MonoBehaviour
@@ -67,6 +68,13 @@ public class CurveImplementation : MonoBehaviour
         };
     }
 
+    internal float GetWidth(int segPos, float tPos)
+    {
+        OrientedPoint left = GetWallPos(segPos, tPos, lWallPoints);
+        OrientedPoint right = GetWallPos(segPos, tPos, rWallPoints);
+        return Vector3.Distance(left.position, right.position) - 1.0f - (0.68f * 2.0f);
+    }
+
 
     /**
      * Method to get position based on spline segment (Points[segPos]-Points[segPos+1]) and 
@@ -104,24 +112,48 @@ public class CurveImplementation : MonoBehaviour
 
     }
 
-    public void Generate()
+    public OrientedPoint GetWallPos(int segPos, float t, List<Vector3> wallPoints)
+    {
+        Vector3 p0;
+        Vector3 p1;
+        Vector3 m0;
+        Vector3 m1;
+
+        p0 = wallPoints[segPos];
+        p1 = wallPoints[segPos + 1];
+
+        if (segPos == 0)
+        {
+            m0 = p1 - p0;
+        }
+        else
+        {
+            m0 = 0.5f * (p1 - wallPoints[segPos - 1]);
+        }
+
+        if (segPos < Points.Count - 2)
+        {
+            m1 = 0.5f * (wallPoints[(segPos + 2) % wallPoints.Count] - p0);
+        }
+        else
+        {
+            m1 = p1 - p0;
+        }
+
+        return CatmullRom.GetOrientedPoint(p0, p1, m0, m1, t);
+
+    }
+
+    public void GenerateWallPoints()
     {
         Vector3 p0, p1, m0, m1;
         float width1, width2;
-        int pointsToMake;
         //Debug.Log("This is a test " + Points[0]);
-        
-            pointsToMake = (CurveResolution) * (Points.Count - 1);
         lWallPoints.Clear();
         rWallPoints.Clear();
-        int startGen = GameManager.segmentPos - 2;
-        int endGen = GameManager.segmentPos + 8;
-        if (startGen < 0) startGen = 0;
-        if (endGen > Points.Count - 1) endGen = Points.Count - 1;
-        if (endGen < 0) endGen = 0;
 
         // First for loop goes through each individual control point and connects it to the next, so 0-1, 1-2, 2-3 and so on
-        for (int i = startGen; i < endGen; i++)
+        for (int i = 0; i < Points.Count-1; i++)
         {
             //if (Points[i] == null || Points[i + 1] == null || (i > 0 && Points[i - 1] == null) || (i < Points.Count - 2 && Points[i + 2] == null))
             //{
@@ -129,7 +161,7 @@ public class CurveImplementation : MonoBehaviour
             //}
             Debug.Log(GameManager.segmentPos);
             p0 = Points[i].transform.position;
-            p1 =  Points[i + 1].transform.position;
+            p1 = Points[i + 1].transform.position;
             width1 = Points[i].GetComponent<PointControl>().width;
             width2 = Points[i + 1].GetComponent<PointControl>().width;
 
@@ -140,7 +172,7 @@ public class CurveImplementation : MonoBehaviour
             // m0
             if (i == 0)
             {
-                m0 =  p1 - p0;
+                m0 = p1 - p0;
             }
             else
             {
@@ -174,15 +206,32 @@ public class CurveImplementation : MonoBehaviour
 
             lWallPoints.Add(p1 + leftOffset);
             rWallPoints.Add(p1 + rightOffset);
-            Debug.DrawLine(p1, p1 + leftOffset);
         }
+    }
+
+    public void Generate()
+    {
+        if (lWallPoints.Count == 0 || rWallPoints.Count == 0)
+        {
+            GenerateWallPoints();
+        }
+
+
+        int startGen = GameManager.segmentPos - 2;
+        int endGen = GameManager.segmentPos + 8;
+        if (startGen < 0) startGen = 0;
+        if (endGen > Points.Count) endGen = Points.Count;
+        if (endGen < 0) endGen = 0;
+
+        List<Vector3> pointsforLeftMesh = lWallPoints.GetRange(startGen, endGen - startGen);
+        List<Vector3> pointsforRightMesh = rWallPoints.GetRange(startGen, endGen - startGen);
 
         MeshFilter meshFilter = walls[0].GetComponent<MeshFilter>();
         MeshCollider meshCollider = walls[0].GetComponent<MeshCollider>();
         if (meshFilter.sharedMesh == null)
             meshFilter.sharedMesh = new Mesh();
         Mesh mesh = new Mesh();
-        CatmullRom.Extrude(mesh, shape, GetWallPath(lWallPoints));
+        CatmullRom.Extrude(mesh, shape, GetWallPath(pointsforLeftMesh));
         meshFilter.sharedMesh = mesh;
         meshCollider.sharedMesh = mesh;
 
@@ -192,12 +241,12 @@ public class CurveImplementation : MonoBehaviour
             meshFilter.sharedMesh = new Mesh();
         mesh = new Mesh();
 
-        CatmullRom.Extrude(mesh, shape, GetWallPath(rWallPoints));
+        CatmullRom.Extrude(mesh, shape, GetWallPath(pointsforRightMesh));
         meshFilter.sharedMesh = mesh;
         meshCollider.sharedMesh = mesh;
     }
 
-    public OrientedPoint[] GetWallPath (List<Vector3> pts)
+    public OrientedPoint[] GetWallPath(List<Vector3> pts)
     {
         OrientedPoint[] path = new OrientedPoint[0];
         for (int i = 0; i < pts.Count - 1; i++)
@@ -206,7 +255,7 @@ public class CurveImplementation : MonoBehaviour
 
             p0 = pts[i];
             p1 = pts[i + 1];
-            
+
             // m0
             if (i == 0)
             {

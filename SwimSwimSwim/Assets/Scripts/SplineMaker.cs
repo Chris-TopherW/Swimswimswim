@@ -12,12 +12,14 @@ public class SplineMaker : MonoBehaviour {
         CurveImplementation script = GetComponent<CurveImplementation>();
         script.enabled = false;
         points.Clear();
-        for (int i = 0; i < 100; i++)
+        float zPos = 0;
+        for (int i = 0; i < 2048; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(-300, 300), 0, i * 200);
+            Vector3 pos = new Vector3(Random.Range(-100, 100), 0, zPos);
             GameObject newPoint = (GameObject)Instantiate(pointPrefab, pos, Quaternion.identity);
-            newPoint.GetComponent<PointControl>().width = Random.Range(40, 180);
+            newPoint.GetComponent<PointControl>().width = Random.Range(20, 200);
             points.Add(newPoint);
+            zPos += Random.Range(150, 200);
         }
         script.enabled = true;
 
