@@ -3,19 +3,18 @@ using System.Collections;
 
 public class DestroySound : MonoBehaviour {
 
-	AudioSource audioSource;
+	AudioSource 		audioSource;
 
-	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad(this.gameObject);
+		DontDestroyOnLoad( this.gameObject );
 		audioSource = GetComponent<AudioSource> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
-		if (!audioSource.isPlaying)
-			Destroy (gameObject);
+		if ( !audioSource.isPlaying ) {
+			Destroy ( gameObject );
+		}
 
 	}
 }

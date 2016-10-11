@@ -159,7 +159,7 @@ public class CurveImplementation : MonoBehaviour
             //{
             //    return;
             //}
-            Debug.Log(GameManager.segmentPos);
+            //Debug.Log(GameManager.segmentPos);
             p0 = Points[i].transform.position;
             p1 = Points[i + 1].transform.position;
             width1 = Points[i].GetComponent<PointControl>().width;

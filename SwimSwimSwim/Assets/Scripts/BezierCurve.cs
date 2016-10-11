@@ -7,38 +7,31 @@ using System.Linq;
 using System.Collections.Generic;
 
 
-public class BezierCurve
-{
-    float[] sampledLengths;
-    Vector3[] points;
+public class BezierCurve {
+	
+    float[] 				sampledLengths;
+    private Vector3[] 		points;
 
-    public BezierCurve(Vector3[] points)
-    {
+    public BezierCurve( Vector3[] points ) {
         this.points = points;
-
         GenerateSamples();
     }
 
-    void GenerateSamples()
-    {
-        Vector3 prevPoint = points[0];
-        Vector3 pt;
-        float total = 0;
+    void GenerateSamples(){
+        Vector3 			prevPoint = points[0];
+        Vector3 			pt;
+        float 				total = 0;
+        List<float> 		samples = new List<float>( 10 ) { 0 };
+        float 				step = 1.0f / 10.0f;
 
-        List<float> samples = new List<float>(10) { 0 };
-        float step = 1.0f / 10.0f;
-        for (float f = step; f < 1.0f; f += step)
-        {
-            pt = GetPoint(f);
-            total += (pt - prevPoint).magnitude;
-            samples.Add(total);
-
+        for ( float f = step; f < 1.0f; f += step ) {
+            pt = GetPoint( f );
+            total += ( pt - prevPoint ).magnitude;
+            samples.Add( total );
             prevPoint = pt;
         }
-
-        pt = GetPoint(1);
-        samples.Add(total + (pt - prevPoint).magnitude);
-
+        pt = GetPoint( 1 );
+        samples.Add( total + ( pt - prevPoint ).magnitude );
         sampledLengths = samples.ToArray();
     }
 
@@ -48,100 +41,86 @@ public class BezierCurve
     /// <param name="t">Value between 0 and 1, indicating the time parameter</param>
     /// <param name="up">A normalized up vector</param>
     /// <returns></returns>
-    Vector3 GetNormal(float t, Vector3 up)
-    {
-        return CalculateNormal(GetTangent(t), up);
+    Vector3 GetNormal( float t, Vector3 up ){
+        return CalculateNormal( GetTangent( t ), up );
     }
 
-    Vector3 CalculateNormal(Vector3 tangent, Vector3 up)
-    {
-        Vector3 binormal = Vector3.Cross(up, tangent);
-        return Vector3.Cross(tangent, binormal);
+    Vector3 CalculateNormal( Vector3 tangent, Vector3 up ){
+        Vector3 binormal = Vector3.Cross( up, tangent );
+        return Vector3.Cross( tangent, binormal );
     }
 
-    Vector3 CalculateTangent(float t, float t2, float it2)
-    {
+    Vector3 CalculateTangent( float t, float t2, float it2 ){
         return (points[0] * -it2 +
-            points[1] * (t * (3 * t - 4) + 1) +
-            points[2] * (-3 * t2 + t * 2) +
-            points[3] * t2).normalized;
+            points[1] * ( t * ( 3 * t - 4 ) + 1 ) +
+            points[2] * ( -3 * t2 + t * 2 ) +
+            points[3] * t2 ).normalized;
     }
 
-    Vector3 CalculatePoint(float t, float t2, float t3, float it, float it2, float it3)
-    {
-        return points[0] * (it3) +
-            points[1] * (3 * it2 * t) +
-            points[2] * (3 * it * t2) +
+    Vector3 CalculatePoint( float t, float t2, float t3, float it, float it2, float it3 ) {
+        return points[0] * ( it3 ) +
+            points[1] * ( 3 * it2 * t ) +
+            points[2] * ( 3 * it * t2 ) +
             points[3] * t3;
     }
 
-    public Vector3 GetTangent(float t)
-    {
+    public Vector3 GetTangent( float t ){
         float t2 = t * t;
-        float it = (1 - t);
+        float it = ( 1 - t );
         float it2 = it * it;
-
-        return CalculateTangent(t, t2, it2);
+        return CalculateTangent( t, t2, it2 );
     }
 
-    public Vector3 GetPoint(float t, out Vector3 tangent, out Vector3 normal, out Quaternion orientation)
-    {
-        float t2 = t * t;
-        float t3 = t2 * t;
-        float it = (1 - t);
-        float it2 = it * it;
-        float it3 = it * it * it;
+    public Vector3 GetPoint( float t, out Vector3 tangent, out Vector3 normal, out Quaternion orientation ) {
+        float 			t2 = t * t;
+        float 			t3 = t2 * t;
+        float 			it = ( 1 - t );
+        float 			it2 = it * it;
+        float 			it3 = it * it * it;
 
-        tangent = CalculateTangent(t, t2, it2);
-        normal = CalculateNormal(tangent, Vector3.up);
-        orientation = Quaternion.LookRotation(tangent, normal);
-
-        return CalculatePoint(t, t2, t3, it, it2, it3);
+        tangent = CalculateTangent( t, t2, it2 );
+        normal = CalculateNormal( tangent, Vector3.up );
+        orientation = Quaternion.LookRotation( tangent, normal );
+        return CalculatePoint( t, t2, t3, it, it2, it3 );
     }
 
-    public Vector3 GetPoint(float t, out Vector3 tangent, out Vector3 normal)
-    {
-        float t2 = t * t;
-        float t3 = t2 * t;
-        float it = (1 - t);
-        float it2 = it * it;
-        float it3 = it * it * it;
+    public Vector3 GetPoint( float t, out Vector3 tangent, out Vector3 normal ) {
+        float 			t2 = t * t;
+        float 			t3 = t2 * t;
+        float 			it = ( 1 - t );
+        float 			it2 = it * it;
+        float 			it3 = it * it * it;
 
-        tangent = CalculateTangent(t, t2, it2);
-        normal = CalculateNormal(tangent, Vector3.up);
-
-        return CalculatePoint(t, t2, t3, it, it2, it3);
+        tangent = CalculateTangent( t, t2, it2 );
+        normal = CalculateNormal( tangent, Vector3.up );
+        return CalculatePoint( t, t2, t3, it, it2, it3 );
     }
 
-    public Vector3 GetPoint(float t, out Vector3 tangent)
-    {
-        float t2 = t * t;
-        float t3 = t2 * t;
-        float it = (1 - t);
-        float it2 = it * it;
-        float it3 = it * it * it;
+    public Vector3 GetPoint( float t, out Vector3 tangent ) {
+        float 			t2 = t * t;
+        float 			t3 = t2 * t;
+        float 			it = ( 1 - t );
+        float 			it2 = it * it;
+        float 			it3 = it * it * it;
 
-        tangent = CalculateTangent(t, t2, it2);
-        return CalculatePoint(t, t2, t3, it, it2, it3);
+        tangent = CalculateTangent( t, t2, it2 );
+        return CalculatePoint( t, t2, t3, it, it2, it3 );
     }
 
-    public Vector3 GetPoint(float t)
-    {
-        float t2 = t * t;
-        float t3 = t2 * t;
-        float it = (1 - t);
-        float it2 = it * it;
-        float it3 = it * it * it;
+    public Vector3 GetPoint( float t ) {
+        float 			t2 = t * t;
+        float 			t3 = t2 * t;
+        float 			it = ( 1 - t );
+        float 			it2 = it * it;
+        float 			it3 = it * it * it;
 
-        return CalculatePoint(t, t2, t3, it, it2, it3);
+        return CalculatePoint( t, t2, t3, it, it2, it3 );
     }
 
-    public Quaternion GetOrientation(float t)
-    {
+    public Quaternion GetOrientation( float t ) {
         Vector3 tangent, normal;
-        GetPoint(t, out tangent, out normal);
-
-        return Quaternion.LookRotation(tangent, normal);
+        GetPoint( t, out tangent, out normal );
+        return Quaternion.LookRotation( tangent, normal );
     }
 
     // A slightly faster method
@@ -168,81 +147,67 @@ public class BezierCurve
     //    return Vector3.Lerp(d, e, t);
     //}
 
-    public OrientedPoint GetOrientedPoint(float t)
-    {
-        Vector3 tangent, normal;
-        Quaternion orientation;
+    public OrientedPoint GetOrientedPoint( float t ) {
+        Vector3 		tangent, normal;
+        Quaternion 		orientation;
+        Vector3 		point = GetPoint( t, out tangent, out normal, out orientation );
 
-        Vector3 point = GetPoint(t, out tangent, out normal, out orientation);
-
-        return new OrientedPoint(point, orientation, sampledLengths.Sample(t));
+        return new OrientedPoint( point, orientation, sampledLengths.Sample( t ) );
     }
 
-    List<int> meshLines = new List<int>();
-    public Mesh ToMesh(Vector2[] verts, Vector2[] normals, float[] uCoords)
-    {
+    List<int> 			meshLines = new List<int>();
+
+    public Mesh ToMesh( Vector2[] verts, Vector2[] normals, float[] uCoords ) {
         Mesh mesh = new Mesh();
-
         meshLines.Clear();
-        for (int i = 0; i < verts.Length - 1; i++)
-        {
-            meshLines.Add(i);
-            meshLines.Add(i + 1);
+        for ( int i = 0; i < verts.Length - 1; i++ ) {
+            meshLines.Add( i );
+            meshLines.Add( i + 1 );
         }
-
         return mesh;
     }
 
-    public IEnumerable<OrientedPoint> GeneratePath(float subDivisions)
-    {
-        float step = 1.0f / subDivisions;
+    public IEnumerable<OrientedPoint> GeneratePath( float subDivisions ){
+        float 			step = 1.0f / subDivisions;
 
-        for (float f = 0; f < 1; f += step)
-        {
+        for ( float f = 0; f < 1; f += step ){
             yield return GetOrientedPoint(f);
         }
-
         yield return GetOrientedPoint(1);
     }
 
-    public void Extrude(Mesh mesh, ExtrudeShape shape, OrientedPoint[] path)
-    {
-        int vertsInShape = shape.verts.Length;
-        int segments = path.Length - 1;
-        int edgeLoops = path.Length;
-        int vertCount = vertsInShape * edgeLoops;
-        int triCount = shape.Lines.Length * segments * 2;
-        int triIndexCount = triCount * 3;
-
-        int[] triangleIndices = new int[triIndexCount];
-        Vector3[] vertices = new Vector3[vertCount];
-        Vector3[] normals = new Vector3[vertCount];
-        Vector2[] uvs = new Vector2[vertCount];
+    public void Extrude( Mesh mesh, ExtrudeShape shape, OrientedPoint[] path ) {
+        int 			vertsInShape = shape.verts.Length;
+        int 			segments = path.Length - 1;
+        int 			edgeLoops = path.Length;
+        int 			vertCount = vertsInShape * edgeLoops;
+        int 			triCount = shape.Lines.Length * segments * 2;
+        int 			triIndexCount = triCount * 3;
+        int[] 			triangleIndices = new int[triIndexCount];
+        Vector3[] 		vertices = new Vector3[vertCount];
+        Vector3[] 		normals = new Vector3[vertCount];
+        Vector2[] 		uvs = new Vector2[vertCount];
 
         // Generate all of the vertices and normals
-        for (int i = 0; i < path.Length; i++)
-        {
+        for ( int i = 0; i < path.Length; i++ ) {
             int offset = i * vertsInShape;
-            for (int j = 0; j < vertsInShape; j++)
-            {
+            for (int j = 0; j < vertsInShape; j++){
                 int id = offset + j;
-                vertices[id] = path[i].LocalToWorld(shape.verts[j]);
-                normals[id] = path[i].LocalToWorldDirection(shape.normals[j]);
-                uvs[id] = new Vector2(shape.uCoords[j], path[i].vCoordinate);
+                vertices[id] = path[i].LocalToWorld( shape.verts[j] );
+                normals[id] = path[i].LocalToWorldDirection( shape.normals[j] );
+                uvs[id] = new Vector2( shape.uCoords[j], path[i].vCoordinate );
             }
         }
 
         // Generate all of the triangles
         int ti = 0;
-        for (int i = 0; i < segments; i++)
-        {
+        for ( int i = 0; i < segments; i++ ) {
             int offset = i * vertsInShape;
-            for (int l = 0; l < shape.Lines.Length; l += 2)
-            {
-                int a = offset + shape.Lines[l];
-                int b = offset + shape.Lines[l] + vertsInShape;
-                int c = offset + shape.Lines[l + 1] + vertsInShape;
-                int d = offset + shape.Lines[l + 1];
+            for ( int l = 0; l < shape.Lines.Length; l += 2 ) {
+                int 	a = offset + shape.Lines[l];
+                int 	b = offset + shape.Lines[l] + vertsInShape;
+                int 	c = offset + shape.Lines[l + 1] + vertsInShape;
+                int 	d = offset + shape.Lines[l + 1];
                 triangleIndices[ti++] = a;
                 triangleIndices[ti++] = b;
                 triangleIndices[ti++] = c;
@@ -251,7 +216,6 @@ public class BezierCurve
                 triangleIndices[ti++] = a;
             }
         }
-
         mesh.Clear();
         mesh.vertices = vertices;
         mesh.normals = normals;
@@ -260,26 +224,19 @@ public class BezierCurve
     }
 }
 
-public static class FloatArrayExtensions
-{
-    public static float Sample(this float[] fArr, float t)
-    {
+public static class FloatArrayExtensions {
+    public static float Sample( this float[] fArr, float t ) {
         int count = fArr.Length;
-        if (count == 0)
-        {
+        if ( count == 0 ) {
             Debug.LogError("Unable to sample array - it has no elements.");
             return 0;
         }
-
-        if (count == 1) return fArr[0];
-
+        if ( count == 1 ) return fArr[0];
         float f = t * (count - 1);
-        int idLower = Mathf.FloorToInt(f);
-        int idUpper = Mathf.FloorToInt(f + 1);
-
-        if (idUpper >= count) return fArr[count - 1];
-        if (idLower < 0) return fArr[0];
-
-        return Mathf.Lerp(fArr[idLower], fArr[idUpper], f - idLower);
+        int idLower = Mathf.FloorToInt( f );
+        int idUpper = Mathf.FloorToInt( f + 1 );
+        if ( idUpper >= count ) return fArr[count - 1];
+        if ( idLower < 0 ) return fArr[0];
+        return Mathf.Lerp( fArr[idLower], fArr[idUpper], f - idLower );
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DisplayPollution : MonoBehaviour {
 
-	private Text myText;
+	private Text		 myText;
 
 	// Use this for initialization
 	void Start () {

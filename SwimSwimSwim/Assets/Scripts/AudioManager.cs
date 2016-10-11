@@ -16,14 +16,14 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 		pulse.Period = 60.0f / 81.0f;
 	}
 
-	void Update(){
+	void Update() {
 		if ( Time.time > 2.0f && !pulse.IsPulsing ) {
-			pulse.StartPulsing (0);
+			pulse.StartPulsing ( 0 );
 		}
-		setLevels.CreateFade ("UIVolume", -80.0f, 15.0f);
+		setLevels.CreateFade ( "UIVolume", -80.0f, 15.0f );
 	}
 
-	public void OnEnable(){
+	public void OnEnable() {
 		pulse.SubscribeToPulse ( this );
 		pulsedPatternLeft = patternModuleObjectLeft.GetComponent<PulsedPatternModule> ();
 		pulsedPatternRight = patternModuleObjectRight.GetComponent<PulsedPatternModule> ();
@@ -34,12 +34,10 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 		pulse.UnsubscribeToPulse ( this );
 	}
 
-	public void OnPulse( IGATPulseInfo pulseInfo ){
-		//	print (pulseInfo.StepIndex + "Pulse!");
+	public void OnPulse( IGATPulseInfo pulseInfo ) {
 		if ( loopNumber < 10 ) {
 			if ( pulseInfo.StepIndex == 6 ) {
-
-				switch (loopNumber) {
+				switch ( loopNumber ) {
 				case 0:
 					changeLoop ( "DroneTransition" );
 					break;
@@ -80,28 +78,28 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 		}
 	}
 
-	public void changeLoop ( string fname ){
+	public void changeLoop ( string fname ) {
 		pulsedPatternLeft.AddSample ( fname + "_0" );
 		pulsedPatternRight.AddSample ( fname + "_1" );
 		removeSample (0);
 	}
 
-	public void removeSample( int index ){
+	public void removeSample( int index ) {
 		pulsedPatternLeft.RemoveSampleAt ( index );
 		pulsedPatternRight.RemoveSampleAt ( index );
 	}
 
-	public void PulseStepsDidChange( bool[] newSteps ){
+	public void PulseStepsDidChange( bool[] newSteps ) {
 	}
 		
-	public void TurnOnEffects(){
+	public void TurnOnEffects() {
 		setLevels.CreateFade( "CrusherMix", 0.4f, 1.0f );
 		setLevels.CreateFade( "SmasherMix", 0.1f, 1.0f );
 		setLevels.CreateFade ( "DecimateMix", 0.1f, 1.0f );
 		setLevels.CreateFade( "LowPassFreq", 3000.0f, 1.0f );
 	}
 
-	public void TurnOffEffects(){
+	public void TurnOffEffects() {
 		setLevels.CreateFade( "CrusherMix", 1.0f, 2.0f );
 		setLevels.CreateFade( "SmasherMix", 1.0f, 1.0f );
 		setLevels.CreateFade ( "DecimateMix", 1.0f, 2.0f );

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     public static int 				segmentPos = 0;
 	public static string 			gameState = "Normal";
     private CurveImplementation 	meshGen;
-	private float 					startTime, 
+	private float					startTime;
 	private float 					timeSinceSceneStart;
 
 	void Start () {
