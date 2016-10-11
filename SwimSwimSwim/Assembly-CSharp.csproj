@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DisplayLaserCharge.cs" />
      <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\DemoSceneMain.cs" />
      <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\EnvelopeOffsetSlider.cs" />
      <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\LightPulser.cs" />

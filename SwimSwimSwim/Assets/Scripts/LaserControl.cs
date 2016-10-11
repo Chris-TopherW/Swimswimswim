@@ -3,35 +3,43 @@ using System.Collections;
 
 public class LaserControl : MonoBehaviour {
 
-    public Camera cam;
-
+    public Camera 				cam;
+	public bool					inverse;
+	public int 					laserChargeMax, laserChargeThreshold;
+	public static int		 	laserCharge;
 	private LineRenderer		line;
 	private AudioSource 		audioSource;
+	private Material 			material;
 	private float 				currentStep;
 	private float 				increment = 0.00392156862f;
     private float 				increment2 = 0.00392156862f * 5;
-    public bool					inverse;
     private bool 				damaging;
-    private Material 			material;
+	private bool 				laserIsFiring = false;
 
 	void Start () {
 		line = GetComponent<LineRenderer> ();
 		line.enabled = false;
 		currentStep = 0;
+		laserCharge = laserChargeMax;
 		audioSource = GetComponent<AudioSource> ();
         material = GetComponent<Renderer>().material;
 	}
 
 	void Update () {
-		if ( Input.GetButtonDown ( "Fire1" ) ){
+		if ( Input.GetButtonDown ( "Fire1" ) && laserCharge > laserChargeThreshold && !laserIsFiring ) {
 			StopCoroutine ( "FireLaser" );
 			StartCoroutine ( "FireLaser" );
+		}
+		if ( !laserIsFiring && laserCharge < laserChargeMax ) {
+			laserCharge += 1;
 		}
 	}
 
 	IEnumerator FireLaser(){
+		laserIsFiring = true;
 		line.enabled = true;
-		while ( Input.GetButton ( "Fire1" ) ) {
+		while ( Input.GetButton ( "Fire1" ) && laserCharge > 0 ) {
+			laserCharge -= 1;
 			audioSource.volume = 0.05f;
             RaycastHit vHit = new RaycastHit();
             Vector3 InverseMouse = new Vector3( Screen.width -  Input.mousePosition.x, Input.mousePosition.y, 0 );
@@ -45,7 +53,7 @@ public class LaserControl : MonoBehaviour {
             if ( Physics.Raycast( vRay, out vHit, 1000 ) ){
                 line.SetPosition( 1, vHit.point );
                 Ray dolphinRay = new Ray( transform.position, ( vHit.point - transform.position ) );
-                if ( Physics.Raycast( dolphinRay, out vHit, 1000 ) && vHit.transform.gameObject.tag == "Destroyable" ){
+                if ( Physics.Raycast( dolphinRay, out vHit, 1000 ) && vHit.transform.gameObject.tag == "Destroyable" ) {
                     damaging = true;
                     Color finalColor = Color.white * Mathf.LinearToGammaSpace( 50.0f );
                     material.SetColor( "_EmissionColor", finalColor );
@@ -67,6 +75,7 @@ public class LaserControl : MonoBehaviour {
 		}
 		line.enabled = false;
 		audioSource.volume = 0.0f;
+		laserIsFiring = false;
 	}
 
 	void OnAudioFilterRead( float[] data, int channels ){

@@ -621,7 +621,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.03103447, g: 0.7007606, b: 1, a: 1}
+  m_BackGroundColor: {r: 1, g: 0.7897059, b: 0.5068965, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -909,6 +909,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011992752860}
   inverse: 0
+  laserChargeMax: 400
+  laserChargeThreshold: 100
 --- !u!114 &114000011425054100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -933,8 +935,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   dolphinSpeed: 10
+  pathSpeed: 10
   audioManagerObject: {fileID: 0}
-  areaWidth: 36
 --- !u!114 &114000012400924950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,7 +968,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011687910560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5ec6153a1d55438228df10fe66844, type: 3}
   m_Name: 
@@ -992,6 +994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011992752860}
   inverse: 0
+  laserChargeMax: 400
+  laserChargeThreshold: 100
 --- !u!120 &120000010575547940
 LineRenderer:
   m_ObjectHideFlags: 1
