@@ -4,15 +4,20 @@ using UnityEngine.UI;
 
 public class DisplayLaserCharge : MonoBehaviour {
 
-	private Text		 myText;
+	private Text		myText;
+	private int 		pollutionAsInt;
 
-	// Use this for initialization
 	void Start () {
 		myText = GetComponent<Text> ();
 	}
-
-	// Update is called once per frame
+		
 	void Update () {
-		myText.text = "Laser charge = " + LaserControl.laserCharge.ToString();
+		pollutionAsInt = ( int )LaserControl.laserCharge;
+		myText.text = "Laser charge = " + pollutionAsInt.ToString();
+		if (LaserControl.laserCharge < LaserControl.laserChargeThreshold) {
+			myText.color = Color.red;
+		} else {
+			myText.color = Color.black;
+		}
 	}
 }

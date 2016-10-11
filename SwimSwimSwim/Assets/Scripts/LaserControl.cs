@@ -5,8 +5,9 @@ public class LaserControl : MonoBehaviour {
 
     public Camera 				cam;
 	public bool					inverse;
-	public int 					laserChargeMax, laserChargeThreshold;
-	public static int		 	laserCharge;
+	public static int 			laserChargeMax = 150;
+	public static int			laserChargeThreshold = 50;
+	public static float		 	laserCharge;
 	private LineRenderer		line;
 	private AudioSource 		audioSource;
 	private Material 			material;
@@ -31,7 +32,7 @@ public class LaserControl : MonoBehaviour {
 			StartCoroutine ( "FireLaser" );
 		}
 		if ( !laserIsFiring && laserCharge < laserChargeMax ) {
-			laserCharge += 1;
+			laserCharge += 10.0f * Time.deltaTime;
 		}
 	}
 
@@ -39,7 +40,7 @@ public class LaserControl : MonoBehaviour {
 		laserIsFiring = true;
 		line.enabled = true;
 		while ( Input.GetButton ( "Fire1" ) && laserCharge > 0 ) {
-			laserCharge -= 1;
+			laserCharge -= 10.0f * Time.deltaTime;
 			audioSource.volume = 0.05f;
             RaycastHit vHit = new RaycastHit();
             Vector3 InverseMouse = new Vector3( Screen.width -  Input.mousePosition.x, Input.mousePosition.y, 0 );
