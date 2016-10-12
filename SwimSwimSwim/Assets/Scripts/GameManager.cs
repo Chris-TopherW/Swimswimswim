@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public static float 			splinePos = 0;
     public static int 				segmentPos = 0;
 	public static string 			gameState = "Normal";
-	public float 					timeUntilBossFight;
+	public float 					timeUntilBossFight, lengthOfBossFight;
 	public GameObject 				audioManagerObject;
     private CurveImplementation 	meshGen;
 	private float					startTime;
@@ -28,9 +28,13 @@ public class GameManager : MonoBehaviour {
 
 	void Update () {
 		timeSinceSceneStart = Time.time - startTime;
-		if ( timeSinceSceneStart >= timeUntilBossFight && gameState == "Normal" ) {
+		if ( timeSinceSceneStart >= timeUntilBossFight && timeSinceSceneStart <= ( timeUntilBossFight + lengthOfBossFight ) && gameState == "Normal" ) {
 			gameState = "BossFight";
 			Debug.Log ( "Boss fight!" );
+		}
+		if ( timeSinceSceneStart >= ( timeUntilBossFight + lengthOfBossFight ) && gameState == "BossFight" ) {
+			gameState = "Normal";
+			Debug.Log ( "Back to Normal" );
 		}
         if ( splinePos >= 1 ){
             splinePos = 0;

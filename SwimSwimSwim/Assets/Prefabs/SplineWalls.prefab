@@ -265,7 +265,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Points: []
   CurveResolution: 20
-  inverseX: 0
   walls:
   - {fileID: 1000012061033614}
   - {fileID: 1000012170147936}

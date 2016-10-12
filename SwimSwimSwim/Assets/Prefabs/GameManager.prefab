@@ -51,3 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2121db463d343b3ab1708b767aaab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPollutionLevel: 1000
+  timeUntilBossFight: 100
+  lengthOfBossFight: 100
+  audioManagerObject: {fileID: 0}

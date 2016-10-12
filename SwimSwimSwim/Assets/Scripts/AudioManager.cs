@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 	private PulsedPatternModule 	pulsedPatternLeft;
 	private PulsedPatternModule 	pulsedPatternRight;
 	private SetLevels 				setLevels;
+	private int 					bossFightLoopIterator = 0;
+	private int 					normalLoopIterator = 0;
 
 	void Start() {
 		pulse.Period = 60.0f / 81.0f;
@@ -20,8 +22,8 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 	void Update() {
 		if ( Time.time > 2.0f && !pulse.IsPulsing ) {
 			pulse.StartPulsing ( 0 );
+			setLevels.CreateFade ( "UIVolume", -80.0f, 13.0f );
 		}
-		setLevels.CreateFade ( "UIVolume", -80.0f, 15.0f );
 	}
 
 	public void OnEnable() {
@@ -34,9 +36,6 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 	public void OnDisable(){
 		pulse.UnsubscribeToPulse ( this );
 	}
-
-	int bossFightLoopIterator = 0;
-	int normalLoopIterator = 0;
 
 	public void OnPulse( IGATPulseInfo pulseInfo ) {
 		//BPM changes
@@ -59,83 +58,11 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 			removeSample (0);
 			addSample ( "FastVapeTransition" );
 		}
-		//boss fight music sequence
 		if( pulseInfo.StepIndex == 6 && musicState == "FastVape" ) {
-			switch ( bossFightLoopIterator ) {
-			case 0:
-				removeSample(0);
-				addSample( "FastVapeA1" );
-				break;
-			case 1:
-				removeSample(0);
-				addSample( "FastVapeA2" );
-				break;
-				default:
-				break;
-			}
-			bossFightLoopIterator ++;
-			if( bossFightLoopIterator == 2 ) {
-				bossFightLoopIterator = 0;
-			}
+			PlayBossFight();
 		}
-		//normal music sequence
 		if( pulseInfo.StepIndex == 6 && musicState == "VaporVase" ) {
-			switch ( normalLoopIterator ) {
-			case 0:
-				removeSample(0);
-				addSample( "VaporVaseA" );
-				break;
-			case 1:
-				removeSample(0);
-				addSample( "VaporVaseA" );
-				break;
-			case 2:
-				removeSample(0);
-				addSample( "VaporVaseAMelody1" );
-				break;
-			case 3:
-				removeSample(0);
-				addSample( "VaporVaseAMelody2" );
-				break;
-			case 4:
-				removeSample(0);
-				addSample( "VaporVaseAMelody1" );
-				break;
-			case 5:
-				removeSample(0);
-				addSample( "VaporVaseAMelody2" );
-				break;
-			case 6:
-				removeSample(0);
-				addSample( "VaporVaseA" );
-				break;
-			case 7:
-				removeSample(0);
-				addSample( "VaporVaseA" );
-				break;
-			case 8:
-				removeSample(0);
-				addSample( "VaporVaseBridge1" );
-				break;
-			case 9:
-				removeSample(0);
-				addSample( "VaporVaseBridge2" );
-				break;
-			case 10:
-				removeSample(0);
-				addSample( "VaporVaseBridge1" );
-				break;
-			case 11:
-				removeSample(0);
-				addSample( "VaporVaseBridge2" );
-				break;
-			default:
-				break;
-			}
-			normalLoopIterator ++;
-			if( normalLoopIterator == 12 ) {
-				normalLoopIterator = 0;
-			}
+			PlayVaporVase();
 		}
 	}
 
@@ -181,5 +108,85 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 
 	public void EndOfGameAudio(){
 		setLevels.CreateFade ("Smasher", 1250.0f, 15.0f);
+	}
+
+	public void PlayVaporVase() {
+		switch ( normalLoopIterator ) {
+		case 0:
+			removeSample(0);
+			addSample( "VaporVaseA" );
+			break;
+		case 1:
+			removeSample(0);
+			addSample( "VaporVaseA" );
+			break;
+		case 2:
+			removeSample(0);
+			addSample( "VaporVaseAMelody1" );
+			break;
+		case 3:
+			removeSample(0);
+			addSample( "VaporVaseAMelody2" );
+			break;
+		case 4:
+			removeSample(0);
+			addSample( "VaporVaseAMelody1" );
+			break;
+		case 5:
+			removeSample(0);
+			addSample( "VaporVaseAMelody2" );
+			break;
+		case 6:
+			removeSample(0);
+			addSample( "VaporVaseA" );
+			break;
+		case 7:
+			removeSample(0);
+			addSample( "VaporVaseA" );
+			break;
+		case 8:
+			removeSample(0);
+			addSample( "VaporVaseBridge1" );
+			break;
+		case 9:
+			removeSample(0);
+			addSample( "VaporVaseBridge2" );
+			break;
+		case 10:
+			removeSample(0);
+			addSample( "VaporVaseBridge1" );
+			break;
+		case 11:
+			removeSample(0);
+			addSample( "VaporVaseBridge2" );
+			break;
+		default:
+			print("Error, VaporVase loop " + normalLoopIterator + " does not exist");
+			break;
+		}
+		normalLoopIterator ++;
+		if( normalLoopIterator == 12 ) {
+			normalLoopIterator = 0;
+		}
+	}
+
+	public void PlayBossFight() {
+		switch ( bossFightLoopIterator ) {
+		case 0:
+			removeSample(0);
+			addSample( "FastVapeA1" );
+			break;
+		case 1:
+			removeSample(0);
+			addSample( "FastVapeA2" );
+			break;
+		default:
+			print("Error, FastVape loop " + bossFightLoopIterator + " does not exist");
+			break;
+		}
+		bossFightLoopIterator ++;
+		if( bossFightLoopIterator == 2 ) {
+			bossFightLoopIterator = 0;
+		}
 	}
 }

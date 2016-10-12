@@ -958,7 +958,7 @@ MonoBehaviour:
   startDelay: 1
   randomWidth: 10
   randomHeight: 5
-  spawningToggle: 1
+  spawningToggle: 0
 --- !u!114 &114000012612763892
 MonoBehaviour:
   m_ObjectHideFlags: 1
