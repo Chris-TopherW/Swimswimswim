@@ -392,7 +392,7 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
   _samples:
-  - _sampleName: VaporVaseA_0
+  - _sampleName: DroneTransition_0
     _pitch: 1
     _semiTones: 0
     _gain: 1
@@ -448,7 +448,7 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
   _samples:
-  - _sampleName: VaporVaseA_1
+  - _sampleName: DroneTransition_1
     _pitch: 1
     _semiTones: 0
     _gain: 1

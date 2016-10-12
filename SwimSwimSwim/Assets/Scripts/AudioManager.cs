@@ -35,15 +35,107 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 		pulse.UnsubscribeToPulse ( this );
 	}
 
+	int bossFightLoopIterator = 0;
+	int normalLoopIterator = 0;
+
 	public void OnPulse( IGATPulseInfo pulseInfo ) {
-		if (pulseInfo.StepIndex == 0 && pulsedPatternLeft.Samples [0].SampleName == "VaporVaseTransition_0") {
+		//BPM changes
+		if ( pulseInfo.StepIndex == 0 && pulsedPatternLeft.Samples [ 0 ].SampleName == "VaporVaseTransition_0" ) {
 			pulse.Period = 60.0f / 76.0f;
 			musicState = "FastVape";
+			bossFightLoopIterator = 0;
 		}
-		if ( GameManager.gameState == "BossFight" && pulsedPatternLeft.Samples[ 0 ].SampleName == "VaporVaseA_0" ) {
-			addSample ("VaporVaseTransition");
-			addSample ("FastVapeA1");
+		if ( pulseInfo.StepIndex == 0 && pulsedPatternLeft.Samples [ 0 ].SampleName == "FastVapeTransition_0" ) {
+			pulse.Period = 60.0f / 81.0f;
+			musicState = "VaporVase";
+			normalLoopIterator = 0;
+		}
+		//transition sections
+		if ( GameManager.gameState == "BossFight" && musicState == "VaporVase" ) {
 			removeSample (0);
+			addSample ( "VaporVaseTransition" );
+		}
+		if ( GameManager.gameState == "Normal" && musicState == "FastVape" ) {
+			removeSample (0);
+			addSample ( "FastVapeTransition" );
+		}
+		//boss fight music sequence
+		if( pulseInfo.StepIndex == 6 && musicState == "FastVape" ) {
+			switch ( bossFightLoopIterator ) {
+			case 0:
+				removeSample(0);
+				addSample( "FastVapeA1" );
+				break;
+			case 1:
+				removeSample(0);
+				addSample( "FastVapeA2" );
+				break;
+				default:
+				break;
+			}
+			bossFightLoopIterator ++;
+			if( bossFightLoopIterator == 2 ) {
+				bossFightLoopIterator = 0;
+			}
+		}
+		//normal music sequence
+		if( pulseInfo.StepIndex == 6 && musicState == "VaporVase" ) {
+			switch ( normalLoopIterator ) {
+			case 0:
+				removeSample(0);
+				addSample( "VaporVaseA" );
+				break;
+			case 1:
+				removeSample(0);
+				addSample( "VaporVaseA" );
+				break;
+			case 2:
+				removeSample(0);
+				addSample( "VaporVaseAMelody1" );
+				break;
+			case 3:
+				removeSample(0);
+				addSample( "VaporVaseAMelody2" );
+				break;
+			case 4:
+				removeSample(0);
+				addSample( "VaporVaseAMelody1" );
+				break;
+			case 5:
+				removeSample(0);
+				addSample( "VaporVaseAMelody2" );
+				break;
+			case 6:
+				removeSample(0);
+				addSample( "VaporVaseA" );
+				break;
+			case 7:
+				removeSample(0);
+				addSample( "VaporVaseA" );
+				break;
+			case 8:
+				removeSample(0);
+				addSample( "VaporVaseBridge1" );
+				break;
+			case 9:
+				removeSample(0);
+				addSample( "VaporVaseBridge2" );
+				break;
+			case 10:
+				removeSample(0);
+				addSample( "VaporVaseBridge1" );
+				break;
+			case 11:
+				removeSample(0);
+				addSample( "VaporVaseBridge2" );
+				break;
+			default:
+				break;
+			}
+			normalLoopIterator ++;
+			if( normalLoopIterator == 12 ) {
+				normalLoopIterator = 0;
+			}
 		}
 	}
 

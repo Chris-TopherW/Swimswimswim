@@ -502,6 +502,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000013410917518, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014202646546, guid: 294fe16db2ac0fe41a2702d65acdf8f6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -534,7 +544,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+    - target: {fileID: 114000014228690134, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
         type: 2}
       propertyPath: _player
       value: 
@@ -544,11 +554,41 @@ Prefab:
       propertyPath: _player
       value: 
       objectReference: {fileID: 2067384298}
-    - target: {fileID: 114000014228690134, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
         type: 2}
       propertyPath: _player
       value: 
       objectReference: {fileID: 2067384298}
+    - target: {fileID: 114000013410917518, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._sampleName
+      value: VaporVaseA_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013410917518, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013410917518, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._gain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._sampleName
+      value: VaporVaseA_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011867689980, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
+        type: 2}
+      propertyPath: _samples.Array.data[0]._gain
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 294fe16db2ac0fe41a2702d65acdf8f6, type: 2}
   m_IsPrefabParent: 0
@@ -915,7 +955,7 @@ Prefab:
     - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
         type: 2}
       propertyPath: timeUntilBossFight
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
         type: 2}
