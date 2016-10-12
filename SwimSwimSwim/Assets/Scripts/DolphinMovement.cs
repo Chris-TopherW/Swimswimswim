@@ -6,8 +6,10 @@ public class DolphinMovement : MonoBehaviour {
 
     public CurveImplementation 	path;
     public float 				dolphinSpeed;
-    public float 				pathSpeed = 10;
+    public float 				defaultPathSpeed = 10;
+	public float 				sprintSpeed;
 	public GameObject 			audioManagerObject;
+	private float 				pathSpeed;
     private Rigidbody 			body;
 	private Vector3 			dolphinPosition;
 	//private AudioManager		audioManager;
@@ -24,11 +26,17 @@ public class DolphinMovement : MonoBehaviour {
         rightWallCollider = GameObject.Find("RightWall").GetComponent<MeshCollider>();
         //audioManager = audioManagerObject.GetComponent<AudioManager> ();
         body = GetComponent<Rigidbody>();
+		pathSpeed = defaultPathSpeed;
     }
 
 	void Update () 
 	{
         float distanceToMove = pathSpeed * Time.deltaTime;
+		if (Input.GetKey (KeyCode.LeftShift)) {
+			pathSpeed = sprintSpeed;
+		} else{
+			pathSpeed = defaultPathSpeed;
+		}
         int segPos = GameManager.segmentPos;
         float tPos = GameManager.splinePos;
         OrientedPoint ptToCheck = path.GetPos(segPos, tPos);

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public static float 			splinePos = 0;
     public static int 				segmentPos = 0;
 	public static string 			gameState = "Normal";
+	public float 					timeUntilBossFight;
     private CurveImplementation 	meshGen;
 	private float					startTime;
 	private float 					timeSinceSceneStart;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update () {
 		timeSinceSceneStart = Time.time - startTime;
-		if ( timeSinceSceneStart >= 10.0f && gameState == "Normal" ) {
+		if ( timeSinceSceneStart >= timeUntilBossFight && gameState == "Normal" ) {
 			gameState = "BossFight";
 			Debug.Log ( "Boss fight!" );
 		}

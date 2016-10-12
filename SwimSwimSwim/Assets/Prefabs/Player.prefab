@@ -909,8 +909,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011992752860}
   inverse: 0
-  laserChargeMax: 400
-  laserChargeThreshold: 100
 --- !u!114 &114000011425054100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -954,11 +952,7 @@ MonoBehaviour:
   - {fileID: 1000011735756958, guid: 4fdbab9f91f964cfd9d2fb0758408a7c, type: 2}
   - {fileID: 1000011366224864, guid: 8b19c67b2443644479c60d3c1b5f5555, type: 2}
   - {fileID: 1000010632660548, guid: 38606fd2b0f50fe4fae8ee38cbffdd07, type: 2}
-  - {fileID: 1000013113363344, guid: b8920805d0198462990ff08da6a6f5e2, type: 2}
-  - {fileID: 1000010185542708, guid: b1fd636f3add14c2fbfdbd53d3376659, type: 2}
-  - {fileID: 1000010215543806, guid: e5484236be9e14038a365d9d0816619f, type: 2}
-  - {fileID: 1000012660935238, guid: 187c7ae48f4464c5c8c1320c2200b187, type: 2}
-  startDelay: 1
+  startDelay: 0.1
   randomWidth: 10
   randomHeight: 5
   spawningToggle: 1
@@ -994,8 +988,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20000011992752860}
   inverse: 0
-  laserChargeMax: 400
-  laserChargeThreshold: 100
 --- !u!120 &120000010575547940
 LineRenderer:
   m_ObjectHideFlags: 1

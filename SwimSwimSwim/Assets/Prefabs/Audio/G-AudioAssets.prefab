@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012839593414}
   - 114: {fileID: 114000013303358418}
   - 114: {fileID: 114000010734807604}
+  - 114: {fileID: 114000013364463116}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -43,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010760717810
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,11 +391,7 @@ MonoBehaviour:
   _randomBypass: 0
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
-  _samples:
-  - _sampleName: DroneTransition_0
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
+  _samples: []
 --- !u!114 &114000013303358418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +406,20 @@ MonoBehaviour:
   pulse: {fileID: 114000010384818324}
   patternModuleObjectLeft: {fileID: 1000011084408462}
   patternModuleObjectRight: {fileID: 1000012365933000}
+--- !u!114 &114000013364463116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010262800138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc5ae39280b144558b50f24d5952094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulse: {fileID: 114000010135055936}
+  patternModuleObject: {fileID: 1000010560656132}
+  sampleWeighting: 0100000001000000010000000000000000000000000000000000000000000000
 --- !u!114 &114000013410917518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,11 +442,7 @@ MonoBehaviour:
   _randomBypass: 0
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
-  _samples:
-  - _sampleName: DroneTransition_1
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
+  _samples: []
 --- !u!114 &114000014228690134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,26 +459,10 @@ MonoBehaviour:
   _player: {fileID: 0}
   _sampleBank: {fileID: 114000010814776274}
   _trackNb: 2
-  _playingOrder: 1
+  _playingOrder: 4
   _randomDelay: 0
   _randomDelayMaxRatio: 0
   _randomBypass: 1
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
-  _samples:
-  - _sampleName: SynthD6
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: SynthF6
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: SynthA6
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
-  - _sampleName: SynthC6
-    _pitch: 1
-    _semiTones: 0
-    _gain: 1
+  _samples: []

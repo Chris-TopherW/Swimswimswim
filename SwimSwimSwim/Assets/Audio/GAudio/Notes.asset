@@ -13,65 +13,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 44100
   _sampleInfos:
-  - _name: SynthD6
+  - _name: D6Synth
     _midiCode: 0
-    _pathInResources: SynthD6
+    _pathInResources: D6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: a83b3684bb9984221942aeb3e975ba1b
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthG6
+  - _name: G6Synth
     _midiCode: 0
-    _pathInResources: SynthG6
+    _pathInResources: G6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: 42caeb75cb1df45ae8d4773111d9c0d3
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthF6
+  - _name: F6Synth
     _midiCode: 0
-    _pathInResources: SynthF6
+    _pathInResources: F6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: af5c2c887f7674b729717cd983d421c5
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthA6
+  - _name: A6Synth
     _midiCode: 0
-    _pathInResources: SynthA6
+    _pathInResources: A6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: 43ed22e8ec2ea4ade87d8de7dd414e2d
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthD7
+  - _name: D7Synth
     _midiCode: 0
-    _pathInResources: SynthD7
+    _pathInResources: D7Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: d9973c1ab26aa429993b9774d16718c0
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthB6
+  - _name: B6Synth
     _midiCode: 0
-    _pathInResources: SynthB6
+    _pathInResources: B6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: fdabc4ca5ca094628bd229b5ab0a483e
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthE6
+  - _name: E6Synth
     _midiCode: 0
-    _pathInResources: SynthE6
+    _pathInResources: E6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: bd4680cc226be4b6495c877b1fe1ca4f
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: SynthC6
+  - _name: C6Synth
     _midiCode: 0
-    _pathInResources: SynthC6
+    _pathInResources: C6Synth
     _numChannels: 1
     _samplesPerChannel: 8704
     _guid: 82de7c2f2a45947379e1641c31d427e2

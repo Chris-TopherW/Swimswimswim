@@ -10,10 +10,10 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 	private PulsedPatternModule 	pulsedPatternLeft;
 	private PulsedPatternModule 	pulsedPatternRight;
 	private SetLevels 				setLevels;
-	private int 					loopNumber = 0;
 
 	void Start() {
 		pulse.Period = 60.0f / 81.0f;
+		//addSample ("VaporVaseA");
 	}
 
 	void Update() {
@@ -35,53 +35,14 @@ public class AudioManager : MonoBehaviour, IGATPulseClient {
 	}
 
 	public void OnPulse( IGATPulseInfo pulseInfo ) {
-		if ( loopNumber < 10 ) {
-			if ( pulseInfo.StepIndex == 6 ) {
-				switch ( loopNumber ) {
-				case 0:
-					changeLoop ( "DroneTransition" );
-					break;
-				case 1:
-					changeLoop ( "VaporVaseA" );
-					break;
-				case 2:
-					changeLoop ( "VaporVaseTransition" );
-					break;
-				case 3:
-					changeLoop ( "FastVapeA1" );
-					break;
-				case 4:
-					changeLoop ( "FastVapeA2" );
-					break;
-				case 5:
-					changeLoop ( "FastVapeTransition" );
-					break;
-				default:
-					changeLoop ( "VaporVaseA" );
-					break;
-				}
-			}
-			if ( pulseInfo.StepIndex == 0 && loopNumber == 2 ) {
-				pulse.Period = 60.0f / 76.0f;
-				Debug.Log ("Tempo shift to 76 bpm");
-			}
-			if( pulseInfo.StepIndex == 0 && loopNumber == 5 ) {
-				pulse.Period = 60.0f / 81.0f;
-				Debug.Log ("Tempo shift to 81 bpm");
-			}
-				
-			if ( pulseInfo.StepIndex == 0 ) {
-				loopNumber++;
-			}
-			if ( loopNumber == 6 )
-				loopNumber = 1;
-		}
+
+//		if (pulseInfo.StepIndex == 6) {
+//		}
 	}
 
-	public void changeLoop ( string fname ) {
+	public void addSample ( string fname ) {
 		pulsedPatternLeft.AddSample ( fname + "_0" );
 		pulsedPatternRight.AddSample ( fname + "_1" );
-		removeSample (0);
 	}
 
 	public void removeSample( int index ) {

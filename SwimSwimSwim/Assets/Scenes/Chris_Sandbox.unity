@@ -549,16 +549,6 @@ Prefab:
       propertyPath: _player
       value: 
       objectReference: {fileID: 2067384298}
-    - target: {fileID: 114000010384818324, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
-        type: 2}
-      propertyPath: _Period
-      value: 0.7407407407407407
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010384818324, guid: 294fe16db2ac0fe41a2702d65acdf8f6,
-        type: 2}
-      propertyPath: _pulseUnit
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 294fe16db2ac0fe41a2702d65acdf8f6, type: 2}
   m_IsPrefabParent: 0
@@ -606,6 +596,16 @@ Prefab:
       propertyPath: audioManagerObject
       value: 
       objectReference: {fileID: 296258511}
+    - target: {fileID: 114000012400924950, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: startDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011887982266, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: sprintSpeed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 048800896bcc9814fab6f2bda3a9b123, type: 2}
   m_IsPrefabParent: 0
@@ -712,7 +712,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1583405156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,7 +906,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010035336424, guid: 3a0e438d3fce8471fb8e31ca6ceec379, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
         type: 2}
@@ -916,6 +916,11 @@ Prefab:
     - target: {fileID: 1000011501783140, guid: 3a0e438d3fce8471fb8e31ca6ceec379, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
+        type: 2}
+      propertyPath: timeUntilBossFight
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a0e438d3fce8471fb8e31ca6ceec379, type: 2}
