@@ -21,7 +21,7 @@ public class ObstacleBehaviour : MonoBehaviour {
 
 	void Update () {
 		if ( health <= 0  ){
-			Instantiate ( explosionSound, transform.position, transform.rotation );
+			//Instantiate ( explosionSound, transform.position, transform.rotation );
 			melodyCreator.PlayRandomNote();
 			Destroy ( gameObject );
 		}

@@ -391,7 +391,11 @@ MonoBehaviour:
   _randomBypass: 0
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
-  _samples: []
+  _samples:
+  - _sampleName: VaporVaseA_0
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
 --- !u!114 &114000013303358418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,6 +424,7 @@ MonoBehaviour:
   pulse: {fileID: 114000010135055936}
   patternModuleObject: {fileID: 1000010560656132}
   sampleWeighting: 0100000001000000010000000000000000000000000000000000000000000000
+  samplePlayed: 0
 --- !u!114 &114000013410917518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,7 +447,11 @@ MonoBehaviour:
   _randomBypass: 0
   _randomBypassChance: 0
   _envelopeModule: {fileID: 0}
-  _samples: []
+  _samples:
+  - _sampleName: VaporVaseA_1
+    _pitch: 1
+    _semiTones: 0
+    _gain: 1
 --- !u!114 &114000014228690134
 MonoBehaviour:
   m_ObjectHideFlags: 1

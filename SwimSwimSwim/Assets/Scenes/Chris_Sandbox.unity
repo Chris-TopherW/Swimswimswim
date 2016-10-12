@@ -730,8 +730,8 @@ MonoBehaviour:
   _player: {fileID: 2067384298}
   _gains:
   - 0
-  - 1
-  _stereoGain: 1
+  - 0.51369864
+  _stereoGain: 0.51369864
   _stereoPan: 1
   _forcePerChannelControl: 0
 --- !u!114 &1587529206
@@ -750,9 +750,9 @@ MonoBehaviour:
   _nextMute: 0
   _player: {fileID: 2067384298}
   _gains:
-  - 1
+  - 0.5273973
   - 0
-  _stereoGain: 1
+  _stereoGain: 0.5273973
   _stereoPan: 0
   _forcePerChannelControl: 0
 --- !u!1001 &1612147092
