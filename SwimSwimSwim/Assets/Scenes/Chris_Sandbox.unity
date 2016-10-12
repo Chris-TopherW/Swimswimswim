@@ -591,21 +591,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011425054100, guid: 048800896bcc9814fab6f2bda3a9b123,
+        type: 2}
+      propertyPath: audioManagerObject
+      value: 
+      objectReference: {fileID: 296258511}
     - target: {fileID: 114000011887982266, guid: 048800896bcc9814fab6f2bda3a9b123,
         type: 2}
       propertyPath: audioManagerObject
       value: 
       objectReference: {fileID: 296258511}
-    - target: {fileID: 114000012400924950, guid: 048800896bcc9814fab6f2bda3a9b123,
-        type: 2}
-      propertyPath: startDelay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011887982266, guid: 048800896bcc9814fab6f2bda3a9b123,
-        type: 2}
-      propertyPath: sprintSpeed
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 048800896bcc9814fab6f2bda3a9b123, type: 2}
   m_IsPrefabParent: 0
@@ -911,7 +906,7 @@ Prefab:
     - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
         type: 2}
       propertyPath: maxPollutionLevel
-      value: 5
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1000011501783140, guid: 3a0e438d3fce8471fb8e31ca6ceec379, type: 2}
       propertyPath: m_IsActive
@@ -920,8 +915,13 @@ Prefab:
     - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
         type: 2}
       propertyPath: timeUntilBossFight
-      value: 120
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114000014176473608, guid: 3a0e438d3fce8471fb8e31ca6ceec379,
+        type: 2}
+      propertyPath: audioManagerObject
+      value: 
+      objectReference: {fileID: 296258511}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a0e438d3fce8471fb8e31ca6ceec379, type: 2}
   m_IsPrefabParent: 0

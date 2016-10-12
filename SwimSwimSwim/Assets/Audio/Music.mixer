@@ -17,12 +17,14 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: b0d12e89922b74d30896f5d031b2c216
     name: CrusherMix
+  - guid: 2738f4dfd268541a4a1f58c61269f374
+    name: Smasher
   - guid: 0b48f0b6d374ee84486183071ddd6c63
     name: SmasherMix
-  - guid: c7c3d701386c2451b9b8056f73a61676
-    name: DECIMATION
   - guid: 6fc42fd271a8041e0893d8797afd37eb
     name: DecimateMix
+  - guid: c7c3d701386c2451b9b8056f73a61676
+    name: DECIMATION
   - guid: 42af347b8045c1048b7fcedbcfcbf90b
     name: LowPassFreq
   - guid: 95a7d85f4597049589841661bcc42f52
@@ -82,7 +84,7 @@ AudioMixerSnapshotController:
     be0a75a077fc0bf4e98f246f1e067c33: 1.001
     839521d04350b445abfbd9d233f0edaf: -1161
     c114c1e0337cc124ebbe89183c6092ed: 9.5
-    c7c3d701386c2451b9b8056f73a61676: 2
+    c7c3d701386c2451b9b8056f73a61676: 100
     1319f441ce13a4a10810183245f77649: -2.2889833
     a04c6551ee1b647f0b4d5339030f4e58: 17403
     57b0f9513b8544aed96a8edcdcad2f61: 1

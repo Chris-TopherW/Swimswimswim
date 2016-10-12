@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class LaserControl : MonoBehaviour {
 
@@ -8,12 +9,13 @@ public class LaserControl : MonoBehaviour {
 	public static int 			laserChargeMax = 150;
 	public static int			laserChargeThreshold = 50;
 	public static float		 	laserCharge;
+	public AudioMixer 			audioMixer;
 	private LineRenderer		line;
 	private AudioSource 		audioSource;
 	private Material 			material;
 	private float 				currentStep;
 	private float 				increment = 0.00392156862f;
-    private float 				increment2 = 0.00392156862f * 5;
+    private float 				increment2 = 0.00392156862f;
     private bool 				damaging;
 	private bool 				laserIsFiring = false;
 
