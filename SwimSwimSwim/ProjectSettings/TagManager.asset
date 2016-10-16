@@ -7,6 +7,9 @@ TagManager:
   - Destroyable
   - Friend
   - Spline
+  - Cleanup
+  - Thumper
+  - CubeManager
   layers:
   - Default
   - TransparentFX

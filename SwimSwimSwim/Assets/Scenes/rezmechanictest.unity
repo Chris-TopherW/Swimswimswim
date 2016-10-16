@@ -90,6 +90,58 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4696881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4696882}
+  - 114: {fileID: 4696883}
+  m_Layer: 0
+  m_Name: Sub Pulse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4696882
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4696881}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 622437549}
+  m_RootOrder: 2
+--- !u!114 &4696883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 4696881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae87499f8df14ce598a1f50d410284a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Bypass: 0
+  _Period: 1
+  _Steps: 0101
+  _RandomBypassStep: 0
+  _StepBypassChance: 0
+  _pulseUnit: 0
+  _ParentPulse: {fileID: 622437548}
+  _SubPulseMode: 0
+  _RatioOfParentPeriod: 0
+  _RandomBypassParentPulse: 0
+  _ParentPulseBypassChance: 0
+  _SubscribedSteps: 01010101
 --- !u!1 &311789293
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Bypass: 0
-  _Period: 0.5
+  _Period: 1
   _Steps: 01010101
   _RandomBypassStep: 0
   _StepBypassChance: 0
@@ -370,6 +422,7 @@ Transform:
   m_Children:
   - {fileID: 1177700353}
   - {fileID: 1123394552}
+  - {fileID: 4696882}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!114 &668711918
@@ -457,7 +510,7 @@ GameObject:
   - 114: {fileID: 860516811}
   m_Layer: 0
   m_Name: CubeManager
-  m_TagString: Untagged
+  m_TagString: CubeManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,6 +741,48 @@ MonoBehaviour:
     _pitch: 2
     _semiTones: 12
     _gain: 0.2826087
+--- !u!1 &1193292947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1193292949}
+  - 114: {fileID: 1193292948}
+  m_Layer: 0
+  m_Name: CubeFire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193292948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193292947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02545f59db4191e4a92309cd6bd07d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireModule: {fileID: 4696883}
+  pattern: {fileID: 1177700354}
+--- !u!4 &1193292949
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1193292947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!114 &1207917310
 MonoBehaviour:
   m_ObjectHideFlags: 0

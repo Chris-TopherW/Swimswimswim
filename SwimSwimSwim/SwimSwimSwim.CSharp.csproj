@@ -258,6 +258,7 @@
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
     <Compile Include="Assets\Scripts\CrossHair.cs" />
+    <Compile Include="Assets\Scripts\CubeFire.cs" />
     <Compile Include="Assets\Scripts\CubeHandler.cs" />
     <Compile Include="Assets\Scripts\CubeSpawner.cs" />
     <Compile Include="Assets\Scripts\CubeThumper.cs" />
