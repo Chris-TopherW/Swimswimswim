@@ -75,6 +75,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DisplayLaserCharge.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\DemoSceneMain.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\EnvelopeOffsetSlider.cs" />
     <Compile Include="Assets\G-Audio\Examples\DemoScene\Scripts\Helpers\LightPulser.cs" />
@@ -257,6 +258,9 @@
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
     <Compile Include="Assets\Scripts\CrossHair.cs" />
+    <Compile Include="Assets\Scripts\CubeHandler.cs" />
+    <Compile Include="Assets\Scripts\CubeSpawner.cs" />
+    <Compile Include="Assets\Scripts\CubeThumper.cs" />
     <Compile Include="Assets\Scripts\CurveImplementation.cs" />
     <Compile Include="Assets\Scripts\DestroySound.cs" />
     <Compile Include="Assets\Scripts\DisplayPollution.cs" />
@@ -266,11 +270,11 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GridOverlay.cs" />
     <Compile Include="Assets\Scripts\LaserControl.cs" />
+    <Compile Include="Assets\Scripts\MelodyCreator.cs" />
     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
     <Compile Include="Assets\Scripts\PlaneControl.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
-    <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
     <Compile Include="Assets\Scripts\RandomStartPos.cs" />
     <Compile Include="Assets\Scripts\SetLevels.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />

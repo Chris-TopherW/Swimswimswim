@@ -19,7 +19,7 @@ namespace GAudio
 		/// <summary>
 		/// Fired when a sample in the pattern is about to play.
 		/// </summary>
-		public delegate void OnPatternWillPlay( PatternSample sample, int indexInPattern, double dspTime );
+		public delegate void OnPatternWillPlay( PatternSample sample, int indexInPattern, double dspTime);
 		
 		/// <summary>
 		/// The delegate you may subscribe to to be notified when a pattern's sample is about to play.
@@ -77,7 +77,10 @@ namespace GAudio
 				}
 			}
 		}
-		[ SerializeField ]
+
+
+        public int randTogetherLimit = 0;
+        [ SerializeField ]
 		protected GATActiveSampleBank _sampleBank;
 		
 		protected override bool CanSubscribeToPulse()
@@ -239,9 +242,9 @@ namespace GAudio
 			{
 				int i;
 				
-				for( i = 0; i < _sampleCount; i++ ) //ToDo : Update sample count
+				for( i = 0; i < randTogetherLimit; i++ ) //ToDo : Update sample count
 				{
-					PlaySample( i, dspTime );
+					PlaySample( (int)Random.Range(0, _sampleCount), dspTime);
 				}
 			}
 		}
@@ -261,7 +264,7 @@ namespace GAudio
 		/// <summary>
 		/// All conditions for playing a sample have been met, you may do so here.
 		/// </summary>
-		public abstract void PlaySample( int index, double dspTime );
+		public abstract void PlaySample( int index, double dspTime);
 		
 		/// <summary>
 		/// How many samples in the pattern?
@@ -283,7 +286,7 @@ namespace GAudio
 			case PlayingOrder.Randomized:
 				_sampleIndex = Random.Range( 0, _sampleCount );
 				break;
-				
+
 			case PlayingOrder.MapToMasterPulseIndex:
 				_sampleIndex = pulseInfo.PulseSender.MasterPulseInfo.StepIndex;
 				break;
