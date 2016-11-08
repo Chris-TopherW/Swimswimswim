@@ -1,0 +1,37 @@
+Title: Swim Swim Swim
+
+Overview: Sea-punk music game, Fruit Ninja meets Rez
+
+Platform: IOS/ Android
+
+Dev period: until March 1
+
+Engine: Unity/ G-audio
+
+Keywords: Memecore, eco warrior, shitcore, ａｅｓｔｈｅｔｉｃ
+
+In Swim Swim Swim, the player controls a dolphin and traverses a procedurally generated ocean.
+The player’s goal is to destroy floating junk in the ocean with sonic attacks.
+If the player reaches the end of a level then they unlock the next level.
+
+Core mechanic:
+Swipe objects on screen then press two fingers to screen, now your sonar attack will destroy each object in time with the music.
+Sonar blasts create notes which become musical melodies.
+Sonic attacks can stack- hovering over junk will create a longer and louder sonic attack which is more powerful but will also create a longer note (slower attack speed).
+
+Level design:
+Casual scale: create 1 level. incremental challenges and a final boss. 10 minutes to complete. Put on app store for free.
+Larger scale: create 3-5 levels with different aesthetics and themed enemies. 30 mins-1 hour to complete. Put on app store for a few dollars.
+
+
+
+Adds as a prize? Or ads as obstacles in game
+
+School of fish around player- as they die you lose game.
+Boss- exploding stuff around boss, mirrors, rhythmic cycles, 
+
+
+Moodboards for art aesthetic
+music moodboarding- inspo
+2d art illustrations/ sketches for art direction
+Same in music
