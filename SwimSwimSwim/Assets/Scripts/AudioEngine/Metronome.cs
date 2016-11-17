@@ -23,7 +23,7 @@ public class Metronome : MonoBehaviour
 	{
 		//wait for instrument set up
 		ready = false;
-			metro = this;
+		metro = this;
 
 		//set up audio DSP buffer size and sample rate for whole program
 		AudioSettings.GetDSPBufferSize (out DSPBufferSize, out DSPNumBuffers);
@@ -39,10 +39,8 @@ public class Metronome : MonoBehaviour
 		currentBar = 1;
 	}
 
-	void OnAudioFilterRead(float[] samples, int channels)
-	{
-		for (int i = 0; i < DSPBufferSize; i++) 
-		{
+	void OnAudioFilterRead(float[] samples, int channels) {
+		for (int i = 0; i < DSPBufferSize; i++)  {
 			phasor++;
 			if (phasor == samplesPerTick) {
 				phasor = 0;

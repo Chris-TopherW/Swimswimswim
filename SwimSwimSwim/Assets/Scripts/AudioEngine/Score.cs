@@ -1,8 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class Score : MonoBehaviour
-{
+//public class NoteEvent
+//{
+//	public NoteEvent(int numberOfNotes) {
+//
+//	}
+//}
+
+public class Score : MonoBehaviour {
+
 	public static Score scoreInstance;
 	public GameObject prefabInst;
 	public AudioClip[] clips;
@@ -12,6 +20,7 @@ public class Score : MonoBehaviour
 	public bool[] inst1;
 	public bool[] inst2;
 	public bool[] inst3;
+	public int[][] notes;
 	public static int instrumentCount;
 
 	private GameObject[] instruments;
@@ -30,11 +39,12 @@ public class Score : MonoBehaviour
 
 		for (int i = 0; i < instrumentsCount; i++)
 		{
-			instruments [i] = Instantiate (prefabInst);
-			instruments [i].name = "" + i;
-			instruments [i].transform.parent = this.transform;
-			instrumentScripts [i] = instruments [i].GetComponent<SequencerInstrument> ();
-			instrumentScripts [i].audioClip = clips [i];
+			instruments[ i ] = Instantiate (prefabInst);
+			instruments[ i ].name = "" + i;
+			instruments[ i ].transform.parent = this.transform;
+			instrumentScripts[ i ] = instruments [i].GetComponent<SequencerInstrument> ();
+			instrumentScripts[ i ].audioClip = clips [i];
+			instrumentScripts[ i ].pan = UnityEngine.Random.Range( -1.0f, 1.0f );
 			//score[instrumentCount] = new bool[16];
 			//instrumentScripts [i].score = score[i];
 			switch(i)
