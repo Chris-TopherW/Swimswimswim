@@ -10,6 +10,8 @@ public class Metronome : MonoBehaviour
 	//instantiate static object to access from other scripts
 	public static Metronome metro;
 
+    public static double startTime;
+
 	public float BPM = 120.0f;
 	[HideInInspector]
 	public int currentTick, currentBar, samplesPerTick, ticksPerBar;
@@ -24,7 +26,7 @@ public class Metronome : MonoBehaviour
 		//wait for instrument set up
 		ready = false;
 		metro = this;
-
+        startTime = AudioSettings.dspTime + 0.1f;
 		//set up audio DSP buffer size and sample rate for whole program
 		AudioSettings.GetDSPBufferSize (out DSPBufferSize, out DSPNumBuffers);
 		sampleRate = AudioSettings.outputSampleRate;

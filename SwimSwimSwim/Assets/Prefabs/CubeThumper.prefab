@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pulse: {fileID: 0}
+  firePulse: {fileID: 0}
   hitIndex: 0
   isTriggered: 0
   isFiring: 0

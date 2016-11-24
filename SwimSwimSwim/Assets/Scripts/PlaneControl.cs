@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class PlaneControl : MonoBehaviour {
-
+    public AudioSource[] sources;
+    public AudioClip[] clips;
     private GameObject player;
 	// Use this for initialization
 	void Start () {

@@ -498,7 +498,7 @@ MonoBehaviour:
   _lengthToPulseRatio: 1
   _maxSamples: 441000
   _samplesPerPixel: 1000
-  _scrollXPosition: 60
+  _scrollXPosition: 61
 --- !u!1 &860516810
 GameObject:
   m_ObjectHideFlags: 0
