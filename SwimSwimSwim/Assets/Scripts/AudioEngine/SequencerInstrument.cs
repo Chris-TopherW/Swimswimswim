@@ -40,7 +40,7 @@ public class SequencerInstrument : MonoBehaviour
 //		audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups(_OutputMixer)[0];
 		//setup input buffer to store clip of floats and set to end of buffer
 		sampleBuffer = new float[ numSamples ];
-		audioClip.GetData (sampleBuffer, 0);
+		audioClip.GetData ( sampleBuffer, 0 );
 		playhead = numSamples - 1;
 		//pan = -0.5f;
 		audioSource.panStereo = pan;

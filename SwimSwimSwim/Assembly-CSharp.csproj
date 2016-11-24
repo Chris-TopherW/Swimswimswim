@@ -223,6 +223,7 @@
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\PlayClip.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Score.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\SequencerInstrument.cs" />
