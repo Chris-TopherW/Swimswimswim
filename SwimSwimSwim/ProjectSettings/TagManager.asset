@@ -10,6 +10,7 @@ TagManager:
   - Cleanup
   - Thumper
   - CubeManager
+  - Metronome
   layers:
   - Default
   - TransparentFX

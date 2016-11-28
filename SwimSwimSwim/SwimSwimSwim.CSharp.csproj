@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>iOS:9</UnityBuildTarget>
     <UnityVersion>5.4.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -282,6 +280,7 @@
     <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
     <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
     <Compile Include="Assets\Scripts\PlaneControl.cs" />
+    <Compile Include="Assets\Scripts\PlayClip.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
     <Compile Include="Assets\Scripts\RandomStartPos.cs" />
     <Compile Include="Assets\Scripts\SetLevels.cs" />
@@ -291,8 +290,10 @@
     <Compile Include="Assets\Scripts\StartManager.cs" />
     <Compile Include="Assets\Scripts\TestModel.cs" />
     <Compile Include="Assets\Scripts\UIMusic.cs" />
+    <Compile Include="Assets\displayMetro.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ForKellyAudioExperiments\NoteOrderInText.txt" />
     <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
     <None Include="Assets\G-Audio\Examples\_Example_05_Looper\__LooperReadme.txt" />
     <None Include="Assets\G-Audio\NVorbis\__License.txt" />

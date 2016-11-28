@@ -144,6 +144,7 @@
     <Compile Include="Assets\ImportedStuff\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ForKellyAudioExperiments\NoteOrderInText.txt" />
     <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
     <None Include="Assets\G-Audio\Examples\_Example_05_Looper\__LooperReadme.txt" />
     <None Include="Assets\G-Audio\NVorbis\__License.txt" />
