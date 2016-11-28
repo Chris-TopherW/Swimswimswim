@@ -223,8 +223,9 @@
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <Compile Include="Assets\PlayClip.cs" />
+     <Compile Include="Assets\Scripts\AudioEngine\Loop.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
+     <Compile Include="Assets\Scripts\AudioEngine\ScheduledMusicTest.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Score.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\SequencerInstrument.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
@@ -249,6 +250,7 @@
      <Compile Include="Assets\Scripts\ObstacleBehaviour.cs" />
      <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
      <Compile Include="Assets\Scripts\PlaneControl.cs" />
+     <Compile Include="Assets\Scripts\PlayClip.cs" />
      <Compile Include="Assets\Scripts\PointControl.cs" />
      <Compile Include="Assets\Scripts\RandomStartPos.cs" />
      <Compile Include="Assets\Scripts\SetLevels.cs" />

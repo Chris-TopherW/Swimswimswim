@@ -18,7 +18,7 @@ public class Loop : MonoBehaviour {
         {
             for (int j = 0; j < clipsToPlay.Length; j++)
             {
-                Debug.Log("Fuuckin i: " + i + " and j: " + j);
+                //Debug.Log("Fuuckin i: " + i + " and j: " + j);
                 sources[j * clipsToPlay.Length + i] = gameObject.AddComponent<AudioSource>() as AudioSource;
                 sources[j * clipsToPlay.Length + i].clip = clipsToPlay[i];
             }
@@ -49,7 +49,7 @@ public class Loop : MonoBehaviour {
                 sources[sourceToPlay].PlayScheduled(nextPlay);
                 lastSourceTriggered = sourceToPlay;
             }
-            Debug.Log(nextPlay);
+            //Debug.Log(nextPlay);
         }
 
     }
