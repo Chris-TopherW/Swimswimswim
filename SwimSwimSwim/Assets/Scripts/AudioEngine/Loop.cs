@@ -5,6 +5,7 @@ public class Loop : MonoBehaviour
 {
     private AudioSource[] sources;
     public AudioClip[] clipsToPlay;
+    public Note[] notes;
     private double startTime;
     private double lastPlayed;
     private double nextPlay;
@@ -25,9 +26,7 @@ public class Loop : MonoBehaviour
             }
         }
         //sources[3].volume = 0;
-        lastPlayed = Metronome.startTime;
-        interval = 60 / metro.BPM;
-        nextPlay = lastPlayed + interval;
+        nextPlay = metro.GetFutureTime(metro.currentBar + 1,0,0);
 
         for (int i = 0; i < clipsToPlay.Length; i++)
         {
@@ -40,11 +39,10 @@ public class Loop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        interval = 60 / metro.BPM;
         if (AudioSettings.dspTime > nextPlay)
         {
             lastPlayed = nextPlay;
-            nextPlay = lastPlayed + interval;
+            nextPlay = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
             for (int j = 0; j < clipsToPlay.Length; j++)
             {
                 int sourceToPlay = (lastSourceTriggered + 1) % sources.Length;

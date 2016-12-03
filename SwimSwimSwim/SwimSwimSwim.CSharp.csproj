@@ -255,8 +255,10 @@
     <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Loop.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
+    <Compile Include="Assets\Scripts\AudioEngine\Note.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\ScheduledMusicTest.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Score.cs" />
+    <Compile Include="Assets\Scripts\AudioEngine\Sequence.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\SequencerInstrument.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
