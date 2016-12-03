@@ -4,17 +4,17 @@ using System.Collections;
 public class ObstacleCleanup : MonoBehaviour {
     
 	public GameObject 			audioManagerObject;
-	private AudioManager 		audioManager;
+	//private AudioManager 		audioManager;
 
 	void Start() {
-		audioManager = audioManagerObject.GetComponent< AudioManager > ();
+		//audioManager = audioManagerObject.GetComponent< AudioManager > ();
 	}
 
     void OnTriggerExit( Collider other ) {
 		if ( other.gameObject.CompareTag ( "Destroyable" ) ) {
 			GameManager.currentPollutionLevel++;
 			Destroy (other.gameObject);
-			audioManager.DamageEffectOn ();
+			//audioManager.DamageEffectOn ();
 		} 
 		else if ( other.gameObject.CompareTag ( "Friend" ) ) 
 		{

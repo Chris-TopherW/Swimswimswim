@@ -14,14 +14,14 @@ public class GameManager : MonoBehaviour {
     private CurveImplementation 	meshGen;
 	private float					startTime;
 	private float 					timeSinceSceneStart;
-	private AudioManager 			audioManager;
+	//private AudioManager 			audioManager;
 	private bool 					endOfGame = false;
 
 	void Start () {
 		Cursor.visible = false;
 		currentPollutionLevel = 0;
         meshGen = GameObject.FindGameObjectWithTag( "Spline" ).GetComponent<CurveImplementation>();
-		audioManager = audioManagerObject.GetComponent< AudioManager > ();
+		//audioManager = audioManagerObject.GetComponent< AudioManager > ();
 		startTime = Time.time;
 		timeSinceSceneStart = 0.0f;
 	}
@@ -41,11 +41,11 @@ public class GameManager : MonoBehaviour {
             segmentPos++;
             meshGen.Generate();
         }
-		if ( currentPollutionLevel >= maxPollutionLevel && !endOfGame) {
-			audioManager.EndOfGameAudio ();
-			endOfGame = true;
-			//SceneManager.LoadScene ("LoseScreen");
-			//Debug.Log("You Lose!!");
-		}
+//		if ( currentPollutionLevel >= maxPollutionLevel && !endOfGame) {
+//			audioManager.EndOfGameAudio ();
+//			endOfGame = true;
+//			//SceneManager.LoadScene ("LoseScreen");
+//			//Debug.Log("You Lose!!");
+//		}
 	}
 }

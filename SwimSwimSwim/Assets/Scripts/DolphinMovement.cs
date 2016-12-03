@@ -12,7 +12,7 @@ public class DolphinMovement : MonoBehaviour {
 	private float 				pathSpeed;
     private Rigidbody 			body;
 	private Vector3 			dolphinPosition;
-	private AudioManager		audioManager;
+//	private AudioManager		audioManager;
 	private bool 				fadeToggle = false;
     private MeshCollider 		leftWallCollider;
     private MeshCollider 		rightWallCollider;
@@ -24,7 +24,7 @@ public class DolphinMovement : MonoBehaviour {
         path = GameObject.FindGameObjectWithTag("Spline").GetComponent<CurveImplementation>();
         leftWallCollider = GameObject.Find("LeftWall").GetComponent<MeshCollider>();
         rightWallCollider = GameObject.Find("RightWall").GetComponent<MeshCollider>();
-        audioManager = audioManagerObject.GetComponent<AudioManager> ();
+        //audioManager = audioManagerObject.GetComponent<AudioManager> ();
         body = GetComponent<Rigidbody>();
 		pathSpeed = defaultPathSpeed;
     }
@@ -90,10 +90,10 @@ public class DolphinMovement : MonoBehaviour {
         body.MovePosition( goal );
 
 		if ( dolphinPosition.y < -2.5f && !fadeToggle ) {
-			audioManager.UnderwaterEffectsOn ();
+			//audioManager.UnderwaterEffectsOn ();
 			fadeToggle = true;
 		} else if( dolphinPosition.y >= -2.5f && fadeToggle ) {
-			audioManager.UnderwaterEffectsOff ();
+			//audioManager.UnderwaterEffectsOff ();
 			fadeToggle = false;
 		}
 	}
