@@ -40,7 +40,7 @@ public class Note
 
     public void Update()
     {
-        if (loop.loops() && AudioSettings.dspTime > nextPlay)
+        if (loop.isLooping() && AudioSettings.dspTime > nextPlay)
         {
             timeToPlay.Add(loop);
             sources[nextSource].clip = clip;

@@ -17,8 +17,8 @@ public class Sequence : MonoBehaviour
     {
         metro = GameObject.FindGameObjectWithTag("Metronome").GetComponent<Metronome>();
         sources = new AudioSource[16];
-        notes = new Note[5];
-        NotationTime n1, n2, n3, n4, n5, barLoop, noLoop;
+        notes = new Note[16];
+        NotationTime n1, n2, n3, n4, n5, barLoop, quarterLoop, noLoop;
         n1 = new NotationTime(0,0,7);
         n2 = new NotationTime(0, 1, 1);
         n3 = new NotationTime(0, 1, 3);
@@ -26,13 +26,33 @@ public class Sequence : MonoBehaviour
         n5 = new NotationTime(0, 0, 1);
         noLoop = new NotationTime(0, 0, 0);
         barLoop = new NotationTime(1, 0, 0);
-       
+        quarterLoop = new NotationTime(0, 1, 0);
+
+        //TODO: Parameters for volume/pan/outputgroup for each note.
+
+
         notes[0] = new Note(metro, n1, barLoop, clipsToPlay[0], gameObject);
         notes[1] = new Note(metro, n2, barLoop, clipsToPlay[1], gameObject);
         notes[2] = new Note(metro, n3, barLoop, clipsToPlay[2], gameObject);
         notes[3] = new Note(metro, n4, barLoop, clipsToPlay[3], gameObject);
         notes[4] = new Note(metro, n5, barLoop, clipsToPlay[4], gameObject);
- }
+
+        notes[5] = new Note(metro, new NotationTime(0, 0, 1), quarterLoop, clipsToPlay[5], gameObject);
+        notes[6] = new Note(metro, new NotationTime(0, 0, 5), quarterLoop, clipsToPlay[5], gameObject);
+        notes[7] = new Note(metro, new NotationTime(0, 3, 7), barLoop, clipsToPlay[5], gameObject);
+
+        notes[8] = new Note(metro, new NotationTime(0, 0,1), barLoop, clipsToPlay[6], gameObject);
+        notes[9] = new Note(metro, new NotationTime(0, 0, 5), barLoop, clipsToPlay[6], gameObject);
+        notes[10] = new Note(metro, new NotationTime(0, 1, 7), barLoop, clipsToPlay[6], gameObject);
+        notes[11] = new Note(metro, new NotationTime(0, 2, 5), barLoop, clipsToPlay[6], gameObject);
+
+        notes[12] = new Note(metro, new NotationTime(0, 1, 1), barLoop, clipsToPlay[7], gameObject);
+        notes[13] = new Note(metro, new NotationTime(0, 1, 3), barLoop, clipsToPlay[7], gameObject);
+        notes[14] = new Note(metro, new NotationTime(0, 2, 3), barLoop, clipsToPlay[7], gameObject);
+        notes[15] = new Note(metro, new NotationTime(0, 3, 1), barLoop, clipsToPlay[7], gameObject);
+
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,7 +77,7 @@ public struct NotationTime
         this.tick = tick;
     }
 
-    public bool loops()
+    public bool isLooping()
     {
         return (bar != 0 || quarter != 0 || tick != 0);
     }
