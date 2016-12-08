@@ -635,10 +635,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipsToPlay:
-  - {fileID: 8300000, guid: 68a005320eb4259418c356e8e1d96d71, type: 3}
-  - {fileID: 8300000, guid: b90bf35d1e289884c890fdaa30431c48, type: 3}
-  - {fileID: 8300000, guid: a9d4fdd7d4f35dc4985dbc577e697f32, type: 3}
-  - {fileID: 8300000, guid: cf50e6e9b92ea1e409b07279a458d7ad, type: 3}
+  - {fileID: 8300000, guid: af5c2c887f7674b729717cd983d421c5, type: 3}
+  - {fileID: 8300000, guid: 43ed22e8ec2ea4ade87d8de7dd414e2d, type: 3}
+  - {fileID: 8300000, guid: 82de7c2f2a45947379e1641c31d427e2, type: 3}
+  - {fileID: 8300000, guid: 42caeb75cb1df45ae8d4773111d9c0d3, type: 3}
+  - {fileID: 8300000, guid: e80a1618d37b76441893fd46c4e7e14e, type: 3}
   lastSourceTriggered: 0
   metro: {fileID: 0}
 --- !u!4 &1676461897

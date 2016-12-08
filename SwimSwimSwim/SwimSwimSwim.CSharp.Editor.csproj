@@ -121,35 +121,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\GATBaseInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\GATEnvelopeInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\GATManagerInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\GATPlayerInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\GATSampleBankInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\MasterPulseInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\PulseBaseInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\PulsedPatternInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\SoundBankInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Inspectors\SubPulseInspector.cs" />
-    <Compile Include="Assets\G-Audio\Editor\MenusAndWizards\GATMenus.cs" />
-    <Compile Include="Assets\G-Audio\Editor\MenusAndWizards\MusicSystemWizard.cs" />
-    <Compile Include="Assets\G-Audio\Editor\MenusAndWizards\SampleBankWizard.cs" />
-    <Compile Include="Assets\G-Audio\Editor\MenusAndWizards\SoundBankWizard.cs" />
-    <Compile Include="Assets\G-Audio\Editor\PropertyDrawers\BindedPropertyDrawers.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Utilities\GATScriptExecutionOrder.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Utilities\GATStartup.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Windows\DataAllocatorConfigWindow.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Windows\EnvelopeWindow.cs" />
-    <Compile Include="Assets\G-Audio\Editor\Windows\GATMemoryWindow.cs" />
     <Compile Include="Assets\ImportedStuff\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ForKellyAudioExperiments\NoteOrderInText.txt" />
-    <None Include="Assets\G-Audio\Examples\InitScene\InitScene_ReadMe.txt" />
-    <None Include="Assets\G-Audio\Examples\_Example_05_Looper\__LooperReadme.txt" />
-    <None Include="Assets\G-Audio\NVorbis\__License.txt" />
-    <None Include="Assets\G-Audio\Scripts\Filters\Audial Manipulators - G-Audio\AboutAudial.txt" />
-    <None Include="Assets\G-Audio\__ReadMe.txt" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\ImportedStuff\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
