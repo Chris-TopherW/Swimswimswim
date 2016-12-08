@@ -16,8 +16,7 @@ public class Sequence : MonoBehaviour
     void Start()
     {
         metro = GameObject.FindGameObjectWithTag("Metronome").GetComponent<Metronome>();
-        sources = new AudioSource[16];
-        notes = new Note[16];
+        notes = new Note[5];
         NotationTime n1, n2, n3, n4, n5, barLoop, quarterLoop, noLoop;
         n1 = new NotationTime(0,0,7);
         n2 = new NotationTime(0, 1, 1);
@@ -29,14 +28,21 @@ public class Sequence : MonoBehaviour
         quarterLoop = new NotationTime(0, 1, 0);
 
         //TODO: Parameters for volume/pan/outputgroup for each note.
+        //Parsing for each note
+        //Restructure this so each note has an array of times to play?
 
+        //TODO: Connect sequence to gameplay with visual
+        //-- A way of triggering a sequence to play at a particular future time that makes musical sense
+        //-- A way of tying gameplay behaviours and animations to a particular note. 
 
         notes[0] = new Note(metro, n1, barLoop, clipsToPlay[0], gameObject);
         notes[1] = new Note(metro, n2, barLoop, clipsToPlay[1], gameObject);
         notes[2] = new Note(metro, n3, barLoop, clipsToPlay[2], gameObject);
         notes[3] = new Note(metro, n4, barLoop, clipsToPlay[3], gameObject);
-        notes[4] = new Note(metro, n5, barLoop, clipsToPlay[4], gameObject);
 
+        
+        notes[4] = new Note(metro, n5, barLoop, clipsToPlay[4], gameObject);
+        /*
         notes[5] = new Note(metro, new NotationTime(0, 0, 1), quarterLoop, clipsToPlay[5], gameObject);
         notes[6] = new Note(metro, new NotationTime(0, 0, 5), quarterLoop, clipsToPlay[5], gameObject);
         notes[7] = new Note(metro, new NotationTime(0, 3, 7), barLoop, clipsToPlay[5], gameObject);
@@ -50,6 +56,7 @@ public class Sequence : MonoBehaviour
         notes[13] = new Note(metro, new NotationTime(0, 1, 3), barLoop, clipsToPlay[7], gameObject);
         notes[14] = new Note(metro, new NotationTime(0, 2, 3), barLoop, clipsToPlay[7], gameObject);
         notes[15] = new Note(metro, new NotationTime(0, 3, 1), barLoop, clipsToPlay[7], gameObject);
+        */
 
 
     }
