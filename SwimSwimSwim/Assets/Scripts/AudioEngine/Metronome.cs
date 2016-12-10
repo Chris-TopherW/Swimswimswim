@@ -16,6 +16,7 @@ public class Metronome : MonoBehaviour
     public float BPM = 120.0f;
 	[HideInInspector]
 	public volatile int currentTick, currentQuarter, currentBar, samplesPerTick, ticksPerBar;
+    public NotationTime currentTime;
 	[HideInInspector]
 	public bool ready;
 
@@ -23,6 +24,8 @@ public class Metronome : MonoBehaviour
                  DSPBufferSize, DSPNumBuffers, sampleRate, ticksPerQuarter, quartersPerBar;
     public double secondsPerQuarter, secondsPerTick;
     public double lastTickTime, nextTickTime;
+
+    private NotationTime notationTick;
 
     void Awake () 
 	{
@@ -48,7 +51,9 @@ public class Metronome : MonoBehaviour
         currentTick = 0;
         currentQuarter = 0;
 		currentBar = 0;
-	}
+        currentTime = new NotationTime(0, 0, 0);
+        notationTick = new NotationTime(0, 0, 1);
+    }
 
     void Update()
     {
@@ -62,6 +67,7 @@ public class Metronome : MonoBehaviour
             lastTickTime = nextTickTime;
             nextTickTime = lastTickTime + secondsPerTick;
             currentTick++;
+            currentTime.Add(notationTick);
             if (currentTick == ticksPerQuarter)
             {
                 currentTick = 0;

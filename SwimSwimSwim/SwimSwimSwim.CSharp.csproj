@@ -121,6 +121,7 @@
     <Compile Include="Assets\ImportedStuff\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Loop.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
+    <Compile Include="Assets\Scripts\AudioEngine\NotationTime.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Note.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\ScheduledMusicTest.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Score.cs" />

@@ -1,75 +1,81 @@
-﻿//using UnityEngine;
-//using System.Collections;
-//using System;
-//using GAudio;
-//
-//    public class CubeThumper : MonoBehaviour
-//    {
-//    public PulseModule pulse;
-//    public PulseModule firePulse;
-//    public int hitIndex;
-//    public bool isTriggered, isFiring, hasFired;
-//
-//        void OnEnable()
-//        {
-//        pulse = GameObject.Find("Sub Pulse").GetComponent<SubPulseModule>();
-//        firePulse = GameObject.Find("FirePulse").GetComponent<SubPulseModule>();
-//        pulse.onWillPulse += OnTriggerPulse;
-//        firePulse.onWillPulse += OnFirePulse;
-//        }
-//   
-//    void OnDisable()
-//        {
-//        pulse.onWillPulse -= OnTriggerPulse;
-//        firePulse.onWillPulse -= OnFirePulse;
-//    }
-//
-//    public bool IsTriggered()
-//    {
-//        return isTriggered;
-//    }
-//
-//
-//   private void OnTriggerPulse(IGATPulseInfo pulseInfo)
-//    {
-//        if (isTriggered && !hasFired) {
-//            GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-//        }
-//        if (hasFired && pulseInfo.StepIndex == pulseInfo.NbOfSteps - 1)
-//        {
-//            Destroy(gameObject);
-//        }
-//        if (isFiring && pulseInfo.PulseSender.MasterPulseInfo.StepIndex == hitIndex)
-//        {
-//            GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-//            isFiring = false;
-//            hasFired = true; //TODO: This is gross -- change to enums.
-//        }
-//    }
-//
-//    private void OnFirePulse(IGATPulseInfo pulseInfo)
-//    {
-//        if (hasFired && pulseInfo.StepIndex == (hitIndex + 1) % pulseInfo.NbOfSteps)
-//        {
-//            Destroy(gameObject);
-//        }
-//        if (isFiring && pulseInfo.StepIndex == hitIndex)
-//        {
-//            GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-//            isFiring = false;
-//            hasFired = true; //TODO: This is gross -- change to enums.
-//        }
-//    }
-//
-//
-//
-//    // Use this for initialization
-//    void Start()
-//        {
-//        }
-//        // Update is called once per frame
-//        void Update()
-//        {
-//
-//        }
-//    }
+﻿using UnityEngine;
+using System.Collections;
+using System;
+
+public enum CubeState
+{
+    IDLE,
+    LOCKED,
+    DESTROYED
+}
+
+public class CubeThumper : MonoBehaviour
+{
+    public CubeState state = CubeState.IDLE;
+    private Metronome metro;
+
+    private bool hasHit = false;
+    private double timeToLock;
+
+    private Material material;
+
+    public AudioClip lockClip;
+
+
+    // Use this for initialization
+    void Start()
+    {
+        metro = GameObject.FindGameObjectWithTag("Metronome").GetComponent<Metronome>();
+        material = gameObject.GetComponent<Renderer>().material;
+        
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        switch (state)
+        {
+            case (CubeState.IDLE):
+                HandleIdle();
+                break;
+            case (CubeState.LOCKED):
+                break;
+            case (CubeState.DESTROYED):
+                break;
+            default :
+                break;
+        }
+    }
+
+    public bool HasHit()
+    {
+        return hasHit;
+    }
+
+    public void DestroyCube()
+    {
+        GameObject.Destroy(gameObject);
+    }
+
+    public void HitCube()
+    {
+        hasHit = true;
+        ScheduledClip lockSound = new ScheduledClip(metro,
+                                                           new NotationTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1),
+                                                           new NotationTime(0, 0, 0),
+                                                           lockClip,
+                                                           gameObject);
+
+        timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
+    }
+
+    void HandleIdle()
+    {
+        //If hit wait until quantized time -- then Lock
+        if (hasHit && AudioSettings.dspTime >= timeToLock)
+        {
+            state = CubeState.LOCKED;
+            material.SetColor("_Color", Color.red);
+        }
+        
+    }
+}

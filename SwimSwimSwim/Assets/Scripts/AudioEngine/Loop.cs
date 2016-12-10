@@ -5,7 +5,7 @@ public class Loop : MonoBehaviour
 {
     private AudioSource[] sources;
     public AudioClip[] clipsToPlay;
-    public Note[] notes;
+    public ScheduledClip[] notes;
     private double startTime;
     private double lastPlayed;
     private double nextPlay;

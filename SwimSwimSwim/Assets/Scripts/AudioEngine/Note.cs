@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Note { 
+public class ScheduledClip { 
 
     public AudioClip clip;
 
@@ -14,7 +14,7 @@ public class Note {
     public int nextSource = 0;
     public int lastSource = 0;
 
-    public Note(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip, GameObject sequencer)
+    public ScheduledClip(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip, GameObject sequencer)
     {
 
         //Init fields

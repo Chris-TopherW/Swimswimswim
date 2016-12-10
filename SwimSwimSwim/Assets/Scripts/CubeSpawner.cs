@@ -17,7 +17,14 @@ public class CubeSpawner : MonoBehaviour {
     IEnumerator spawnTimer(float delay)
     {
         Vector3 spawnPos = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10));
-        GameObject.Instantiate(CubePrefab, spawnPos, Quaternion.identity);
+        Collider[] checkResult = Physics.OverlapSphere(spawnPos, 0.5f);
+
+        if (checkResult.Length == 0)
+        {
+            // all clear!
+            GameObject newCube = (GameObject)GameObject.Instantiate(CubePrefab, spawnPos, Quaternion.identity);
+            CubeHandler.handler.AddCube(newCube.GetComponent<CubeThumper>());
+        }
         yield return new WaitForSeconds(delay);
     }
 
