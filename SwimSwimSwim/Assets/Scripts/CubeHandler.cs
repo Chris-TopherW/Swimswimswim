@@ -10,10 +10,12 @@ public class CubeHandler : MonoBehaviour
     public Metronome metro;
     public static List<CubeThumper> cubes;
     public static List<CubeThumper> targetedCubes;
-    private int numCubesHit = 0;
+    private int numberofLocks = 0;
 
     private bool lockedThisTick = false;
     private NotationTime currentTickTime;
+
+    private double timeUntilCanFireAgain;
 
 
     private bool firing = false;
@@ -50,8 +52,15 @@ public class CubeHandler : MonoBehaviour
             currentTickTime = new NotationTime((metro.currentTime));
         }
 
+        if (firing && AudioSettings.dspTime >= timeUntilCanFireAgain)
+        {
+            firing = false;
+        }
+
         //If an object hasn't been locked on this tick do raycasting
-        if (targetedCubes.Count < 8 && !lockedThisTick)
+
+        //Cannot rely on list count anymore, will have to keep track in method
+        if (numberofLocks < 8 && !lockedThisTick)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit[] hits = Physics.SphereCastAll(ray.origin, 1, ray.direction, 1000.0f);
@@ -62,17 +71,22 @@ public class CubeHandler : MonoBehaviour
                 {
 
                     CubeThumper thump = obj.GetComponent<CubeThumper>();
-                    if (!thump.HasHit() && !lockedThisTick)
+                    if (thump.Lockable() && !lockedThisTick )
                     {
                         thump.HitCube();
-                        targetedCubes.Add(thump);
+                        if (!targetedCubes.Contains(thump))
+                        {
+                            targetedCubes.Add(thump);
+                        }
                         lockedThisTick = true;
+                        numberofLocks++;
                     }
                 }
             }
         }
-        if ((Input.touchCount > 1 || Input.GetKeyDown(KeyCode.Space)) && !firing)
+        if ( (Input.touchCount > 1 || Input.GetKeyDown(KeyCode.Space))  && !firing)
         {
+            firing = true;
             NotationTime firingStart = new NotationTime(metro.currentTime);
             firingStart.Add(new NotationTime(0,0,1));
             foreach (CubeThumper thump in targetedCubes)
@@ -80,7 +94,9 @@ public class CubeHandler : MonoBehaviour
                 thump.DestroyCube(firingStart);
                 firingStart.Add(new NotationTime(0, 0, 1));
             }
+            timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
             targetedCubes.Clear();
+            numberofLocks = 0;
         }
     }
 }
