@@ -17,16 +17,21 @@ public class CubeHandler : MonoBehaviour
 
 
     private bool firing = false;
-    
+
+    void Awake()
+    {
+
+        handler = this;
+
+        cubes = new List<CubeThumper>();
+        targetedCubes = new List<CubeThumper>();
+    }
    
 
     // Use this for initialization
     void Start()
     {
-        handler = this;
         metro = Metronome.metro;
-        cubes = new List<CubeThumper>();
-        targetedCubes = new List<CubeThumper>();
         currentTickTime = new NotationTime(metro.currentTime);
     }
 
