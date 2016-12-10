@@ -50,7 +50,7 @@ public class CubeHandler : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit[] hits = Physics.SphereCastAll(ray.origin, 1, ray.direction, 1000.0f);
-            for (int i = 0; i < hits.Length && i < 1; i++)
+            for (int i = 0; i < hits.Length; i++)
             {
                 GameObject obj = hits[i].transform.gameObject;
                 if (obj.CompareTag("Thumper"))
@@ -68,9 +68,12 @@ public class CubeHandler : MonoBehaviour
         }
         if ((Input.touchCount > 1 || Input.GetKeyDown(KeyCode.Space)) && !firing)
         {
+            NotationTime firingStart = new NotationTime(metro.currentTime);
+            firingStart.Add(new NotationTime(0,0,1));
             foreach (CubeThumper thump in targetedCubes)
             {
-                thump.DestroyCube();
+                thump.DestroyCube(firingStart);
+                firingStart.Add(new NotationTime(0, 0, 1));
             }
             targetedCubes.Clear();
         }

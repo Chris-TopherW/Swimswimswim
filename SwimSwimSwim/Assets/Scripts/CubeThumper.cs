@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.Networking;
 
 public enum CubeState
 {
@@ -15,11 +16,15 @@ public class CubeThumper : MonoBehaviour
     private Metronome metro;
 
     private bool hasHit = false;
+    private bool hasFired = false;
     private double timeToLock;
+    private double timeToFire;
+    private double timeAlive;
 
     private Material material;
 
     public AudioClip lockClip;
+    public AudioClip fireClip;
 
 
     // Use this for initialization
@@ -38,8 +43,10 @@ public class CubeThumper : MonoBehaviour
                 HandleIdle();
                 break;
             case (CubeState.LOCKED):
+                HandleLocked();
                 break;
             case (CubeState.DESTROYED):
+                HandleDestroyed();
                 break;
             default :
                 break;
@@ -51,9 +58,19 @@ public class CubeThumper : MonoBehaviour
         return hasHit;
     }
 
-    public void DestroyCube()
+    public void DestroyCube(NotationTime toFire)
     {
-        GameObject.Destroy(gameObject);
+        hasFired = true;
+        ScheduledClip fireSound = new ScheduledClip(metro,
+                                                           toFire,
+                                                           new NotationTime(0, 0, 0),
+                                                           fireClip,
+                                                           gameObject);
+
+        timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
+        NotationTime timeLeft = new NotationTime(toFire);
+        timeLeft.Add(new NotationTime(0,0,1));
+        timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick); 
     }
 
     public void HitCube()
@@ -66,6 +83,9 @@ public class CubeThumper : MonoBehaviour
                                                            gameObject);
 
         timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
+
+        state = CubeState.LOCKED;
+        material.SetColor("_Color", Color.red);
     }
 
     void HandleIdle()
@@ -77,5 +97,22 @@ public class CubeThumper : MonoBehaviour
             material.SetColor("_Color", Color.red);
         }
         
+    }
+
+    void HandleLocked()
+    {
+        if (hasFired && AudioSettings.dspTime >= timeToFire)
+        {
+            state = CubeState.DESTROYED;
+            material.SetColor("_Color", Color.green);
+        }
+    }
+
+    void HandleDestroyed()
+    {
+        if (AudioSettings.dspTime >= timeAlive)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 }
