@@ -74,9 +74,12 @@ public class CubeThumper : MonoBehaviour
         return (currentHealth > lockNum && hasFired == false);
     }
 
-    public void DestroyCube(NotationTime toFire)
+    public void FireCube(NotationTime toFire)
     {
         hasFired = true;
+        currentHealth -= lockNum;
+        lockNum = 0;
+        spriteRenderer.enabled = false;
         ScheduledClip fireSound = new ScheduledClip(metro,
                                                            toFire,
                                                            new NotationTime(0, 0, 0),
@@ -84,9 +87,13 @@ public class CubeThumper : MonoBehaviour
                                                            gameObject);
 
         timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
-        NotationTime timeLeft = new NotationTime(toFire);
-        timeLeft.Add(new NotationTime(0,0,1));
-        timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick); 
+
+        if (Destroyed())
+        {
+            NotationTime timeLeft = new NotationTime(toFire);
+            timeLeft.Add(new NotationTime(0, 0, 1));
+            timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
+        }
     }
 
     public void HitCube()
@@ -102,7 +109,6 @@ public class CubeThumper : MonoBehaviour
         timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
 
         state = CubeState.LOCKED;
-        material.SetColor("_Color", Color.yellow);
         if (lockNum == 0)
         {
             spriteRenderer.enabled = false;
@@ -121,15 +127,34 @@ public class CubeThumper : MonoBehaviour
 
     void HandleIdle()
     {
-        
+        Color health = Color.Lerp(Color.red, Color.green, (float)currentHealth / (float)MaxHealth);
+        material.SetColor("_Color", health);
+    }
+
+    bool Destroyed()
+    {
+        return (currentHealth <= 0);
     }
 
     void HandleLocked()
     {
         if (hasFired && AudioSettings.dspTime >= timeToFire)
         {
-            state = CubeState.DESTROYED;
-            material.SetColor("_Color", Color.red);
+            if (Destroyed())
+            {
+                state = CubeState.DESTROYED;
+                material.SetColor("_Color", Color.red);
+            }
+            else
+            {
+
+                Color health = Color.Lerp(Color.red, Color.green, (float)currentHealth / (float)MaxHealth);
+                material.SetColor("_Color", health);
+                state = CubeState.IDLE;
+                hasHit = false;
+                hasFired = false;
+            }
+
         }
     }
 

@@ -163,7 +163,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 382804642}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 844c896a071a662439db71282e8406e8, type: 3}
   m_Name: 
@@ -227,6 +227,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 212000013553472788, guid: 5c68e72b90b67954c8243d2fc734e951,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5c68e72b90b67954c8243d2fc734e951, type: 2}
   m_IsPrefabParent: 0
@@ -258,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubePrefab: {fileID: 1000013864986058, guid: 5c68e72b90b67954c8243d2fc734e951, type: 2}
-  delay: 0.2
+  delay: 0.5
 --- !u!4 &537407970
 Transform:
   m_ObjectHideFlags: 0
