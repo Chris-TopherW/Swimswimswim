@@ -10,13 +10,13 @@ public class Sequence : MonoBehaviour
     void Start()
     {
         metro = Metronome.metro;
-        notes = new ScheduledClip[5];
-        NotationTime n1, n2, n3, n4, n5, barLoop, quarterLoop, noLoop;
-        n1 = new NotationTime(0,0,7);
-        n2 = new NotationTime(0, 1, 1);
-        n3 = new NotationTime(0, 1, 3);
-        n4 = new NotationTime(0, 1, 5);
-        n5 = new NotationTime(0, 0, 1);
+        notes = new ScheduledClip[1];
+        NotationTime n1, barLoop, quarterLoop, noLoop;
+        n1 = new NotationTime(0,0,1);
+        //n2 = new NotationTime(0, 1, 1);
+        //n3 = new NotationTime(0, 1, 3);
+        //n4 = new NotationTime(0, 1, 5);
+        //n5 = new NotationTime(0, 0, 1);
         noLoop = new NotationTime(0, 0, 0);
         barLoop = new NotationTime(1, 0, 0);
         quarterLoop = new NotationTime(0, 1, 0);
@@ -30,12 +30,12 @@ public class Sequence : MonoBehaviour
         //-- A way of tying gameplay behaviours and animations to a particular note. 
 
         notes[0] = new ScheduledClip(metro, n1, barLoop, clipsToPlay[0], gameObject);
-        notes[1] = new ScheduledClip(metro, n2, barLoop, clipsToPlay[1], gameObject);
-        notes[2] = new ScheduledClip(metro, n3, barLoop, clipsToPlay[2], gameObject);
-        notes[3] = new ScheduledClip(metro, n4, barLoop, clipsToPlay[3], gameObject);
+        //notes[1] = new ScheduledClip(metro, n2, barLoop, clipsToPlay[1], gameObject);
+        //notes[2] = new ScheduledClip(metro, n3, barLoop, clipsToPlay[2], gameObject);
+        //notes[3] = new ScheduledClip(metro, n4, barLoop, clipsToPlay[3], gameObject);
 
         
-        notes[4] = new ScheduledClip(metro, n5, barLoop, clipsToPlay[4], gameObject);
+        //notes[4] = new ScheduledClip(metro, n5, barLoop, clipsToPlay[4], gameObject);
         /*
         notes[5] = new Note(metro, new NotationTime(0, 0, 1), quarterLoop, clipsToPlay[5], gameObject);
         notes[6] = new Note(metro, new NotationTime(0, 0, 5), quarterLoop, clipsToPlay[5], gameObject);

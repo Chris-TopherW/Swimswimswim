@@ -133,8 +133,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  lockClip: {fileID: 8300000, guid: df39202cf8945274e9582e5cbcb8d239, type: 3}
-  fireClip: {fileID: 8300000, guid: 6b33839e97b0e1f46bfa57633337cbd5, type: 3}
+  lockClips:
+  - {fileID: 8300000, guid: df39202cf8945274e9582e5cbcb8d239, type: 3}
+  fireClips:
+  - {fileID: 8300000, guid: af5c2c887f7674b729717cd983d421c5, type: 3}
+  - {fileID: 8300000, guid: 43ed22e8ec2ea4ade87d8de7dd414e2d, type: 3}
+  - {fileID: 8300000, guid: 82de7c2f2a45947379e1641c31d427e2, type: 3}
+  - {fileID: 8300000, guid: bd4680cc226be4b6495c877b1fe1ca4f, type: 3}
   MaxHealth: 8
   lockSprites:
   - {fileID: 21300000, guid: 1511c9cdf7d6cd142ba56dc0d6da8da2, type: 3}

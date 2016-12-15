@@ -10,7 +10,8 @@ public class CubeHandler : MonoBehaviour
     public Metronome metro;
     public static List<CubeThumper> cubes;
     public static List<CubeThumper> targetedCubes;
-    private int numberofLocks = 0;
+	public int maxLock = 8;
+	private int numberOfLocks = 0;
 
     private bool lockedThisTick = false;
     private NotationTime currentTickTime;
@@ -60,7 +61,7 @@ public class CubeHandler : MonoBehaviour
         //If an object hasn't been locked on this tick do raycasting
 
         //Cannot rely on list count anymore, will have to keep track in method
-        if (numberofLocks < 8 && !lockedThisTick)
+		if (numberOfLocks < maxLock && !lockedThisTick)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit[] hits = Physics.SphereCastAll(ray.origin, 1, ray.direction, 1000.0f);
@@ -79,7 +80,7 @@ public class CubeHandler : MonoBehaviour
                             targetedCubes.Add(thump);
                         }
                         lockedThisTick = true;
-                        numberofLocks++;
+						numberOfLocks++;
                     }
                 }
             }
@@ -96,7 +97,8 @@ public class CubeHandler : MonoBehaviour
             }
             timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
             targetedCubes.Clear();
-            numberofLocks = 0;
+            numberOfLocks = 0;
         }
+
     }
 }

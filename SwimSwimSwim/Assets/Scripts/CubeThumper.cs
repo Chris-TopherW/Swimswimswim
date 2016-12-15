@@ -23,8 +23,9 @@ public class CubeThumper : MonoBehaviour
 
     private Material material;
 
-    public AudioClip lockClip;
-    public AudioClip fireClip;
+	public AudioClip[] lockClips;
+	public AudioClip[] fireClips;
+
 
     public int MaxHealth;
     private int currentHealth;
@@ -42,7 +43,6 @@ public class CubeThumper : MonoBehaviour
         material = gameObject.GetComponent<Renderer>().material;
 
         currentHealth = MaxHealth;
-
 
     }
     // Update is called once per frame
@@ -83,7 +83,7 @@ public class CubeThumper : MonoBehaviour
         ScheduledClip fireSound = new ScheduledClip(metro,
                                                            toFire,
                                                            new NotationTime(0, 0, 0),
-                                                           fireClip,
+														   fireClips[UnityEngine.Random.Range(0, fireClips.Length)],
                                                            gameObject);
 
         timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
@@ -103,7 +103,7 @@ public class CubeThumper : MonoBehaviour
         ScheduledClip lockSound = new ScheduledClip(metro,
                                                            new NotationTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1),
                                                            new NotationTime(0, 0, 0),
-                                                           lockClip,
+														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)],
                                                            gameObject);
 
         timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
