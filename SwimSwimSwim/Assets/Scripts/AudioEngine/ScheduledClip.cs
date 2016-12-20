@@ -14,6 +14,9 @@ public class ScheduledClip {
     public int nextSource = 0;
     public int lastSource = 0;
 
+    public bool customLength = false;
+    private double fadeoutStart, fadeoutLength;
+
     public ScheduledClip(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip, GameObject sequencer)
     {
 
@@ -39,6 +42,21 @@ public class ScheduledClip {
         nextSource = (lastSource + 1) % sources.Length;
     }
 
+    public void Randomizer()
+    {
+        sources[lastSource].volume = Random.Range(0.4f, 1.0f);
+        sources[lastSource].pitch = Random.Range(0.1f, 1.1f);
+    }
+
+    public void SetClipLength(NotationTime length, float fadeoutLength)
+    {
+        customLength = true;
+        length.Add(timeToPlay);
+        fadeoutStart = metro.GetFutureTime(length) - fadeoutLength;
+        Debug.Log(fadeoutStart + fadeoutLength - nextPlay);
+
+    }
+
     public void Update()
     {
         //If this is a looping note, schedule alternate AudioSource to play at the next loop interval.
@@ -51,6 +69,13 @@ public class ScheduledClip {
             sources[nextSource].PlayScheduled(nextPlay);
             lastSource = nextSource;
             nextSource = (lastSource + 1) % sources.Length;
+        }
+
+        if (customLength && AudioSettings.dspTime >= fadeoutStart)
+        {
+            float t = (float)(AudioSettings.dspTime - fadeoutStart)/(float)fadeoutLength;
+            float vol = Mathf.Lerp(1, 0, t);
+            sources[lastSource].volume = vol;
         }
     }
 

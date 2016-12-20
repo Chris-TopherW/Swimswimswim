@@ -113,7 +113,17 @@ public class Metronome : MonoBehaviour
 
     }
 
-	public int getDSPBufferSize()
+    public double GetFutureTime(NotationTime time)
+    {
+        int tickTime = (time.bar * ticksPerBar) + (time.quarter * ticksPerQuarter) + time.tick;
+        int currentTickTime = (currentBar * ticksPerBar) + (currentQuarter * ticksPerQuarter) + currentTick;
+        if (currentTickTime > tickTime) return -1;
+        int futureTicks = tickTime - currentTickTime;
+        return lastTickTime + (futureTicks * secondsPerTick);
+
+    }
+
+    public int getDSPBufferSize()
 	{
 		return DSPBufferSize;
 	}

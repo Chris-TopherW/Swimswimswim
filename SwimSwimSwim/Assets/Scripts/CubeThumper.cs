@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine.Networking;
 
 public enum CubeState
@@ -33,7 +34,7 @@ public class CubeThumper : MonoBehaviour
 
     public Sprite[] lockSprites;
     public SpriteRenderer spriteRenderer;
-    
+    private ScheduledClip fireSound;
 
 
     // Use this for initialization
@@ -48,6 +49,11 @@ public class CubeThumper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fireSound !=null)
+        {
+            fireSound.Update();
+        }
+
         switch (state)
         {
             case (CubeState.IDLE):
@@ -74,26 +80,33 @@ public class CubeThumper : MonoBehaviour
         return (currentHealth > lockNum && hasFired == false);
     }
 
+    public int GetLockLength()
+    {
+        return lockNum;
+    }
+
     public void FireCube(NotationTime toFire)
     {
         hasFired = true;
         currentHealth -= lockNum;
-        lockNum = 0;
         spriteRenderer.enabled = false;
-        ScheduledClip fireSound = new ScheduledClip(metro,
+        fireSound = new ScheduledClip(metro,
                                                            toFire,
                                                            new NotationTime(0, 0, 0),
 														   fireClips[UnityEngine.Random.Range(0, fireClips.Length)],
                                                            gameObject);
-
+        fireSound.SetClipLength(new NotationTime(0,0,lockNum), 0.01f);
+        
         timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
 
         if (Destroyed())
         {
             NotationTime timeLeft = new NotationTime(toFire);
-            timeLeft.Add(new NotationTime(0, 0, 1));
+            timeLeft.Add(new NotationTime(0, 0, lockNum));
             timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
         }
+
+        lockNum = 0;
     }
 
     public void HitCube()
@@ -105,6 +118,8 @@ public class CubeThumper : MonoBehaviour
                                                            new NotationTime(0, 0, 0),
 														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)],
                                                            gameObject);
+
+        lockSound.Randomizer();
 
         timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
 
