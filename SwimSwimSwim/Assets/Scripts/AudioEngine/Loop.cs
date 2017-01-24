@@ -22,7 +22,7 @@ public class Loop : MonoBehaviour
             for (int j = 0; j < clipsToPlay.Length; j++)
             {
                 sources[j * clipsToPlay.Length + i] = gameObject.AddComponent<AudioSource>() as AudioSource;
-                sources[j * clipsToPlay.Length + i].clip = clipsToPlay[i];
+                sources[j * clipsToPlay.Length + i].clip = clipsToPlay[j];
             }
         }
         //sources[3].volume = 0;

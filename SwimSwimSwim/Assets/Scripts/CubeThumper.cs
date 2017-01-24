@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine.Networking;
 
 public enum CubeState
@@ -31,6 +32,8 @@ public class CubeThumper : MonoBehaviour
     public int MaxHealth;
     private int currentHealth;
     private int lockNum;
+
+    public float vol;
 
     public Sprite[] lockSprites;
     public SpriteRenderer spriteRenderer;
@@ -95,14 +98,14 @@ public class CubeThumper : MonoBehaviour
                                                            new NotationTime(0, 0, 0),
 														   fireClips[UnityEngine.Random.Range(0, fireClips.Length)],
                                                            gameObject);
-        fireSound.SetClipLength(new NotationTime(0,0,lockNum), 0.01f);
+        fireSound.SetClipLength(new NotationTime(0,1,0), 0.01f);
         
         timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
 
         if (Destroyed())
         {
             NotationTime timeLeft = new NotationTime(toFire);
-            timeLeft.Add(new NotationTime(0, 0, lockNum));
+            timeLeft.Add(new NotationTime(0, 1, 0));
             timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
         }
 
@@ -120,6 +123,7 @@ public class CubeThumper : MonoBehaviour
                                                            gameObject);
 
         lockSound.Randomizer();
+        lockSound.setVolume(vol);
 
         timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
 

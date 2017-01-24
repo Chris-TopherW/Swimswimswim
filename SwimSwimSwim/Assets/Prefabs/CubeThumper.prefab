@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013864986058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.1586996, y: 1.24, z: 16.119846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -134,13 +134,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   lockClips:
-  - {fileID: 8300000, guid: df39202cf8945274e9582e5cbcb8d239, type: 3}
+  - {fileID: 8300000, guid: d6ba91e808a6eda4da2cf9ff9e6f7d8c, type: 3}
+  - {fileID: 8300000, guid: 0481eee3299d62f41a235278998920b0, type: 3}
+  - {fileID: 8300000, guid: bf4d229ead665a6439500307cfc9adda, type: 3}
+  - {fileID: 8300000, guid: 7680a6af7d2527e4fa3c0939da8f0ff1, type: 3}
+  - {fileID: 8300000, guid: 0fbb44516f9372a40824712dd59dde33, type: 3}
+  - {fileID: 8300000, guid: 1c417b0c9306de2459cc41e4bc5ba9a4, type: 3}
+  - {fileID: 8300000, guid: 76afa92a548082d4f9c4ce507cd5a82c, type: 3}
+  - {fileID: 8300000, guid: 4359c3259720dda4392a6bf269b5ad53, type: 3}
   fireClips:
-  - {fileID: 8300000, guid: 838999cf09e1a6a4bb99c72b1683f4e1, type: 3}
-  - {fileID: 8300000, guid: 79280a6d71289d64abe3ab1f09ee23eb, type: 3}
-  - {fileID: 8300000, guid: c7e2a16866a2e1d41b8bd34aba594772, type: 3}
-  - {fileID: 8300000, guid: 770aee9ebe216f540b4ca5d66a63a9e8, type: 3}
+  - {fileID: 8300000, guid: cfd37c395f5cc384ab3987f653ea7c42, type: 3}
+  - {fileID: 8300000, guid: 27b3ebc8389e61c44b7948ef696af3d0, type: 3}
+  - {fileID: 8300000, guid: a31dd4a79a9baa945b0fb370ad3ddba3, type: 3}
+  - {fileID: 8300000, guid: 3a15a2bd90ffb79469ac606311e29373, type: 3}
+  - {fileID: 8300000, guid: 98bc64b4643630c4192efdc959c5d8de, type: 3}
+  - {fileID: 8300000, guid: 7c817946c9e52fc4888f6f5891946828, type: 3}
+  - {fileID: 8300000, guid: 13c2b51fb50612348a1972d1375f7b92, type: 3}
   MaxHealth: 8
+  vol: 0.3
   lockSprites:
   - {fileID: 21300000, guid: 1511c9cdf7d6cd142ba56dc0d6da8da2, type: 3}
   - {fileID: 21300000, guid: 1aee0160a134c50478369dca28c68510, type: 3}

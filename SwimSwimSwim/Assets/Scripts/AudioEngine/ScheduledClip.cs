@@ -48,6 +48,11 @@ public class ScheduledClip {
         sources[lastSource].pitch = Random.Range(0.1f, 2.1f);
     }
 
+    public void setVolume(float vol)
+    {
+        sources[lastSource].volume = vol;
+    }
+
     public void SetClipLength(NotationTime length, float fadeoutLength)
     {
         customLength = true;
