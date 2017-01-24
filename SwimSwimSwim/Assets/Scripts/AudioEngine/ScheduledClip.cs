@@ -45,7 +45,7 @@ public class ScheduledClip {
     public void Randomizer()
     {
         sources[lastSource].volume = Random.Range(0.4f, 1.0f);
-        sources[lastSource].pitch = Random.Range(0.1f, 1.1f);
+        sources[lastSource].pitch = Random.Range(0.1f, 2.1f);
     }
 
     public void SetClipLength(NotationTime length, float fadeoutLength)

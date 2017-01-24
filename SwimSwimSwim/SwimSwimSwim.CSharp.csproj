@@ -149,6 +149,9 @@
     <Compile Include="Assets\Scripts\PlaneControl.cs" />
     <Compile Include="Assets\Scripts\PlayClip.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
+    <Compile Include="Assets\Scripts\PortalPrototype\Copycam.cs" />
+    <Compile Include="Assets\Scripts\PortalPrototype\MoveCube.cs" />
+    <Compile Include="Assets\Scripts\PortalPrototype\WindowPosition.cs" />
     <Compile Include="Assets\Scripts\RandomStartPos.cs" />
     <Compile Include="Assets\Scripts\SetLevels.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
