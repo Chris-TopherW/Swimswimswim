@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 268799282}
   - component: {fileID: 268799281}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BackgroundLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipsToPlay:
-  - {fileID: 8300000, guid: db4d2d3de2fa9a541a22bea2c062b759, type: 3}
-  metro: {fileID: 0}
+  - {fileID: 8300000, guid: eacd0a54e7e7a423aa1ce1a40a3e5587, type: 3}
+  metro: {fileID: 736868439}
 --- !u!4 &268799282
 Transform:
   m_ObjectHideFlags: 0
