@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,18 +17,18 @@ public class GameManager : MonoBehaviour {
 	private float 					timeSinceSceneStart;
 	//private AudioManager 			audioManager;
 	private bool 					endOfGame = false;
+    public Text textPane; 
 
 	void Start () {
-		Cursor.visible = false;
+		//Cursor.visible = false;
 		currentPollutionLevel = 0;
-        meshGen = GameObject.FindGameObjectWithTag( "Spline" ).GetComponent<CurveImplementation>();
 		//audioManager = audioManagerObject.GetComponent< AudioManager > ();
 		startTime = Time.time;
 		timeSinceSceneStart = 0.0f;
 	}
 
 	void Update () {
-		timeSinceSceneStart = Time.time - startTime;
+		/*timeSinceSceneStart = Time.time - startTime;
 		if ( timeSinceSceneStart >= timeUntilBossFight && timeSinceSceneStart <= ( timeUntilBossFight + lengthOfBossFight ) && gameState == "Normal" ) {
 			gameState = "BossFight";
 			Debug.Log ( "Boss fight!" );
@@ -40,12 +41,16 @@ public class GameManager : MonoBehaviour {
             splinePos = 0;
             segmentPos++;
             meshGen.Generate();
-        }
+        }*/
 //		if ( currentPollutionLevel >= maxPollutionLevel && !endOfGame) {
 //			audioManager.EndOfGameAudio ();
 //			endOfGame = true;
 //			//SceneManager.LoadScene ("LoseScreen");
 //			//Debug.Log("You Lose!!");
 //		}
+	    if (textPane != null)
+	    {
+	        textPane.text = "Pollution: " + currentPollutionLevel;
+	    }
 	}
 }

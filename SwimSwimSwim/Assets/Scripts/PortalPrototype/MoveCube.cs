@@ -18,7 +18,9 @@ public class MoveCube : MonoBehaviour
 	void FixedUpdate ()
 	{
 	    position = gameObject.transform.position;
-        if (Input.GetKey(KeyCode.A))
+
+        //Manual Movement!
+        /*if (Input.GetKey(KeyCode.A))
         {
             position.x -= speed * Time.deltaTime;
         }
@@ -33,12 +35,8 @@ public class MoveCube : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             position.z += speed * Time.deltaTime;
-        }
-	    if (position.z >= 28)
-	    {
-	        position.x += 100;
-	        position.z = 0;
-	    }
-	    body.MovePosition(position);
+        }*/
+        position.z += speed * Time.deltaTime;
+        body.MovePosition(position);
 	}
 }

@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013864986058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1586996, y: 1.24, z: 16.119846}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000014120947932}
@@ -152,9 +152,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 98bc64b4643630c4192efdc959c5d8de, type: 3}
   - {fileID: 8300000, guid: 7c817946c9e52fc4888f6f5891946828, type: 3}
   - {fileID: 8300000, guid: 13c2b51fb50612348a1972d1375f7b92, type: 3}
-  MaxHealth: 8
+  MaxHealth: 4
   lockVolume: 0.3
-  fireVolume: 0.2
+  fireVolume: 0.475
   lockSprites:
   - {fileID: 21300000, guid: 1511c9cdf7d6cd142ba56dc0d6da8da2, type: 3}
   - {fileID: 21300000, guid: 1aee0160a134c50478369dca28c68510, type: 3}
