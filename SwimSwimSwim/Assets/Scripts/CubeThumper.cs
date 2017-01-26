@@ -28,6 +28,8 @@ public class CubeThumper : MonoBehaviour
 	public AudioClip[] lockClips;
 	public AudioClip[] fireClips;
 
+    public AudioClip[] destroyClips;
+
 
     public int MaxHealth;
     private int currentHealth;
@@ -98,10 +100,19 @@ public class CubeThumper : MonoBehaviour
         hasFired = true;
         currentHealth -= lockNum;
         spriteRenderer.enabled = false;
+        AudioClip soundToPlay;
+        if (Destroyed())
+        {
+            soundToPlay = destroyClips[UnityEngine.Random.Range(0, destroyClips.Length)];
+        }
+        else
+        {
+            soundToPlay = fireClips[UnityEngine.Random.Range(0, fireClips.Length)];
+        }
         fireSound = new ScheduledClip(metro,
                                                            toFire,
                                                            new NotationTime(0, 0, 0),
-														   fireClips[UnityEngine.Random.Range(0, fireClips.Length)],
+                                                           soundToPlay,
                                                            gameObject);
         fireSound.SetClipLength(new NotationTime(0,1,0), 0.01f);
         
