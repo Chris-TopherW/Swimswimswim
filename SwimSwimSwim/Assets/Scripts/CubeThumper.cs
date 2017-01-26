@@ -38,6 +38,8 @@ public class CubeThumper : MonoBehaviour
 	[Range(0.0f, 1.0f)]
 	public float fireVolume;
 
+    public int scoreValue = 500;
+
     public Sprite[] lockSprites;
     public SpriteRenderer spriteRenderer;
     private ScheduledClip fireSound;
@@ -91,7 +93,7 @@ public class CubeThumper : MonoBehaviour
         return lockNum;
     }
 
-    public void FireCube(NotationTime toFire)
+    public int FireCube(NotationTime toFire)
     {
         hasFired = true;
         currentHealth -= lockNum;
@@ -111,9 +113,12 @@ public class CubeThumper : MonoBehaviour
             NotationTime timeLeft = new NotationTime(toFire);
             timeLeft.Add(new NotationTime(0, 1, 0));
             timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
+            return scoreValue;
         }
-
+       
         lockNum = 0;
+
+        return -1;
     }
 
     public void HitCube()

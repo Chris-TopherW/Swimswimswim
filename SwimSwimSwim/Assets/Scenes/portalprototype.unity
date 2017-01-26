@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &35691663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -268,8 +268,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 142.3, y: -39}
-  m_SizeDelta: {x: 229.3, y: 30}
+  m_AnchoredPosition: {x: 142.3, y: -44.3}
+  m_SizeDelta: {x: 229.3, y: 58.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &126673115
 MonoBehaviour:
@@ -459,6 +459,7 @@ MonoBehaviour:
   timeUntilBossFight: 0
   lengthOfBossFight: 0
   audioManagerObject: {fileID: 0}
+  textPane: {fileID: 126673115}
 --- !u!1 &239647233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1199325142
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1290102818
 Transform:
   m_ObjectHideFlags: 0

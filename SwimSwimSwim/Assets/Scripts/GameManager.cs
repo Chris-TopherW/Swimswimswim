@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	public int 						maxPollutionLevel;
 	public static int 				currentPollutionLevel;
+    public static int gameScore;
     public static float 			splinePos = 0;
     public static int 				segmentPos = 0;
 	public static string 			gameState = "Normal";
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour {
 //		}
 	    if (textPane != null)
 	    {
-	        textPane.text = "Pollution: " + currentPollutionLevel;
+	        textPane.text = "Pollution: " + currentPollutionLevel + "\n Score: " + gameScore;
 	    }
 	}
 }

@@ -90,12 +90,21 @@ public class CubeHandler : MonoBehaviour
             firing = true;
             NotationTime firingStart = new NotationTime(metro.currentTime);
             firingStart.Add(new NotationTime(0,0,1));
+            int pointsGained = 0;
+            int multiplier = 0;
             foreach (CubeThumper thump in targetedCubes)
             {
                 int lockLength = thump.GetLockLength();
-                thump.FireCube(firingStart);
+                int fireResult = thump.FireCube(firingStart);
+                if (fireResult > 0)
+                {
+                    pointsGained += fireResult;
+                    multiplier++;
+                }
                 firingStart.Add(new NotationTime(0, 0, lockLength));
+
             }
+            GameManager.gameScore += pointsGained*multiplier;
             timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
             targetedCubes.Clear();
             numberOfLocks = 0;
