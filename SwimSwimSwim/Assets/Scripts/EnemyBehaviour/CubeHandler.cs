@@ -83,36 +83,41 @@ public class CubeHandler : MonoBehaviour
 						numberOfLocks++;
                     }
                 }
-            }
-        }
-
-
-        if ( (Input.touchCount > 1 || Input.GetKeyDown(KeyCode.Space))  && !firing)
-        {
-            firing = true;
-            NotationTime firingStart = new NotationTime(metro.currentTime);
-            firingStart.Add(new NotationTime(0,0,1));
-            int pointsGained = 0;
-            int multiplier = 0;
-            foreach (CubeThumper thump in targetedCubes)
-            {
-                if (thump != null)
+                if (!obj.CompareTag("Cleanup") && obj.CompareTag("Player") && !firing)
                 {
-                    int lockLength = thump.GetLockLength();
-                    int fireResult = thump.FireCube(firingStart);
-                    if (fireResult > 0)
-                    {
-                        pointsGained += fireResult;
-                        multiplier++;
-                    }
-                    firingStart.Add(new NotationTime(0, 0, lockLength));
+                    Fire();
                 }
             }
-            GameManager.gameScore += pointsGained*multiplier;
-            timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
-            targetedCubes.Clear();
-            numberOfLocks = 0;
         }
 
+
+
+    }
+
+    void Fire()
+    {
+        firing = true;
+        NotationTime firingStart = new NotationTime(metro.currentTime);
+        firingStart.Add(new NotationTime(0, 0, 1));
+        int pointsGained = 0;
+        int multiplier = 0;
+        foreach (CubeThumper thump in targetedCubes)
+        {
+            if (thump != null)
+            {
+                int lockLength = thump.GetLockLength();
+                int fireResult = thump.FireCube(firingStart);
+                if (fireResult > 0)
+                {
+                    pointsGained += fireResult;
+                    multiplier++;
+                }
+                firingStart.Add(new NotationTime(0, 0, lockLength));
+            }
+        }
+        GameManager.gameScore += pointsGained * multiplier;
+        timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
+        targetedCubes.Clear();
+        numberOfLocks = 0;
     }
 }
