@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}</ProjectGuid>
+    <ProjectGuid>{18EA641D-4E5A-F46B-F173-003C54C4EB51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -73,6 +73,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
@@ -81,11 +87,9 @@
     <Compile Include="Assets\Scripts\AudioEngine\Sequence.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
-    <Compile Include="Assets\Scripts\CubeFire.cs" />
-    <Compile Include="Assets\Scripts\CubeHandler.cs" />
-    <Compile Include="Assets\Scripts\CubeSpawner.cs" />
-    <Compile Include="Assets\Scripts\CubeThumper.cs" />
     <Compile Include="Assets\Scripts\CurveImplementation.cs" />
+    <Compile Include="Assets\Scripts\EnemyBehaviour\CubeHandler.cs" />
+    <Compile Include="Assets\Scripts\EnemyBehaviour\CubeThumper.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
@@ -95,6 +99,9 @@
     <Compile Include="Assets\Scripts\SetLevels.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\SplineMaker.cs" />
+    <Compile Include="Assets\Scripts\UIElements\ButtonAnimation.cs" />
+    <Compile Include="Assets\Scripts\UIElements\ButtonTextFade.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

@@ -85,6 +85,8 @@ public class CubeHandler : MonoBehaviour
                 }
             }
         }
+
+
         if ( (Input.touchCount > 1 || Input.GetKeyDown(KeyCode.Space))  && !firing)
         {
             firing = true;
@@ -94,15 +96,17 @@ public class CubeHandler : MonoBehaviour
             int multiplier = 0;
             foreach (CubeThumper thump in targetedCubes)
             {
-                int lockLength = thump.GetLockLength();
-                int fireResult = thump.FireCube(firingStart);
-                if (fireResult > 0)
+                if (thump != null)
                 {
-                    pointsGained += fireResult;
-                    multiplier++;
+                    int lockLength = thump.GetLockLength();
+                    int fireResult = thump.FireCube(firingStart);
+                    if (fireResult > 0)
+                    {
+                        pointsGained += fireResult;
+                        multiplier++;
+                    }
+                    firingStart.Add(new NotationTime(0, 0, lockLength));
                 }
-                firingStart.Add(new NotationTime(0, 0, lockLength));
-
             }
             GameManager.gameScore += pointsGained*multiplier;
             timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
