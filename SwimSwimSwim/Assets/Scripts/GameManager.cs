@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	private bool 					endOfGame = false;
     private bool gamePlaying;
     public Text textPane;
+
+    public ButtonAnimation gameButton;
     public GameObject backgroundLoop;
 
     //TODO -- Massive cleanup
@@ -39,9 +41,24 @@ public class GameManager : MonoBehaviour {
     {
 
         player.GetComponent<MoveCube>().enabled = true;
-        player.GetComponentInChildren<Spawner>().enabled = true;
-        backgroundLoop.GetComponent<Sequence>().enabled = true;
+        player.GetComponentInChildren<Spawner>().spawningToggle = true;
+        backgroundLoop.GetComponent<Sequence>().BeginPlay();
         gamePlaying = true;
+    }
+
+    public void GameOver()
+    {
+        player.GetComponent<MoveCube>().enabled = false;
+        player.GetComponentInChildren<Spawner>().spawningToggle = false;
+        backgroundLoop.GetComponent<Sequence>().Kill();
+        foreach (CubeThumper t in FindObjectsOfType<CubeThumper>())
+        {
+            Destroy(t.gameObject);
+        }
+        gamePlaying = false;
+        gameScore = 0;
+        currentPollutionLevel = 0;
+        gameButton.Enable();
     }
 
 	void Update () {
@@ -59,15 +76,16 @@ public class GameManager : MonoBehaviour {
             segmentPos++;
             meshGen.Generate();
         }*/
-//		if ( currentPollutionLevel >= maxPollutionLevel && !endOfGame) {
-//			audioManager.EndOfGameAudio ();
-//			endOfGame = true;
-//			//SceneManager.LoadScene ("LoseScreen");
-//			//Debug.Log("You Lose!!");
-//		}
+		if ( currentPollutionLevel >= maxPollutionLevel ) {
+            GameOver();
+		}
 	    if (textPane != null && gamePlaying)
 	    {
 	        textPane.text = "Pollution: " + currentPollutionLevel + "\n Score: " + gameScore;
+	    }
+	    else
+	    {
+	        textPane.text = "";
 	    }
 	}
 }

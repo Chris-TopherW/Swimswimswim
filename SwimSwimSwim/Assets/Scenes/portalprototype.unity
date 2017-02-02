@@ -550,11 +550,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c2121db463d343b3ab1708b767aaab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPollutionLevel: 0
+  maxPollutionLevel: 5
   timeUntilBossFight: 0
   lengthOfBossFight: 0
   player: {fileID: 0}
   textPane: {fileID: 126673115}
+  gameButton: {fileID: 1692123274}
   backgroundLoop: {fileID: 268799280}
 --- !u!1 &239647233
 GameObject:
@@ -688,7 +689,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268799280}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 844c896a071a662439db71282e8406e8, type: 3}
   m_Name: 
@@ -1163,7 +1164,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436732724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1976986762}
@@ -1176,17 +1177,17 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436732724}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 488fc8ab0fc2f46c8bdbedfebd4b3cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 1000013864986058, guid: 5c68e72b90b67954c8243d2fc734e951, type: 2}
-  startDelay: 2
+  startDelay: 0.5
   randomWidth: 15
   randomHeight: 10
-  spawningToggle: 1
+  spawningToggle: 0
 --- !u!1 &1512683556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,17 +1376,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1692123274}
         m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1751830997}
-        m_MethodName: TextFadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

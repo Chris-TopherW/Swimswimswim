@@ -48,6 +48,16 @@ public class ScheduledClip {
         sources[lastSource].pitch = Random.Range(0.1f, 2.1f);
     }
 
+    public void Kill()
+    {
+        loop = new NotationTime(0,0,0);
+        foreach (AudioSource source in sources)
+        {
+            source.volume = 0;
+
+        }
+    }
+
     public void setVolume(float vol)
     {
         sources[lastSource].volume = vol;
