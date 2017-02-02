@@ -51,7 +51,7 @@ public class CubeThumper : MonoBehaviour
     void Start()
     {
         metro = GameObject.FindGameObjectWithTag("Metronome").GetComponent<Metronome>();
-        material = gameObject.GetComponent<Renderer>().material;
+        material = gameObject.GetComponentInChildren<Renderer>().material;
 
         currentHealth = MaxHealth;
 
