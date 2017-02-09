@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim", "Assembly-CSharp.csproj", "{5F18085E-2B29-B28C-80AD-FF311D665B4B}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim.CSharp", "SwimSwimSwim.CSharp.csproj", "{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F18085E-2B29-B28C-80AD-FF311D665B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F18085E-2B29-B28C-80AD-FF311D665B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F18085E-2B29-B28C-80AD-FF311D665B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F18085E-2B29-B28C-80AD-FF311D665B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7992BECB-FFD7-CB93-CEBC-91E630D2D53B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

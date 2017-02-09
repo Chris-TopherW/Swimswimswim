@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\PortalPrototype\WindowPosition.cs" />
     <Compile Include="Assets\Scripts\SetLevels.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\SpiningObject.cs" />
     <Compile Include="Assets\Scripts\SplineMaker.cs" />
     <Compile Include="Assets\Scripts\UIElements\ButtonAnimation.cs" />
     <Compile Include="Assets\Scripts\UIElements\ButtonTextFade.cs" />
