@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1183,7 +1183,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 1000013864986058, guid: 5c68e72b90b67954c8243d2fc734e951, type: 2}
+  - {fileID: 1211813641780760, guid: 5c68e72b90b67954c8243d2fc734e951, type: 2}
+  - {fileID: 1478428781541194, guid: f8b64249b2fd1413e89ed53de6daa7f8, type: 2}
+  - {fileID: 1207806131462244, guid: 945a49969d26b423fb1acc0f50cf7fe0, type: 2}
+  - {fileID: 1557846560238614, guid: 6ba5fdcf14a6e4266881d1a9c73b01a2, type: 2}
+  - {fileID: 1142192662033896, guid: 3de43094d12394ee6bbb45710229a7f0, type: 2}
+  - {fileID: 1461722780033642, guid: 2d6e7d38d065c4d20954a2b2e7ba8330, type: 2}
+  - {fileID: 1776597498515634, guid: 515b6948c290248f99890ee73d55db0b, type: 2}
   startDelay: 3
   randomWidth: 15
   randomHeight: 10

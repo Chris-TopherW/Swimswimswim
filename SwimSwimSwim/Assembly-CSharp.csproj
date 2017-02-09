@@ -52,11 +52,9 @@
      <Compile Include="Assets\Scripts\AudioEngine\Sequence.cs" />
      <Compile Include="Assets\Scripts\BezierCurve.cs" />
      <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
-     <Compile Include="Assets\Scripts\CubeFire.cs" />
-     <Compile Include="Assets\Scripts\CubeHandler.cs" />
-     <Compile Include="Assets\Scripts\CubeSpawner.cs" />
-     <Compile Include="Assets\Scripts\CubeThumper.cs" />
      <Compile Include="Assets\Scripts\CurveImplementation.cs" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour\CubeHandler.cs" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour\CubeThumper.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
      <Compile Include="Assets\Scripts\PointControl.cs" />
@@ -65,7 +63,10 @@
      <Compile Include="Assets\Scripts\PortalPrototype\WindowPosition.cs" />
      <Compile Include="Assets\Scripts\SetLevels.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\SpiningObject.cs" />
      <Compile Include="Assets\Scripts\SplineMaker.cs" />
+     <Compile Include="Assets\Scripts\UIElements\ButtonAnimation.cs" />
+     <Compile Include="Assets\Scripts\UIElements\ButtonTextFade.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
