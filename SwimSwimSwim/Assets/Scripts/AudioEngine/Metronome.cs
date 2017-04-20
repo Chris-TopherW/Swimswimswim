@@ -20,8 +20,7 @@ public class Metronome : MonoBehaviour
 	[HideInInspector]
 	public bool ready;
 
-	private int  samplesPerBar, samplesPerQuarter, phasor, numberOfHits,
-                 DSPBufferSize, DSPNumBuffers, sampleRate, ticksPerQuarter, quartersPerBar;
+	private int  samplesPerBar, samplesPerQuarter, phasor, numberOfHits, sampleRate, ticksPerQuarter, quartersPerBar;
 
     public double secondsPerQuarter, secondsPerTick;
     public double lastTickTime, nextTickTime;
@@ -35,7 +34,6 @@ public class Metronome : MonoBehaviour
 		metro = this;
         startTime = AudioSettings.dspTime;
 		//set up audio DSP buffer size and sample rate for whole program
-		AudioSettings.GetDSPBufferSize (out DSPBufferSize, out DSPNumBuffers);
 		sampleRate = AudioSettings.outputSampleRate;
 
 		ticksPerQuarter = 8;
@@ -82,28 +80,6 @@ public class Metronome : MonoBehaviour
         }
     }
 
-
-	/*void OnAudioFilterRead(float[] samples, int channels) {
-        for (int i = 0; i < DSPBufferSize; i++)  {
-			phasor++;
-			if (phasor == samplesPerTick) {
-                //lastTickTime = AudioSettings.dspTime;
-				phasor = 0;
-                currentTick++;
-                if (currentTick == ticksPerQuarter)
-                {
-                    currentTick = 0;
-                    currentQuarter++;
-                }
-                if (currentQuarter == quartersPerBar)
-                {
-                    currentQuarter = 0;
-                    currentBar++;
-                }
-			}
-    	}
-	} */
-
     public double GetFutureTime(int bar, int quarter, int tick)
     {
         int tickTime =  (bar * ticksPerBar) + (quarter * ticksPerQuarter) + tick ;
@@ -126,13 +102,4 @@ public class Metronome : MonoBehaviour
 
     }
 
-    public int getDSPBufferSize()
-	{
-		return DSPBufferSize;
-	}
-
-	public int getSampleRate()
-	{
-		return sampleRate;
-	}
 }
