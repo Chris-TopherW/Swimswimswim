@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScheduledClip { 
+public class ScheduledClip : MonoBehaviour { 
 
     public AudioClip clip;
 
@@ -10,14 +10,18 @@ public class ScheduledClip {
     private NotationTime loop;
     private NotationTime timeToPlay;
     private double nextPlay;
-    public GameObject sequencer;
+    private GameObject sequencer;
     public int nextSource = 0;
     public int lastSource = 0;
 
     public bool customLength = false;
     private double fadeoutStart, fadeoutLength;
 
-    public ScheduledClip(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip, GameObject sequencer)
+	//TODO: Refactor so that no NotationTime is needed for loop, just a bool
+	//		This will require the ScheduledClip to calculate the NotationTime from the length of the AudioClip
+	//		Alternatively the loop length could be included in the metadata for the audioclip and retrieved from that.
+
+	public void Init(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip)
     {
 
         //Init fields
@@ -25,7 +29,7 @@ public class ScheduledClip {
         this.clip = clip;
         this.timeToPlay = time;
         this.loop = loop;
-        this.sequencer = sequencer;
+		this.sequencer = gameObject;
 
         //Init AudioSources 
         sources = new AudioSource[2];
@@ -85,6 +89,10 @@ public class ScheduledClip {
             lastSource = nextSource;
             nextSource = (lastSource + 1) % sources.Length;
         }
+
+		/*if(loop.isLooping()){
+			sources[0].loop = true;
+		}*/
 
         if (customLength && AudioSettings.dspTime >= fadeoutStart)
         {

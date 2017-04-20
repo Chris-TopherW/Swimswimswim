@@ -109,11 +109,11 @@ public class CubeThumper : MonoBehaviour
         {
             soundToPlay = fireClips[UnityEngine.Random.Range(0, fireClips.Length)];
         }
-        fireSound = new ScheduledClip(metro,
+		fireSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
+        fireSound.Init(metro,
                                                            toFire,
                                                            new NotationTime(0, 0, 0),
-                                                           soundToPlay,
-                                                           gameObject);
+                                                           soundToPlay);
         fireSound.SetClipLength(new NotationTime(0,1,0), 0.01f);
         
         timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
@@ -136,11 +136,11 @@ public class CubeThumper : MonoBehaviour
     {
 
         lockNum++;
-        ScheduledClip lockSound = new ScheduledClip(metro,
+		ScheduledClip lockSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
+        lockSound.Init(metro,
                                                            new NotationTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1),
                                                            new NotationTime(0, 0, 0),
-														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)],
-                                                           gameObject);
+														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)]);
 
         //lockSound.Randomizer();
         lockSound.setVolume(lockVolume);
