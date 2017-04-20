@@ -22,6 +22,7 @@ public class Metronome : MonoBehaviour
 
 	private int  samplesPerBar, samplesPerQuarter, phasor, numberOfHits,
                  DSPBufferSize, DSPNumBuffers, sampleRate, ticksPerQuarter, quartersPerBar;
+
     public double secondsPerQuarter, secondsPerTick;
     public double lastTickTime, nextTickTime;
 
@@ -117,7 +118,9 @@ public class Metronome : MonoBehaviour
     {
         int tickTime = (time.bar * ticksPerBar) + (time.quarter * ticksPerQuarter) + time.tick;
         int currentTickTime = (currentBar * ticksPerBar) + (currentQuarter * ticksPerQuarter) + currentTick;
-        if (currentTickTime > tickTime) return -1;
+		if (currentTickTime > tickTime){
+			return -1;
+		}
         int futureTicks = tickTime - currentTickTime;
         return lastTickTime + (futureTicks * secondsPerTick);
 
