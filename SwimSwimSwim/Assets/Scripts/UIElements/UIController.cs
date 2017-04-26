@@ -26,7 +26,12 @@ public class UIController : Singleton<UIController> {
 
     public void Pause()
     {
-        
+        BlastManager.Instance.PauseGame();
+    }
+
+    public void Resume()
+    {
+        BlastManager.Instance.ResumeGame();
     }
 
 }

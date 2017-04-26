@@ -49,7 +49,21 @@ public class BlastManager : Singleton<BlastManager>
         stateChangeDelegate();
     }
     
+    public void PauseGame()
+    {
+        //Time.timeScale = 0; Will need to be smarter than this.
+        //TODO: Manage pausing/resuming metro and audio and gameplay in sync :D
 
+        ChangeState(GameState.Paused);
+
+    }
+
+    public void ResumeGame()
+    {
+       // Time.timeScale = 1;
+        ChangeState(GameState.Playing);
+
+    }
 
     // Update is called once per frame
     void Update () {

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonAnimation : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class ButtonAnimation : MonoBehaviour
     
     public void Disable()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         gameObject.GetComponent<Button>().interactable = false;
         fade.TextFadeOut();
     }
 
     public void Enable()
     {
+        
         gameObject.GetComponent<Button>().interactable = true;
         fade.TextFadeIn();
     }
