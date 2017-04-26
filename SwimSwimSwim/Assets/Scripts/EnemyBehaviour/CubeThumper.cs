@@ -15,7 +15,6 @@ public enum CubeState
 public class CubeThumper : MonoBehaviour
 {
     public CubeState state = CubeState.IDLE;
-    private Metronome metro;
 
     private bool hasHit = false;
     private bool hasFired = false;
@@ -50,7 +49,6 @@ public class CubeThumper : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        metro = GameObject.FindGameObjectWithTag("Metronome").GetComponent<Metronome>();
         material = gameObject.GetComponentInChildren<Renderer>().material;
 
         currentHealth = MaxHealth;
@@ -110,20 +108,19 @@ public class CubeThumper : MonoBehaviour
             soundToPlay = fireClips[UnityEngine.Random.Range(0, fireClips.Length)];
         }
 		fireSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        fireSound.Init(metro,
-                                                           toFire,
+        fireSound.Init(                                    toFire,
                                                            new NotationTime(0, 0, 0),
                                                            soundToPlay);
         fireSound.SetClipLength(new NotationTime(0,1,0), 0.01f);
         
-        timeToFire = metro.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
+        timeToFire = Metronome.Instance.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
 		fireSound.setVolume(fireVolume);
 
         if (Destroyed())
         {
             NotationTime timeLeft = new NotationTime(toFire);
             timeLeft.Add(new NotationTime(0, 1, 0));
-            timeAlive = metro.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
+            timeAlive = Metronome.Instance.GetFutureTime(timeLeft.bar, timeLeft.quarter, timeLeft.tick);
             return scoreValue;
         }
        
@@ -137,15 +134,14 @@ public class CubeThumper : MonoBehaviour
 
         lockNum++;
 		ScheduledClip lockSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        lockSound.Init(metro,
-                                                           new NotationTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1),
+        lockSound.Init(                                                           new NotationTime(Metronome.Instance.currentBar, Metronome.Instance.currentQuarter, Metronome.Instance.currentTick + 1),
                                                            new NotationTime(0, 0, 0),
 														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)]);
 
         //lockSound.Randomizer();
         lockSound.setVolume(lockVolume);
 
-        timeToLock = metro.GetFutureTime(metro.currentBar, metro.currentQuarter, metro.currentTick + 1);
+        timeToLock = Metronome.Instance.GetFutureTime(Metronome.Instance.currentBar, Metronome.Instance.currentQuarter, Metronome.Instance.currentTick + 1);
 
         state = CubeState.LOCKED;
         if (lockNum == 0)

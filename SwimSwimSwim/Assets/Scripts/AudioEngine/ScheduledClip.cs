@@ -6,7 +6,6 @@ public class ScheduledClip : MonoBehaviour {
     public AudioClip clip;
 
     private AudioSource[] sources;
-    private Metronome metro;
     private NotationTime loop;
     private NotationTime timeToPlay;
     private double nextPlay;
@@ -21,11 +20,10 @@ public class ScheduledClip : MonoBehaviour {
 	//		This will require the ScheduledClip to calculate the NotationTime from the length of the AudioClip
 	//		Alternatively the loop length could be included in the metadata for the audioclip and retrieved from that.
 
-	public void Init(Metronome metro, NotationTime time, NotationTime loop, AudioClip clip)
+	public void Init(NotationTime time, NotationTime loop, AudioClip clip)
     {
 
         //Init fields
-        this.metro = metro;
         this.clip = clip;
         this.timeToPlay = time;
         this.loop = loop;
@@ -41,7 +39,7 @@ public class ScheduledClip : MonoBehaviour {
         //Schedule first AudioSource
         sources[nextSource].clip = clip;
         sources[nextSource].volume = 1;
-        nextPlay = metro.GetFutureTime(timeToPlay.bar, timeToPlay.quarter, timeToPlay.tick);
+        nextPlay = Metronome.Instance.GetFutureTime(timeToPlay.bar, timeToPlay.quarter, timeToPlay.tick);
         sources[nextSource].PlayScheduled(nextPlay);
         nextSource = (lastSource + 1) % sources.Length;
     }
@@ -71,7 +69,7 @@ public class ScheduledClip : MonoBehaviour {
     {
         customLength = true;
         length.Add(timeToPlay);
-        fadeoutStart = metro.GetFutureTime(length) - fadeoutLength;
+        fadeoutStart = Metronome.Instance.GetFutureTime(length) - fadeoutLength;
         Debug.Log(fadeoutStart + fadeoutLength - nextPlay);
 
     }
@@ -84,7 +82,7 @@ public class ScheduledClip : MonoBehaviour {
             timeToPlay.Add(loop);
             sources[nextSource].clip = clip;
             sources[nextSource].volume = 1;
-            nextPlay = metro.GetFutureTime(timeToPlay.bar, timeToPlay.quarter, timeToPlay.tick);
+            nextPlay = Metronome.Instance.GetFutureTime(timeToPlay.bar, timeToPlay.quarter, timeToPlay.tick);
             sources[nextSource].PlayScheduled(nextPlay);
             lastSource = nextSource;
             nextSource = (lastSource + 1) % sources.Length;

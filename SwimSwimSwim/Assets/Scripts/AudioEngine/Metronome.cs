@@ -5,7 +5,7 @@ using System.Collections;
 /// Metronome class as sample accurate clock to run instruments.
 /// </summary>
 
-public class Metronome : MonoBehaviour
+public class Metronome : Singleton<Metronome>
 {
 	//instantiate static object to access from other scripts
 	public static Metronome metro;
@@ -26,6 +26,8 @@ public class Metronome : MonoBehaviour
     public double lastTickTime, nextTickTime;
 
     private NotationTime notationTick;
+
+    protected Metronome() { }
 
     void Awake () 
 	{

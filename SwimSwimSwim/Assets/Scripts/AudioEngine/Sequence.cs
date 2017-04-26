@@ -5,11 +5,9 @@ public class Sequence : MonoBehaviour
 {
     private ScheduledClip note;
     public AudioClip[] clipsToPlay;
-    public Metronome metro;
     // Use this for initialization
     void Start()
     {
-        metro = Metronome.metro;
         
         //TODO: Cleanup + Dynamic handling of background music changes
 
@@ -34,11 +32,11 @@ public class Sequence : MonoBehaviour
         noLoop = new NotationTime(0, 0, 0);
         barLoop = new NotationTime(1, 0, 0);
         quarterLoop = new NotationTime(0, 1, 0);
-        initialTime = new NotationTime(metro.currentTime);
+        initialTime = new NotationTime(Metronome.Instance.currentTime);
         initialTime.Add(n1);
 
 		note = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        note.Init(metro, initialTime, barLoop, clipsToPlay[0]);
+        note.Init(initialTime, barLoop, clipsToPlay[0]);
     }
 }
 

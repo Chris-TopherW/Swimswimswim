@@ -7,7 +7,6 @@ using System.Linq;
 public class CubeHandler : MonoBehaviour
 {
     public static CubeHandler handler;
-    public Metronome metro;
     public static List<CubeThumper> cubes;
     public static List<CubeThumper> targetedCubes;
 	public int maxLock = 8;
@@ -34,8 +33,7 @@ public class CubeHandler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        metro = Metronome.metro;
-        currentTickTime = new NotationTime(metro.currentTime);
+        currentTickTime = new NotationTime(Metronome.Instance.currentTime);
     }
 
     internal void AddCube(CubeThumper cubeThumper)
@@ -47,10 +45,10 @@ public class CubeHandler : MonoBehaviour
     void Update()
     {
         //Otherwise we check if the tick has advanced then release the lock
-        if (!currentTickTime.Equals(metro.currentTime))
+        if (!currentTickTime.Equals(Metronome.Instance.currentTime))
         {
             lockedThisTick = false;
-            currentTickTime = new NotationTime((metro.currentTime));
+            currentTickTime = new NotationTime((Metronome.Instance.currentTime));
         }
 
         if (firing && AudioSettings.dspTime >= timeUntilCanFireAgain)
@@ -97,7 +95,7 @@ public class CubeHandler : MonoBehaviour
     void Fire()
     {
         firing = true;
-        NotationTime firingStart = new NotationTime(metro.currentTime);
+        NotationTime firingStart = new NotationTime(Metronome.Instance.currentTime);
         firingStart.Add(new NotationTime(0, 0, 1));
         int pointsGained = 0;
         int multiplier = 0;
@@ -116,7 +114,7 @@ public class CubeHandler : MonoBehaviour
             }
         }
         GameManager.gameScore += pointsGained * multiplier;
-        timeUntilCanFireAgain = metro.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
+        timeUntilCanFireAgain = Metronome.Instance.GetFutureTime(firingStart.bar, firingStart.quarter, firingStart.tick);
         targetedCubes.Clear();
         numberOfLocks = 0;
     }
