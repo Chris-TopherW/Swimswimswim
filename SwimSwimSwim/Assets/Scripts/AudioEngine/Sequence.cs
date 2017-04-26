@@ -11,6 +11,7 @@ public class Sequence : MonoBehaviour
         
         //TODO: Cleanup + Dynamic handling of background music changes
 
+        //TODO: Make sure to set the BPM of the metro before playing clips as this is now a singleton.
 
     }
 

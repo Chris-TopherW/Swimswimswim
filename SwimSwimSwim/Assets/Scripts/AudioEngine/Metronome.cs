@@ -82,6 +82,11 @@ public class Metronome : Singleton<Metronome>
         }
     }
 
+    public void SetBPM(float newBPM)
+    {
+        this.BPM = newBPM;
+    }
+
     public double GetFutureTime(int bar, int quarter, int tick)
     {
         int tickTime =  (bar * ticksPerBar) + (quarter * ticksPerQuarter) + tick ;

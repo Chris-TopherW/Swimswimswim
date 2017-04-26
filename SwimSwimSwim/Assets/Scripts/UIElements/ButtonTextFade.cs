@@ -11,7 +11,7 @@ public class ButtonTextFade : MonoBehaviour
 
     //TODO: Implement state machine to avoid bool grossness.
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 	    fadeRate = 1/0.2f;
 	    textComponent = gameObject.GetComponent<Text>();
