@@ -11,6 +11,7 @@ TagManager:
   - Thumper
   - CubeManager
   - Metronome
+  - Blast Zone
   layers:
   - Default
   - TransparentFX

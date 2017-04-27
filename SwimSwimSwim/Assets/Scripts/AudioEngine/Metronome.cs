@@ -30,9 +30,12 @@ public class Metronome : Singleton<Metronome>
     public delegate void OnTickChangeDelegate(NotationTime currentTime);
     public static OnTickChangeDelegate tickChangeDelegate;
 
+
+    //This delegate is called on the tick before the quarter changes!
     public delegate void OnQuarterChangeDelegate(NotationTime currentTime);
     public static OnQuarterChangeDelegate quarterChangeDelegate;
 
+    //This delegate is called on the tick before the bar changes!
     public delegate void OnBarChangeDelegate(NotationTime currentTime);
     public static OnBarChangeDelegate barChangeDelegate;
 
@@ -82,23 +85,29 @@ public class Metronome : Singleton<Metronome>
             {
                 tickChangeDelegate(currentTime);
             }
-            if (currentTick == ticksPerQuarter)
+            if (currentTick == ticksPerQuarter - 1)
             {
-                currentTick = 0;
-                currentQuarter++;
                 if (quarterChangeDelegate != null)
                 {
                     quarterChangeDelegate(currentTime);
                 }
+                if (currentQuarter == quartersPerBar - 1)
+                {
+                    if (barChangeDelegate != null)
+                    {
+                        barChangeDelegate(currentTime);
+                    }
+                }
+            }
+            if (currentTick == ticksPerQuarter)
+            {
+                currentTick = 0;
+                currentQuarter++;
             }
             if (currentQuarter == quartersPerBar)
             {
                 currentQuarter = 0;
                 currentBar++;
-                if (barChangeDelegate != null)
-                {
-                    barChangeDelegate(currentTime);
-                }
             }
         }
     }

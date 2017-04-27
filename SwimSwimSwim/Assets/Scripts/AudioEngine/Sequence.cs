@@ -5,20 +5,30 @@ public class Sequence : MonoBehaviour
 {
     private ScheduledClip note;
     public AudioClip[] clipsToPlay;
+    private AudioSource[] sources;
+    private bool startedPlaying;
+    private int clipPlaying;
+    private int nextSource;
     // Use this for initialization
     void Start()
     {
-        
-        //TODO: Cleanup + Dynamic handling of background music changes
-
         //TODO: Make sure to set the BPM of the metro before playing clips as this is now a singleton.
 
+        Metronome.barChangeDelegate += ChangeClip;
+
+        //Init AudioSources 
+        sources = new AudioSource[2];
+        for (int i = 0; i < sources.Length; i++)
+        {
+            sources[i] = gameObject.AddComponent<AudioSource>() as AudioSource;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-           if (note != null) note.Update();
+
     }
 
     public void Kill()
@@ -37,7 +47,25 @@ public class Sequence : MonoBehaviour
         initialTime.Add(n1);
 
 		note = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        note.Init(initialTime, barLoop, clipsToPlay[0]);
+        note.Init(initialTime, noLoop, clipsToPlay[0]);
+        clipPlaying = 0;
+    }
+
+    public void ChangeClip(NotationTime currentTime)
+    {
+        if
+            (currentTime.bar % 8 == 1)
+        {
+            NotationTime initialTime = new NotationTime(Metronome.Instance.currentTime);
+            initialTime.Add(new NotationTime(0, 0, 1));
+            double nextPlay = Metronome.Instance.GetFutureTime(initialTime);
+            sources[nextSource].clip = clipsToPlay[clipPlaying];
+            sources[nextSource].volume = 1;
+            sources[nextSource].PlayScheduled(nextPlay);
+            nextSource = (nextSource + 1) % sources.Length;
+            clipPlaying++;
+            clipPlaying = clipPlaying % clipsToPlay.Length;
+        }
     }
 }
 
