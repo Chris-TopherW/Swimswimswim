@@ -27,6 +27,15 @@ public class Metronome : Singleton<Metronome>
 
     private NotationTime notationTick;
 
+    public delegate void OnTickChangeDelegate(NotationTime currentTime);
+    public static OnTickChangeDelegate tickChangeDelegate;
+
+    public delegate void OnQuarterChangeDelegate(NotationTime currentTime);
+    public static OnQuarterChangeDelegate quarterChangeDelegate;
+
+    public delegate void OnBarChangeDelegate(NotationTime currentTime);
+    public static OnBarChangeDelegate barChangeDelegate;
+
     protected Metronome() { }
 
     void Awake () 
@@ -69,15 +78,27 @@ public class Metronome : Singleton<Metronome>
             nextTickTime = lastTickTime + secondsPerTick;
             currentTick++;
             currentTime.Add(notationTick);
+            if (tickChangeDelegate != null)
+            {
+                tickChangeDelegate(currentTime);
+            }
             if (currentTick == ticksPerQuarter)
             {
                 currentTick = 0;
                 currentQuarter++;
+                if (quarterChangeDelegate != null)
+                {
+                    quarterChangeDelegate(currentTime);
+                }
             }
             if (currentQuarter == quartersPerBar)
             {
                 currentQuarter = 0;
                 currentBar++;
+                if (barChangeDelegate != null)
+                {
+                    barChangeDelegate(currentTime);
+                }
             }
         }
     }

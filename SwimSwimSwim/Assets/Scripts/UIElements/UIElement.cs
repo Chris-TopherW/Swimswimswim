@@ -19,6 +19,7 @@ public class UIElement : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         fade = GetComponentInChildren<ButtonTextFade>();
+        //Subscribes to state change delegate of the game manager, whenever the state changes this gets called.
         BlastManager.stateChangeDelegate += UpdateState;
         UpdateState();
     }

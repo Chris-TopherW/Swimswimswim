@@ -27,11 +27,14 @@ public class BlastManager : Singleton<BlastManager>
     public delegate void OnStateChangeDelegate();
     public static OnStateChangeDelegate stateChangeDelegate;
 
+    private List<BlastZone> blastZones;
+
     protected BlastManager() { }
 
 
     // Use this for initialization
     void Start () {
+        blastZones = new List<BlastZone>();
 		
 	}
 
