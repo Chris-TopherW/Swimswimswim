@@ -38,7 +38,7 @@ public class Sequence : MonoBehaviour
 
     public void BeginPlay()
     {
-        NotationTime n1, barLoop, quarterLoop, noLoop, initialTime;
+      /*  NotationTime n1, barLoop, quarterLoop, noLoop, initialTime;
         n1 = new NotationTime(0, 0, 1);
         noLoop = new NotationTime(0, 0, 0);
         barLoop = new NotationTime(1, 0, 0);
@@ -48,7 +48,7 @@ public class Sequence : MonoBehaviour
 
 		note = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
         note.Init(initialTime, noLoop, clipsToPlay[0]);
-        clipPlaying = 0;
+        clipPlaying = 0;*/
     }
 
     public void ChangeClip(NotationTime currentTime)
