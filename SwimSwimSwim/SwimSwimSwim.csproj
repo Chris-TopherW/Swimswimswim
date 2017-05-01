@@ -84,10 +84,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioEngine\BGMScheduler.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\NotationTime.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\ScheduledClip.cs" />
-    <Compile Include="Assets\Scripts\AudioEngine\Sequence.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Singleton.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\BlastPrototype\BlastController.cs" />

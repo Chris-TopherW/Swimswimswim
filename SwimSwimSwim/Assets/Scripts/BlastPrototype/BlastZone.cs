@@ -33,5 +33,6 @@ public class BlastZone : MonoBehaviour {
         lockSound.Init(new NotationTime(Metronome.Instance.currentBar, Metronome.Instance.currentQuarter, Metronome.Instance.currentTick + 1),
                                                            new NotationTime(0, 0, 0),
                                                            lockClips[UnityEngine.Random.Range(0, lockClips.Length)]);
+        lockSound.setVolume(0.4f);
     }
 }

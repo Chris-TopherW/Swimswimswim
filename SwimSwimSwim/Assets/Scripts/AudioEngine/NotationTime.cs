@@ -42,6 +42,21 @@ public class NotationTime
 
     }
 
+    public void AddTick()
+    {
+        tick++;
+        if (tick >= 8)
+        {
+            tick -= 8;
+            quarter++;
+        }
+        if (quarter >= 4)
+        {
+            quarter -= 4;
+            bar++;
+        }
+    }
+
     protected bool Equals(NotationTime other)
     {
         return bar == other.bar && quarter == other.quarter && tick == other.tick;
@@ -64,5 +79,10 @@ public class NotationTime
             hashCode = (hashCode*397) ^ tick;
             return hashCode;
         }
+    }
+
+    public int TimeAsTicks()
+    {
+        return (bar * 32) + (quarter * 8) + tick;
     }
 }

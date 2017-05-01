@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 
         player.GetComponent<MoveCube>().enabled = true;
         player.GetComponentInChildren<Spawner>().spawningToggle = true;
-        backgroundLoop.GetComponent<Sequence>().BeginPlay();
+        backgroundLoop.GetComponent<BGMScheduler>().BeginPlay();
         gamePlaying = true;
     }
 
@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour {
     {
         player.GetComponent<MoveCube>().enabled = false;
         player.GetComponentInChildren<Spawner>().spawningToggle = false;
-        backgroundLoop.GetComponent<Sequence>().Kill();
         foreach (CubeThumper t in FindObjectsOfType<CubeThumper>())
         {
             Destroy(t.gameObject);
