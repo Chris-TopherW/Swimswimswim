@@ -39,10 +39,9 @@ public class GameManager : MonoBehaviour {
 
     public void ClickBeginGame()
     {
-
         player.GetComponent<MoveCube>().enabled = true;
         player.GetComponentInChildren<Spawner>().spawningToggle = true;
-		backgroundLoop.GetComponent<BackgroundMusic>().Init(null);
+		backgroundLoop.GetComponent<BackgroundMusic>().Init((int)Loops.loop1);
         gamePlaying = true;
     }
 

@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum Loops { loop1, loop2, loop3 };
+
 public class BackgroundMusic : MonoBehaviour
 {
-    public BackgroundClip backgroundClip;
+	public AudioClip[] clips;
+	public string[] clipKeys;
+	public int[] clipLengths;
+    private BackgroundClip[] backgroundClips;
     private AudioSource[] sources;
     private bool startedPlaying;
     private int clipPlaying;
@@ -17,9 +22,17 @@ public class BackgroundMusic : MonoBehaviour
         for (int i = 0; i < sources.Length; i++) {
             sources[i] = gameObject.AddComponent<AudioSource>() as AudioSource;
         }
+		//setup background loop meta data
+		backgroundClips = new BackgroundClip[clips.Length];
+		clipKeys = new string[clips.Length];
+		clipLengths = new int[clips.Length];
+		for(int i = 0; i < clips.Length; i++) 
+		{
+			backgroundClips[i] = new BackgroundClip(clips[i], clipKeys[i], clipLengths[i]);
+		}
     }
     
-	public void Init(BackgroundClip bgClip)
+	public void Init(int loop)
 	{
 		if(Metronome.Instance.ready) 
 		{
@@ -28,6 +41,7 @@ public class BackgroundMusic : MonoBehaviour
 		}
 		Metronome.Instance.SetBPM(126.0f);
 		Metronome.Instance.ready = true;
+		nextClip = loop;
 		nextPlay = new NotationTime(Metronome.Instance.currentTime);
 		nextPlay.AddTick();
 		//Call the tick change once to schedule the first time, then subscribe to the tick change delegate to handle all future scheduling.
@@ -55,11 +69,11 @@ public class BackgroundMusic : MonoBehaviour
         if (currentTime.TimeAsTicks() == nextPlay.TimeAsTicks() - 1) 
 		{
             double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
-            sources[nextSource].clip = backgroundClip.clip;
+			sources[nextSource].clip = backgroundClips[nextClip].clip;
             sources[nextSource].volume = 1;
             sources[nextSource].PlayScheduled(nextPlayTime);
             //Set next time to play
-            nextPlay.Add(new NotationTime(backgroundClip.barsLength, 0, 0));
+            //nextPlay.Add(new NotationTime(backgroundClip.barsLength, 0, 0));
             //Set the next source to play
             nextSource = (nextSource + 1) % sources.Length;
             //Set the next clip to play -- this logic could go into another method
