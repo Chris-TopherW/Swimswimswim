@@ -35,16 +35,16 @@ public class BackgroundMusic : MonoBehaviour
 		Metronome.tickChangeDelegate += HandleTickChange;
 	}
 
-	public NotationTime PlayNext(BackgroundClip bgClip) 
-	{
-		nextPlay = new NotationTime(Metronome.Instance.currentBar);
-		nextPlay.AddTime(Metronome.Instance.currentTick);
-		nextPlay.AddTick();
-		//Call the tick change once to schedule the first time, then subscribe to the tick change delegate to handle all future scheduling.
-		HandleTickChange(Metronome.Instance.currentTime);
-		Metronome.tickChangeDelegate += HandleTickChange;
-		return null;
-	}
+//	public NotationTime PlayNext(BackgroundClip bgClip) 
+//	{
+//		nextPlay = new NotationTime(Metronome.Instance.currentBar);
+//		nextPlay.AddTime(Metronome.Instance.currentTick);
+//		nextPlay.AddTick();
+//		//Call the tick change once to schedule the first time, then subscribe to the tick change delegate to handle all future scheduling.
+//		HandleTickChange(Metronome.Instance.currentTime);
+//		Metronome.tickChangeDelegate += HandleTickChange;
+//		return null;
+//	}
 
     /**
      * This will call on a tick change, we do scheduling on the tick before, this leaves it as late as possible
