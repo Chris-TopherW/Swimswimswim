@@ -22,6 +22,14 @@ public class BlastController : MonoBehaviour {
                     BlastManager.Instance.HandleBlastZoneInput(touchPos);
                 }
             }
+            else if (Input.GetMouseButton(0))
+            {
+                Vector2 touchPos = Input.mousePosition;
+                if (touchPos.y > 200)
+                {
+                    BlastManager.Instance.HandleBlastZoneInput(touchPos);
+                }
+            }
         }
    
 	}

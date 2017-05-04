@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -87,7 +89,6 @@
     <Compile Include="Assets\Scripts\AudioEngine\BGMScheduler.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\NotationTime.cs" />
-    <Compile Include="Assets\Scripts\AudioEngine\ScheduledClip.cs" />
     <Compile Include="Assets\Scripts\AudioEngine\Singleton.cs" />
     <Compile Include="Assets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\Scripts\BlastPrototype\BlastController.cs" />
