@@ -11,10 +11,12 @@ public class BackgroundMusic : MonoBehaviour
     private BackgroundClip[] backgroundClips;
     private AudioSource[] sources;
     private bool startedPlaying;
-    private int clipPlaying;
     private int nextSource;
-    private int nextClip;
+	private int clipPlaying;
+	private int nextClip = (int)Loops.loop1;
     private NotationTime nextPlay;
+
+	private string[] keys = {"BbMinor", "F7"};
 
 	void Start() 
 	{
@@ -41,6 +43,7 @@ public class BackgroundMusic : MonoBehaviour
 		}
 		Metronome.Instance.SetBPM(126.0f);
 		Metronome.Instance.ready = true;
+		clipPlaying = nextClip;
 		nextClip = loop;
 		nextPlay = new NotationTime(Metronome.Instance.currentTime);
 		nextPlay.AddTick();
@@ -73,12 +76,9 @@ public class BackgroundMusic : MonoBehaviour
             sources[nextSource].volume = 1;
             sources[nextSource].PlayScheduled(nextPlayTime);
             //Set next time to play
-            //nextPlay.Add(new NotationTime(backgroundClip.barsLength, 0, 0));
+			nextPlay.Add(new NotationTime(8,0,0));
             //Set the next source to play
             nextSource = (nextSource + 1) % sources.Length;
-            //Set the next clip to play -- this logic could go into another method
-//            nextClip++;
-//            nextClip = nextClip % clipsToPlay.Length;
         }
     }
 }

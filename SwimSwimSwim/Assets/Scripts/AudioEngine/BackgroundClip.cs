@@ -6,12 +6,14 @@ public class BackgroundClip : MonoBehaviour
 {
 	public string key;
 	public AudioClip clip;
-	public int barsLength;
+	private int numBars;
+	public NotationTime bars;
 
-	public BackgroundClip(AudioClip clip, string key, int barsLength) 
+	public BackgroundClip(AudioClip clip, string key, int numBars) 
 	{
 		this.key = key;
 		this.clip = clip;
-		this.barsLength = barsLength;
+		this.numBars = numBars;
+		bars = new NotationTime(numBars, 0,0);
 	}
 }
