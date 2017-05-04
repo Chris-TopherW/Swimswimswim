@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    private ScheduledClip note;
     public BackgroundClip backgroundClip;
     private AudioSource[] sources;
     private bool startedPlaying;

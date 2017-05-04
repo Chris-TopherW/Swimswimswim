@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\AudioEngine\BackgroundMusic.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\NotationTime.cs" />
-     <Compile Include="Assets\Scripts\AudioEngine\ScheduledClip.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Singleton.cs" />
      <Compile Include="Assets\Scripts\BezierCurve.cs" />
      <Compile Include="Assets\Scripts\BlastPrototype\BlastController.cs" />
