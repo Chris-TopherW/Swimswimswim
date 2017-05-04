@@ -10,6 +10,12 @@ public enum GameState
 public class BlastManager : Singleton<BlastManager>
 {
 
+    public const int MAX_FIREPOWER = 24;
+    public const int MAX_ZONES = 4;
+
+    public int ticksFired = 0;
+    public int zoneCount = 0;
+
     public GameState state = GameState.Begin;
 
     public int maxPollutionLevel;
@@ -73,6 +79,11 @@ public class BlastManager : Singleton<BlastManager>
         state = newState;
         stateChangeDelegate();
     }
+
+    public bool HasFirepower()
+    {
+        return ticksFired < MAX_FIREPOWER;
+    }
     
     public void PauseGame()
     {
@@ -85,17 +96,23 @@ public class BlastManager : Singleton<BlastManager>
 
     public void HandleBlastZoneInput(Vector2 touchPosition)
     {
-        if (!tickLock)
+        if (!tickLock && HasFirepower())
         {
             BlastZone touchedBlastZone = CheckForBlastZones(touchPosition);
             if (touchedBlastZone != null)
             {
-                touchedBlastZone.GrowNextTick();
-            } else {
+                if (touchedBlastZone.CanGrow())
+                {
+                    touchedBlastZone.GrowNextTick();
+                    ticksFired++;
+                }
+            } else if (zoneCount < MAX_ZONES) {
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
                 Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
                 GameObject zoneMade = GameObject.Instantiate(toSpawn, spawnLocation, Quaternion.identity);
                 zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
+                ticksFired++;
+                zoneCount++;
             }
             tickLock = true;
         }
@@ -104,7 +121,7 @@ public class BlastManager : Singleton<BlastManager>
     public BlastZone CheckForBlastZones(Vector2 touchPosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-        RaycastHit[] hits = Physics.SphereCastAll(ray.origin, 0.5f, ray.direction, 1000.0f);
+        RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction, 1000.0f);
         for (int i = 0; i < hits.Length; i++)
         {
 

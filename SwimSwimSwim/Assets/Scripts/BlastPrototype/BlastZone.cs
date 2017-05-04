@@ -8,6 +8,7 @@ public enum BlastZoneStates
 }
 
 public class BlastZone : MonoBehaviour {
+    public const int MAX_SIZE = 8;
 
     public AudioClip[] lockClips;
     public AudioClip[] fireClips;
@@ -16,6 +17,9 @@ public class BlastZone : MonoBehaviour {
     private MeshRenderer mesh;
     private float zoneScale = 3.0f;
     private bool growNextTick = false;
+
+
+    private int currentSize;
 
     NotationTime timeToCreate;
     // Use this for initialization
@@ -28,6 +32,8 @@ public class BlastZone : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    
 
     public void HandleTickChange(NotationTime currentTime)
     {
@@ -48,6 +54,7 @@ public class BlastZone : MonoBehaviour {
         }
         this.timeToCreate = timeToCreate;
         gameObject.GetComponent<MeshRenderer>().enabled = true;
+        currentSize++;
         PlayLockSound();
     }
 
@@ -65,6 +72,12 @@ public class BlastZone : MonoBehaviour {
     {
         growNextTick = true;
         PlayLockSound();
+        currentSize++;
+    }
+
+    public bool CanGrow()
+    {
+        return currentSize < MAX_SIZE;
     }
 
     public void GrowZone()

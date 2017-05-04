@@ -80,7 +80,7 @@ public class Metronome : Singleton<Metronome>
             lastTickTime = nextTickTime;
             nextTickTime = lastTickTime + secondsPerTick;
             currentTick++;
-            currentTime.Add(notationTick);
+            currentTime.AddTick();
             if (tickChangeDelegate != null)
             {
                 tickChangeDelegate(currentTime);
