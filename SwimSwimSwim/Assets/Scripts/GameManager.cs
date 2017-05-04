@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 
         player.GetComponent<MoveCube>().enabled = true;
         player.GetComponentInChildren<Spawner>().spawningToggle = true;
-        backgroundLoop.GetComponent<BGMScheduler>().BeginPlay();
+		backgroundLoop.GetComponent<BackgroundMusic>().Init(null);
         gamePlaying = true;
     }
 

@@ -42,20 +42,57 @@ public class NotationTime
 
     }
 
-    public void AddTick()
-    {
+    public void AddTick() {
         tick++;
-        if (tick >= 8)
-        {
+        if (tick >= 8) {
             tick -= 8;
             quarter++;
         }
-        if (quarter >= 4)
-        {
+        if (quarter >= 4) {
             quarter -= 4;
             bar++;
         }
     }
+
+	public void AddTime(int bar, int quarter, int tick) {
+		for(int i = 0; i < tick; i++) 
+		{
+			this.tick++;
+			if (this.tick >= 8) {
+				this.tick -= 8;
+				this.quarter++;
+			}
+		}
+		for(int i = 0; i < quarter; i++) 
+		{
+			this.quarter++;
+			if (this.quarter >= 8) {
+				this.quarter -= 8;
+				this.bar++;
+			}
+		}
+		this.bar += bar;
+	}
+
+	public void AddTime(NotationTime notationTime) {
+		for(int i = 0; i < notationTime.tick; i++) 
+		{
+			tick++;
+			if (tick >= 8) {
+				tick -= 8;
+				quarter++;
+			}
+		}
+		for(int i = 0; i < notationTime.quarter; i++) 
+		{
+			quarter++;
+			if (quarter >= 8) {
+				quarter -= 8;
+				bar++;
+			}
+		}
+		bar += notationTime.bar;
+	}
 
     protected bool Equals(NotationTime other)
     {
