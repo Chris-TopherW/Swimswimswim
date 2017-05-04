@@ -79,6 +79,10 @@ public class BackgroundMusic : MonoBehaviour
 			nextPlay.Add(new NotationTime(8,0,0));
             //Set the next source to play
             nextSource = (nextSource + 1) % sources.Length;
+			if(nextClip == (int)Loops.loop2)
+				nextClip = (int)Loops.loop1;
+			else
+				nextClip = (int)Loops.loop2;
         }
     }
 }
