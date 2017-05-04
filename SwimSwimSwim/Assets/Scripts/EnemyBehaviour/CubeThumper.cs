@@ -43,7 +43,6 @@ public class CubeThumper : MonoBehaviour
 
     public Sprite[] lockSprites;
     public SpriteRenderer spriteRenderer;
-    private ScheduledClip fireSound;
 
 
     // Use this for initialization
@@ -57,10 +56,6 @@ public class CubeThumper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fireSound !=null)
-        {
-            fireSound.Update();
-        }
 
         switch (state)
         {
@@ -107,15 +102,6 @@ public class CubeThumper : MonoBehaviour
         {
             soundToPlay = fireClips[UnityEngine.Random.Range(0, fireClips.Length)];
         }
-		fireSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        fireSound.Init(                                    toFire,
-                                                           new NotationTime(0, 0, 0),
-                                                           soundToPlay);
-        fireSound.SetClipLength(new NotationTime(0,1,0), 0.01f);
-        
-        timeToFire = Metronome.Instance.GetFutureTime(toFire.bar, toFire.quarter, toFire.tick);
-		fireSound.setVolume(fireVolume);
-
         if (Destroyed())
         {
             NotationTime timeLeft = new NotationTime(toFire);
@@ -133,14 +119,7 @@ public class CubeThumper : MonoBehaviour
     {
 
         lockNum++;
-		ScheduledClip lockSound = gameObject.AddComponent < ScheduledClip >() as ScheduledClip;
-        lockSound.Init(                                                           new NotationTime(Metronome.Instance.currentBar, Metronome.Instance.currentQuarter, Metronome.Instance.currentTick + 1),
-                                                           new NotationTime(0, 0, 0),
-														   lockClips[UnityEngine.Random.Range(0, lockClips.Length)]);
-
-        //lockSound.Randomizer();
-        lockSound.setVolume(lockVolume);
-
+	
         timeToLock = Metronome.Instance.GetFutureTime(Metronome.Instance.currentBar, Metronome.Instance.currentQuarter, Metronome.Instance.currentTick + 1);
 
         state = CubeState.LOCKED;

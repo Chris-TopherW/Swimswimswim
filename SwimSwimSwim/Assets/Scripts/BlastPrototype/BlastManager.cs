@@ -31,7 +31,8 @@ public class BlastManager : Singleton<BlastManager>
 
     private BlastController controller;
 
-    public bool tickLock;
+    public bool tickLock = true;
+    private NotationTime tickUnlockTime;
 
 
     public GameObject toSpawn;
@@ -43,7 +44,6 @@ public class BlastManager : Singleton<BlastManager>
     void Start () {
         blastZones = new List<BlastZone>();
         controller = GetComponent<BlastController>();
-        Metronome.quarterChangeDelegate += HandleTickChange;
 		
 	}
 
@@ -53,11 +53,19 @@ public class BlastManager : Singleton<BlastManager>
         //Delay before activating game controller
         StartCoroutine(StartController(1f)); 
         ChangeState(GameState.Playing);
+        tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
+        tickUnlockTime.Add(new NotationTime(0, 0, 2));
+
+        Metronome.tickChangeDelegate += HandleTickChange;
     }
 
     public void HandleTickChange(NotationTime currentTime)
     {
-        tickLock = false;
+        if (tickUnlockTime.TimeAsTicks() - 1 == Metronome.Instance.currentTime.TimeAsTicks())
+        {
+            tickLock = false;
+            tickUnlockTime.Add(new NotationTime(0, 0, 4));
+        }
     }
 
     void ChangeState(GameState newState)
@@ -79,14 +87,36 @@ public class BlastManager : Singleton<BlastManager>
     {
         if (!tickLock)
         {
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-            Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
-            GameObject zoneMade = GameObject.Instantiate(toSpawn, spawnLocation, Quaternion.identity);
-            zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
+            BlastZone touchedBlastZone = CheckForBlastZones(touchPosition);
+            if (touchedBlastZone != null)
+            {
+                touchedBlastZone.GrowNextTick();
+            } else {
+                Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
+                Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
+                GameObject zoneMade = GameObject.Instantiate(toSpawn, spawnLocation, Quaternion.identity);
+                zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
+            }
             tickLock = true;
         }
     }
-    
+
+    public BlastZone CheckForBlastZones(Vector2 touchPosition)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
+        RaycastHit[] hits = Physics.SphereCastAll(ray.origin, 0.5f, ray.direction, 1000.0f);
+        for (int i = 0; i < hits.Length; i++)
+        {
+
+            GameObject obj = hits[i].transform.gameObject;
+            if (obj.CompareTag("Blast Zone"))
+            {
+                return obj.GetComponent<BlastZone>();
+            }
+        }
+        return null;
+    }
+
 
     public void ResumeGame()
     {
