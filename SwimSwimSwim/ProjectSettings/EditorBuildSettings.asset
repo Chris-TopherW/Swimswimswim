@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+  - enabled: 0
+    path: 
     guid: 375b1c2fbcb0479479c04c17904c5264
   - enabled: 1
     path: Assets/Scenes/portalprototype.unity

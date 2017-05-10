@@ -10,10 +10,6 @@ public enum BlastZoneStates
 public class BlastZone : MonoBehaviour {
     public const int MAX_SIZE = 8;
 
-    public AudioClip[] lockClips;
-    public AudioClip[] fireClips;
-    public AudioClip[] destroyClips;
-    private AudioSource[] sources;
     private MeshRenderer mesh;
     private float zoneScale = 3.0f;
     private bool growNextTick = false;
@@ -21,19 +17,12 @@ public class BlastZone : MonoBehaviour {
 
     private int currentSize;
 
-    NotationTime timeToCreate;
+    //NotationTime timeToCreate;
     // Use this for initialization
     void Start () {
         Metronome.tickChangeDelegate += HandleTickChange;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    
 
     public void HandleTickChange(NotationTime currentTime)
     {
@@ -46,32 +35,18 @@ public class BlastZone : MonoBehaviour {
 
     public void CreateZone(NotationTime timeToCreate)
     {
-
-        sources = new AudioSource[2];
-        for (int i = 0; i < sources.Length; i++)
-        {
-            sources[i] = gameObject.AddComponent<AudioSource>() as AudioSource;
-        }
-        this.timeToCreate = timeToCreate;
+        //this.timeToCreate = timeToCreate;
         gameObject.GetComponent<MeshRenderer>().enabled = true;
         currentSize++;
-        PlayLockSound();
+		SFXPlayer.Instance.PlayCircleStart();
     }
 
-    public void PlayLockSound()
-    {
-        NotationTime nextPlay = new NotationTime(Metronome.Instance.currentTime);
-        nextPlay.AddTick();
-        double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
-        sources[0].clip = lockClips[Random.Range(0, lockClips.Length)];
-        sources[0].volume = 0.4f;
-        sources[0].PlayScheduled(nextPlayTime);
-    }
+
 
     public void GrowNextTick()
     {
         growNextTick = true;
-        PlayLockSound();
+		SFXPlayer.Instance.PlayCircleStart();
         currentSize++;
     }
 

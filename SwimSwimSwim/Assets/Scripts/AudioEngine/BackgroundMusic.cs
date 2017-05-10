@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Loops { loop1, loop2, loop3 };
+public enum Loops { loop1, loop2, loop3, numLoops };
 
 public class BackgroundMusic : MonoBehaviour
 {
@@ -13,7 +13,8 @@ public class BackgroundMusic : MonoBehaviour
     private bool startedPlaying;
     private int nextSource;
 	private int clipPlaying;
-	private int nextClip = (int)Loops.loop1;
+	//this should defo not be public! Just for debugging rn
+	public int nextClip = (int)Loops.loop1;
     private NotationTime nextPlay;
 
 	private string[] keys = {"BbMinor", "F7"};
@@ -26,11 +27,10 @@ public class BackgroundMusic : MonoBehaviour
         }
 		//setup background loop meta data
 		backgroundClips = new BackgroundClip[clips.Length];
-		clipKeys = new string[clips.Length];
-		clipLengths = new int[clips.Length];
 		for(int i = 0; i < clips.Length; i++) 
 		{
 			backgroundClips[i] = new BackgroundClip(clips[i], clipKeys[i], clipLengths[i]);
+			Debug.Log(backgroundClips[i].length.bar);
 		}
     }
     
@@ -76,13 +76,20 @@ public class BackgroundMusic : MonoBehaviour
             sources[nextSource].volume = 1;
             sources[nextSource].PlayScheduled(nextPlayTime);
             //Set next time to play
-			nextPlay.Add(new NotationTime(8,0,0));
-            //Set the next source to play
+			nextPlay.Add(backgroundClips[nextSource].length);
+			//Debug.Log(backgroundClips[nextSource].length.bar);
             nextSource = (nextSource + 1) % sources.Length;
-			if(nextClip == (int)Loops.loop2)
-				nextClip = (int)Loops.loop1;
-			else
-				nextClip = (int)Loops.loop2;
         }
     }
+	public void SetNextLoop(int loop) 
+	{
+		if(loop < (int)Loops.numLoops) {
+		nextClip = loop;
+		}
+		else
+		{
+			Debug.Log("Error, next loop set to non-existent loop!");
+			return;
+		}
+	}
 }

@@ -45,7 +45,6 @@ public class BlastManager : Singleton<BlastManager>
 
     protected BlastManager() { }
 
-
     // Use this for initialization
     void Start () {
         blastZones = new List<BlastZone>();
