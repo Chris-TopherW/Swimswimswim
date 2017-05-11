@@ -27,7 +27,7 @@ public class SFXPlayer : Singleton<SFXPlayer>
 		NotationTime nextPlay = new NotationTime(Metronome.Instance.currentTime);
 		nextPlay.AddTick();
 		double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
-		sources[currentSource].clip = fMixolydian[Random.Range(0, fMixolydian.Length)];
+		NoteChoice();
 		sources[currentSource].volume = 0.4f;
 		sources[currentSource].PlayScheduled(nextPlayTime);
 		currentSource++;
@@ -41,5 +41,19 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	}
 	void PlayCircleEnd() {
 
+	}
+
+	void NoteChoice() {
+		switch(BackgroundMusic.Instance.currentClip) {
+		case (int)Loops.Bb7Bossa:
+			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
+			break;
+		case (int)Loops.Bb7BossaBreakdown:
+			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
+			break;
+		case (int)Loops.F7Bossa:
+			sources[currentSource].clip = fMixolydian[Random.Range(0, fMixolydian.Length)];
+			break;
+		}
 	}
 }

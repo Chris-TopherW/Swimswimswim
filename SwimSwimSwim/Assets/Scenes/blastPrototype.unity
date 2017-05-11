@@ -584,6 +584,11 @@ Prefab:
       propertyPath: textPane
       value: 
       objectReference: {fileID: 738504742}
+    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: numSources
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0

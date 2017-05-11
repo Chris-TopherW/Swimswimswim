@@ -54,7 +54,7 @@ public class BlastManager : Singleton<BlastManager>
 
     public void BeginGame()
     {
-		backgroundLoop.GetComponent<BackgroundMusic>().Init((int)Loops.loop1);
+		backgroundLoop.GetComponent<BackgroundMusic>().Init((int)Loops.Bb7Bossa);
         //Delay before activating game controller
         StartCoroutine(StartController(1f)); 
         ChangeState(GameState.Playing);
