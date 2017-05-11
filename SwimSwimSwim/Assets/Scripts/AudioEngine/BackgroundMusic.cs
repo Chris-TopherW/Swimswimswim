@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Loops { Bb7Bossa, Bb7BossaBreakdown, F7Bossa, numLoops };
+public enum Loops { Bb7_BOSSA, Bb7_BOSSA_BREAKDOWN, F7_BOSSA, NUM_LOOPS };
+public enum Keys { C, CS, D, DS, E, F, FS, G, GS, A, AS, B };
 
 public class BackgroundMusic : Singleton<BackgroundMusic>
 {
@@ -17,7 +18,7 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 	public int currentClip;
 	//this should defo not be editable! Just for debugging rn
 	[SerializeField]
-	private int nextClip = (int)Loops.Bb7Bossa;
+	private int nextClip = (int)Loops.Bb7_BOSSA;
 	private int nextClipZ_1;
 	bool clipHasChanged = false;
     private NotationTime nextPlay;
@@ -78,7 +79,7 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 
 	public void SetNextLoop(int loop) 
 	{
-		if(loop < (int)Loops.numLoops) {
+		if(loop < (int)Loops.NUM_LOOPS) {
 		nextClip = loop;
 		}
 		else

@@ -36,24 +36,30 @@ public class SFXPlayer : Singleton<SFXPlayer>
 		}
 	}
 
-	void PlayCircleExpand() {
+	public void PlayCircleExpand() {
 
 	}
-	void PlayCircleEnd() {
+	public void PlayCircleEnd() {
 
 	}
 
-	void NoteChoice() {
+	//I think this will have to be hard coded :(
+	private void NoteChoice() {
 		switch(BackgroundMusic.Instance.currentClip) {
-		case (int)Loops.Bb7Bossa:
+		case (int)Loops.Bb7_BOSSA:
 			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
 			break;
-		case (int)Loops.Bb7BossaBreakdown:
+		case (int)Loops.Bb7_BOSSA_BREAKDOWN:
 			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
 			break;
-		case (int)Loops.F7Bossa:
+		case (int)Loops.F7_BOSSA:
 			sources[currentSource].clip = fMixolydian[Random.Range(0, fMixolydian.Length)];
 			break;
 		}
+	}
+
+	private void MixolImprov(int currentRoot, int newRoot) 
+	{
+		int transposition = newRoot - currentRoot;
 	}
 }

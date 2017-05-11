@@ -589,6 +589,11 @@ Prefab:
       propertyPath: numSources
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: nextClip
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0
