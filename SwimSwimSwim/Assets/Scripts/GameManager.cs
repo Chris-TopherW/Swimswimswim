@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	public int 						maxPollutionLevel;
 	public static int 				currentPollutionLevel;
-    public static int gameScore;
+    public static int 				gameScore;
     public static float 			splinePos = 0;
     public static int 				segmentPos = 0;
 	public static string 			gameState = "Normal";

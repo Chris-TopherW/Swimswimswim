@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public enum GameState
 {
-    Begin, Playing, Paused
+    Begin, Playing, Paused, GameOver
 }
 
 public class BlastManager : Singleton<BlastManager>
@@ -83,6 +83,12 @@ public class BlastManager : Singleton<BlastManager>
     {
         return ticksFired < MAX_FIREPOWER;
     }
+
+	private void GameOver() {
+		Debug.Log("lol, u lose :P");
+		ChangeState(GameState.GameOver);
+		controller.Deactivate();
+	}
     
     public void PauseGame()
     {
@@ -146,18 +152,16 @@ public class BlastManager : Singleton<BlastManager>
 
     public void IncreaseScore (int points)
     {
-
+		gameScore += points;
     }
 
-    public void DecreaseHealth (int damage)
+    public void IncreasePollution (int damage)
     {
-
+		currentPollutionLevel += damage;
+		if(currentPollutionLevel >= maxPollutionLevel) {
+			GameOver();
+		}
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     IEnumerator StartController(float timeToWait)
     {
