@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4464891, g: 0.49632698, b: 0.5747258, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -286,6 +286,79 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 252145742}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1001 &998430609
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 11.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828438099921338, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1903217243726680, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_TagString
+      value: Destroyable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520647450322104, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_TagString
+      value: Destroyable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879905487373242, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_TagString
+      value: Destroyable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606161152309280, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23195290869249050, guid: 7563288317e07f24f92f26b174dd304e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5097127b16bcdb345a346616be1df1a5, type: 2}
+    - target: {fileID: 23299378497010156, guid: 7563288317e07f24f92f26b174dd304e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5097127b16bcdb345a346616be1df1a5, type: 2}
+    - target: {fileID: 23281799317884724, guid: 7563288317e07f24f92f26b174dd304e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5097127b16bcdb345a346616be1df1a5, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1434265495
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +667,18 @@ Prefab:
       propertyPath: nextClip
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: toSpawn
+      value: 
+      objectReference: {fileID: 1606161152309280, guid: 7563288317e07f24f92f26b174dd304e,
+        type: 2}
+    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: blastZone
+      value: 
+      objectReference: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0

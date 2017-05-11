@@ -42,6 +42,7 @@ public class BlastManager : Singleton<BlastManager>
 
 
     public GameObject toSpawn;
+    public GameObject blastZone;
 
     protected BlastManager() { }
 
@@ -60,16 +61,15 @@ public class BlastManager : Singleton<BlastManager>
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 2));
-
+        StartCoroutine(StartSpawn(3f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
     public void HandleTickChange(NotationTime currentTime)
     {
-        if (tickUnlockTime.TimeAsTicks() - 1 == Metronome.Instance.currentTime.TimeAsTicks())
+        if (tickUnlockTime.TimeAsTicks() == Metronome.Instance.currentTime.TimeAsTicks())
         {
             tickLock = false;
-            tickUnlockTime.Add(new NotationTime(0, 0, 4));
         }
     }
 
@@ -108,11 +108,13 @@ public class BlastManager : Singleton<BlastManager>
             } else if (zoneCount < MAX_ZONES) {
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
                 Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
-                GameObject zoneMade = GameObject.Instantiate(toSpawn, spawnLocation, Quaternion.identity);
+                GameObject zoneMade = GameObject.Instantiate(blastZone, spawnLocation, Quaternion.identity);
                 zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
                 ticksFired++;
                 zoneCount++;
             }
+            tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
+            tickUnlockTime.Add(new NotationTime(0, 0, 2));
             tickLock = true;
         }
     }
@@ -142,6 +144,16 @@ public class BlastManager : Singleton<BlastManager>
 
     }
 
+    public void IncreaseScore (int points)
+    {
+
+    }
+
+    public void DecreaseHealth (int damage)
+    {
+
+    }
+
     // Update is called once per frame
     void Update () {
 		
@@ -151,5 +163,14 @@ public class BlastManager : Singleton<BlastManager>
     {
         yield return new WaitForSeconds(timeToWait);
         controller.Activate();
+    }
+
+    IEnumerator StartSpawn(float delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delay);
+            GameObject.Instantiate(toSpawn);
+        }
     }
 }
