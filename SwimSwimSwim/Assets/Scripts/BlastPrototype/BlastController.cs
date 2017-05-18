@@ -21,6 +21,10 @@ public class BlastController : MonoBehaviour {
                 {
                     BlastManager.Instance.HandleBlastZoneInput(touchPos);
                 }
+                else
+                {
+                    BlastManager.Instance.HandleDolphinInput(touchPos);
+                }
             }
             else if (Input.GetMouseButton(0))
             {
@@ -28,6 +32,9 @@ public class BlastController : MonoBehaviour {
                 if (touchPos.y > 200)
                 {
                     BlastManager.Instance.HandleBlastZoneInput(touchPos);
+                } else
+                {
+                    BlastManager.Instance.HandleDolphinInput(touchPos);
                 }
             }
         }

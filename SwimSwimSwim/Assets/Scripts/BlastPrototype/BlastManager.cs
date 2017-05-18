@@ -44,14 +44,17 @@ public class BlastManager : Singleton<BlastManager>
     public GameObject toSpawn;
     public GameObject blastZone;
 
+    public Text debugScoreDisplay;
+
     protected BlastManager() { }
 
     // Use this for initialization
     void Start () {
         blastZones = new List<BlastZone>();
         controller = GetComponent<BlastController>();
-		
-	}
+        UpdateText();
+
+    }
 
     public void BeginGame()
     {
@@ -61,7 +64,7 @@ public class BlastManager : Singleton<BlastManager>
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 2));
-        StartCoroutine(StartSpawn(3f));
+        StartCoroutine(StartSpawn(6f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -99,6 +102,19 @@ public class BlastManager : Singleton<BlastManager>
 
     }
 
+    public void HandleDolphinInput(Vector2 touchPosition)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f))
+        {
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                DestroyZones();
+            }
+        }
+    }
+
     public void HandleBlastZoneInput(Vector2 touchPosition)
     {
         if (!tickLock && HasFirepower())
@@ -115,6 +131,7 @@ public class BlastManager : Singleton<BlastManager>
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
                 Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
                 GameObject zoneMade = GameObject.Instantiate(blastZone, spawnLocation, Quaternion.identity);
+                blastZones.Add(zoneMade.GetComponent<BlastZone>());
                 zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
                 ticksFired++;
                 zoneCount++;
@@ -150,9 +167,22 @@ public class BlastManager : Singleton<BlastManager>
 
     }
 
+    //Logic for destruction of zones goes here.
+    public void DestroyZones()
+    {
+        foreach (BlastZone zone in blastZones)
+        {
+            zone.DestroyZone();
+        }
+        blastZones.Clear();
+        zoneCount = 0;
+        ticksFired = 0;
+    }
+
     public void IncreaseScore (int points)
     {
 		gameScore += points;
+        UpdateText();
     }
 
     public void IncreasePollution (int damage)
@@ -161,6 +191,12 @@ public class BlastManager : Singleton<BlastManager>
 		if(currentPollutionLevel >= maxPollutionLevel) {
 			GameOver();
 		}
+        UpdateText();
+    }
+
+    public void UpdateText()
+    {
+        debugScoreDisplay.text = "Score: " + gameScore + "\nPollution: " + currentPollutionLevel;
     }
 
     IEnumerator StartController(float timeToWait)

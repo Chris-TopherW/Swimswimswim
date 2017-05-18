@@ -14,12 +14,15 @@ public class BlastZone : MonoBehaviour {
     private float zoneScale = 3.0f;
     private bool growNextTick = false;
 
+    private List<BlastEnemy> enemiesInZone;
+
 
     private int currentSize;
 
     //NotationTime timeToCreate;
     // Use this for initialization
     void Start () {
+        enemiesInZone = new List<BlastEnemy>();
         Metronome.tickChangeDelegate += HandleTickChange;
 
     }
@@ -40,7 +43,33 @@ public class BlastZone : MonoBehaviour {
         currentSize++;
 		SFXPlayer.Instance.PlayCircleStart();
     }
+    
+    public void DestroyZone()
+    {
+        //Shallow clone
+        List<BlastEnemy> localEnemies = enemiesInZone.GetRange(0, enemiesInZone.Count);
+        foreach (BlastEnemy enemy in localEnemies)
+        {
+            enemy.DoDamage(1);
+        }
+        Destroy(gameObject);
+    }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Destroyable"))
+        {
+            enemiesInZone.Add(other.gameObject.GetComponent<BlastEnemy>());
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Destroyable"))
+        {
+            enemiesInZone.Remove(other.gameObject.GetComponent<BlastEnemy>());
+        }
+    }
 
 
     public void GrowNextTick()
