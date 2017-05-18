@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4464891, g: 0.49632698, b: 0.5747258, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1037,38 +1037,11 @@ Prefab:
       propertyPath: textPane
       value: 
       objectReference: {fileID: 738504742}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: numSources
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: nextClip
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: toSpawn
-      value: 
-      objectReference: {fileID: 1606161152309280, guid: 7563288317e07f24f92f26b174dd304e,
-        type: 2}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: blastZone
-      value: 
-      objectReference: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09,
-        type: 2}
     - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
         type: 2}
       propertyPath: debugScoreDisplay
       value: 
       objectReference: {fileID: 738504742}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: maxPollutionLevel
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0

@@ -178,13 +178,15 @@ MonoBehaviour:
   ticksFired: 0
   zoneCount: 0
   state: 0
-  maxPollutionLevel: 0
+  maxPollutionLevel: 5
   player: {fileID: 0}
   textPane: {fileID: 0}
   gameButton: {fileID: 0}
   backgroundLoop: {fileID: 1318992265908952}
   tickLock: 0
-  toSpawn: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09, type: 2}
+  toSpawn: {fileID: 1606161152309280, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+  blastZone: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09, type: 2}
+  debugScoreDisplay: {fileID: 0}
 --- !u!114 &114521143173827742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,7 +207,8 @@ MonoBehaviour:
   - BbMinor
   - F7
   clipLengths: 080000000800000008000000
-  nextClip: 2
+  currentClip: 0
+  nextClip: 0
 --- !u!114 &114604877469510540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,13 +221,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BbMixolydian:
-  - {fileID: 8300000, guid: 3344588640b964b30a3ef869078d611d, type: 3}
-  - {fileID: 8300000, guid: 978fdadd7a35d4ba28f87fe04ec23f77, type: 3}
-  - {fileID: 8300000, guid: fd6c71accff8645d381f2d8b5fa471e2, type: 3}
-  - {fileID: 8300000, guid: 5e0da3d5c469a4c6da0ae38f6384e388, type: 3}
-  - {fileID: 8300000, guid: 26fbd42f5f15d42a5bdbae34d406d107, type: 3}
-  - {fileID: 8300000, guid: 2aab5065421ac4870b5254862b6f82ba, type: 3}
-  - {fileID: 8300000, guid: f24788d5c429d41a098427aadbbae30f, type: 3}
+  - {fileID: 8300000, guid: 9b732964c0a4242b28827ed7e83a919b, type: 3}
+  - {fileID: 8300000, guid: ba0607aa93aec4d94bc902937371d2b5, type: 3}
+  - {fileID: 8300000, guid: 2c97bbf73453841e48660cceddb7afe9, type: 3}
+  - {fileID: 8300000, guid: e9fa1700bd0544f1c838c4f717318c2f, type: 3}
+  - {fileID: 8300000, guid: 0db33eaeb563f4f5285b53fa142b4fbc, type: 3}
+  - {fileID: 8300000, guid: ecf5b1581d133426ba9d7114b3c5c042, type: 3}
+  - {fileID: 8300000, guid: 6c233ec921e3c41bda097ffad9f70188, type: 3}
   fMixolydian:
   - {fileID: 8300000, guid: 98bc64b4643630c4192efdc959c5d8de, type: 3}
   - {fileID: 8300000, guid: 13c2b51fb50612348a1972d1375f7b92, type: 3}
@@ -244,7 +247,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4359c3259720dda4392a6bf269b5ad53, type: 3}
   - {fileID: 8300000, guid: efcfc259b8ff6e84bbce35e65596626f, type: 3}
   - {fileID: 8300000, guid: 264400fc042def1468c0fcb52f4f14a6, type: 3}
-  numSources: 2
+  numSources: 4
 --- !u!224 &224510083843665404
 RectTransform:
   m_ObjectHideFlags: 1
