@@ -159,6 +159,9 @@
     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestingAssets\CallTesting.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Materials\BackgroundGradient.shader" />
+    <None Include="Assets\Materials\CoolImageCutoutShader.shader" />
+    <None Include="Assets\Materials\NormalShader.shader" />
     <None Include="Assets\Models\Notes.txt" />
     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
