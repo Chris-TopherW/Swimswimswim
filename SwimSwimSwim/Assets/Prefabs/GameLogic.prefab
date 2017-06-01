@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activated: 0
+  playerCollider: {fileID: 0}
+  blastZoneCollider: {fileID: 0}
 --- !u!114 &114320549354470836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +186,7 @@ MonoBehaviour:
   gameButton: {fileID: 0}
   backgroundLoop: {fileID: 1318992265908952}
   tickLock: 0
-  toSpawn: {fileID: 1606161152309280, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
+  toSpawn: {fileID: 1038020401004794, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
   blastZone: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09, type: 2}
   debugScoreDisplay: {fileID: 0}
 --- !u!114 &114521143173827742
@@ -219,13 +221,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BbMixolydian:
-  - {fileID: 8300000, guid: 9b732964c0a4242b28827ed7e83a919b, type: 3}
-  - {fileID: 8300000, guid: ba0607aa93aec4d94bc902937371d2b5, type: 3}
-  - {fileID: 8300000, guid: 2c97bbf73453841e48660cceddb7afe9, type: 3}
   - {fileID: 8300000, guid: e9fa1700bd0544f1c838c4f717318c2f, type: 3}
+  - {fileID: 8300000, guid: 3b6bb090445744f62b258c39e25bb2d8, type: 3}
+  - {fileID: 8300000, guid: 9b732964c0a4242b28827ed7e83a919b, type: 3}
   - {fileID: 8300000, guid: 0db33eaeb563f4f5285b53fa142b4fbc, type: 3}
+  - {fileID: 8300000, guid: 67625fc4ff1954d6bb808e5738d20621, type: 3}
+  - {fileID: 8300000, guid: ba0607aa93aec4d94bc902937371d2b5, type: 3}
   - {fileID: 8300000, guid: ecf5b1581d133426ba9d7114b3c5c042, type: 3}
-  - {fileID: 8300000, guid: 6c233ec921e3c41bda097ffad9f70188, type: 3}
   fMixolydian:
   - {fileID: 8300000, guid: 98bc64b4643630c4192efdc959c5d8de, type: 3}
   - {fileID: 8300000, guid: 13c2b51fb50612348a1972d1375f7b92, type: 3}
@@ -245,6 +247,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4359c3259720dda4392a6bf269b5ad53, type: 3}
   - {fileID: 8300000, guid: efcfc259b8ff6e84bbce35e65596626f, type: 3}
   - {fileID: 8300000, guid: 264400fc042def1468c0fcb52f4f14a6, type: 3}
+  explosions:
+  - {fileID: 8300000, guid: 9e6f09f3f878b4028aade775906923ca, type: 3}
   noteProb: 0a000000010000000500000000000000080000000400000002000000
   numSources: 4
 --- !u!224 &224510083843665404

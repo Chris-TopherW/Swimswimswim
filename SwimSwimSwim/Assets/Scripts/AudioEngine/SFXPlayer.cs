@@ -8,6 +8,7 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	public AudioClip[] BbMixolydian;
 	public AudioClip[] fMixolydian;
 	public AudioClip[] drumsSamples;
+	public AudioClip[] explosions;
 	public int[] noteProb;
 	public int numSources = 2;
 
@@ -40,8 +41,17 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	public void PlayCircleExpand() {
 
 	}
-	public void PlayCircleEnd() {
-
+	public void PlayCircleDestroy() {
+		NotationTime nextPlay = new NotationTime(Metronome.Instance.currentTime);
+		nextPlay.AddTick();
+		double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
+		sources[currentSource].clip = explosions[0];
+		sources[currentSource].volume = 0.4f;
+		sources[currentSource].PlayScheduled(nextPlayTime);
+		currentSource++;
+		if(currentSource == sources.Length) {
+			currentSource = 0;
+		}
 	}
 		
 	private void NoteChoice() {

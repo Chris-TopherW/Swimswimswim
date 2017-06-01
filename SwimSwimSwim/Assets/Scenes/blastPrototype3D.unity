@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4464891, g: 0.49632698, b: 0.5747258, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1500,78 +1500,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: textPane
-      value: 
-      objectReference: {fileID: 738504742}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: numSources
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: nextClip
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: toSpawn
-      value: 
-      objectReference: {fileID: 1038020401004794, guid: 7563288317e07f24f92f26b174dd304e,
-        type: 2}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: blastZone
-      value: 
-      objectReference: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09,
-        type: 2}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: debugScoreDisplay
-      value: 
-      objectReference: {fileID: 738504742}
-    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: maxPollutionLevel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: e9fa1700bd0544f1c838c4f717318c2f, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 3b6bb090445744f62b258c39e25bb2d8, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9b732964c0a4242b28827ed7e83a919b, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0db33eaeb563f4f5285b53fa142b4fbc, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 67625fc4ff1954d6bb808e5738d20621, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: ba0607aa93aec4d94bc902937371d2b5, type: 3}
-    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
-        type: 2}
-      propertyPath: BbMixolydian.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: ecf5b1581d133426ba9d7114b3c5c042, type: 3}
     - target: {fileID: 114185846075887682, guid: 152371e4938e9404ca40e84ff2c499ab,
         type: 2}
       propertyPath: playerCollider
@@ -1582,6 +1510,16 @@ Prefab:
       propertyPath: blastZoneCollider
       value: 
       objectReference: {fileID: 1379016932}
+    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: textPane
+      value: 
+      objectReference: {fileID: 738504742}
+    - target: {fileID: 114464866143145684, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: debugScoreDisplay
+      value: 
+      objectReference: {fileID: 738504742}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0

@@ -53,6 +53,7 @@ public class BlastZone : MonoBehaviour {
             enemy.DoDamage(1);
         }
         Metronome.tickChangeDelegate -= HandleTickChange;
+		SFXPlayer.Instance.PlayCircleDestroy();
         Destroy(gameObject);
     }
 

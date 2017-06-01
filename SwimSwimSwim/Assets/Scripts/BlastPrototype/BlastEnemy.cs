@@ -25,7 +25,6 @@ public class BlastEnemy : MonoBehaviour {
         if (gameObject.transform.position.z <= -6.0f)
         {
             BlastManager.Instance.IncreasePollution(1);
-
             Destroy(gameObject);
         }
 	}
