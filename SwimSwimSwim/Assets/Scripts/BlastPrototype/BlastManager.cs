@@ -44,6 +44,9 @@ public class BlastManager : Singleton<BlastManager>
     public GameObject toSpawn;
     public GameObject blastZone;
 
+    private Transform spawnPoint;
+    private Transform blastZoneParent;
+
     public Text debugScoreDisplay;
 
     protected BlastManager() { }
@@ -53,18 +56,19 @@ public class BlastManager : Singleton<BlastManager>
         blastZones = new List<BlastZone>();
         controller = GetComponent<BlastController>();
         UpdateText();
-
+        spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
+        blastZoneParent = GameObject.Find("BlastZones").GetComponent<Transform>();
     }
 
     public void BeginGame()
     {
 		backgroundLoop.GetComponent<BackgroundMusic>().Init((int)Loops.Bb7_BOSSA);
         //Delay before activating game controller
-        StartCoroutine(StartController(1f)); 
+        StartCoroutine(StartController(0.5f)); 
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 2));
-        StartCoroutine(StartSpawn(6f));
+        StartCoroutine(StartSpawn(2f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -89,7 +93,7 @@ public class BlastManager : Singleton<BlastManager>
 
 	private void GameOver() {
 		Debug.Log("lol, u lose :P");
-		ChangeState(GameState.GameOver);
+        ChangeState(GameState.GameOver);
 		controller.Deactivate();
 	}
     
@@ -102,17 +106,9 @@ public class BlastManager : Singleton<BlastManager>
 
     }
 
-    public void HandleDolphinInput(Vector2 touchPosition)
+    public void HandleDolphinInput()
     {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100f))
-        {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                DestroyZones();
-            }
-        }
+        DestroyZones();
     }
 
     public void HandleBlastZoneInput(Vector2 touchPosition)
@@ -129,9 +125,10 @@ public class BlastManager : Singleton<BlastManager>
                 }
             } else if (zoneCount < MAX_ZONES) {
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-                Vector3 spawnLocation = ray.origin + (ray.direction * ray.origin.y);
+                Vector3 spawnLocation = ray.origin + (ray.direction * (ray.origin.y +2));
                 GameObject zoneMade = GameObject.Instantiate(blastZone, spawnLocation, Quaternion.identity);
                 blastZones.Add(zoneMade.GetComponent<BlastZone>());
+                zoneMade.transform.parent = blastZoneParent;
                 zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
                 ticksFired++;
                 zoneCount++;
@@ -189,7 +186,7 @@ public class BlastManager : Singleton<BlastManager>
     {
 		currentPollutionLevel += damage;
 		if(currentPollutionLevel >= maxPollutionLevel) {
-			GameOver();
+		//	GameOver();
 		}
         UpdateText();
     }
@@ -210,7 +207,7 @@ public class BlastManager : Singleton<BlastManager>
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            GameObject.Instantiate(toSpawn);
+            GameObject.Instantiate(toSpawn, spawnPoint.position, Quaternion.identity);
         }
     }
 }

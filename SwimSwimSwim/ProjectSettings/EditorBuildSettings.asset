@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 375b1c2fbcb0479479c04c17904c5264
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/portalprototype.unity
     guid: 5777f01ba21975b4b897e628a90bdecb
+  - enabled: 0
+    path: Assets/Scenes/blastPrototype.unity
+    guid: ad23c75c67c0d59468996e72ae3c1cf3
+  - enabled: 1
+    path: Assets/Scenes/blastPrototype3D.unity
+    guid: 583c176f2811ff84696bed68be4cab3f

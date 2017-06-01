@@ -4,39 +4,43 @@ using UnityEngine;
 
 public class BlastController : MonoBehaviour {
     public bool activated;
+    public Collider playerCollider;
+    public Collider blastZoneCollider;
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if (BlastManager.Instance.state == GameState.Playing && activated)
         {
+            //Rewrite -- Raycast to dolphin first,
+            //Then raycast to blast zone.
+            Vector2 touchPos ;
             if (Input.touchCount > 0)
             {
-                Vector2 touchPos = Input.GetTouch(0).position;
-                if (touchPos.y > 200)
-                {
-                    BlastManager.Instance.HandleBlastZoneInput(touchPos);
-                }
-                else
-                {
-                    BlastManager.Instance.HandleDolphinInput(touchPos);
-                }
+                touchPos = Input.GetTouch(0).position;
             }
             else if (Input.GetMouseButton(0))
             {
-                Vector2 touchPos = Input.mousePosition;
-                if (touchPos.y > 200)
-                {
-                    BlastManager.Instance.HandleBlastZoneInput(touchPos);
-                } else
-                {
-                    BlastManager.Instance.HandleDolphinInput(touchPos);
-                }
+                touchPos = Input.mousePosition;
+            } else
+            {
+                return;
             }
+
+            Ray ray = Camera.main.ScreenPointToRay(touchPos);
+            RaycastHit hit;
+            if (playerCollider.Raycast(ray, out hit, 1000.0F))
+            {
+                BlastManager.Instance.HandleDolphinInput();
+            } else if (blastZoneCollider.Raycast(ray, out hit, 1000.0F))
+            {
+                BlastManager.Instance.HandleBlastZoneInput(touchPos);
+            }
+            return;
         }
    
 	}

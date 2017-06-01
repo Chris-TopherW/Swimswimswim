@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CoolCutoutShader
-  m_Shader: {fileID: 4800000, guid: a1e86ebfcdd8c1b49b65f60fb8bdc7fb, type: 3}
+  m_Name: Grid2
+  m_Shader: {fileID: 4800000, guid: 358af7ccee71cf54fa0246c2aa72c1ae, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -38,8 +38,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9d63e71cbbeb6a34b9ce8b3b2bc21212, type: 3}
-        m_Scale: {x: 0, y: 0}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -61,18 +61,23 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GridSpacing: 3.1
+    - _GridThickness: 3.04
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.034
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
+    - _ZonePosition: 4
+    - _ZoneScalar: 1
+    - _ZoneThickness: 3.74
+    - _ZoneWidth: 4
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
-    - _Tiling: {r: 0.99, g: 0.98, b: 0, a: 0}
+    - _GridColour: {r: 0.4117647, g: 0.9411765, b: 0.54509807, a: 0.103}
+    - _ZoneColour: {r: 0.4117647, g: 0.9411765, b: 0.54509807, a: 0.341}

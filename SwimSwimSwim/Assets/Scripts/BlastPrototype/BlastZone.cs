@@ -21,7 +21,7 @@ public class BlastZone : MonoBehaviour {
 
     //NotationTime timeToCreate;
     // Use this for initialization
-    void Start () {
+    void Awake () {
         enemiesInZone = new List<BlastEnemy>();
         Metronome.tickChangeDelegate += HandleTickChange;
 
@@ -52,6 +52,7 @@ public class BlastZone : MonoBehaviour {
         {
             enemy.DoDamage(1);
         }
+        Metronome.tickChangeDelegate -= HandleTickChange;
         Destroy(gameObject);
     }
 
@@ -87,7 +88,10 @@ public class BlastZone : MonoBehaviour {
     public void GrowZone()
     {
         zoneScale += 0.5f;
-        this.gameObject.transform.localScale = new Vector3(zoneScale, 0.05f, zoneScale);
+        if (gameObject != null)
+        {
+            this.gameObject.transform.localScale = new Vector3(zoneScale, zoneScale, 1f);
+        }
 
     }
 }
