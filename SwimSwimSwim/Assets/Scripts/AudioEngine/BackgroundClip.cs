@@ -8,12 +8,14 @@ public class BackgroundClip
 	public AudioClip clip;
 	private int numBars;
 	public NotationTime length;
+	public string clipName;
 
-	public BackgroundClip(AudioClip clip, string key, int numBars) 
+	public BackgroundClip(AudioClip p_clip, string p_key, int p_numBars) 
 	{
-		this.key = key;
-		this.clip = clip;
-		this.numBars = numBars;
+		key = p_key;
+		clip = p_clip;
+		numBars = p_numBars;
 		length = new NotationTime(numBars, 0,0);
+		clipName = clip.name;
 	}
 }

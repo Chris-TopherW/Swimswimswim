@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum Loops { Bb7_BOSSA, Bb7_BOSSA_BREAKDOWN, F7_BOSSA, NUM_LOOPS };
-public enum Keys { C, CS, D, DS, E, F, FS, G, GS, A, AS, B };
+//public enum Keys { C, CS, D, DS, E, F, FS, G, GS, A, AS, B };
 
 public class BackgroundMusic : Singleton<BackgroundMusic>
 {
@@ -12,15 +11,10 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 	public string[] clipKeys;
 	public int[] clipLengths;
     private BackgroundClip[] backgroundClips;
+	public BackgroundClip currentClip;
+	public BackgroundClip nextClip;
     private AudioSource[] sources;
-    private bool startedPlaying;
     private int nextSource;
-	public int currentClip;
-	//this should defo not be editable! Just for debugging rn
-	[SerializeField]
-	private int nextClip = (int)Loops.Bb7_BOSSA;
-	private int nextClipZ_1;
-	bool clipHasChanged = false;
     private NotationTime nextPlay;
 
 	void Start() 
@@ -37,8 +31,9 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 		}
     }
     
-	public void Init(int loop)
+	public void Init(string p_clip)
 	{
+		SetNextLoop(p_clip);
 		if(Metronome.Instance.ready) 
 		{
 			Debug.Log("Error: cannot call StartMusic when metro is already ticking, call StopMusic first");
@@ -46,8 +41,6 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 		}
 		Metronome.Instance.SetBPM(126.0f);
 		Metronome.Instance.ready = true;
-		currentClip = nextClip;
-		nextClip = loop;
 		nextPlay = new NotationTime(Metronome.Instance.currentTime);
 		nextPlay.AddTick();
 		HandleTickChange(Metronome.Instance.currentTime);
@@ -59,33 +52,25 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
         if (currentTime.TimeAsTicks() == nextPlay.TimeAsTicks() - 1) 
 		{
             double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
-			sources[nextSource].clip = backgroundClips[nextClip].clip;
+			//sources[nextSource].clip = nextClip.clip;
+			sources[nextSource].clip = nextClip.clip;
             sources[nextSource].volume = 1;
             sources[nextSource].PlayScheduled(nextPlayTime);
             //Set next time to play
-			nextPlay.Add(backgroundClips[nextSource].length);
+			currentClip = nextClip;
+			nextPlay.Add(currentClip.length);
+
             nextSource = (nextSource + 1) % sources.Length;
-			if(nextClip != currentClip) {
-				nextClipZ_1 = nextClip;
-				clipHasChanged = true;
-			}
         }
-		else if(clipHasChanged) 
-		{
-			currentClip = nextClipZ_1; //next clip delayed 1 tick
-			clipHasChanged = false;
-		}
     }
 
-	public void SetNextLoop(int loop) 
+	private void SetNextLoop(string p_clip) 
 	{
-		if(loop < (int)Loops.NUM_LOOPS) {
-		nextClip = loop;
-		}
-		else
+		for(int i = 0; i < backgroundClips.Length; i++)
 		{
-			Debug.Log("Error, next loop set to non-existent loop!");
-			return;
+			string name = backgroundClips[i].clipName;
+			if(name == p_clip)
+				nextClip = backgroundClips[i];
 		}
 	}
 }

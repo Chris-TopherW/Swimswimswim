@@ -87,6 +87,7 @@
      <None Include="Assets\UnityTestTools\LICENSE.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditiveBlend.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Additive.shader" />
+     <None Include="Assets\Materials\CircleIntersectShader.shader" />
      <None Include="Assets\Models\Notes.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\Fallback.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
@@ -96,10 +97,15 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditive.shader" />
+     <None Include="Assets\Materials\NormalShader.shader" />
      <None Include="Assets\UnityTestTools\changelog.txt" />
+     <None Include="Assets\Materials\BackgroundGradient.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\LaserScope.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
+     <None Include="Assets\Materials\CircleColorShader.shader" />
+     <None Include="Assets\Materials\GridShader.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
+     <None Include="Assets\Materials\CoolImageCutoutShader.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>/Users/chriswratt/Desktop/SwimGitSwim/SwimSwimSwim/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>

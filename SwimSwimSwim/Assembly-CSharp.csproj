@@ -57,12 +57,15 @@
      <Compile Include="Assets\Scripts\BlastPrototype\BlastEnemy.cs" />
      <Compile Include="Assets\Scripts\BlastPrototype\BlastManager.cs" />
      <Compile Include="Assets\Scripts\BlastPrototype\BlastPickup.cs" />
+     <Compile Include="Assets\Scripts\BlastPrototype\BlastPlayer.cs" />
      <Compile Include="Assets\Scripts\BlastPrototype\BlastZone.cs" />
+     <Compile Include="Assets\Scripts\BlastPrototype\CircleDrawing.cs" />
      <Compile Include="Assets\Scripts\CatmullRomMesh.cs" />
      <Compile Include="Assets\Scripts\CurveImplementation.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\CubeHandler.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\CubeThumper.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GenerateCircleMesh.cs" />
      <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
      <Compile Include="Assets\Scripts\PointControl.cs" />
      <Compile Include="Assets\Scripts\PortalPrototype\Copycam.cs" />
@@ -123,6 +126,7 @@
      <None Include="Assets\UnityTestTools\LICENSE.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditiveBlend.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Additive.shader" />
+     <None Include="Assets\Materials\CircleIntersectShader.shader" />
      <None Include="Assets\Models\Notes.txt" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\Fallback.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
@@ -132,10 +136,15 @@
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditive.shader" />
+     <None Include="Assets\Materials\NormalShader.shader" />
      <None Include="Assets\UnityTestTools\changelog.txt" />
+     <None Include="Assets\Materials\BackgroundGradient.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\LaserScope.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
+     <None Include="Assets\Materials\CircleColorShader.shader" />
+     <None Include="Assets\Materials\GridShader.shader" />
      <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
+     <None Include="Assets\Materials\CoolImageCutoutShader.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

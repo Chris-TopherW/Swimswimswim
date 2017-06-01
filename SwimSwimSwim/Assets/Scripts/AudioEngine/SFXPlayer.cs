@@ -8,6 +8,7 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	public AudioClip[] BbMixolydian;
 	public AudioClip[] fMixolydian;
 	public AudioClip[] drumsSamples;
+	public int[] noteProb;
 	public int numSources = 2;
 
 	private AudioSource[] sources;
@@ -42,18 +43,14 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	public void PlayCircleEnd() {
 
 	}
-
-	//I think this will have to be hard coded :(
+		
 	private void NoteChoice() {
-		switch(BackgroundMusic.Instance.currentClip) {
-		case (int)Loops.Bb7_BOSSA:
-			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
+		switch(BackgroundMusic.Instance.currentClip.key) {
+		case "Bbm":
+			sources[currentSource].clip = BbMixolydian[markovMelody(BbMixolydian.Length)];
 			break;
-		case (int)Loops.Bb7_BOSSA_BREAKDOWN:
-			sources[currentSource].clip = BbMixolydian[Random.Range(0, fMixolydian.Length)];
-			break;
-		case (int)Loops.F7_BOSSA:
-			sources[currentSource].clip = fMixolydian[Random.Range(0, fMixolydian.Length)];
+		case "F7":
+			sources[currentSource].clip = BbMixolydian[markovMelody(fMixolydian.Length)];
 			break;
 		}
 	}
@@ -61,5 +58,29 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	private void MixolImprov(int currentRoot, int newRoot) 
 	{
 		int transposition = newRoot - currentRoot;
+	}
+
+	private int markovMelody(int p_numChoices)
+	{
+		int sum = 0;
+		int noteIndex = 0;
+		for(int i = 0; i < noteProb.Length; i++)
+		{
+			sum += noteProb[i];
+		}
+		int randomProbChoice = Random.Range(0, sum);
+
+		sum = 0;
+		for(int i = 0; i < noteProb.Length; i++)
+		{
+			if(sum < randomProbChoice) sum += noteProb[i];
+			else
+			{
+				noteIndex = i;
+				break;
+			}
+			noteIndex = i;
+		}
+		return noteIndex;
 	}
 }

@@ -203,12 +203,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 12baa29225da94e65877055e0beabfe7, type: 3}
   - {fileID: 8300000, guid: eacd0a54e7e7a423aa1ce1a40a3e5587, type: 3}
   clipKeys:
-  - BbMinor
-  - BbMinor
+  - Bbm
+  - F7
   - F7
   clipLengths: 080000000800000008000000
-  currentClip: 0
-  nextClip: 0
 --- !u!114 &114604877469510540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +245,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4359c3259720dda4392a6bf269b5ad53, type: 3}
   - {fileID: 8300000, guid: efcfc259b8ff6e84bbce35e65596626f, type: 3}
   - {fileID: 8300000, guid: 264400fc042def1468c0fcb52f4f14a6, type: 3}
+  noteProb: 0a000000010000000500000000000000080000000400000002000000
   numSources: 4
 --- !u!224 &224510083843665404
 RectTransform:
