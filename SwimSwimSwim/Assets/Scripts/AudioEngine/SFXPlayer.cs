@@ -15,6 +15,8 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	private AudioSource[] sources;
 	private int currentSource;
 	private int nextSource;
+	private int currentNote;
+	private int previousNote;
 
 	void Awake() 
 	{
@@ -46,7 +48,7 @@ public class SFXPlayer : Singleton<SFXPlayer>
 		nextPlay.AddTick();
 		double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
 		sources[currentSource].clip = explosions[0];
-		sources[currentSource].volume = 0.4f;
+		sources[currentSource].volume = 0.1f;
 		sources[currentSource].PlayScheduled(nextPlayTime);
 		currentSource++;
 		if(currentSource == sources.Length) {
@@ -57,10 +59,10 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	private void NoteChoice() {
 		switch(BackgroundMusic.Instance.currentClip.key) {
 		case "Bbm":
-			sources[currentSource].clip = BbMixolydian[markovMelody(BbMixolydian.Length)];
+			sources[currentSource].clip = BbMixolydian[MarkovMelody(BbMixolydian.Length)];
 			break;
 		case "F7":
-			sources[currentSource].clip = BbMixolydian[markovMelody(fMixolydian.Length)];
+			sources[currentSource].clip = BbMixolydian[MarkovMelody(fMixolydian.Length)];
 			break;
 		}
 	}
@@ -70,7 +72,38 @@ public class SFXPlayer : Singleton<SFXPlayer>
 		int transposition = newRoot - currentRoot;
 	}
 
-	private int markovMelody(int p_numChoices)
+	private int MarkovMelody(int p_numChoices)
+	{
+		switch(Random.Range(0, 4))
+			{
+		case 0:
+			return RandomWalk(p_numChoices);
+			break;
+		case 1:
+			return RandomWalk(p_numChoices);
+			break;
+		case 2:
+			return RandomWalk(p_numChoices);
+			break;
+		case 3:
+			return RandomWalk(p_numChoices);
+			break;
+		default:
+			return RandomWalk(p_numChoices);
+			break;
+			}
+	}
+	private int RandomWalk(int p_numChoices)
+	{
+		currentNote = (previousNote + Random.Range(-1, 2));
+		if(currentNote < 0)
+			currentNote = 0;
+		if(currentNote >= p_numChoices)
+			currentNote = p_numChoices - 1;
+		previousNote = currentNote;
+		return currentNote;
+	}
+	private int RandomJump(int p_numChoices)
 	{
 		int sum = 0;
 		int noteIndex = 0;
@@ -91,6 +124,8 @@ public class SFXPlayer : Singleton<SFXPlayer>
 			}
 			noteIndex = i;
 		}
-		return noteIndex;
+		currentNote = noteIndex;
+		previousNote = noteIndex;
+		return currentNote;
 	}
 }
