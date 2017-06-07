@@ -12,6 +12,7 @@ public class MarkovGenerator
 		PopulateTransitionMatrix();
 	}
 
+    //This is working @ 6/7/2017
 	private void PopulateTransitionMatrix()
 	{
 		int previousNote;
@@ -26,22 +27,26 @@ public class MarkovGenerator
 			noteIterator++;
 		}
 	}
+
+    //this is returning incorrect results @ 6/7/2017
 	public int NextNote(int previousNote)
 	{
 		int sum = 0;
 		int randomiser;
 		for(int i = 0; i < 12; i++)
 		{
-			sum += transitionMatrix[previousNote,i];
+			sum += transitionMatrix[previousNote,i]; //should sum all values in row so that we can chose one based on its weighting
 		}
-		randomiser = Random.Range(0, sum);
+        //randomiser = Random.Range(0, sum + 1);
+        randomiser = 1;
 		sum = 0;
 		for(int i = 0; i < 12; i++)
 		{
 			sum += transitionMatrix[previousNote,i];
 			if(sum >= randomiser)
 			{
-				return transitionMatrix[previousNote,i];
+                int curVal = i;
+				return i;
 			}
 		}
 		Debug.Log("Should never see this! Markov overflow");

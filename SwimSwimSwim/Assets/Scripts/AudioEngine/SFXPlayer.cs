@@ -67,17 +67,19 @@ public class SFXPlayer : Singleton<SFXPlayer>
 			ofset = 5;
 			break;
 		}
-
+        Debug.Log("Previous note: " + currentNote);
 		nextNote = markovGenerator.NextNote(currentNote) - ofset;
-		if(nextNote < 0)
-		{
-			nextNote += 12;
-		}
-		if(nextNote >= 12)
-		{
-			nextNote -= 12;
-		}
+		if(nextNote < 0) nextNote += 12;
+
+		if(nextNote >= 12) nextNote -= 12;
+
 		sources[currentSource].clip = guitarSynth[nextNote];
-		currentNote = nextNote;
-	}
+		currentNote = nextNote - ofset;
+        if (currentNote < 0) currentNote += 12;
+
+        if (currentNote >= 12) currentNote -= 12;
+
+        Debug.Log("current note: " + currentNote);
+        //Debug.Log(currentNote);
+    }
 }
