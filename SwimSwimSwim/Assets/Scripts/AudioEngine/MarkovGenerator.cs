@@ -31,25 +31,36 @@ public class MarkovGenerator
     //this is returning incorrect results @ 6/7/2017
 	public int NextNote(int previousNote)
 	{
-		int sum = 0;
+		int sumTransitions = 0;
 		int randomiser;
-		for(int i = 0; i < 12; i++)
+        int iterator = 0;
+		while(iterator < 12)
 		{
-			sum += transitionMatrix[previousNote,i]; //should sum all values in row so that we can chose one based on its weighting
-		}
-        //randomiser = Random.Range(0, sum + 1);
-        randomiser = 1;
-		sum = 0;
-		for(int i = 0; i < 12; i++)
+            sumTransitions += transitionMatrix[previousNote, iterator]; //should sum all values in row so that we can chose one based on its weighting
+            iterator++;
+
+        }
+        if(sumTransitions == 0)
+        {
+            //There is no translation prob for this note- go back to root note.
+            Debug.Log("No transition prob for this note");
+            return 0;
+        }
+        randomiser = Random.Range(1, sumTransitions + 1);
+        sumTransitions = 0;
+        iterator = 0;
+
+        while (iterator < 12)
 		{
-			sum += transitionMatrix[previousNote,i];
-			if(sum >= randomiser)
+            sumTransitions += transitionMatrix[previousNote, iterator];
+            if (sumTransitions >= randomiser)
 			{
-                int curVal = i;
-				return i;
+                return iterator;
 			}
-		}
-		Debug.Log("Should never see this! Markov overflow");
+            iterator++;
+        }
+		Debug.Log("Should never see this! Markov overflow: val " + iterator);
+        Debug.Log("Randomiser = " + randomiser);
 		return 0;
 	}
 }
