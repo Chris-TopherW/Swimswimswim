@@ -11,7 +11,8 @@ public class BlastZone : MonoBehaviour {
     public const int MAX_SIZE = 8;
 
     private MeshRenderer mesh;
-    private float zoneScale = 3.0f;
+    public float zoneScale = 3.0f;
+    public float zoneGrowth = 1f;
     private bool growNextTick = false;
 
     private List<BlastEnemy> enemiesInZone;
@@ -88,10 +89,10 @@ public class BlastZone : MonoBehaviour {
 
     public void GrowZone()
     {
-        zoneScale += 0.5f;
+        zoneScale += zoneGrowth;
         if (gameObject != null)
         {
-            this.gameObject.transform.localScale = new Vector3(zoneScale, zoneScale, 1f);
+            this.gameObject.transform.localScale = new Vector3(zoneScale, 1f, zoneScale);
         }
 
     }

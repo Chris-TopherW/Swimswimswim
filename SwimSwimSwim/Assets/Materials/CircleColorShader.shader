@@ -29,7 +29,7 @@
 				return o;
 			}
 			half4 frag(v2f i) : SV_Target{
-				return half4(1,0,0,0.2);
+				return half4(1,0,0,0.5);
 			}
 			ENDCG
 		}
@@ -54,7 +54,7 @@
 				return o;
 			}
 			half4 frag(v2f i) : SV_Target{
-				return half4(0,1,0,0.3);
+				return half4(0,1,0,0.7);
 			}
 				ENDCG
 			}
@@ -79,7 +79,7 @@
 				return o;
 			}
 			half4 frag(v2f i) : SV_Target{
-				return half4(0,0,1,0.4);
+				return half4(0,0,1,0.8);
 			}
 				ENDCG
 			}
@@ -104,7 +104,7 @@
 				return o;
 			}
 			half4 frag(v2f i) : SV_Target{
-				return half4(0,1,1,0.5);
+				return half4(0,1,1,0.8);
 			}
 				ENDCG
 			}

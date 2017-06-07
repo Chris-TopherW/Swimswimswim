@@ -35,10 +35,10 @@ public class GenerateCircleMesh : MonoBehaviour {
         float angleStep = 360.0f / (float)numOfPoints;
         List<Vector3> vertexList = new List<Vector3>();
         List<int> triangleList = new List<int>();
-        Quaternion quaternion = Quaternion.Euler(0.0f, 0, angleStep);
+        Quaternion quaternion = Quaternion.Euler(0.0f, angleStep, 0f);
         // Make first triangle.
         vertexList.Add(new Vector3(0.0f, 0f, 0.0f));  // 1. Circle center.
-        vertexList.Add(new Vector3(0.5f, 0f, 0.0f));  // 2. First vertex on circle outline (radius = 0.5f)
+        vertexList.Add(new Vector3(0.0f, 0f, 0.5f));  // 2. First vertex on circle outline (radius = 0.5f)
         vertexList.Add(quaternion * vertexList[1]);     // 3. First vertex on circle outline rotated by angle)
                                                         // Add triangle indices.
         triangleList.Add(0);

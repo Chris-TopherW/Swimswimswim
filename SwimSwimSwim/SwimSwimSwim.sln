@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim", "SwimSwimSwim.csproj", "{18EA641D-4E5A-F46B-F173-003C54C4EB51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim.Editor", "SwimSwimSwim.Editor.csproj", "{86C33B5A-055A-A798-399A-3E944B3AAE3C}"

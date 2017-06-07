@@ -49,7 +49,15 @@ public class BlastManager : Singleton<BlastManager>
 
     public Text debugScoreDisplay;
 
+    public Collider blastCollider;
+
     protected BlastManager() { }
+
+    void Awake()
+    {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
+    }
 
     // Use this for initialization
     void Start () {
@@ -67,8 +75,8 @@ public class BlastManager : Singleton<BlastManager>
         StartCoroutine(StartController(0.5f)); 
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
-        tickUnlockTime.Add(new NotationTime(0, 0, 2));
-        StartCoroutine(StartSpawn(2f));
+        tickUnlockTime.Add(new NotationTime(0, 0, 1));
+        StartCoroutine(StartSpawn(4f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -125,16 +133,19 @@ public class BlastManager : Singleton<BlastManager>
                 }
             } else if (zoneCount < MAX_ZONES) {
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-                Vector3 spawnLocation = ray.origin + (ray.direction * (ray.origin.y +2));
-                GameObject zoneMade = GameObject.Instantiate(blastZone, spawnLocation, Quaternion.identity);
-                blastZones.Add(zoneMade.GetComponent<BlastZone>());
-                zoneMade.transform.parent = blastZoneParent;
-                zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
-                ticksFired++;
-                zoneCount++;
+                RaycastHit hit;
+                if (blastCollider.Raycast(ray, out hit, 1000.0F))
+                {
+                    GameObject zoneMade = GameObject.Instantiate(blastZone, hit.point, Quaternion.identity);
+                    blastZones.Add(zoneMade.GetComponent<BlastZone>());
+                    zoneMade.transform.parent = blastZoneParent;
+                    zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
+                    ticksFired++;
+                    zoneCount++;
+                }
             }
             tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
-            tickUnlockTime.Add(new NotationTime(0, 0, 2));
+            tickUnlockTime.Add(new NotationTime(0, 0, 1));
             tickLock = true;
         }
     }
@@ -207,7 +218,8 @@ public class BlastManager : Singleton<BlastManager>
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            GameObject.Instantiate(toSpawn, spawnPoint.position, Quaternion.identity);
+            Vector3 position = spawnPoint.position; //+ new Vector3(0, Random.Range(-3, 7), 0);
+            GameObject.Instantiate(toSpawn, position, Quaternion.identity);
         }
     }
 }

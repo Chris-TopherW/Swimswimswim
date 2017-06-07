@@ -27,9 +27,9 @@ public class NotationTime
     public void Add(NotationTime other)
     {
         tick += other.tick;
-        if (tick >= 8)
+        if (tick >= 4)
         {
-            tick -= 8;
+            tick -= 4;
             quarter++;
         }
         quarter += other.quarter;
@@ -44,8 +44,8 @@ public class NotationTime
 
     public void AddTick() {
         tick++;
-        if (tick >= 8) {
-            tick -= 8;
+        if (tick >= 4) {
+            tick -= 4;
             quarter++;
         }
         if (quarter >= 4) {
@@ -80,6 +80,6 @@ public class NotationTime
 
     public int TimeAsTicks()
     {
-        return (bar * 32) + (quarter * 8) + tick;
+        return (bar * 16) + (quarter * 4) + tick;
     }
 }

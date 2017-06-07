@@ -50,7 +50,7 @@ public class Metronome : Singleton<Metronome>
 		//set up audio DSP buffer size and sample rate for whole program
 		sampleRate = AudioSettings.outputSampleRate;
 
-		ticksPerQuarter = 8;
+		ticksPerQuarter = 4;
 		quartersPerBar = 4;
 		ticksPerBar = ticksPerQuarter * quartersPerBar;
 		//set up basic subdivision

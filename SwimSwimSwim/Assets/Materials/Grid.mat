@@ -58,17 +58,17 @@ Material:
     - _Cutoff: 0.166
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Falloff: 39.3
+    - _Falloff: 39.69
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GridOffsetX: 0
     - _GridOffsetY: 0
-    - _GridSpacing: 0.32
+    - _GridSpacing: 0.5
     - _GridSpacingX: 0.35
     - _GridSpacingY: 0.29
     - _GridSpacingZ: 0.62
-    - _GridThickness: 2.1
+    - _GridThickness: 1.94
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -78,12 +78,12 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _ZonePosition: 21.591
+    - _ZonePosition: 78.86534
     - _ZoneScalar: 1
     - _ZoneSpacing: 0.59
-    - _ZoneThickness: 5.83
+    - _ZoneThickness: 5.49
     - _ZoneWarp: 0.1
-    - _ZoneWidth: 30.5
+    - _ZoneWidth: 14.28
     m_Colors:
     - _BaseColour: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
