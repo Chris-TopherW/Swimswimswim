@@ -5,11 +5,9 @@ using UnityEngine;
 public class SFXPlayer : Singleton<SFXPlayer> 
 {
 	public static SFXPlayer sfxPlayer;
-	public AudioClip[] BbMixolydian;
-	public AudioClip[] fMixolydian;
+	public AudioClip[] guitarSynth;
 	public AudioClip[] drumsSamples;
 	public AudioClip[] explosions;
-	public int[] noteProb;
 	public int numSources = 2;
 
 	private AudioSource[] sources;
@@ -17,6 +15,7 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	private int nextSource;
 	private int currentNote;
 	private int previousNote;
+	private MarkovGenerator markovGenerator = new MarkovGenerator();
 
 	void Awake() 
 	{
@@ -57,75 +56,28 @@ public class SFXPlayer : Singleton<SFXPlayer>
 	}
 		
 	private void NoteChoice() {
+		int nextNote;
+		int ofset = 0;
+
 		switch(BackgroundMusic.Instance.currentClip.key) {
 		case "Bbm":
-			sources[currentSource].clip = BbMixolydian[MarkovMelody(BbMixolydian.Length)];
+			ofset = -2;
 			break;
 		case "F7":
-			sources[currentSource].clip = BbMixolydian[MarkovMelody(fMixolydian.Length)];
+			ofset = 5;
 			break;
 		}
-	}
 
-	private void MixolImprov(int currentRoot, int newRoot) 
-	{
-		int transposition = newRoot - currentRoot;
-	}
-
-	private int MarkovMelody(int p_numChoices)
-	{
-		switch(Random.Range(0, 4))
-			{
-		case 0:
-			return RandomWalk(p_numChoices);
-			break;
-		case 1:
-			return RandomWalk(p_numChoices);
-			break;
-		case 2:
-			return RandomWalk(p_numChoices);
-			break;
-		case 3:
-			return RandomWalk(p_numChoices);
-			break;
-		default:
-			return RandomWalk(p_numChoices);
-			break;
-			}
-	}
-	private int RandomWalk(int p_numChoices)
-	{
-		currentNote = (previousNote + Random.Range(-1, 2));
-		if(currentNote < 0)
-			currentNote = 0;
-		if(currentNote >= p_numChoices)
-			currentNote = p_numChoices - 1;
-		previousNote = currentNote;
-		return currentNote;
-	}
-	private int RandomJump(int p_numChoices)
-	{
-		int sum = 0;
-		int noteIndex = 0;
-		for(int i = 0; i < noteProb.Length; i++)
+		nextNote = markovGenerator.NextNote(currentNote) - ofset;
+		if(nextNote < 0)
 		{
-			sum += noteProb[i];
+			nextNote += 12;
 		}
-		int randomProbChoice = Random.Range(0, sum);
-
-		sum = 0;
-		for(int i = 0; i < noteProb.Length; i++)
+		if(nextNote >= 12)
 		{
-			if(sum < randomProbChoice) sum += noteProb[i];
-			else
-			{
-				noteIndex = i;
-				break;
-			}
-			noteIndex = i;
+			nextNote -= 12;
 		}
-		currentNote = noteIndex;
-		previousNote = noteIndex;
-		return currentNote;
+		sources[currentSource].clip = guitarSynth[nextNote];
+		currentNote = nextNote;
 	}
 }

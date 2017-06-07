@@ -48,8 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioEngine\BackgroundClip.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\BackgroundMusic.cs" />
+     <Compile Include="Assets\Scripts\AudioEngine\MarkovGenerator.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Metronome.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\NotationTime.cs" />
+     <Compile Include="Assets\Scripts\AudioEngine\RawMidiData.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\SFXPlayer.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\Singleton.cs" />
      <Compile Include="Assets\Scripts\BezierCurve.cs" />

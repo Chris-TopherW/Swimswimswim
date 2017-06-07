@@ -220,22 +220,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6359c28ce7d01480f8304a7cf886763c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BbMixolydian:
-  - {fileID: 8300000, guid: e9fa1700bd0544f1c838c4f717318c2f, type: 3}
-  - {fileID: 8300000, guid: 3b6bb090445744f62b258c39e25bb2d8, type: 3}
-  - {fileID: 8300000, guid: 9b732964c0a4242b28827ed7e83a919b, type: 3}
-  - {fileID: 8300000, guid: 0db33eaeb563f4f5285b53fa142b4fbc, type: 3}
-  - {fileID: 8300000, guid: 67625fc4ff1954d6bb808e5738d20621, type: 3}
-  - {fileID: 8300000, guid: ba0607aa93aec4d94bc902937371d2b5, type: 3}
-  - {fileID: 8300000, guid: ecf5b1581d133426ba9d7114b3c5c042, type: 3}
-  fMixolydian:
-  - {fileID: 8300000, guid: 98bc64b4643630c4192efdc959c5d8de, type: 3}
-  - {fileID: 8300000, guid: 13c2b51fb50612348a1972d1375f7b92, type: 3}
-  - {fileID: 8300000, guid: cfd37c395f5cc384ab3987f653ea7c42, type: 3}
-  - {fileID: 8300000, guid: 27b3ebc8389e61c44b7948ef696af3d0, type: 3}
-  - {fileID: 8300000, guid: a31dd4a79a9baa945b0fb370ad3ddba3, type: 3}
-  - {fileID: 8300000, guid: 3a15a2bd90ffb79469ac606311e29373, type: 3}
-  - {fileID: 8300000, guid: 7c817946c9e52fc4888f6f5891946828, type: 3}
+  guitarSynth:
+  - {fileID: 8300000, guid: 46444278d32b942cca5e1e5205b0e916, type: 3}
+  - {fileID: 8300000, guid: ebcdf4c6d6985450d96923c24fea4f1e, type: 3}
+  - {fileID: 8300000, guid: b8a4d5fc84ee443869e54e47d2871347, type: 3}
+  - {fileID: 8300000, guid: 9408c4ee3505f4f58b4038c55815d9c1, type: 3}
+  - {fileID: 8300000, guid: 5190225e192c04688beed0eb72b87bb7, type: 3}
+  - {fileID: 8300000, guid: 1a857a25e33b24d5da03348a44f090a0, type: 3}
+  - {fileID: 8300000, guid: acf213ddb40034c289db3c63c8555b58, type: 3}
+  - {fileID: 8300000, guid: d5e222614efc84ea0a309dc2b2caff61, type: 3}
+  - {fileID: 8300000, guid: 621aac8a46912434b9218a5f0ed32707, type: 3}
+  - {fileID: 8300000, guid: df286bf5ea0ac4bb491567f50523a061, type: 3}
+  - {fileID: 8300000, guid: 612c2d5ef76ad49c4931723490290b6c, type: 3}
+  - {fileID: 8300000, guid: 07f5f4bf4408147d99d692e35eecdf70, type: 3}
   drumsSamples:
   - {fileID: 8300000, guid: d6ba91e808a6eda4da2cf9ff9e6f7d8c, type: 3}
   - {fileID: 8300000, guid: 0481eee3299d62f41a235278998920b0, type: 3}
@@ -249,7 +246,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 264400fc042def1468c0fcb52f4f14a6, type: 3}
   explosions:
   - {fileID: 8300000, guid: 9e6f09f3f878b4028aade775906923ca, type: 3}
-  noteProb: 05000000030000000500000002000000080000000400000002000000
   numSources: 4
 --- !u!224 &224510083843665404
 RectTransform:
