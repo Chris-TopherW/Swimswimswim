@@ -51,6 +51,19 @@ public class BlastManager : Singleton<BlastManager>
 
     public Collider blastCollider;
 
+    public List<BlastZone> BlastZones
+    {
+        get
+        {
+            return blastZones;
+        }
+
+        set
+        {
+            blastZones = value;
+        }
+    }
+
     protected BlastManager() { }
 
     void Awake()
@@ -61,7 +74,7 @@ public class BlastManager : Singleton<BlastManager>
 
     // Use this for initialization
     void Start () {
-        blastZones = new List<BlastZone>();
+        BlastZones = new List<BlastZone>();
         controller = GetComponent<BlastController>();
         UpdateText();
         spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
@@ -137,7 +150,7 @@ public class BlastManager : Singleton<BlastManager>
                 if (blastCollider.Raycast(ray, out hit, 1000.0F))
                 {
                     GameObject zoneMade = GameObject.Instantiate(blastZone, hit.point, Quaternion.identity);
-                    blastZones.Add(zoneMade.GetComponent<BlastZone>());
+                    BlastZones.Add(zoneMade.GetComponent<BlastZone>());
                     zoneMade.transform.parent = blastZoneParent;
                     zoneMade.GetComponent<BlastZone>().CreateZone(Metronome.Instance.currentTime);
                     ticksFired++;
@@ -152,18 +165,23 @@ public class BlastManager : Singleton<BlastManager>
 
     public BlastZone CheckForBlastZones(Vector2 touchPosition)
     {
+        //Rewrite this to use the same kind of checking that th
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
-        RaycastHit[] hits = Physics.RaycastAll(ray.origin, ray.direction, 1000.0f);
-        for (int i = 0; i < hits.Length; i++)
-        {
-
-            GameObject obj = hits[i].transform.gameObject;
-            if (obj.CompareTag("Blast Zone"))
+        RaycastHit hit;
+        BlastZone zone = null;
+        float zDistance = float.PositiveInfinity;
+        if (blastCollider.Raycast(ray, out hit , 1000.0f)) {
+            foreach (BlastZone z in BlastZones)
             {
-                return obj.GetComponent<BlastZone>();
+                float d = Vector2.Distance(hit.point.xz(), z.transform.position.xz()) - z.zoneScale/2;
+                if (d <= 0 && d < zDistance)
+                {
+                    zDistance = d;
+                    zone = z;
+                }
             }
         }
-        return null;
+        return zone;
     }
 
 
@@ -178,11 +196,11 @@ public class BlastManager : Singleton<BlastManager>
     //Logic for destruction of zones goes here.
     public void DestroyZones()
     {
-        foreach (BlastZone zone in blastZones)
+        foreach (BlastZone zone in BlastZones)
         {
             zone.DestroyZone();
         }
-        blastZones.Clear();
+        BlastZones.Clear();
         zoneCount = 0;
         ticksFired = 0;
     }

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim.Plugins", "SwimSwimSwim.Plugins.csproj", "{1C13DCA6-F111-D28B-E7A2-96E9ECF15AC3}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim", "SwimSwimSwim.csproj", "{18EA641D-4E5A-F46B-F173-003C54C4EB51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimSwimSwim.Editor", "SwimSwimSwim.Editor.csproj", "{86C33B5A-055A-A798-399A-3E944B3AAE3C}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C13DCA6-F111-D28B-E7A2-96E9ECF15AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C13DCA6-F111-D28B-E7A2-96E9ECF15AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C13DCA6-F111-D28B-E7A2-96E9ECF15AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C13DCA6-F111-D28B-E7A2-96E9ECF15AC3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18EA641D-4E5A-F46B-F173-003C54C4EB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18EA641D-4E5A-F46B-F173-003C54C4EB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18EA641D-4E5A-F46B-F173-003C54C4EB51}.Release|Any CPU.ActiveCfg = Release|Any CPU

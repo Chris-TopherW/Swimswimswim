@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: 
+    path: Assets/Scenes/MainMenu.unity
     guid: 375b1c2fbcb0479479c04c17904c5264
   - enabled: 0
     path: Assets/Scenes/portalprototype.unity

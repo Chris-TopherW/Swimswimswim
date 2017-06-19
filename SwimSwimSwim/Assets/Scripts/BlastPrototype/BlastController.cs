@@ -18,7 +18,12 @@ public class BlastController : MonoBehaviour {
         {
             //Rewrite -- Raycast to dolphin first,
             //Then raycast to blast zone.
-            Vector2 touchPos ;
+
+            if (Input.GetMouseButton(1))
+            {
+                Application.CaptureScreenshot("screenshot.png", 4);
+            }
+            Vector2 touchPos;
             if (Input.touchCount > 0)
             {
                 touchPos = Input.GetTouch(0).position;
@@ -26,10 +31,13 @@ public class BlastController : MonoBehaviour {
             else if (Input.GetMouseButton(0))
             {
                 touchPos = Input.mousePosition;
-            } else
-            {
+            }
+            else
+             {
                 return;
             }
+
+
 
             Ray ray = Camera.main.ScreenPointToRay(touchPos);
             RaycastHit hit;
