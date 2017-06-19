@@ -51,6 +51,7 @@ public class BlastManager : Singleton<BlastManager>
 
     public Collider blastCollider;
 
+    private List<BlastEnemy> Enemies;
     public List<BlastZone> BlastZones
     {
         get
@@ -75,6 +76,7 @@ public class BlastManager : Singleton<BlastManager>
     // Use this for initialization
     void Start () {
         BlastZones = new List<BlastZone>();
+        Enemies = new List<BlastEnemy>();
         controller = GetComponent<BlastController>();
         UpdateText();
         spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
@@ -165,7 +167,6 @@ public class BlastManager : Singleton<BlastManager>
 
     public BlastZone CheckForBlastZones(Vector2 touchPosition)
     {
-        //Rewrite this to use the same kind of checking that th
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(touchPosition.x, touchPosition.y, 0));
         RaycastHit hit;
         BlastZone zone = null;
@@ -199,6 +200,10 @@ public class BlastManager : Singleton<BlastManager>
         foreach (BlastZone zone in BlastZones)
         {
             zone.DestroyZone();
+        }
+        foreach (BlastEnemy enemy in Enemies)
+        {
+            enemy.Hit();
         }
         BlastZones.Clear();
         zoneCount = 0;
@@ -238,6 +243,13 @@ public class BlastManager : Singleton<BlastManager>
             yield return new WaitForSeconds(delay);
             Vector3 position = spawnPoint.position; //+ new Vector3(0, Random.Range(-3, 7), 0);
             GameObject.Instantiate(toSpawn, position, Quaternion.identity);
+            Enemies.Clear();
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Destroyable");
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                Enemies.Add(enemies[i].GetComponent<BlastEnemy>());
+            }
+
         }
     }
 }
