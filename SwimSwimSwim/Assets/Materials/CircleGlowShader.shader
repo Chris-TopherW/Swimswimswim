@@ -4,6 +4,7 @@ Shader "Unlit/CircleGlowShader"
 	{
 		_MainTex("Texture", 2D) = "white" {}
 		_GlowColour("Glow Colour", Color) = (0.5, 1.0, 1.0, 1.0)
+		_GlowColour2("Glow Colour", Color) = (0.5, 1.0, 1.0, 1.0)
 	}
 	SubShader
 	{
@@ -35,6 +36,7 @@ Shader "Unlit/CircleGlowShader"
 	sampler2D _MainTex;
 	float4 _MainTex_ST;
 	fixed4 _GlowColour;
+	fixed4 _GlowColour2;
 
 	v2f vert(appdata v)
 	{
@@ -49,9 +51,10 @@ Shader "Unlit/CircleGlowShader"
 		fixed4 c = 0;
 	// normal is a 3D vector with xyz components; in -1..1
 	// range. To display it as color, bring the range into 0..1
-	// and put into red, green, blue components
-	c.rgb = _GlowColour;
-	c.a = tex2D(_MainTex, i.uv).a * _GlowColour.a;
+	// and put into red, green, blue components=
+	float glowMod = 0.8 + (sin(_Time*15*2*3.141) * 0.2);
+	c.rgb = lerp(_GlowColour,_GlowColour2,glowMod);
+	c.a = tex2D(_MainTex, i.uv).a * _GlowColour.a * glowMod;
 	return c;
 	}
 		ENDCG

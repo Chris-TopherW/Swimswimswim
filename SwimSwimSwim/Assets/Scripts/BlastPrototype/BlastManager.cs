@@ -91,7 +91,7 @@ public class BlastManager : Singleton<BlastManager>
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 1));
-        StartCoroutine(StartSpawn(4f));
+        StartCoroutine(StartSpawn(0.5f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -241,7 +241,7 @@ public class BlastManager : Singleton<BlastManager>
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            Vector3 position = spawnPoint.position; //+ new Vector3(0, Random.Range(-3, 7), 0);
+            Vector3 position = spawnPoint.position + new Vector3(Random.Range(-7, 7), 0, Random.Range(-7, 7));
             GameObject.Instantiate(toSpawn, position, Quaternion.identity);
             Enemies.Clear();
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Destroyable");

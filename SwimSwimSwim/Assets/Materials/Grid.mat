@@ -58,17 +58,17 @@ Material:
     - _Cutoff: 0.166
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Falloff: 66.59
+    - _Falloff: 103
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GridOffsetX: 0
     - _GridOffsetY: 0
-    - _GridSpacing: 0.46
+    - _GridSpacing: 0.4
     - _GridSpacingX: 0.35
     - _GridSpacingY: 0.29
     - _GridSpacingZ: 0.62
-    - _GridThickness: 2.94
+    - _GridThickness: 2.37
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -78,18 +78,19 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _ZonePosition: 76.350876
+    - _ZonePosition: 173.02542
     - _ZoneScalar: 1
     - _ZoneSpacing: 0.59
-    - _ZoneThickness: 3.09
+    - _ZoneThickness: 2.61
     - _ZoneWarp: 0.1
-    - _ZoneWidth: 21.56
+    - _ZoneWidth: 164.42
     m_Colors:
     - _BaseColour: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GridColour: {r: 0.7712983, g: 0.29310346, b: 1, a: 0.891}
-    - _GridColour2: {r: 0.5, g: 1, b: 1, a: 1}
-    - _GridColour3: {r: 1, g: 0.9852941, b: 0.5, a: 1}
-    - _GridColour4: {r: 1, g: 0.5, b: 0.52205896, a: 1}
-    - _ZoneColour: {r: 0, g: 0.6114836, b: 0.6397059, a: 1}
+    - _GridColour: {r: 1, g: 0.56896555, b: 0.89224136, a: 0.891}
+    - _GridColour2: {r: 0, g: 1, b: 0.8235295, a: 1}
+    - _GridColour3: {r: 0.81982756, g: 0.3551724, b: 1, a: 1}
+    - _GridColour4: {r: 0.90998983, g: 0.75517243, b: 1, a: 1}
+    - _GridColour5: {r: 1, g: 1, b: 1, a: 1}
+    - _ZoneColour: {r: 1, g: 0.9191176, b: 0.5, a: 1}

@@ -10,6 +10,7 @@ public class BlastEnemy : MonoBehaviour
     public float speed = 0f;
     private int zonesIn = 0;
     private Renderer rend;
+    private float rot = 0;
 
     // Use this for initialization
     void Start()
@@ -59,8 +60,11 @@ public class BlastEnemy : MonoBehaviour
 
     void UpdatePosition()
     {
+
+        if (rot >= 360) rot -=360;
+       // rot += .05f;
         Quaternion newRotation = transform.rotation;
-        newRotation.y += .005f;
+        newRotation.y = rot;
         this.transform.rotation = newRotation;
     }
 

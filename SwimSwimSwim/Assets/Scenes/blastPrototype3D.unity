@@ -453,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 471094948}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 310.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1000, y: 1000, z: 1}
   m_Children: []
   m_Father: {fileID: 514782808}
@@ -486,7 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c25cb66c4344468f25baea4cd44fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.15
+  speed: 3
+  posStart: 90
   gridMaterial: {fileID: 2100000, guid: 813e6feb802cd5647901998ea9ad47de, type: 2}
   blastZonePos: {fileID: 1252563835}
 --- !u!4 &514782808
@@ -812,7 +813,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.118944675, g: 0, b: 0.32352942, a: 0}
+  m_BackGroundColor: {r: 0.33448273, g: 0.5595842, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
