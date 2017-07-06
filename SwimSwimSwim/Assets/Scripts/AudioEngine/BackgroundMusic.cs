@@ -39,7 +39,7 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
 			Debug.Log("Error: cannot call StartMusic when metro is already ticking, call StopMusic first");
 			return;
 		}
-		Metronome.Instance.SetBPM(126.0f);
+		Metronome.Instance.SetBPM(100.0f);
 		Metronome.Instance.ready = true;
 		nextPlay = new NotationTime(Metronome.Instance.currentTime);
 		nextPlay.AddTick();
@@ -54,7 +54,7 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
             double nextPlayTime = Metronome.Instance.GetFutureTime(nextPlay);
 			//sources[nextSource].clip = nextClip.clip;
 			sources[nextSource].clip = nextClip.clip;
-            sources[nextSource].volume = 1;
+            sources[nextSource].volume = 0.4f;
             sources[nextSource].PlayScheduled(nextPlayTime);
             //Set next time to play
 			currentClip = nextClip;

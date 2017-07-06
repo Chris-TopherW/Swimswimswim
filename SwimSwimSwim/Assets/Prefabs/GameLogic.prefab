@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af02fd357d48476fa071ba3754002f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 126
+  BPM: 100
   currentTick: 0
   currentQuarter: 0
   currentBar: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   toSpawn: {fileID: 1038020401004794, guid: 7563288317e07f24f92f26b174dd304e, type: 2}
   blastZone: {fileID: 1431955129313076, guid: 22f4ffa4e92caf14db75fe04b0648d09, type: 2}
   debugScoreDisplay: {fileID: 0}
+  blastCollider: {fileID: 0}
 --- !u!114 &114521143173827742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,14 +202,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 0a21e9dc21c4742ac87677194ba9e2fb, type: 3}
-  - {fileID: 8300000, guid: 12baa29225da94e65877055e0beabfe7, type: 3}
-  - {fileID: 8300000, guid: eacd0a54e7e7a423aa1ce1a40a3e5587, type: 3}
+  - {fileID: 8300000, guid: e86e8deb99e883442a3fcb69f0b8052e, type: 3}
+  - {fileID: 8300000, guid: e86e8deb99e883442a3fcb69f0b8052e, type: 3}
+  - {fileID: 8300000, guid: e86e8deb99e883442a3fcb69f0b8052e, type: 3}
   clipKeys:
   - Bbm
   - F7
   - F7
-  clipLengths: 080000000800000008000000
+  clipLengths: 040000000400000004000000
 --- !u!114 &114604877469510540
 MonoBehaviour:
   m_ObjectHideFlags: 1

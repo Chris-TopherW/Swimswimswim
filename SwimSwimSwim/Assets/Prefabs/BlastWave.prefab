@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347627d0d57909e428bcf33481eec668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
+  hitPoints: 2
   scorePoints: 500
   speed: 0.025
 --- !u!114 &114772089942220794
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347627d0d57909e428bcf33481eec668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
+  hitPoints: 2
   scorePoints: 500
   speed: 0.025
 --- !u!114 &114851940052799026
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347627d0d57909e428bcf33481eec668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 1
+  hitPoints: 2
   scorePoints: 500
   speed: 0.025
 --- !u!135 &135008651446338712

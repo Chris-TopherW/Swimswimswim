@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -173,6 +175,7 @@
   <ItemGroup>
     <None Include="Assets\Materials\BackgroundGradient.shader" />
     <None Include="Assets\Materials\CircleColorShader.shader" />
+    <None Include="Assets\Materials\CircleGlowShader.shader" />
     <None Include="Assets\Materials\CircleIntersectShader.shader" />
     <None Include="Assets\Materials\CoolImageCutoutShader.shader" />
     <None Include="Assets\Materials\GridShader.shader" />

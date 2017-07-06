@@ -183,6 +183,7 @@
   <ItemGroup>
     <None Include="Assets\Materials\BackgroundGradient.shader" />
     <None Include="Assets\Materials\CircleColorShader.shader" />
+    <None Include="Assets\Materials\CircleGlowShader.shader" />
     <None Include="Assets\Materials\CircleIntersectShader.shader" />
     <None Include="Assets\Materials\CoolImageCutoutShader.shader" />
     <None Include="Assets\Materials\GridShader.shader" />
