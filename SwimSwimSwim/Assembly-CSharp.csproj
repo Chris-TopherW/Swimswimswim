@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FishManager.cs" />
      <Compile Include="Assets\Models\Pizza.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\BackgroundClip.cs" />
      <Compile Include="Assets\Scripts\AudioEngine\BackgroundMusic.cs" />
@@ -68,6 +67,7 @@
      <Compile Include="Assets\Scripts\CurveImplementation.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\CubeHandler.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\CubeThumper.cs" />
+     <Compile Include="Assets\Scripts\FishManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GenerateCircleMesh.cs" />
      <Compile Include="Assets\Scripts\ObstacleCleanup.cs" />
