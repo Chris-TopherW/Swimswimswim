@@ -44,6 +44,7 @@ public class UIElement : MonoBehaviour {
 
     public void Disable()
     {
+        gameObject.GetComponent<Image>().raycastTarget = false;
         gameObject.GetComponent<Button>().interactable = false;
         if (fade != null)
         {
@@ -54,6 +55,7 @@ public class UIElement : MonoBehaviour {
 
     public void Enable()
     {
+        gameObject.GetComponent<Image>().raycastTarget = true;
         gameObject.GetComponent<Button>().interactable = true;
         if (fade != null)
         {

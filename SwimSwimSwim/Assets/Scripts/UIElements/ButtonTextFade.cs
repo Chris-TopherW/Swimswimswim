@@ -13,7 +13,7 @@ public class ButtonTextFade : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-	    fadeRate = 1/0.2f;
+	    fadeRate = 1/0.1f;
 	    textComponent = gameObject.GetComponent<Text>();
 	    fadingOut = false;
         fadingIn = false;
@@ -26,7 +26,7 @@ public class ButtonTextFade : MonoBehaviour
 
         if (fadingOut && textCol.a >= 0)
 	    {
-	        textCol.a -= fadeRate*Time.deltaTime;
+	        textCol.a -= fadeRate*Time.unscaledDeltaTime;
 	        if (textCol.a < 0) { textCol.a = 0;
 	            fadingOut = false;
 	        }
@@ -34,7 +34,7 @@ public class ButtonTextFade : MonoBehaviour
 
         if (fadingIn && textCol.a <= 1)
         {
-            textCol.a += fadeRate * Time.deltaTime;
+            textCol.a += fadeRate * Time.unscaledDeltaTime;
             if (textCol.a > 1)
             {
                 textCol.a = 1;

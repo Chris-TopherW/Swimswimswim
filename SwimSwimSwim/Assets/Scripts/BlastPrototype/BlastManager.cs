@@ -124,10 +124,9 @@ public class BlastManager : Singleton<BlastManager>
     {
         //Time.timeScale = 0; Will need to be smarter than this.
         //TODO: Manage pausing/resuming metro and audio and gameplay in sync :D
-        controller.Deactivate();
-        AudioListener.pause = true;
-        Time.timeScale = 0;
+
         ChangeState(GameState.Paused);
+        StartCoroutine(StopControllerTime(0.12f));
 
     }
 
@@ -190,10 +189,8 @@ public class BlastManager : Singleton<BlastManager>
 
     public void ResumeGame()
     {
-        Time.timeScale = 1;
-        AudioListener.pause = false;
         ChangeState(GameState.Playing);
-        StartCoroutine(StartController(1f));
+        StartCoroutine(StartController(0.12f));
 
     }
 
@@ -235,8 +232,20 @@ public class BlastManager : Singleton<BlastManager>
 
     IEnumerator StartController(float timeToWait)
     {
-        yield return new WaitForSeconds(timeToWait);
+        yield return new WaitForSecondsRealtime(timeToWait);
+        Time.timeScale = 1;
+
+        AudioListener.pause = false;
         controller.Activate();
+    }
+
+    IEnumerator StopControllerTime(float timeToWait)
+    { 
+        yield return new WaitForSecondsRealtime(timeToWait);
+        Time.timeScale = 0;
+
+        AudioListener.pause = true;
+        controller.Deactivate();
     }
 
     IEnumerator StartSpawn(float delay)
