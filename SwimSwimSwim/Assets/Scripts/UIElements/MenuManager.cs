@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
+    public GameObject menuBackdrop;
     public GameObject mainMenuButtons;
     public GameObject optionsButtons;
     public GameObject creditsView;
@@ -16,7 +17,9 @@ public class MenuManager : MonoBehaviour {
     }
 	
     public void loadGame() {
-        SceneManager.LoadScene(1);
+        menuBackdrop.SetActive(false);
+        mainMenuButtons.SetActive(false);
+        BlastManager.Instance.BeginGame();
     }
     public void loadOptions() {
         mainMenuButtons.SetActive(false);
