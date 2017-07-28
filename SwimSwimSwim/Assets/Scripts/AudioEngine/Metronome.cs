@@ -68,7 +68,7 @@ public class Metronome : Singleton<Metronome>
         notationTick = new NotationTime(0, 0, 1);
     }
 
-    void FixedUpdate()
+    void Update()
     {
        // BPM++;
         samplesPerBar = (int)(sampleRate / (BPM / 60.0f)) * 4;

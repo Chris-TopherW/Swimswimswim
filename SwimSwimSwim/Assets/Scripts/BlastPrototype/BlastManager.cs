@@ -235,7 +235,7 @@ public class BlastManager : Singleton<BlastManager>
         yield return new WaitForSecondsRealtime(timeToWait);
         Time.timeScale = 1;
 
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
         controller.Activate();
     }
 
@@ -244,7 +244,7 @@ public class BlastManager : Singleton<BlastManager>
         yield return new WaitForSecondsRealtime(timeToWait);
         Time.timeScale = 0;
 
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
         controller.Deactivate();
     }
 
