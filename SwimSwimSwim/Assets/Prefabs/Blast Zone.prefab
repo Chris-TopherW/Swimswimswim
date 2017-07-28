@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 23267660863850004}
   - component: {fileID: 114225085550148946}
   - component: {fileID: 54316948234445490}
-  - component: {fileID: 114216632913965402}
   m_Layer: 0
   m_Name: Blast Zone
   m_TagString: Blast Zone
@@ -268,18 +267,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114216632913965402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1431955129313076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d47c3934ea56ad4483c117bdff0bfdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 50
 --- !u!114 &114225085550148946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,8 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4697832888893154785f6e28b2d718af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoneScale: 5
-  zoneGrowth: 1
+  zoneScale: 3
+  zoneGrowth: 0.66
 --- !u!136 &136039762486896422
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     public ButtonAnimation gameButton;
     public GameObject backgroundLoop;
 
-    //TODO -- Massive cleanup
+    //DEPRECATED
 
 	void Start () {
         player = GameObject.FindWithTag("Player");

@@ -2,6 +2,8 @@
 
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+// TODO: Remove stencil shader, calculate zones in shader using distance function and for loop (cheaper and probs cleaner)
+
 Shader "Unlit/GridShader"
 {
 	Properties{

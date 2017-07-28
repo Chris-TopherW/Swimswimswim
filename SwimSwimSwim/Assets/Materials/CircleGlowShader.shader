@@ -15,6 +15,10 @@ Shader "Unlit/CircleGlowShader"
 
 		Pass
 	{
+			Stencil{
+			Ref 1
+			Comp equal
+		}
 		CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag

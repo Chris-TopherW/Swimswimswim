@@ -23,7 +23,7 @@ public class BlastZone : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         Metronome.tickChangeDelegate += HandleTickChange;
-
+        this.gameObject.transform.localScale = new Vector3(zoneScale, 1f, zoneScale);
     }
 
     public void HandleTickChange(NotationTime currentTime)

@@ -87,11 +87,11 @@ public class BlastManager : Singleton<BlastManager>
     {
 		backgroundLoop.GetComponent<BackgroundMusic>().Init("ChipBoss");
         //Delay before activating game controller
-        StartCoroutine(StartController(0.5f)); 
+        StartCoroutine(StartController(0.01f)); 
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 1));
-        StartCoroutine(StartSpawn(0.5f));
+        StartCoroutine(StartSpawn(0.3f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -125,6 +125,8 @@ public class BlastManager : Singleton<BlastManager>
         //Time.timeScale = 0; Will need to be smarter than this.
         //TODO: Manage pausing/resuming metro and audio and gameplay in sync :D
         controller.Deactivate();
+        AudioListener.pause = true;
+        Time.timeScale = 0;
         ChangeState(GameState.Paused);
 
     }
@@ -188,7 +190,8 @@ public class BlastManager : Singleton<BlastManager>
 
     public void ResumeGame()
     {
-       // Time.timeScale = 1;
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         ChangeState(GameState.Playing);
         StartCoroutine(StartController(1f));
 
@@ -241,7 +244,7 @@ public class BlastManager : Singleton<BlastManager>
         while (true)
         {
             yield return new WaitForSeconds(delay);
-            Vector3 position = spawnPoint.position + new Vector3(Random.Range(-7, 7), 0, Random.Range(-7, 7));
+            Vector3 position = spawnPoint.position + new Vector3(Mathf.Sin(Time.time/2) * 5, 0, 0);
             GameObject.Instantiate(toSpawn, position, Quaternion.identity);
             Enemies.Clear();
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Destroyable");

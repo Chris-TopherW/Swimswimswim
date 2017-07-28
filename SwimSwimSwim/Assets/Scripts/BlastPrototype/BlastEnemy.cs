@@ -12,6 +12,7 @@ public class BlastEnemy : MonoBehaviour
     private Renderer rend;
     private float rot = 0;
 
+    //TODO: NO HP, score multiplier in overlapping zones instead
     // Use this for initialization
     void Start()
     {
@@ -68,6 +69,7 @@ public class BlastEnemy : MonoBehaviour
         this.transform.rotation = newRotation;
     }
 
+    //TODO: Clean dis up
     void UpdateMaterial()
     {
         float zoneDistance = Mathf.Clamp(getDistanceToZone(),-0.5f,0.5f);
