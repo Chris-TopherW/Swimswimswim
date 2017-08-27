@@ -85,13 +85,13 @@ public class BlastManager : Singleton<BlastManager>
 
     public void BeginGame()
     {
-		backgroundLoop.GetComponent<BackgroundMusic>().Init("ChipBoss");
+		backgroundLoop.GetComponent<BackgroundMusic>().Init("CaptainPlanetBeach");
         //Delay before activating game controller
         StartCoroutine(StartController(0.01f)); 
         ChangeState(GameState.Playing);
         tickUnlockTime = new NotationTime(Metronome.Instance.currentTime);
         tickUnlockTime.Add(new NotationTime(0, 0, 1));
-        StartCoroutine(StartSpawn(0.3f));
+        StartCoroutine(StartSpawn(3f));
         Metronome.tickChangeDelegate += HandleTickChange;
     }
 
@@ -254,7 +254,7 @@ public class BlastManager : Singleton<BlastManager>
         {
             yield return new WaitForSeconds(delay);
             Vector3 position = spawnPoint.position + new Vector3(Mathf.Sin(Time.time/2) * 5, 0, 0);
-            GameObject.Instantiate(toSpawn, position, Quaternion.identity);
+            GameObject.Instantiate(toSpawn, position + toSpawn.transform.position, toSpawn.transform.rotation);
             Enemies.Clear();
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Destroyable");
             for (int i = 0; i < enemies.Length; i++)

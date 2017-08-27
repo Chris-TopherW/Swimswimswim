@@ -11,12 +11,24 @@ public class BlastEnemy : MonoBehaviour
     private int zonesIn = 0;
     private Renderer rend;
     private float rot = 0;
-
+    private bool destroyed = false;
+    private float fadeInAmt = 1;
+    private float explAmt = 0;
+    private Material dynamicMaterial;
+    [Range(0.0f, 2.0f)]
+    public float explodeTime = 1;
+    [Range(0.0f, 2.0f)]
+    public float fadeoutTime = 1;
+    [Range(0.1f, 1.0f)]
+    public float fadeLength = 1;
     //TODO: NO HP, score multiplier in overlapping zones instead
     // Use this for initialization
     void Start()
     {
         rend = GetComponent<Renderer>();
+        dynamicMaterial = rend.material;
+        dynamicMaterial.SetFloat(Shader.PropertyToID("_Transparency"), 1);
+        StartCoroutine(FadeIn(1f));
         maxHP = hitPoints;
     }
 
@@ -25,12 +37,12 @@ public class BlastEnemy : MonoBehaviour
     {
         UpdatePosition();
         UpdateMaterial();
-        if (hitPoints <= 0)
+        if (hitPoints <= 0 && !destroyed)
         {
 
             BlastManager.Instance.IncreaseScore(scorePoints);
-
-            Destroy(gameObject);
+            StartCoroutine(Explode(explodeTime));
+            destroyed = true;
         }
         if (gameObject.transform.position.z <= -6.0f)
         {
@@ -39,34 +51,35 @@ public class BlastEnemy : MonoBehaviour
         }
     }
 
+
     float getDistanceToZone()
     {
-        List<BlastZone> zones = BlastManager.Instance.BlastZones;
-        zonesIn = 0;
+
         float zDistance = float.PositiveInfinity;
-        foreach (BlastZone z in zones)
+        if (BlastManager.Instance.BlastZones != null)
         {
-            float d = Vector2.Distance(transform.position.xz(), z.transform.position.xz()) - z.zoneScale/2;
-            if (d <= 0)
+            List<BlastZone> zones = BlastManager.Instance.BlastZones;
+            zonesIn = 0;
+            foreach (BlastZone z in zones)
             {
-                zonesIn++;
+                float d = Vector2.Distance(transform.position.xz(), z.transform.position.xz()) - z.zoneScale / 2;
+                if (d <= 0)
+                {
+                    zonesIn++;
+                }
+                if (d < zDistance)
+                {
+                    zDistance = d;
+                }
             }
-            if (d < zDistance)
-            {
-                zDistance = d;
-            }
+
         }
         return zDistance;
     }
 
     void UpdatePosition()
     {
-
-        if (rot >= 360) rot -=360;
-       // rot += .05f;
-        Quaternion newRotation = transform.rotation;
-        newRotation.y = rot;
-        this.transform.rotation = newRotation;
+       
     }
 
     //TODO: Clean dis up
@@ -95,8 +108,41 @@ public class BlastEnemy : MonoBehaviour
         hitPoints -= damage;
     }
 
-    IEnumerator Cleanup(float timeToWait)
+    IEnumerator ExplodeLoop(float animTime)
     {
-        yield return new WaitForSeconds(timeToWait);
+        while (true)
+        {
+            StartCoroutine(Explode(animTime));
+            yield return new WaitForSeconds(animTime);
+        }
+
+    }
+
+
+    IEnumerator Explode(float animTime)
+    {
+        explAmt = 0;
+        float transAmount = 0;
+        while (explAmt < 2)
+        {
+            //   this.gameObject.transform.localScale *= 1.025f;
+            explAmt += Time.deltaTime * 2 / animTime;
+            transAmount = Mathf.Clamp((explAmt - fadeoutTime) / fadeLength, 0,1);
+            if (explAmt > 2) explAmt = 2;
+            dynamicMaterial.SetFloat(Shader.PropertyToID("_ExplodeAmount"), explAmt);
+            dynamicMaterial.SetFloat(Shader.PropertyToID("_Transparency"), transAmount);
+            yield return null;
+        }
+        Destroy(gameObject);
+    }
+
+    IEnumerator FadeIn(float animTime)
+    {
+        for (int i = 0; i <= 20; i++)
+        {
+            fadeInAmt = 1 - i / 20.0f;
+            dynamicMaterial.SetFloat(Shader.PropertyToID("_Transparency"), fadeInAmt);
+            yield return new WaitForSeconds(animTime / 20.0f);
+        }
     }
 }
