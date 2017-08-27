@@ -78,7 +78,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _ZonePosition: 233.11504
+    - _ZonePosition: 361.75406
     - _ZoneScalar: 1
     - _ZoneSpacing: 0.59
     - _ZoneThickness: 2.61
@@ -89,7 +89,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridColour: {r: 1, g: 0.56896555, b: 0.89224136, a: 0.891}
-    - _GridColour2: {r: 0, g: 1, b: 0.8235295, a: 1}
+    - _GridColour2: {r: 0, g: 0.7794118, b: 1, a: 1}
     - _GridColour3: {r: 0.81982756, g: 0.3551724, b: 1, a: 1}
     - _GridColour4: {r: 0.90998983, g: 0.75517243, b: 1, a: 1}
     - _GridColour5: {r: 1, g: 1, b: 1, a: 1}

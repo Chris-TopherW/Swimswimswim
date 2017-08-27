@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4148624680533590}
   - component: {fileID: 33779161351130386}
   - component: {fileID: 23156120665921254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4088154245725908}
   - component: {fileID: 33764537468103618}
   - component: {fileID: 23306278393467148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 23267660863850004}
   - component: {fileID: 114225085550148946}
   - component: {fileID: 54316948234445490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blast Zone
   m_TagString: Blast Zone
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4316955465158036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CircleGlow2side (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

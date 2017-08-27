@@ -140,6 +140,10 @@
       <Project>{18EA641D-4E5A-F46B-F173-003C54C4EB51}</Project>
       <Name>SwimSwimSwim</Name>
     </ProjectReference>
+    <ProjectReference Include="SwimSwimSwim.Editor.Plugins.csproj">
+      <Project>{AC3D60A1-611D-031C-1323-911A60C1BF20}</Project>
+      <Name>SwimSwimSwim.Editor.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\SampleTests.cs" />
@@ -190,6 +194,8 @@
     <None Include="Assets\Materials\NormalShader.shader" />
     <None Include="Assets\Models\Notes.txt" />
     <None Include="Assets\Models\Trash.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+    <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />

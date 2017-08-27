@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
     public GameObject menuBackdrop;
+    public GameObject titleText;
     public GameObject mainMenuButtons;
     public GameObject optionsButtons;
     public GameObject creditsView;
@@ -19,17 +20,21 @@ public class MenuManager : MonoBehaviour {
     public void loadGame() {
         menuBackdrop.SetActive(false);
         mainMenuButtons.SetActive(false);
+        titleText.SetActive(false);
         BlastManager.Instance.BeginGame();
     }
     public void loadOptions() {
         mainMenuButtons.SetActive(false);
+        titleText.SetActive(false);
         optionsButtons.SetActive(true);
     }
     public void loadHighScore() {
         mainMenuButtons.SetActive(false);
+        titleText.SetActive(false);
         highScoreView.SetActive(true);
     }
     public void loadCredits() {
+        titleText.SetActive(false);
         mainMenuButtons.SetActive(false);
         creditsView.SetActive(true);
     }
@@ -42,6 +47,7 @@ public class MenuManager : MonoBehaviour {
     public void loadMainMenu()
     {
         mainMenuButtons.SetActive(true);
+        titleText.SetActive(true);
         optionsButtons.SetActive(false);
         creditsView.SetActive(false);
         highScoreView.SetActive(false);

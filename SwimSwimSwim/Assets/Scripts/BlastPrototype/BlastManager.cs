@@ -22,7 +22,6 @@ public class BlastManager : Singleton<BlastManager>
     public static int currentPollutionLevel;
     public static int gameScore;
     
-    public GameObject player;
     private float startTime;
     private float timeSinceSceneStart;
     public Text textPane;
@@ -36,6 +35,7 @@ public class BlastManager : Singleton<BlastManager>
     private List<BlastZone> blastZones;
 
     private BlastController controller;
+    private BlastPlayer player;
 
     public bool tickLock = true;
     private NotationTime tickUnlockTime;
@@ -78,14 +78,16 @@ public class BlastManager : Singleton<BlastManager>
         BlastZones = new List<BlastZone>();
         Enemies = new List<BlastEnemy>();
         controller = GetComponent<BlastController>();
-        UpdateText();
         spawnPoint = GameObject.Find("SpawnPoint").GetComponent<Transform>();
         blastZoneParent = GameObject.Find("BlastZones").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<BlastPlayer>();
     }
 
     public void BeginGame()
     {
 		backgroundLoop.GetComponent<BackgroundMusic>().Init("CaptainPlanetBeach");
+        player.speed = 6f;
+        UpdateText();
         //Delay before activating game controller
         StartCoroutine(StartController(0.01f)); 
         ChangeState(GameState.Playing);
@@ -227,7 +229,7 @@ public class BlastManager : Singleton<BlastManager>
 
     public void UpdateText()
     {
-        debugScoreDisplay.text = "Score: " + gameScore + "\nPollution: " + currentPollutionLevel;
+        debugScoreDisplay.text = "Score: " + gameScore;
     }
 
     IEnumerator StartController(float timeToWait)
