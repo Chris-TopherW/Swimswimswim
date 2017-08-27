@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 //public enum Keys { C, CS, D, DS, E, F, FS, G, GS, A, AS, B };
 
@@ -13,6 +14,8 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
     private BackgroundClip[] backgroundClips;
 	public BackgroundClip currentClip;
 	public BackgroundClip nextClip;
+	public AudioMixerGroup backgroundMixGroup;
+
     private AudioSource[] sources;
     private int nextSource;
     private NotationTime nextPlay;
@@ -22,6 +25,7 @@ public class BackgroundMusic : Singleton<BackgroundMusic>
         sources = new AudioSource[2];
         for (int i = 0; i < sources.Length; i++) {
             sources[i] = gameObject.AddComponent<AudioSource>() as AudioSource;
+			sources[i].outputAudioMixerGroup = backgroundMixGroup;
         }
 		//setup background loop meta data
 		backgroundClips = new BackgroundClip[clips.Length];

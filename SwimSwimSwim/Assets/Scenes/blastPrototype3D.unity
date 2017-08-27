@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1500,6 +1500,38 @@ Prefab:
       propertyPath: clips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 976e6ce6f3f0c224791c0ea84fb17669, type: 3}
+    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: clipKeys.Array.data[0]
+      value: GM
+      objectReference: {fileID: 0}
+    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: clipKeys.Array.data[1]
+      value: GM
+      objectReference: {fileID: 0}
+    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: clipKeys.Array.data[2]
+      value: GM
+      objectReference: {fileID: 0}
+    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: explosions.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 233722caa4ca843bea8e84bce67136c9, type: 3}
+    - target: {fileID: 114604877469510540, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: MelodyMixGroup
+      value: 
+      objectReference: {fileID: 243180758152527438, guid: c6a3b6717e28d41aca7d441e5a026611,
+        type: 2}
+    - target: {fileID: 114521143173827742, guid: 152371e4938e9404ca40e84ff2c499ab,
+        type: 2}
+      propertyPath: backgroundMixGroup
+      value: 
+      objectReference: {fileID: 243220343685568128, guid: c6a3b6717e28d41aca7d441e5a026611,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 152371e4938e9404ca40e84ff2c499ab, type: 2}
   m_IsPrefabParent: 0
