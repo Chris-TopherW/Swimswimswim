@@ -308,7 +308,7 @@ namespace UnityStandardAssets.Water
                         DestroyImmediate(m_RefractionTexture);
                     }
                     m_RefractionTexture = new RenderTexture(textureSize, textureSize, 16);
-                    m_RefractionTexture.filterMode = FilterMode.Point;
+                    m_RefractionTexture.filterMode = FilterMode.Bilinear;
                     m_RefractionTexture.name = "__WaterRefraction" + GetInstanceID();
                     m_RefractionTexture.isPowerOfTwo = true;
                     m_RefractionTexture.hideFlags = HideFlags.DontSave;

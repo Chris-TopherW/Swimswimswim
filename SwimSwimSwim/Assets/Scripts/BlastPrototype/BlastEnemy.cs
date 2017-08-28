@@ -79,7 +79,7 @@ public class BlastEnemy : MonoBehaviour
 
     void UpdatePosition()
     {
-       
+        transform.Rotate(0, 360 / 10 * Time.deltaTime, 0);
     }
 
     //TODO: Clean dis up
